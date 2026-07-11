@@ -85,7 +85,8 @@
         ① 下のボタンをおす<br>
         ② 「マイクの使用を許可しますか？」→ <b>許可</b><br>
         ③ 緑のマイクをおして、文を <b>はっきり声に出して</b> 読もう<br>
-        ④ どの単語が読めたか、みどり✓・赤✗ でわかるよ
+        ④ よみおわったら <b>よめた！✓</b> をおす<br>
+        ⑤ どの単語が読めたか、みどり✓・赤✗ でわかるよ
       </div>
       <div class="actions"><button class="btn go" id="btnStart">はじめる ▶</button></div>
       <div id="srWarn"></div>
@@ -106,6 +107,7 @@
     </div>
     <div class="actions">
       <button class="btn ghost" id="btnModel">🔊 お手本</button>
+      <button class="btn go hidden" id="btnJudge">よめた！ ✓</button>
       <button class="btn go hidden" id="btnNext">つぎへ ▶</button>
     </div>
     <div id="runErr"></div>
@@ -270,6 +272,7 @@
     renderSentence(s.best && s.best.wordHit);
     $("#fb").textContent=""; $("#fb").className="fb";
     $("#heard").textContent="";
+    $("#btnJudge").classList.add("hidden");
     $("#btnNext").classList.toggle("hidden", !s.best);
     $("#micLbl").textContent="マイクをおして、読んでみよう";
   }
@@ -302,32 +305,38 @@
   // 子どもはゆっくり・間をあけて読むので：
   //  ・continuous=true（息つぎで切れない）
   //  ・確定前の聞き取り（interim）も判定に使う（iPhoneのSafariは確定が来ないことがある）
-  //  ・「no-speech」は2回まで自動でやり直し（すぐ「きこえなかった」と言わない）
-  //  ・読み終わって3秒しずかになったら自動でストップ
-  var REC_MAX_MS=30000, REC_SILENCE_MS=3000, stopReq=null;
+  //  ・ブラウザが勝手に聞き取りを終えても、それまでの結果を持ったまま自動でつなぎ直す
+  //  ・判定するのは本人が「よめた！✓」（またはマイク）をおしたとき。60秒たったら安全のため自動判定
+  var REC_MAX_MS=60000, REC_RESTART_MAX=12, stopReq=null;
   function startRec(){
     if(!SR || listening) return;
     var s=SENTS[idx], startIdx=idx;
-    var finals=[], lastInterim="", retries=0, gotSound=false, wantStop=false, settled=false, permFail=false;
-    var maxTimer=null, silTimer=null;
+    var doneTexts=[], finals=[], lastInterim="", restarts=0, wantStop=false, settled=false, permFail=false;
+    var maxTimer=null;
     listening=true;
     $("#mic").classList.add("listening"); $("#mic").textContent="👂";
     $("#micLbl").textContent="じゅんびちゅう…";
     $("#fb").textContent=""; $("#fb").className="fb"; $("#heard").textContent="";
+    $("#btnJudge").classList.remove("hidden"); $("#btnNext").classList.add("hidden");
     stopReq=function(){ wantStop=true; try{rec.stop()}catch(e){} };
     maxTimer=setTimeout(function(){ wantStop=true; try{rec.stop()}catch(e){} }, REC_MAX_MS);
-    function armSilence(){ clearTimeout(silTimer);
-      silTimer=setTimeout(function(){ wantStop=true; try{rec.stop()}catch(e){} }, REC_SILENCE_MS); }
-    function uiIdle(){ listening=false; stopReq=null; clearTimeout(maxTimer); clearTimeout(silTimer);
-      $("#mic").classList.remove("listening"); $("#mic").textContent="🎤"; }
+    function allText(){
+      var t=doneTexts.concat(finals.map(function(r){return r[0].transcript})).join(" ").trim();
+      return t;
+    }
+    function uiIdle(){ listening=false; stopReq=null; clearTimeout(maxTimer);
+      $("#mic").classList.remove("listening"); $("#mic").textContent="🎤";
+      $("#btnJudge").classList.add("hidden"); }
     function settle(){
       if(settled) return; settled=true; uiIdle();
       var cands=[];
-      var joined=finals.map(function(r){return r[0].transcript}).join(" ").trim();
+      var joined=allText();
       if(joined) cands.push(joined);
-      if(finals.length===1){ for(var a=0;a<finals[0].length;a++){ cands.push(finals[0][a].transcript); } }
-      if(lastInterim && lastInterim!==joined) cands.push(joined ? (joined+" "+lastInterim) : lastInterim);
-      if(lastInterim && cands.indexOf(lastInterim)<0) cands.push(lastInterim);
+      if(!doneTexts.length && finals.length===1){ for(var a=0;a<finals[0].length;a++){ cands.push(finals[0][a].transcript); } }
+      if(lastInterim){
+        if(joined && joined.indexOf(lastInterim)<0) cands.push(joined+" "+lastInterim);
+        if(cands.indexOf(lastInterim)<0) cands.push(lastInterim);
+      }
       if(!cands.length){
         if(idx===startIdx && !permFail && !$("#runErr").innerHTML) $("#micLbl").textContent="きこえなかったみたい。マイクを おして、もう一回よんでみよう！";
         return;
@@ -348,9 +357,8 @@
     function begin(){
       try{ rec=new SR(); }catch(e){ settle(); return; }
       rec.lang="en-US"; rec.interimResults=true; rec.maxAlternatives=5; rec.continuous=true;
-      rec.onstart=function(){ if(!settled) $("#micLbl").textContent="きいてるよ… ゆっくりで だいじょうぶ 📖"; };
+      rec.onstart=function(){ if(!settled && !allText() && !lastInterim) $("#micLbl").textContent="きいてるよ 📖 よみおわったら「よめた！✓」をおしてね"; };
       rec.onresult=function(ev){
-        gotSound=true;
         finals=[]; var interim="";
         for(var i=0;i<ev.results.length;i++){
           var r=ev.results[i];
@@ -358,9 +366,8 @@
         }
         interim=interim.trim();
         if(interim) lastInterim=interim;
-        var shown=finals.map(function(r){return r[0].transcript}).join(" ")+(interim?" "+interim:"");
-        if(shown.trim()) $("#heard").innerHTML='<span class="en">'+escT(shown.trim())+'</span>';
-        armSilence();
+        var shown=(allText()+" "+interim).trim();
+        if(shown) $("#heard").innerHTML='<span class="en">'+escT(shown)+'</span>';
       };
       rec.onerror=function(ev){
         if(ev.error==="not-allowed" || ev.error==="service-not-allowed"){
@@ -368,14 +375,17 @@
           $("#runErr").innerHTML='<div class="err">⚠️ マイクが使えないみたい。<br>・アドレスバーの設定から「マイク」を <b>許可</b> にしてね<br>・iPhoneは「設定 → Safari → マイク → 許可」<br>・LINEの中のブラウザではなく <b>Safari/Chrome</b> で開いてね</div>';
           $("#micLbl").textContent="マイクの許可ができたら、もう一回おしてね";
         }
-        // no-speech / aborted は onend 側で自動やり直し
+        // no-speech / aborted は onend 側でつなぎ直す
       };
       rec.onend=function(){
         if(settled) return;
-        var heardSomething = gotSound || lastInterim || finals.length;
-        if(!wantStop && !heardSomething && retries<2){
-          retries++;
-          $("#micLbl").textContent="👂 まだ きこえてないよ。大きな こえで どうぞ！";
+        // この回の確定結果をためて、本人がボタンをおすまで聞き直しを続ける
+        finals.forEach(function(r){ doneTexts.push(r[0].transcript); });
+        if(lastInterim){ var joined=doneTexts.join(" "); if(joined.indexOf(lastInterim)<0) doneTexts.push(lastInterim); lastInterim=""; }
+        finals=[];
+        if(!wantStop && restarts<REC_RESTART_MAX){
+          restarts++;
+          if(!doneTexts.length) $("#micLbl").textContent="👂 まだ きこえてないよ。大きな こえで どうぞ！";
           begin(); return;
         }
         settle();
@@ -432,6 +442,7 @@
     idx=0; showStep();
   };
   $("#mic").onclick=function(){ if(listening){ if(stopReq)stopReq(); return; } $("#runErr").innerHTML=""; startRec(); };
+  $("#btnJudge").onclick=function(){ if(listening && stopReq) stopReq(); };
   $("#btnModel").onclick=function(){ playModel(idx); };
   $("#btnNext").onclick=function(){
     if(listening && stopReq){ stopReq(); }
