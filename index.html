@@ -129,6 +129,18 @@
       <div style="font-family:var(--font-round); font-size:13px; color:var(--muted)">文ごとのけっか</div>
       <div id="sumList"></div>
     </div>
+    <div class="card" id="recCard">
+      <div style="font-family:var(--font-round); font-weight:700">🎙️ さいごに、音読を ろくおんして 先生に おくろう！</div>
+      <div class="note">上の文を さいしょから 声に出して 読んでね。先生が あとで きいてくれるよ。</div>
+      <button class="mic" id="recBtn">🎙️</button>
+      <div class="miclbl" id="recLbl">ボタンを おして ろくおん スタート</div>
+      <audio id="recPlay" controls style="width:100%; margin-top:10px; display:none"></audio>
+      <div class="actions hidden" id="recActions">
+        <button class="btn ghost" id="recRedo">とりなおす 🔁</button>
+        <button class="btn go" id="recSend">先生に おくる ✉️</button>
+      </div>
+      <div class="sendst" id="recSt"></div>
+    </div>
     <div class="actions">
       <button class="btn ghost" id="btnRetry">もう一回 🔁</button>
       <button class="btn go" id="btnClose">クエストにもどる 🏡</button>
@@ -454,6 +466,69 @@
     idx=0; showStep();
   };
   $("#btnClose").onclick=function(){ try{window.close()}catch(e){} };
+
+  // ---- 🎙️ ろくおんして先生におくる（けっか画面のさいご） ----
+  (function(){
+    if(!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder)){
+      var rc=$("#recCard"); if(rc) rc.innerHTML='<div class="note">この端末では ろくおんが つかえないみたい。SafariかChromeの さいしんばんで ひらいてね。</div>';
+      return;
+    }
+    var mr=null, chunks=[], blob=null, recording=false, timer=null, MAXSEC=180;
+    function fmt(s){ return Math.floor(s/60)+":"+("0"+(s%60)).slice(-2); }
+    function pickMime(){ var c=["audio/mp4","audio/webm;codecs=opus","audio/webm"];
+      for(var i=0;i<c.length;i++){ try{ if(MediaRecorder.isTypeSupported(c[i])) return c[i]; }catch(e){} } return ""; }
+    $("#recBtn").onclick=function(){
+      if(recording){ try{mr.stop()}catch(e){} return; }
+      navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+        chunks=[]; blob=null;
+        var mime=pickMime();
+        try{ mr = mime ? new MediaRecorder(stream,{mimeType:mime}) : new MediaRecorder(stream); }
+        catch(e){ mr=new MediaRecorder(stream); }
+        mr.ondataavailable=function(ev){ if(ev.data && ev.data.size) chunks.push(ev.data); };
+        mr.onstop=function(){
+          recording=false; clearInterval(timer);
+          stream.getTracks().forEach(function(t){t.stop()});
+          $("#recBtn").classList.remove("listening"); $("#recBtn").textContent="🎙️";
+          blob=new Blob(chunks,{type:mr.mimeType||"audio/mp4"});
+          var a=$("#recPlay"); a.src=URL.createObjectURL(blob); a.style.display="block";
+          $("#recActions").classList.remove("hidden");
+          $("#recLbl").textContent="きいてみて、よければ「先生に おくる」";
+        };
+        var sec=0;
+        recording=true;
+        $("#recBtn").classList.add("listening"); $("#recBtn").textContent="⏹";
+        $("#recLbl").textContent="ろくおん中… 0:00　よみおわったら ⏹ をおしてね";
+        timer=setInterval(function(){ sec++;
+          $("#recLbl").textContent="ろくおん中… "+fmt(sec)+"　よみおわったら ⏹ をおしてね";
+          if(sec>=MAXSEC){ try{mr.stop()}catch(e){} }
+        },1000);
+        mr.start();
+      }).catch(function(){ $("#recLbl").textContent="マイクが つかえなかった…もう一回 おしてね"; });
+    };
+    $("#recRedo").onclick=function(){
+      blob=null; $("#recPlay").style.display="none"; $("#recActions").classList.add("hidden");
+      $("#recLbl").textContent="ボタンを おして ろくおん スタート"; $("#recSt").textContent="";
+    };
+    $("#recSend").onclick=function(){
+      if(!blob) return;
+      if(!DATA.exec){ $("#recSt").textContent="⚠️ おくり先が ないみたい（先生に 画面を 見せてね）"; return; }
+      $("#recSt").textContent="おくっています…（すこし まってね）";
+      $("#recSend").disabled=true;
+      var fr=new FileReader();
+      fr.onload=function(){
+        var b64=String(fr.result).split(",")[1]||"";
+        fetch(DATA.exec,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},
+          body:JSON.stringify({action:"ondokuAudio", name:DATA.name||"", lessonTitle:DATA.lessonTitle||"", mime:blob.type||"audio/mp4", audio:b64})})
+        .then(function(r){return r.json()})
+        .then(function(j){
+          $("#recSt").textContent = j&&j.ok ? "✅ 先生に とどいたよ！おつかれさま 🦋" : "⚠️ おくれなかった…もう一回 ためしてね";
+          $("#recSend").disabled=false;
+        })
+        .catch(function(){ $("#recSt").textContent="⚠️ おくれなかった…もう一回 ためしてね"; $("#recSend").disabled=false; });
+      };
+      fr.readAsDataURL(blob);
+    };
+  })();
 })();
 </script>
 </body>
