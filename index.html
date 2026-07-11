@@ -81,7 +81,7 @@
     <div class="card">
       <div style="font-size:46px">🎤</div>
       <h2 style="font-size:19px; margin-top:6px" id="lessonTitle"></h2>
-      <div class="note">
+      <div class="note" id="startNote">
         ① 下のボタンをおす<br>
         ② 「マイクの使用を許可しますか？」→ <b>許可</b><br>
         ③ 緑のマイクをおして、文を <b>はっきり声に出して</b> 読もう<br>
@@ -126,7 +126,7 @@
       <div class="sendst" id="sendst"></div>
     </div>
     <div class="card" style="text-align:left">
-      <div style="font-family:var(--font-round); font-size:13px; color:var(--muted)">文ごとのけっか</div>
+      <div style="font-family:var(--font-round); font-size:13px; color:var(--muted)" id="sumHead">文ごとのけっか</div>
       <div id="sumList"></div>
     </div>
     <div class="card" id="recCard">
@@ -170,6 +170,16 @@
   }
   $("#who").textContent=(DATA.name?DATA.name+" さん · ":"")+DATA.lessonTitle;
   $("#lessonTitle").textContent=DATA.lessonTitle;
+
+  // ---- 単語モード（ハートワード：1語ずつ読めたか判定） ----
+  var WORD=DATA.mode==="word";
+  if(WORD){
+    $("#sent").style.fontSize="42px";
+    $("#startNote").innerHTML=$("#startNote").innerHTML.replace("文を","ことばを");
+    $("#sumHead").textContent="ことばごとの けっか";
+    var recNote=document.querySelector("#recCard .note");
+    if(recNote) recNote.textContent="上の ことばを じゅんばんに 声に出して 読んでね。先生が あとで きいてくれるよ。";
+  }
 
   // ---- お手本：自然な音声ファイル（クエスト本体からURLで渡される）優先。無ければ合成音声 ----
   var modelAud=null;
@@ -278,7 +288,7 @@
   }
   function showStep(){
     var s=SENTS[idx];
-    $("#pLbl").textContent="文 "+(idx+1);
+    $("#pLbl").textContent=(WORD?"ことば ":"文 ")+(idx+1);
     $("#pCnt").textContent=(idx+1)+" / "+SENTS.length;
     $("#fill").style.width=(idx/SENTS.length*100)+"%";
     renderSentence(s.best && s.best.wordHit);
