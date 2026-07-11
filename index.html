@@ -157,9 +157,28 @@
   $("#who").textContent=(DATA.name?DATA.name+" さん · ":"")+DATA.lessonTitle;
   $("#lessonTitle").textContent=DATA.lessonTitle;
 
-  // ---- 音声合成（お手本） ----
+  // ---- お手本：自然な音声ファイル（クエスト本体からURLで渡される）優先。無ければ合成音声 ----
+  var modelAud=null;
+  function pickVoice(){ try{ var vs=speechSynthesis.getVoices()||[], pref=["Samantha","Google US English","Microsoft Aria","Microsoft Jenny","Allison","Karen"];
+      for(var i=0;i<pref.length;i++) for(var j=0;j<vs.length;j++){ if(vs[j].name && vs[j].name.indexOf(pref[i])===0 && /^en/i.test(vs[j].lang)) return vs[j]; }
+      for(var k=0;k<vs.length;k++){ if(vs[k].lang==="en-US") return vs[k]; }
+    }catch(e){} return null; }
   function sayEn(t){ try{ if(!window.speechSynthesis)return; speechSynthesis.cancel(); speechSynthesis.resume();
-    var u=new SpeechSynthesisUtterance(t); u.lang="en-US"; u.rate=.85; speechSynthesis.speak(u); }catch(e){} }
+    var u=new SpeechSynthesisUtterance(String(t).replace(/\bA\b/g,"a")); u.lang="en-US"; u.rate=.85;
+    var v=pickVoice(); if(v)u.voice=v; speechSynthesis.speak(u); }catch(e){} }
+  function playModel(i){
+    try{ if(modelAud){ modelAud.onended=null; modelAud.onerror=null; modelAud.pause(); modelAud=null; } }catch(e){}
+    var url=DATA.audio && DATA.audio[i];
+    if(url){
+      try{
+        var a=new Audio(url); modelAud=a;
+        a.onerror=function(){ sayEn(SENTS[i].en); };
+        var p=a.play(); if(p&&p.catch) p.catch(function(){ sayEn(SENTS[i].en); });
+        return;
+      }catch(e){}
+    }
+    sayEn(SENTS[i].en);
+  }
 
   // ---- 語の正規化・同一判定 ----
   var CONTR={"i'm":"i am","you're":"you are","he's":"he is","she's":"she is","it's":"it is","we're":"we are","they're":"they are",
@@ -280,59 +299,90 @@
     return bestHit;
   }
 
+  // 子どもはゆっくり・間をあけて読むので：
+  //  ・continuous=true（息つぎで切れない）
+  //  ・確定前の聞き取り（interim）も判定に使う（iPhoneのSafariは確定が来ないことがある）
+  //  ・「no-speech」は2回まで自動でやり直し（すぐ「きこえなかった」と言わない）
+  //  ・読み終わって3秒しずかになったら自動でストップ
+  var REC_MAX_MS=30000, REC_SILENCE_MS=3000, stopReq=null;
   function startRec(){
     if(!SR || listening) return;
-    var s=SENTS[idx];
-    try{ rec=new SR(); }catch(e){ return; }
-    rec.lang="en-US"; rec.interimResults=true; rec.maxAlternatives=5; rec.continuous=false;
-    var finals=[];
+    var s=SENTS[idx], startIdx=idx;
+    var finals=[], lastInterim="", retries=0, gotSound=false, wantStop=false, settled=false, permFail=false;
+    var maxTimer=null, silTimer=null;
     listening=true;
     $("#mic").classList.add("listening"); $("#mic").textContent="👂";
-    $("#micLbl").textContent="きいてるよ… はっきり読んでね";
-    $("#fb").textContent=""; $("#heard").textContent="";
-    recTimer=setTimeout(function(){ try{rec.stop()}catch(e){} }, 15000);
-    rec.onresult=function(ev){
-      var interim="";
-      for(var i=0;i<ev.results.length;i++){
-        var r=ev.results[i];
-        if(r.isFinal) finals[i]=r; else interim+=r[0].transcript;
-      }
-      if(interim) $("#heard").innerHTML='<span class="en">'+escT(interim)+'</span>';
-    };
-    rec.onerror=function(ev){
-      listening=false; clearTimeout(recTimer);
-      $("#mic").classList.remove("listening"); $("#mic").textContent="🎤";
-      if(ev.error==="not-allowed" || ev.error==="service-not-allowed"){
-        $("#runErr").innerHTML='<div class="err">⚠️ マイクが使えないみたい。<br>・アドレスバーの設定から「マイク」を <b>許可</b> にしてね<br>・iPhoneは「設定 → Safari → マイク → 許可」<br>・LINEの中のブラウザではなく <b>Safari/Chrome</b> で開いてね</div>';
-        $("#micLbl").textContent="マイクの許可ができたら、もう一回おしてね";
-      } else if(ev.error==="no-speech"){
-        $("#micLbl").textContent="きこえなかったみたい。もう一回おして、大きな声で！";
-      } else {
-        $("#micLbl").textContent="うまくいかなかった…もう一回おしてね";
-      }
-    };
-    rec.onend=function(){
-      listening=false; clearTimeout(recTimer);
-      $("#mic").classList.remove("listening"); $("#mic").textContent="🎤";
+    $("#micLbl").textContent="じゅんびちゅう…";
+    $("#fb").textContent=""; $("#fb").className="fb"; $("#heard").textContent="";
+    stopReq=function(){ wantStop=true; try{rec.stop()}catch(e){} };
+    maxTimer=setTimeout(function(){ wantStop=true; try{rec.stop()}catch(e){} }, REC_MAX_MS);
+    function armSilence(){ clearTimeout(silTimer);
+      silTimer=setTimeout(function(){ wantStop=true; try{rec.stop()}catch(e){} }, REC_SILENCE_MS); }
+    function uiIdle(){ listening=false; stopReq=null; clearTimeout(maxTimer); clearTimeout(silTimer);
+      $("#mic").classList.remove("listening"); $("#mic").textContent="🎤"; }
+    function settle(){
+      if(settled) return; settled=true; uiIdle();
       var cands=[];
-      var joined=finals.filter(Boolean).map(function(r){return r[0].transcript}).join(" ").trim();
+      var joined=finals.map(function(r){return r[0].transcript}).join(" ").trim();
       if(joined) cands.push(joined);
-      var fin=finals.filter(Boolean);
-      if(fin.length===1){ for(var a=0;a<fin[0].length;a++){ cands.push(fin[0][a].transcript); } }
-      if(!cands.length){ if(!$("#runErr").innerHTML) $("#micLbl").textContent="きこえなかったみたい。もう一回！"; return; }
-      $("#heard").innerHTML='きこえた英語：<span class="en">'+escT(cands[0])+'</span>';
+      if(finals.length===1){ for(var a=0;a<finals[0].length;a++){ cands.push(finals[0][a].transcript); } }
+      if(lastInterim && lastInterim!==joined) cands.push(joined ? (joined+" "+lastInterim) : lastInterim);
+      if(lastInterim && cands.indexOf(lastInterim)<0) cands.push(lastInterim);
+      if(!cands.length){
+        if(idx===startIdx && !permFail && !$("#runErr").innerHTML) $("#micLbl").textContent="きこえなかったみたい。マイクを おして、もう一回よんでみよう！";
+        return;
+      }
       var hit=judgeWords(s,cands);
       var total=s.judgeable.filter(Boolean).length;
       // 前より良ければ更新（悪くならない）
       if(!s.best || hit.ok>s.best.ok){ s.best=hit; s.heard=cands[0]; }
+      if(idx!==startIdx) return; // すでに次の文へ進んでいたら、記録だけ残して画面はさわらない
+      $("#heard").innerHTML='きこえた英語：<span class="en">'+escT(cands[0])+'</span>';
       renderSentence(hit.wordHit);
       var fb=$("#fb");
       if(hit.ok>=total){ fb.className="fb ok"; fb.textContent="パーフェクト！🎉"; }
       else{ fb.className="fb tr"; fb.textContent="✓ "+hit.ok+" / "+total+"　赤いところ、もう一回チャレンジ？💪"; }
       $("#micLbl").textContent="もう一回よむ？（いいほうのけっかが のこるよ）";
       $("#btnNext").classList.remove("hidden");
-    };
-    try{ rec.start(); }catch(e){ listening=false; }
+    }
+    function begin(){
+      try{ rec=new SR(); }catch(e){ settle(); return; }
+      rec.lang="en-US"; rec.interimResults=true; rec.maxAlternatives=5; rec.continuous=true;
+      rec.onstart=function(){ if(!settled) $("#micLbl").textContent="きいてるよ… ゆっくりで だいじょうぶ 📖"; };
+      rec.onresult=function(ev){
+        gotSound=true;
+        finals=[]; var interim="";
+        for(var i=0;i<ev.results.length;i++){
+          var r=ev.results[i];
+          if(r.isFinal) finals.push(r); else interim+=r[0].transcript+" ";
+        }
+        interim=interim.trim();
+        if(interim) lastInterim=interim;
+        var shown=finals.map(function(r){return r[0].transcript}).join(" ")+(interim?" "+interim:"");
+        if(shown.trim()) $("#heard").innerHTML='<span class="en">'+escT(shown.trim())+'</span>';
+        armSilence();
+      };
+      rec.onerror=function(ev){
+        if(ev.error==="not-allowed" || ev.error==="service-not-allowed"){
+          permFail=true; wantStop=true;
+          $("#runErr").innerHTML='<div class="err">⚠️ マイクが使えないみたい。<br>・アドレスバーの設定から「マイク」を <b>許可</b> にしてね<br>・iPhoneは「設定 → Safari → マイク → 許可」<br>・LINEの中のブラウザではなく <b>Safari/Chrome</b> で開いてね</div>';
+          $("#micLbl").textContent="マイクの許可ができたら、もう一回おしてね";
+        }
+        // no-speech / aborted は onend 側で自動やり直し
+      };
+      rec.onend=function(){
+        if(settled) return;
+        var heardSomething = gotSound || lastInterim || finals.length;
+        if(!wantStop && !heardSomething && retries<2){
+          retries++;
+          $("#micLbl").textContent="👂 まだ きこえてないよ。大きな こえで どうぞ！";
+          begin(); return;
+        }
+        settle();
+      };
+      try{ rec.start(); }catch(e){ settle(); }
+    }
+    begin();
   }
 
   // ---- けっか集計・送信 ----
@@ -381,10 +431,10 @@
     $("#scrStart").classList.add("hidden"); $("#scrRun").classList.remove("hidden");
     idx=0; showStep();
   };
-  $("#mic").onclick=function(){ if(listening){ try{rec.stop()}catch(e){} return; } $("#runErr").innerHTML=""; startRec(); };
-  $("#btnModel").onclick=function(){ sayEn(SENTS[idx].en); };
+  $("#mic").onclick=function(){ if(listening){ if(stopReq)stopReq(); return; } $("#runErr").innerHTML=""; startRec(); };
+  $("#btnModel").onclick=function(){ playModel(idx); };
   $("#btnNext").onclick=function(){
-    if(listening){ try{rec.stop()}catch(e){} }
+    if(listening && stopReq){ stopReq(); }
     if(idx>=SENTS.length-1){ finish(); } else { idx++; showStep(); }
   };
   $("#btnRetry").onclick=function(){
