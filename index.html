@@ -467,6 +467,30 @@
   };
   $("#btnClose").onclick=function(){ try{window.close()}catch(e){} };
 
+  // ---- 🎙️ ろくおんだけモード（クエストの「🎙️ろくおんして先生におくる」から。チェックなしでいつでも） ----
+  if(DATA.mode==="rec"){
+    $("#scrStart").classList.add("hidden");
+    var recSec=document.createElement("section");
+    recSec.innerHTML='<div class="card" style="text-align:left">'+
+      '<div style="font-family:var(--font-round); font-weight:700">📖 きょう おくる文</div>'+
+      '<div class="note">文をタップすると お手本が きけるよ。じゅんびが できたら、下の 🎙️ で ろくおんしよう。</div>'+
+      '<div id="recSents"></div></div>';
+    document.querySelector(".wrap").appendChild(recSec);
+    var recList=recSec.querySelector("#recSents");
+    SENTS.forEach(function(s,i){
+      var d=document.createElement("div"); d.className="sum-sent"; d.style.cursor="pointer";
+      d.innerHTML='<span class="en" style="font-family:var(--font-en)">'+escT(s.en)+'</span>'+(s.ja?'<div class="ja" style="margin-top:2px">'+escT(s.ja)+'</div>':'');
+      d.onclick=function(){ playModel(i); };
+      recList.appendChild(d);
+    });
+    recSec.appendChild($("#recCard"));
+    $("#recCard").querySelector("div").textContent="🎙️ ろくおんして 先生に おくろう！";
+    var recClose=document.createElement("div"); recClose.className="actions";
+    recClose.innerHTML='<button class="btn go" id="btnClose2">クエストにもどる 🏡</button>';
+    recSec.appendChild(recClose);
+    recClose.querySelector("#btnClose2").onclick=function(){ try{window.close()}catch(e){} };
+  }
+
   // ---- 🎙️ ろくおんして先生におくる（けっか画面のさいご） ----
   (function(){
     if(!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder)){
@@ -521,8 +545,10 @@
           body:JSON.stringify({action:"ondokuAudio", name:DATA.name||"", lessonTitle:DATA.lessonTitle||"", mime:blob.type||"audio/mp4", audio:b64})})
         .then(function(r){return r.json()})
         .then(function(j){
-          $("#recSt").textContent = j&&j.ok ? "✅ 先生に とどいたよ！おつかれさま 🦋" : "⚠️ おくれなかった…もう一回 ためしてね";
+          $("#recSt").textContent = j&&j.ok ? "✅ 先生に とどいたよ！ていしゅつボーナス +10 🦋" : "⚠️ おくれなかった…もう一回 ためしてね";
           $("#recSend").disabled=false;
+          // クエスト本体に「おくったよ」を知らせる（提出ボーナス＋✉️記録）
+          try{ if(j&&j.ok&&window.opener) window.opener.postMessage({type:"ondokuRecSent", lessonId:DATA.lessonId||"", lessonTitle:DATA.lessonTitle||""}, "*"); }catch(e){}
         })
         .catch(function(){ $("#recSt").textContent="⚠️ おくれなかった…もう一回 ためしてね"; $("#recSend").disabled=false; });
       };
