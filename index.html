@@ -239,6 +239,10 @@
     if(a===b) return true;
     if(H2C[a]&&H2C[a]===H2C[b]) return true;
     if(PROPER[a] && b && lev(a,b)<=(a.length>=4?2:1)) return true;
+    // ことばチェック（単語モード）だけ：1語だけの聞き取りはエンジン自体がブレやすい
+    // （例：his → she's/is/hiss と文字起こしされる）ので、3文字以上は1文字違いまで、
+    // 5文字以上は2文字違いまで正解にする。he/she など2文字以下は厳密のまま。文の音読は従来通り。
+    if(WORD && b && a.length>=3 && lev(a,b)<=(a.length>=5?2:1)) return true;
     return false;
   }
   // LCS（順番を守った最長一致）で、正解文のどのトークンが読めたかを求める
