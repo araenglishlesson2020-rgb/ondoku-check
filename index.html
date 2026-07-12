@@ -228,6 +228,14 @@
     return [t.replace(/'/g,"")].filter(Boolean);
   }
   function tokenize(str){ var out=[]; String(str).split(/\s+/).forEach(function(w){ out=out.concat(tokenizeWord(w)); }); return out; }
+  // 聞き取りエンジンが混同しやすい語（実機で報告があったら足していく）。
+  // 単語モードと「みじかい文（5トークン以下）」だけで有効＝長い本文の判定はゆるまない。
+  var SOFT=[["sit","said","see","seat","sat","set"],["tap","top","tab","tup","app","type"]];
+  var S2C={}; SOFT.forEach(function(g,gi){ g.forEach(function(w){ S2C[w]="s"+gi; }); });
+  // 語尾ゆれ（sit↔sits、tap↔tapped 等）を同じ語とみなす簡易ステム
+  function stem(w){ var t=String(w).replace(/(ing|es|ed|s)$/,""); if(t.length<2) return String(w);
+    return t.replace(/([a-z])\1$/,"$1"); }
+  var SOFTON=false; // judgeWords が文の長さを見てON/OFFする
   // 人名など固有名詞（大文字はじまりで文頭以外にも出る語）は、聞き取りブレに寛容にする
   var PROPER={};
   function lev(a,b){ var la=a.length, lb=b.length, i, j;
@@ -243,6 +251,11 @@
     // （例：his → she's/is/hiss と文字起こしされる）ので、3文字以上は1文字違いまで、
     // 5文字以上は2文字違いまで正解にする。he/she など2文字以下は厳密のまま。文の音読は従来通り。
     if(WORD && b && a.length>=3 && lev(a,b)<=(a.length>=5?2:1)) return true;
+    // 単語モード＋みじかい文：混同しやすい語（sit↔said等）と語尾ゆれ（tap↔tapped等）も正解に
+    if(SOFTON && b){
+      if(S2C[a] && S2C[a]===S2C[b]) return true;
+      if(stem(a)===stem(b)) return true;
+    }
     return false;
   }
   // LCS（順番を守った最長一致）で、正解文のどのトークンが読めたかを求める
@@ -270,9 +283,18 @@
       best:null, heard:"" };
   });
   var idx=0;
-  // 固有名詞を集める：文頭以外で大文字はじまりの語（Irma, Shirly など）
+  // 固有名詞を集める：文頭以外で大文字はじまりの語（Irma, Shirly など）＋
+  // 文頭でも「よくある英単語」でなければ人名とみなす（Pim and I sit. の Pim など）
+  var STOP0={}; ("the a an i it its is in on at to of for with and but or if so as by up down out off "+
+    "we he she they you my your his her our their this that these those there here "+
+    "what who when where why how which can could will would shall should may might must "+
+    "do does did done am are was were be been being have has had not no yes "+
+    "go goes going went get got let look looks come comes came see say says said sit sat tap run ran "+
+    "one two three four five six seven eight nine ten now then today tomorrow please thank thanks "+
+    "oh ok okay hello hi hey good new old big little many some all every each").split(" ").forEach(function(w){STOP0[w]=1;});
   SENTS.forEach(function(s){ s.words.forEach(function(w,i){
-    if(i>0 && /^[A-Z][a-z]/.test(w)){ tokenizeWord(w).forEach(function(t){ PROPER[t]=1; }); }
+    if(/^[A-Z][a-z]/.test(w)){ var toks=tokenizeWord(w);
+      if(i>0 || (toks[0] && !STOP0[toks[0]])) toks.forEach(function(t){ PROPER[t]=1; }); }
   }); });
 
   // ---- 音声認識 ----
@@ -306,6 +328,7 @@
 
   // 表示単語ごとの ✓✗ を求める（部分トークンが全部読めていたら✓）
   function judgeWords(s, transcripts){
+    SOFTON = WORD || s.flat.length<=5; // みじかい文（UFLIの「I sit.」等）は聞き取りブレに寛容
     var flatSet={}; s.flat.forEach(function(t){flatSet[t]=1});
     var bestHit=null, bestOk=-1;
     transcripts.forEach(function(tr){
