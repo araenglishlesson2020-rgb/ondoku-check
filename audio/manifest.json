@@ -1151,5 +1151,6449 @@
   "favorite": "audio/jenny/words/favorite.mp3",
   "breakfast": "audio/jenny/words/breakfast.mp3",
   "february": "audio/jenny/words/february.mp3"
- }
+ },
+ "od_l33": [
+  {
+   "en": "What can vets do? Vets help pets.",
+   "f": "audio/jenny/od_l33/0.mp3",
+   "s": "audio/jenny/od_l33/0s.mp3"
+  },
+  {
+   "en": "Can a vet help a dog? Yes, a vet can help a dog.",
+   "f": "audio/jenny/od_l33/1.mp3",
+   "s": "audio/jenny/od_l33/1s.mp3"
+  },
+  {
+   "en": "Can a vet help a cat? Yes, a vet can help lots of pets.",
+   "f": "audio/jenny/od_l33/2.mp3",
+   "s": "audio/jenny/od_l33/2s.mp3"
+  },
+  {
+   "en": "Can a vet help kids? No, a vet can not help kids.",
+   "f": "audio/jenny/od_l33/3.mp3",
+   "s": "audio/jenny/od_l33/3s.mp3"
+  },
+  {
+   "en": "Vets just help pets. Vets have a fun job.",
+   "f": "audio/jenny/od_l33/4.mp3",
+   "s": "audio/jenny/od_l33/4s.mp3"
+  }
+ ],
+ "od_l34": [
+  {
+   "en": "Jaz and Zed went on a trip in a tent.",
+   "f": "audio/jenny/od_l34/0.mp3",
+   "s": "audio/jenny/od_l34/0s.mp3"
+  },
+  {
+   "en": "Jaz sets up the tent. Zed helps.",
+   "f": "audio/jenny/od_l34/1.mp3",
+   "s": "audio/jenny/od_l34/1s.mp3"
+  },
+  {
+   "en": "\"Look at the pond,\" said Jaz. \"Let's swim!\"",
+   "f": "audio/jenny/od_l34/2.mp3",
+   "s": "audio/jenny/od_l34/2s.mp3"
+  },
+  {
+   "en": "Jaz and Zed jump in the pond to swim.",
+   "f": "audio/jenny/od_l34/3.mp3",
+   "s": "audio/jenny/od_l34/3s.mp3"
+  },
+  {
+   "en": "Jaz and Zed see lots of bugs.",
+   "f": "audio/jenny/od_l34/4.mp3",
+   "s": "audio/jenny/od_l34/4s.mp3"
+  },
+  {
+   "en": "\"You have to zip up the tent,\" said Jaz.",
+   "f": "audio/jenny/od_l34/5.mp3",
+   "s": "audio/jenny/od_l34/5s.mp3"
+  },
+  {
+   "en": "\"If you zip it, the bugs do not get in.\"",
+   "f": "audio/jenny/od_l34/6.mp3",
+   "s": "audio/jenny/od_l34/6s.mp3"
+  },
+  {
+   "en": "Zed runs to the tent to zip it up.",
+   "f": "audio/jenny/od_l34/7.mp3",
+   "s": "audio/jenny/od_l34/7s.mp3"
+  },
+  {
+   "en": "The bugs do not get in.",
+   "f": "audio/jenny/od_l34/8.mp3",
+   "s": "audio/jenny/od_l34/8s.mp3"
+  }
+ ],
+ "od_l35a": [
+  {
+   "en": "Jax has a big bag.",
+   "f": "audio/jenny/od_l35a/0.mp3",
+   "s": "audio/jenny/od_l35a/0s.mp3"
+  },
+  {
+   "en": "The bag has hats and caps in it.",
+   "f": "audio/jenny/od_l35a/1.mp3",
+   "s": "audio/jenny/od_l35a/1s.mp3"
+  },
+  {
+   "en": "Six hats and ten caps fit in the bag.",
+   "f": "audio/jenny/od_l35a/2.mp3",
+   "s": "audio/jenny/od_l35a/2s.mp3"
+  },
+  {
+   "en": "\"Can I have a hat?\" asks Gab.",
+   "f": "audio/jenny/od_l35a/3.mp3",
+   "s": "audio/jenny/od_l35a/3s.mp3"
+  },
+  {
+   "en": "\"Yes, you can have a hat,\" said Jax.",
+   "f": "audio/jenny/od_l35a/4.mp3",
+   "s": "audio/jenny/od_l35a/4s.mp3"
+  },
+  {
+   "en": "\"Can I have a cap?\" asks Kat.",
+   "f": "audio/jenny/od_l35a/5.mp3",
+   "s": "audio/jenny/od_l35a/5s.mp3"
+  },
+  {
+   "en": "\"Yes, you can have a cap,\" said Jax.",
+   "f": "audio/jenny/od_l35a/6.mp3",
+   "s": "audio/jenny/od_l35a/6s.mp3"
+  },
+  {
+   "en": "Gab and Kat are glad to have the hat and cap.",
+   "f": "audio/jenny/od_l35a/7.mp3",
+   "s": "audio/jenny/od_l35a/7s.mp3"
+  }
+ ],
+ "od_l35b": [
+  {
+   "en": "Sam plans a trip to camp.",
+   "f": "audio/jenny/od_l35b/0.mp3",
+   "s": "audio/jenny/od_l35b/0s.mp3"
+  },
+  {
+   "en": "Sam asks Dan to plan the trip with him.",
+   "f": "audio/jenny/od_l35b/1.mp3",
+   "s": "audio/jenny/od_l35b/1s.mp3"
+  },
+  {
+   "en": "Dan said, \"Yes! Let's plan a trip! What do we have to do?\"",
+   "f": "audio/jenny/od_l35b/2.mp3",
+   "s": "audio/jenny/od_l35b/2s.mp3"
+  },
+  {
+   "en": "\"We have to get the van and the tents,\" said Sam.",
+   "f": "audio/jenny/od_l35b/3.mp3",
+   "s": "audio/jenny/od_l35b/3s.mp3"
+  },
+  {
+   "en": "\"I can get the van if you can get the tents,\" said Dan.",
+   "f": "audio/jenny/od_l35b/4.mp3",
+   "s": "audio/jenny/od_l35b/4s.mp3"
+  },
+  {
+   "en": "Dan gets the van. Sam gets the tents.",
+   "f": "audio/jenny/od_l35b/5.mp3",
+   "s": "audio/jenny/od_l35b/5s.mp3"
+  },
+  {
+   "en": "The men are glad to be on a trip to camp.",
+   "f": "audio/jenny/od_l35b/6.mp3",
+   "s": "audio/jenny/od_l35b/6s.mp3"
+  }
+ ],
+ "od_l35c": [
+  {
+   "en": "Vlad is a crab. Vlad the crab ran on the sand.",
+   "f": "audio/jenny/od_l35c/0.mp3",
+   "s": "audio/jenny/od_l35c/0s.mp3"
+  },
+  {
+   "en": "A crab trap was in the sand.",
+   "f": "audio/jenny/od_l35c/1.mp3",
+   "s": "audio/jenny/od_l35c/1s.mp3"
+  },
+  {
+   "en": "Vlad did not see the trap. Vlad ran in to the trap.",
+   "f": "audio/jenny/od_l35c/2.mp3",
+   "s": "audio/jenny/od_l35c/2s.mp3"
+  },
+  {
+   "en": "\"Help!\" said Vlad.",
+   "f": "audio/jenny/od_l35c/3.mp3",
+   "s": "audio/jenny/od_l35c/3s.mp3"
+  },
+  {
+   "en": "Dax the crab sees Vlad. \"I can help you!\" said Dax.",
+   "f": "audio/jenny/od_l35c/4.mp3",
+   "s": "audio/jenny/od_l35c/4s.mp3"
+  },
+  {
+   "en": "Dax acts fast. He grabs Vlad.",
+   "f": "audio/jenny/od_l35c/5.mp3",
+   "s": "audio/jenny/od_l35c/5s.mp3"
+  },
+  {
+   "en": "Dax and Vlad ran from the trap. The crabs are glad.",
+   "f": "audio/jenny/od_l35c/6.mp3",
+   "s": "audio/jenny/od_l35c/6s.mp3"
+  }
+ ],
+ "od_l36a": [
+  {
+   "en": "Gil has a big pig. His pig is in its big pen.",
+   "f": "audio/jenny/od_l36a/0.mp3",
+   "s": "audio/jenny/od_l36a/0s.mp3"
+  },
+  {
+   "en": "A mud pit is in the pen.",
+   "f": "audio/jenny/od_l36a/1.mp3",
+   "s": "audio/jenny/od_l36a/1s.mp3"
+  },
+  {
+   "en": "The pig can swim in the mud pit.",
+   "f": "audio/jenny/od_l36a/2.mp3",
+   "s": "audio/jenny/od_l36a/2s.mp3"
+  },
+  {
+   "en": "The pig can dig in the mud pit.",
+   "f": "audio/jenny/od_l36a/3.mp3",
+   "s": "audio/jenny/od_l36a/3s.mp3"
+  },
+  {
+   "en": "The pig has a lot of fun in the mud pit.",
+   "f": "audio/jenny/od_l36a/4.mp3",
+   "s": "audio/jenny/od_l36a/4s.mp3"
+  },
+  {
+   "en": "Gil grins at his pig. The pig grins at Gil.",
+   "f": "audio/jenny/od_l36a/5.mp3",
+   "s": "audio/jenny/od_l36a/5s.mp3"
+  }
+ ],
+ "od_l36b": [
+  {
+   "en": "Tim and his six dogs are on a trip to the pond.",
+   "f": "audio/jenny/od_l36b/0.mp3",
+   "s": "audio/jenny/od_l36b/0s.mp3"
+  },
+  {
+   "en": "The dogs do flips in the mud and spin in the sand.",
+   "f": "audio/jenny/od_l36b/1.mp3",
+   "s": "audio/jenny/od_l36b/1s.mp3"
+  },
+  {
+   "en": "Next, Tim and his six dogs jump in the pond for a swim.",
+   "f": "audio/jenny/od_l36b/2.mp3",
+   "s": "audio/jenny/od_l36b/2s.mp3"
+  },
+  {
+   "en": "Tim said, \"I see a disk.\"",
+   "f": "audio/jenny/od_l36b/3.mp3",
+   "s": "audio/jenny/od_l36b/3s.mp3"
+  },
+  {
+   "en": "The dogs swim to get the disk.",
+   "f": "audio/jenny/od_l36b/4.mp3",
+   "s": "audio/jenny/od_l36b/4s.mp3"
+  },
+  {
+   "en": "Tim and his dogs are wet. Drip! Drip! Drip!",
+   "f": "audio/jenny/od_l36b/5.mp3",
+   "s": "audio/jenny/od_l36b/5s.mp3"
+  },
+  {
+   "en": "\"The trip to the pond was fun,\" said Tim.",
+   "f": "audio/jenny/od_l36b/6.mp3",
+   "s": "audio/jenny/od_l36b/6s.mp3"
+  },
+  {
+   "en": "\"Yip, Yip,\" said the six dogs.",
+   "f": "audio/jenny/od_l36b/7.mp3",
+   "s": "audio/jenny/od_l36b/7s.mp3"
+  }
+ ],
+ "od_l37a": [
+  {
+   "en": "Mom and Dad went for a jog.",
+   "f": "audio/jenny/od_l37a/0.mp3",
+   "s": "audio/jenny/od_l37a/0s.mp3"
+  },
+  {
+   "en": "Mom and Dad got hot.",
+   "f": "audio/jenny/od_l37a/1.mp3",
+   "s": "audio/jenny/od_l37a/1s.mp3"
+  },
+  {
+   "en": "Is the fan on? The fan is not on.",
+   "f": "audio/jenny/od_l37a/2.mp3",
+   "s": "audio/jenny/od_l37a/2s.mp3"
+  },
+  {
+   "en": "The fan is in the box.",
+   "f": "audio/jenny/od_l37a/3.mp3",
+   "s": "audio/jenny/od_l37a/3s.mp3"
+  },
+  {
+   "en": "Mom set the fan on top of the box.",
+   "f": "audio/jenny/od_l37a/4.mp3",
+   "s": "audio/jenny/od_l37a/4s.mp3"
+  },
+  {
+   "en": "Dad taps the fan on. The fan is on. It's not hot!",
+   "f": "audio/jenny/od_l37a/5.mp3",
+   "s": "audio/jenny/od_l37a/5s.mp3"
+  }
+ ],
+ "od_l37b": [
+  {
+   "en": "Dom is lost.",
+   "f": "audio/jenny/od_l37b/0.mp3",
+   "s": "audio/jenny/od_l37b/0s.mp3"
+  },
+  {
+   "en": "He went to look at a frog and lost his mom.",
+   "f": "audio/jenny/od_l37b/1.mp3",
+   "s": "audio/jenny/od_l37b/1s.mp3"
+  },
+  {
+   "en": "He can not spot his mom.",
+   "f": "audio/jenny/od_l37b/2.mp3",
+   "s": "audio/jenny/od_l37b/2s.mp3"
+  },
+  {
+   "en": "Is Mom at the camp? No. Mom is not at the camp.",
+   "f": "audio/jenny/od_l37b/3.mp3",
+   "s": "audio/jenny/od_l37b/3s.mp3"
+  },
+  {
+   "en": "Is Mom in the sandbox? No. Mom is not in the sandbox.",
+   "f": "audio/jenny/od_l37b/4.mp3",
+   "s": "audio/jenny/od_l37b/4s.mp3"
+  },
+  {
+   "en": "Dom stops at the pond. He can see his mom!",
+   "f": "audio/jenny/od_l37b/5.mp3",
+   "s": "audio/jenny/od_l37b/5s.mp3"
+  },
+  {
+   "en": "He runs to his mom.",
+   "f": "audio/jenny/od_l37b/6.mp3",
+   "s": "audio/jenny/od_l37b/6s.mp3"
+  },
+  {
+   "en": "Dom and his mom look at frogs in the pond.",
+   "f": "audio/jenny/od_l37b/7.mp3",
+   "s": "audio/jenny/od_l37b/7s.mp3"
+  }
+ ],
+ "od_l38a": [
+  {
+   "en": "Nils, Jon, and Mag got a big box.",
+   "f": "audio/jenny/od_l38a/0.mp3",
+   "s": "audio/jenny/od_l38a/0s.mp3"
+  },
+  {
+   "en": "What is in the box?",
+   "f": "audio/jenny/od_l38a/1.mp3",
+   "s": "audio/jenny/od_l38a/1s.mp3"
+  },
+  {
+   "en": "Nils looks in the box. Nils sees a hat in the box.",
+   "f": "audio/jenny/od_l38a/2.mp3",
+   "s": "audio/jenny/od_l38a/2s.mp3"
+  },
+  {
+   "en": "Jon looks in the box. Jon sees a map in the box.",
+   "f": "audio/jenny/od_l38a/3.mp3",
+   "s": "audio/jenny/od_l38a/3s.mp3"
+  },
+  {
+   "en": "Mag looks in the box. Mag sees a book in the box.",
+   "f": "audio/jenny/od_l38a/4.mp3",
+   "s": "audio/jenny/od_l38a/4s.mp3"
+  },
+  {
+   "en": "Next, the kids see pots and pans and bats in the box.",
+   "f": "audio/jenny/od_l38a/5.mp3",
+   "s": "audio/jenny/od_l38a/5s.mp3"
+  },
+  {
+   "en": "A lot is in this box!",
+   "f": "audio/jenny/od_l38a/6.mp3",
+   "s": "audio/jenny/od_l38a/6s.mp3"
+  }
+ ],
+ "od_l38b": [
+  {
+   "en": "Fran and Brad are in a band.",
+   "f": "audio/jenny/od_l38b/0.mp3",
+   "s": "audio/jenny/od_l38b/0s.mp3"
+  },
+  {
+   "en": "\"I quit,\" said Brad.",
+   "f": "audio/jenny/od_l38b/1.mp3",
+   "s": "audio/jenny/od_l38b/1s.mp3"
+  },
+  {
+   "en": "Brad grabs his bag. He slams it into the van.",
+   "f": "audio/jenny/od_l38b/2.mp3",
+   "s": "audio/jenny/od_l38b/2s.mp3"
+  },
+  {
+   "en": "Fran can see Brad is mad.",
+   "f": "audio/jenny/od_l38b/3.mp3",
+   "s": "audio/jenny/od_l38b/3s.mp3"
+  },
+  {
+   "en": "Fran and Brad get in the van.",
+   "f": "audio/jenny/od_l38b/4.mp3",
+   "s": "audio/jenny/od_l38b/4s.mp3"
+  },
+  {
+   "en": "\"You are mad,\" said Fran.",
+   "f": "audio/jenny/od_l38b/5.mp3",
+   "s": "audio/jenny/od_l38b/5s.mp3"
+  },
+  {
+   "en": "Brad hits his bag. \"Yes! I am mad,\" said Brad.",
+   "f": "audio/jenny/od_l38b/6.mp3",
+   "s": "audio/jenny/od_l38b/6s.mp3"
+  },
+  {
+   "en": "Fran grabs his hand. \"Let's rest a bit.\"",
+   "f": "audio/jenny/od_l38b/7.mp3",
+   "s": "audio/jenny/od_l38b/7s.mp3"
+  },
+  {
+   "en": "Brad grins. \"Yes. Let's rest.\"",
+   "f": "audio/jenny/od_l38b/8.mp3",
+   "s": "audio/jenny/od_l38b/8s.mp3"
+  },
+  {
+   "en": "Brad and Fran rest a bit.",
+   "f": "audio/jenny/od_l38b/9.mp3",
+   "s": "audio/jenny/od_l38b/9s.mp3"
+  },
+  {
+   "en": "\"I am not mad,\" said Brad, \"I do not quit.\"",
+   "f": "audio/jenny/od_l38b/10.mp3",
+   "s": "audio/jenny/od_l38b/10s.mp3"
+  },
+  {
+   "en": "\"I am glad,\" said Fran.",
+   "f": "audio/jenny/od_l38b/11.mp3",
+   "s": "audio/jenny/od_l38b/11s.mp3"
+  }
+ ],
+ "od_l39a": [
+  {
+   "en": "Cub and Pup are buds.",
+   "f": "audio/jenny/od_l39a/0.mp3",
+   "s": "audio/jenny/od_l39a/0s.mp3"
+  },
+  {
+   "en": "Cub and Pup have lots of fun.",
+   "f": "audio/jenny/od_l39a/1.mp3",
+   "s": "audio/jenny/od_l39a/1s.mp3"
+  },
+  {
+   "en": "Cub runs in the sun. Pup digs in the mud.",
+   "f": "audio/jenny/od_l39a/2.mp3",
+   "s": "audio/jenny/od_l39a/2s.mp3"
+  },
+  {
+   "en": "Cub and Pup are hot and wet. The fun must stop.",
+   "f": "audio/jenny/od_l39a/3.mp3",
+   "s": "audio/jenny/od_l39a/3s.mp3"
+  },
+  {
+   "en": "Cub and Pup must get in the tub.",
+   "f": "audio/jenny/od_l39a/4.mp3",
+   "s": "audio/jenny/od_l39a/4s.mp3"
+  },
+  {
+   "en": "The buds have fun in the suds. The fun did not stop!",
+   "f": "audio/jenny/od_l39a/5.mp3",
+   "s": "audio/jenny/od_l39a/5s.mp3"
+  }
+ ],
+ "od_l39b": [
+  {
+   "en": "Gus the pup was in the mud.",
+   "f": "audio/jenny/od_l39b/0.mp3",
+   "s": "audio/jenny/od_l39b/0s.mp3"
+  },
+  {
+   "en": "He dug in the mud and got a bug.",
+   "f": "audio/jenny/od_l39b/1.mp3",
+   "s": "audio/jenny/od_l39b/1s.mp3"
+  },
+  {
+   "en": "Gus ran to the rug with his bug.",
+   "f": "audio/jenny/od_l39b/2.mp3",
+   "s": "audio/jenny/od_l39b/2s.mp3"
+  },
+  {
+   "en": "Mom sees Gus on the rug.",
+   "f": "audio/jenny/od_l39b/3.mp3",
+   "s": "audio/jenny/od_l39b/3s.mp3"
+  },
+  {
+   "en": "\"No Gus! No bugs on the rug!\"",
+   "f": "audio/jenny/od_l39b/4.mp3",
+   "s": "audio/jenny/od_l39b/4s.mp3"
+  },
+  {
+   "en": "Mom jumps up to stop Gus, but he is fast.",
+   "f": "audio/jenny/od_l39b/5.mp3",
+   "s": "audio/jenny/od_l39b/5s.mp3"
+  },
+  {
+   "en": "Gus runs to the mud.",
+   "f": "audio/jenny/od_l39b/6.mp3",
+   "s": "audio/jenny/od_l39b/6s.mp3"
+  },
+  {
+   "en": "Mom grabs Gus and dumps him in the tub.",
+   "f": "audio/jenny/od_l39b/7.mp3",
+   "s": "audio/jenny/od_l39b/7s.mp3"
+  },
+  {
+   "en": "Mom scrubs Gus. Gus looks glum.",
+   "f": "audio/jenny/od_l39b/8.mp3",
+   "s": "audio/jenny/od_l39b/8s.mp3"
+  },
+  {
+   "en": "Mom pets Gus. Gus is not glum.",
+   "f": "audio/jenny/od_l39b/9.mp3",
+   "s": "audio/jenny/od_l39b/9s.mp3"
+  }
+ ],
+ "od_l40a": [
+  {
+   "en": "Dex has a pet hen. The hen is big and red.",
+   "f": "audio/jenny/od_l40a/0.mp3",
+   "s": "audio/jenny/od_l40a/0s.mp3"
+  },
+  {
+   "en": "Dex let his hen run.",
+   "f": "audio/jenny/od_l40a/1.mp3",
+   "s": "audio/jenny/od_l40a/1s.mp3"
+  },
+  {
+   "en": "But the hen ran into a pig pen.",
+   "f": "audio/jenny/od_l40a/2.mp3",
+   "s": "audio/jenny/od_l40a/2s.mp3"
+  },
+  {
+   "en": "The hen has a big welt.",
+   "f": "audio/jenny/od_l40a/3.mp3",
+   "s": "audio/jenny/od_l40a/3s.mp3"
+  },
+  {
+   "en": "Dex must tend to his red hen.",
+   "f": "audio/jenny/od_l40a/4.mp3",
+   "s": "audio/jenny/od_l40a/4s.mp3"
+  },
+  {
+   "en": "He gets the hen in its bed. \"You must rest,\" Dex said.",
+   "f": "audio/jenny/od_l40a/5.mp3",
+   "s": "audio/jenny/od_l40a/5s.mp3"
+  }
+ ],
+ "od_l40b": [
+  {
+   "en": "Fred is at camp. He must set up his tent.",
+   "f": "audio/jenny/od_l40b/0.mp3",
+   "s": "audio/jenny/od_l40b/0s.mp3"
+  },
+  {
+   "en": "Oh no! The tent has a rip in it.",
+   "f": "audio/jenny/od_l40b/1.mp3",
+   "s": "audio/jenny/od_l40b/1s.mp3"
+  },
+  {
+   "en": "Fred must mend the tent.",
+   "f": "audio/jenny/od_l40b/2.mp3",
+   "s": "audio/jenny/od_l40b/2s.mp3"
+  },
+  {
+   "en": "What can help Fred mend the tent?",
+   "f": "audio/jenny/od_l40b/3.mp3",
+   "s": "audio/jenny/od_l40b/3s.mp3"
+  },
+  {
+   "en": "A kit can help him mend the tent.",
+   "f": "audio/jenny/od_l40b/4.mp3",
+   "s": "audio/jenny/od_l40b/4s.mp3"
+  },
+  {
+   "en": "Fred mends and tests the tent. It is set up!",
+   "f": "audio/jenny/od_l40b/5.mp3",
+   "s": "audio/jenny/od_l40b/5s.mp3"
+  }
+ ],
+ "od_l41a": [
+  {
+   "en": "The fox can not get up. He is in a pit.",
+   "f": "audio/jenny/od_l41a/0.mp3",
+   "s": "audio/jenny/od_l41a/0s.mp3"
+  },
+  {
+   "en": "The red hen looks at the fox. \"Oh no! You are in the pit.\"",
+   "f": "audio/jenny/od_l41a/1.mp3",
+   "s": "audio/jenny/od_l41a/1s.mp3"
+  },
+  {
+   "en": "\"Yes, I am in the pit. Can you help me?\" asks the fox.",
+   "f": "audio/jenny/od_l41a/2.mp3",
+   "s": "audio/jenny/od_l41a/2s.mp3"
+  },
+  {
+   "en": "\"Yes, I can help, but do not jump on me!\" said the red hen.",
+   "f": "audio/jenny/od_l41a/3.mp3",
+   "s": "audio/jenny/od_l41a/3s.mp3"
+  },
+  {
+   "en": "The red hen helps the fox.",
+   "f": "audio/jenny/od_l41a/4.mp3",
+   "s": "audio/jenny/od_l41a/4s.mp3"
+  },
+  {
+   "en": "The fox did not jump on the red hen.",
+   "f": "audio/jenny/od_l41a/5.mp3",
+   "s": "audio/jenny/od_l41a/5s.mp3"
+  },
+  {
+   "en": "The red hen and the fox are glad the fox is not in the pit.",
+   "f": "audio/jenny/od_l41a/6.mp3",
+   "s": "audio/jenny/od_l41a/6s.mp3"
+  }
+ ],
+ "od_l41b": [
+  {
+   "en": "Glen is a frog with black spots.",
+   "f": "audio/jenny/od_l41b/0.mp3",
+   "s": "audio/jenny/od_l41b/0s.mp3"
+  },
+  {
+   "en": "Glen is in the pond. The pond has pads.",
+   "f": "audio/jenny/od_l41b/1.mp3",
+   "s": "audio/jenny/od_l41b/1s.mp3"
+  },
+  {
+   "en": "Glen can jump from pad to pad.",
+   "f": "audio/jenny/od_l41b/2.mp3",
+   "s": "audio/jenny/od_l41b/2s.mp3"
+  },
+  {
+   "en": "He can flip and flop on the pads in the pond.",
+   "f": "audio/jenny/od_l41b/3.mp3",
+   "s": "audio/jenny/od_l41b/3s.mp3"
+  },
+  {
+   "en": "Glen sees a slug in the pond. The slug is on a pad.",
+   "f": "audio/jenny/od_l41b/4.mp3",
+   "s": "audio/jenny/od_l41b/4s.mp3"
+  },
+  {
+   "en": "\"Do you have legs to jump?\" Glen asks the slug.",
+   "f": "audio/jenny/od_l41b/5.mp3",
+   "s": "audio/jenny/od_l41b/5s.mp3"
+  },
+  {
+   "en": "\"I do not have legs. I can not jump.\" said the slug.",
+   "f": "audio/jenny/od_l41b/6.mp3",
+   "s": "audio/jenny/od_l41b/6s.mp3"
+  },
+  {
+   "en": "Glen lets the slug get on his back.",
+   "f": "audio/jenny/od_l41b/7.mp3",
+   "s": "audio/jenny/od_l41b/7s.mp3"
+  },
+  {
+   "en": "Look! Glen and the slug can jump from pad to pad!",
+   "f": "audio/jenny/od_l41b/8.mp3",
+   "s": "audio/jenny/od_l41b/8s.mp3"
+  }
+ ],
+ "od_l41c": [
+  {
+   "en": "Brent and Clint must get Mom a gift.",
+   "f": "audio/jenny/od_l41c/0.mp3",
+   "s": "audio/jenny/od_l41c/0s.mp3"
+  },
+  {
+   "en": "The kids went to Gram's Craft Stand.",
+   "f": "audio/jenny/od_l41c/1.mp3",
+   "s": "audio/jenny/od_l41c/1s.mp3"
+  },
+  {
+   "en": "Brent helps Clint cut ten red dots.",
+   "f": "audio/jenny/od_l41c/2.mp3",
+   "s": "audio/jenny/od_l41c/2s.mp3"
+  },
+  {
+   "en": "Next, Clint helps Brent stamp six red spots.",
+   "f": "audio/jenny/od_l41c/3.mp3",
+   "s": "audio/jenny/od_l41c/3s.mp3"
+  },
+  {
+   "en": "The gift Brent and Clint craft is a crest.",
+   "f": "audio/jenny/od_l41c/4.mp3",
+   "s": "audio/jenny/od_l41c/4s.mp3"
+  },
+  {
+   "en": "The kids set the crest in a box.",
+   "f": "audio/jenny/od_l41c/5.mp3",
+   "s": "audio/jenny/od_l41c/5s.mp3"
+  },
+  {
+   "en": "The crest Brent and Clint craft is grand.",
+   "f": "audio/jenny/od_l41c/6.mp3",
+   "s": "audio/jenny/od_l41c/6s.mp3"
+  },
+  {
+   "en": "\"Yes!\" said Mom, \"This is the best gift. You are the best kids.\"",
+   "f": "audio/jenny/od_l41c/7.mp3",
+   "s": "audio/jenny/od_l41c/7s.mp3"
+  }
+ ],
+ "od_l42": [
+  {
+   "en": "Buzz has a fun job. His job is to sell jugs of milk at the mill.",
+   "f": "audio/jenny/od_l42/0.mp3",
+   "s": "audio/jenny/od_l42/0s.mp3"
+  },
+  {
+   "en": "Buzz runs up a tall grass hill to get the milk.",
+   "f": "audio/jenny/od_l42/1.mp3",
+   "s": "audio/jenny/od_l42/1s.mp3"
+  },
+  {
+   "en": "He huffs and puffs at the top of the hill.",
+   "f": "audio/jenny/od_l42/2.mp3",
+   "s": "audio/jenny/od_l42/2s.mp3"
+  },
+  {
+   "en": "Buzz fills six glass jugs with milk. Not a drop spills.",
+   "f": "audio/jenny/od_l42/3.mp3",
+   "s": "audio/jenny/od_l42/3s.mp3"
+  },
+  {
+   "en": "Next, Buzz runs the milk jugs to the mill.",
+   "f": "audio/jenny/od_l42/4.mp3",
+   "s": "audio/jenny/od_l42/4s.mp3"
+  },
+  {
+   "en": "Buzz sees Tiff, Will, and Russ at the mill.",
+   "f": "audio/jenny/od_l42/5.mp3",
+   "s": "audio/jenny/od_l42/5s.mp3"
+  },
+  {
+   "en": "\"Do you want milk?\" asks Buzz. \"Yes!\" yell the pals.",
+   "f": "audio/jenny/od_l42/6.mp3",
+   "s": "audio/jenny/od_l42/6s.mp3"
+  },
+  {
+   "en": "The pals get the jugs. The boss gets the bill.",
+   "f": "audio/jenny/od_l42/7.mp3",
+   "s": "audio/jenny/od_l42/7s.mp3"
+  },
+  {
+   "en": "Buzz did a swell job.",
+   "f": "audio/jenny/od_l42/8.mp3",
+   "s": "audio/jenny/od_l42/8s.mp3"
+  }
+ ],
+ "od_l43": [
+  {
+   "en": "Ross and his mom went to the mall.",
+   "f": "audio/jenny/od_l43/0.mp3",
+   "s": "audio/jenny/od_l43/0s.mp3"
+  },
+  {
+   "en": "Ross got golf clubs and golf balls. The golf balls are small.",
+   "f": "audio/jenny/od_l43/1.mp3",
+   "s": "audio/jenny/od_l43/1s.mp3"
+  },
+  {
+   "en": "The man from the mall said Ross can hit the balls in the hall.",
+   "f": "audio/jenny/od_l43/2.mp3",
+   "s": "audio/jenny/od_l43/2s.mp3"
+  },
+  {
+   "en": "Ross taps the ball with the club.",
+   "f": "audio/jenny/od_l43/3.mp3",
+   "s": "audio/jenny/od_l43/3s.mp3"
+  },
+  {
+   "en": "The ball rolls up the hall and hits the tall wall.",
+   "f": "audio/jenny/od_l43/4.mp3",
+   "s": "audio/jenny/od_l43/4s.mp3"
+  },
+  {
+   "en": "\"Look at me!\" Ross calls to Mom from the hall.",
+   "f": "audio/jenny/od_l43/5.mp3",
+   "s": "audio/jenny/od_l43/5s.mp3"
+  },
+  {
+   "en": "He did not want to stop but Mom said he had to go.",
+   "f": "audio/jenny/od_l43/6.mp3",
+   "s": "audio/jenny/od_l43/6s.mp3"
+  },
+  {
+   "en": "It was fun to hit golf balls in the mall!",
+   "f": "audio/jenny/od_l43/7.mp3",
+   "s": "audio/jenny/od_l43/7s.mp3"
+  }
+ ],
+ "od_l44": [
+  {
+   "en": "Mack and Rick are at the mud track.",
+   "f": "audio/jenny/od_l44/0.mp3",
+   "s": "audio/jenny/od_l44/0s.mp3"
+  },
+  {
+   "en": "The pals see lots of trucks.",
+   "f": "audio/jenny/od_l44/1.mp3",
+   "s": "audio/jenny/od_l44/1s.mp3"
+  },
+  {
+   "en": "The big truck gets stuck in the mud.",
+   "f": "audio/jenny/od_l44/2.mp3",
+   "s": "audio/jenny/od_l44/2s.mp3"
+  },
+  {
+   "en": "The small truck goes fast on the track.",
+   "f": "audio/jenny/od_l44/3.mp3",
+   "s": "audio/jenny/od_l44/3s.mp3"
+  },
+  {
+   "en": "Mack and Rick clap.",
+   "f": "audio/jenny/od_l44/4.mp3",
+   "s": "audio/jenny/od_l44/4s.mp3"
+  },
+  {
+   "en": "Mack goes to the snack stand to grab chips.",
+   "f": "audio/jenny/od_l44/5.mp3",
+   "s": "audio/jenny/od_l44/5s.mp3"
+  },
+  {
+   "en": "At the snack stand, he sees his pals, Beck and Nick.",
+   "f": "audio/jenny/od_l44/6.mp3",
+   "s": "audio/jenny/od_l44/6s.mp3"
+  },
+  {
+   "en": "Rick sees the pack at the snack stand and yells, \"Get back, quick!\".",
+   "f": "audio/jenny/od_l44/7.mp3",
+   "s": "audio/jenny/od_l44/7s.mp3"
+  },
+  {
+   "en": "The pals run back to the track.",
+   "f": "audio/jenny/od_l44/8.mp3",
+   "s": "audio/jenny/od_l44/8s.mp3"
+  },
+  {
+   "en": "A truck ran into a stack of bricks!",
+   "f": "audio/jenny/od_l44/9.mp3",
+   "s": "audio/jenny/od_l44/9s.mp3"
+  },
+  {
+   "en": "The pack yells and jumps.",
+   "f": "audio/jenny/od_l44/10.mp3",
+   "s": "audio/jenny/od_l44/10s.mp3"
+  },
+  {
+   "en": "\"The mud track is the best,\" says Mack.",
+   "f": "audio/jenny/od_l44/11.mp3",
+   "s": "audio/jenny/od_l44/11s.mp3"
+  }
+ ],
+ "od_l45": [
+  {
+   "en": "Look at the ship.",
+   "f": "audio/jenny/od_l45/0.mp3",
+   "s": "audio/jenny/od_l45/0s.mp3"
+  },
+  {
+   "en": "Trish and Josh jump on the ship deck.",
+   "f": "audio/jenny/od_l45/1.mp3",
+   "s": "audio/jenny/od_l45/1s.mp3"
+  },
+  {
+   "en": "Trish has a net to get fish.",
+   "f": "audio/jenny/od_l45/2.mp3",
+   "s": "audio/jenny/od_l45/2s.mp3"
+  },
+  {
+   "en": "Josh has a bag to get shells.",
+   "f": "audio/jenny/od_l45/3.mp3",
+   "s": "audio/jenny/od_l45/3s.mp3"
+  },
+  {
+   "en": "Trish jumps off the ship with the net. She swims to get fish.",
+   "f": "audio/jenny/od_l45/4.mp3",
+   "s": "audio/jenny/od_l45/4s.mp3"
+  },
+  {
+   "en": "Josh jumps off the ship with his bag. He swims to get shells.",
+   "f": "audio/jenny/od_l45/5.mp3",
+   "s": "audio/jenny/od_l45/5s.mp3"
+  },
+  {
+   "en": "Trish and Josh get back on the ship.",
+   "f": "audio/jenny/od_l45/6.mp3",
+   "s": "audio/jenny/od_l45/6s.mp3"
+  },
+  {
+   "en": "\"Look at the fish in my net,\" said Trish.",
+   "f": "audio/jenny/od_l45/7.mp3",
+   "s": "audio/jenny/od_l45/7s.mp3"
+  },
+  {
+   "en": "\"Look at the shells in my bag,\" said Josh.",
+   "f": "audio/jenny/od_l45/8.mp3",
+   "s": "audio/jenny/od_l45/8s.mp3"
+  },
+  {
+   "en": "We had fun on the ship.",
+   "f": "audio/jenny/od_l45/9.mp3",
+   "s": "audio/jenny/od_l45/9s.mp3"
+  }
+ ],
+ "od_l46": [
+  {
+   "en": "Jack and Finn want to go to the pond.",
+   "f": "audio/jenny/od_l46/0.mp3",
+   "s": "audio/jenny/od_l46/0s.mp3"
+  },
+  {
+   "en": "Finn picks this red hat. Jack picks that pink hat.",
+   "f": "audio/jenny/od_l46/1.mp3",
+   "s": "audio/jenny/od_l46/1s.mp3"
+  },
+  {
+   "en": "Finn picks this big backpack.",
+   "f": "audio/jenny/od_l46/2.mp3",
+   "s": "audio/jenny/od_l46/2s.mp3"
+  },
+  {
+   "en": "Jack picks that small backpack.",
+   "f": "audio/jenny/od_l46/3.mp3",
+   "s": "audio/jenny/od_l46/3s.mp3"
+  },
+  {
+   "en": "Finn and Jack walk to Liz. Liz will go with them to the pond.",
+   "f": "audio/jenny/od_l46/4.mp3",
+   "s": "audio/jenny/od_l46/4s.mp3"
+  },
+  {
+   "en": "Finn, Jack, and Liz jump off the rocks and splash in the pond.",
+   "f": "audio/jenny/od_l46/5.mp3",
+   "s": "audio/jenny/od_l46/5s.mp3"
+  },
+  {
+   "en": "Finn, Jack, and Liz had a ball at the pond.",
+   "f": "audio/jenny/od_l46/6.mp3",
+   "s": "audio/jenny/od_l46/6s.mp3"
+  }
+ ],
+ "od_l47": [
+  {
+   "en": "Thad and Cath go on a jog at camp.",
+   "f": "audio/jenny/od_l47/0.mp3",
+   "s": "audio/jenny/od_l47/0s.mp3"
+  },
+  {
+   "en": "They have six paths to pick from. They pick the fifth path.",
+   "f": "audio/jenny/od_l47/1.mp3",
+   "s": "audio/jenny/od_l47/1s.mp3"
+  },
+  {
+   "en": "Thump! Thump! Thud! \"What was that?\" asks Cath.",
+   "f": "audio/jenny/od_l47/2.mp3",
+   "s": "audio/jenny/od_l47/2s.mp3"
+  },
+  {
+   "en": "Thad looks and sees a big rock on the path.",
+   "f": "audio/jenny/od_l47/3.mp3",
+   "s": "audio/jenny/od_l47/3s.mp3"
+  },
+  {
+   "en": "\"This rock fell from that hill. That was the thud,\" says Thad.",
+   "f": "audio/jenny/od_l47/4.mp3",
+   "s": "audio/jenny/od_l47/4s.mp3"
+  },
+  {
+   "en": "\"Both of us were in luck that we did not get hit!\" says Cath.",
+   "f": "audio/jenny/od_l47/5.mp3",
+   "s": "audio/jenny/od_l47/5s.mp3"
+  },
+  {
+   "en": "\"Let's go on the sixth path back to camp,\" says Thad.",
+   "f": "audio/jenny/od_l47/6.mp3",
+   "s": "audio/jenny/od_l47/6s.mp3"
+  },
+  {
+   "en": "Thad and Cath jog back to camp.",
+   "f": "audio/jenny/od_l47/7.mp3",
+   "s": "audio/jenny/od_l47/7s.mp3"
+  },
+  {
+   "en": "At camp they grab a wet cloth to wash off.",
+   "f": "audio/jenny/od_l47/8.mp3",
+   "s": "audio/jenny/od_l47/8s.mp3"
+  },
+  {
+   "en": "\"That was a fun jog,\" said Thad.",
+   "f": "audio/jenny/od_l47/9.mp3",
+   "s": "audio/jenny/od_l47/9s.mp3"
+  }
+ ],
+ "od_l48": [
+  {
+   "en": "Chuck and Rich are at lunch.",
+   "f": "audio/jenny/od_l48/0.mp3",
+   "s": "audio/jenny/od_l48/0s.mp3"
+  },
+  {
+   "en": "Chuck has chips in his lunchbox but no dip.",
+   "f": "audio/jenny/od_l48/1.mp3",
+   "s": "audio/jenny/od_l48/1s.mp3"
+  },
+  {
+   "en": "Rich has dip in his lunchbox but no chips.",
+   "f": "audio/jenny/od_l48/2.mp3",
+   "s": "audio/jenny/od_l48/2s.mp3"
+  },
+  {
+   "en": "Chuck looks at Rich. Rich looks at Chuck. What can they do?",
+   "f": "audio/jenny/od_l48/3.mp3",
+   "s": "audio/jenny/od_l48/3s.mp3"
+  },
+  {
+   "en": "Chuck dumps his chips on a dish.",
+   "f": "audio/jenny/od_l48/4.mp3",
+   "s": "audio/jenny/od_l48/4s.mp3"
+  },
+  {
+   "en": "\"Rich, do you want chips?\" Chuck asks. \"Yes I do!\" said Rich.",
+   "f": "audio/jenny/od_l48/5.mp3",
+   "s": "audio/jenny/od_l48/5s.mp3"
+  },
+  {
+   "en": "Rich slid his dip next to the dish.",
+   "f": "audio/jenny/od_l48/6.mp3",
+   "s": "audio/jenny/od_l48/6s.mp3"
+  },
+  {
+   "en": "\"Chuck, do you want dip?\" Rich asks. \"Yes I do!\" said Chuck.",
+   "f": "audio/jenny/od_l48/7.mp3",
+   "s": "audio/jenny/od_l48/7s.mp3"
+  },
+  {
+   "en": "They chill and chat and munch on chips and dip. Yum! Yum! Yum!",
+   "f": "audio/jenny/od_l48/8.mp3",
+   "s": "audio/jenny/od_l48/8s.mp3"
+  }
+ ],
+ "od_l49": [
+  {
+   "en": "Beth has a lot of pets.",
+   "f": "audio/jenny/od_l49/0.mp3",
+   "s": "audio/jenny/od_l49/0s.mp3"
+  },
+  {
+   "en": "She has ten small chicks and six big sloths.",
+   "f": "audio/jenny/od_l49/1.mp3",
+   "s": "audio/jenny/od_l49/1s.mp3"
+  },
+  {
+   "en": "She grabs a big bag of snacks and drags it to the pet pens.",
+   "f": "audio/jenny/od_l49/2.mp3",
+   "s": "audio/jenny/od_l49/2s.mp3"
+  },
+  {
+   "en": "The ten small chicks run to Beth.",
+   "f": "audio/jenny/od_l49/3.mp3",
+   "s": "audio/jenny/od_l49/3s.mp3"
+  },
+  {
+   "en": "\"Do you chicks want a snack?\" Beth asks.",
+   "f": "audio/jenny/od_l49/4.mp3",
+   "s": "audio/jenny/od_l49/4s.mp3"
+  },
+  {
+   "en": "\"Cluck, cluck, cluck,\" go the chicks. The chicks peck at their snacks.",
+   "f": "audio/jenny/od_l49/5.mp3",
+   "s": "audio/jenny/od_l49/5s.mp3"
+  },
+  {
+   "en": "Beth looks up in the tree at the sloths.",
+   "f": "audio/jenny/od_l49/6.mp3",
+   "s": "audio/jenny/od_l49/6s.mp3"
+  },
+  {
+   "en": "\"Do you sloths want a snack?\" The sloths nod.",
+   "f": "audio/jenny/od_l49/7.mp3",
+   "s": "audio/jenny/od_l49/7s.mp3"
+  },
+  {
+   "en": "Beth hands the sloths their dish of snacks.",
+   "f": "audio/jenny/od_l49/8.mp3",
+   "s": "audio/jenny/od_l49/8s.mp3"
+  },
+  {
+   "en": "Munch, munch, munch go the sloths.",
+   "f": "audio/jenny/od_l49/9.mp3",
+   "s": "audio/jenny/od_l49/9s.mp3"
+  },
+  {
+   "en": "Beth grabs the last snack in the bag. \"I will have this snack,\" Beth says.",
+   "f": "audio/jenny/od_l49/10.mp3",
+   "s": "audio/jenny/od_l49/10s.mp3"
+  },
+  {
+   "en": "Beth sits on the grass and snacks with the pets.",
+   "f": "audio/jenny/od_l49/11.mp3",
+   "s": "audio/jenny/od_l49/11s.mp3"
+  }
+ ],
+ "od_l50": [
+  {
+   "en": "Phil and Whit went on a walk.",
+   "f": "audio/jenny/od_l50/0.mp3",
+   "s": "audio/jenny/od_l50/0s.mp3"
+  },
+  {
+   "en": "On a whim, they went to see Steph.",
+   "f": "audio/jenny/od_l50/1.mp3",
+   "s": "audio/jenny/od_l50/1s.mp3"
+  },
+  {
+   "en": "She could whip them up a snack. She was a whiz with a whisk.",
+   "f": "audio/jenny/od_l50/2.mp3",
+   "s": "audio/jenny/od_l50/2s.mp3"
+  },
+  {
+   "en": "\"Which snack do you want to munch on?\" said Steph.",
+   "f": "audio/jenny/od_l50/3.mp3",
+   "s": "audio/jenny/od_l50/3s.mp3"
+  },
+  {
+   "en": "Whit would want a big snack, but Phil would want a small snack.",
+   "f": "audio/jenny/od_l50/4.mp3",
+   "s": "audio/jenny/od_l50/4s.mp3"
+  },
+  {
+   "en": "\"Let me have a whack at this dish,\" said Steph.",
+   "f": "audio/jenny/od_l50/5.mp3",
+   "s": "audio/jenny/od_l50/5s.mp3"
+  },
+  {
+   "en": "She whips up a dish to munch on.",
+   "f": "audio/jenny/od_l50/6.mp3",
+   "s": "audio/jenny/od_l50/6s.mp3"
+  },
+  {
+   "en": "Phil and Whit got a whiff of the dish. \"Yum!\" said Whit.",
+   "f": "audio/jenny/od_l50/7.mp3",
+   "s": "audio/jenny/od_l50/7s.mp3"
+  },
+  {
+   "en": "The pals were glad they went to see Steph on a whim!",
+   "f": "audio/jenny/od_l50/8.mp3",
+   "s": "audio/jenny/od_l50/8s.mp3"
+  }
+ ],
+ "od_l51": [
+  {
+   "en": "King and Ash are best pals.",
+   "f": "audio/jenny/od_l51/0.mp3",
+   "s": "audio/jenny/od_l51/0s.mp3"
+  },
+  {
+   "en": "To have fun, King and Ash sing songs.",
+   "f": "audio/jenny/od_l51/1.mp3",
+   "s": "audio/jenny/od_l51/1s.mp3"
+  },
+  {
+   "en": "King brings Ash a book of songs.",
+   "f": "audio/jenny/od_l51/2.mp3",
+   "s": "audio/jenny/od_l51/2s.mp3"
+  },
+  {
+   "en": "\"Which song should we sing?\" asks King.",
+   "f": "audio/jenny/od_l51/3.mp3",
+   "s": "audio/jenny/od_l51/3s.mp3"
+  },
+  {
+   "en": "\"Let's pick a quick song and then a long song,\" said Ash.",
+   "f": "audio/jenny/od_l51/4.mp3",
+   "s": "audio/jenny/od_l51/4s.mp3"
+  },
+  {
+   "en": "King and Ash sing their songs.",
+   "f": "audio/jenny/od_l51/5.mp3",
+   "s": "audio/jenny/od_l51/5s.mp3"
+  },
+  {
+   "en": "King's mom just got back from the shop.",
+   "f": "audio/jenny/od_l51/6.mp3",
+   "s": "audio/jenny/od_l51/6s.mp3"
+  },
+  {
+   "en": "\"Will you sing me a song?\" she asks. \"Yes!\" yell Ash and King.",
+   "f": "audio/jenny/od_l51/7.mp3",
+   "s": "audio/jenny/od_l51/7s.mp3"
+  },
+  {
+   "en": "They grab the book of songs.",
+   "f": "audio/jenny/od_l51/8.mp3",
+   "s": "audio/jenny/od_l51/8s.mp3"
+  },
+  {
+   "en": "\"We have to pick the best song for your mom,\" said Ash.",
+   "f": "audio/jenny/od_l51/9.mp3",
+   "s": "audio/jenny/od_l51/9s.mp3"
+  },
+  {
+   "en": "King looks in the book. He sees the best song. \"This is it,\" he says.",
+   "f": "audio/jenny/od_l51/10.mp3",
+   "s": "audio/jenny/od_l51/10s.mp3"
+  },
+  {
+   "en": "King and Ash sing.",
+   "f": "audio/jenny/od_l51/11.mp3",
+   "s": "audio/jenny/od_l51/11s.mp3"
+  },
+  {
+   "en": "King's mom claps and says, \"I am so glad you sang that song.\"",
+   "f": "audio/jenny/od_l51/12.mp3",
+   "s": "audio/jenny/od_l51/12s.mp3"
+  }
+ ],
+ "od_l52": [
+  {
+   "en": "Hank has a job at the bank.",
+   "f": "audio/jenny/od_l52/0.mp3",
+   "s": "audio/jenny/od_l52/0s.mp3"
+  },
+  {
+   "en": "When Hank gets to the bank, he sniffs a bad smell.",
+   "f": "audio/jenny/od_l52/1.mp3",
+   "s": "audio/jenny/od_l52/1s.mp3"
+  },
+  {
+   "en": "\"What is that smell?\" Hank thinks. \"Is it a skunk?\"",
+   "f": "audio/jenny/od_l52/2.mp3",
+   "s": "audio/jenny/od_l52/2s.mp3"
+  },
+  {
+   "en": "He sniffs his desk. \"No, it's not my desk.\"",
+   "f": "audio/jenny/od_l52/3.mp3",
+   "s": "audio/jenny/od_l52/3s.mp3"
+  },
+  {
+   "en": "He checks the fish tank. \"No, this is not what stinks.\"",
+   "f": "audio/jenny/od_l52/4.mp3",
+   "s": "audio/jenny/od_l52/4s.mp3"
+  },
+  {
+   "en": "He walks to the back of the bank.",
+   "f": "audio/jenny/od_l52/5.mp3",
+   "s": "audio/jenny/od_l52/5s.mp3"
+  },
+  {
+   "en": "When he gets to the back, he sees the small trash bin.",
+   "f": "audio/jenny/od_l52/6.mp3",
+   "s": "audio/jenny/od_l52/6s.mp3"
+  },
+  {
+   "en": "\"Oh no!\" Hank yells, \"I left all the trash in the bin.\"",
+   "f": "audio/jenny/od_l52/7.mp3",
+   "s": "audio/jenny/od_l52/7s.mp3"
+  },
+  {
+   "en": "Hank sniffs the trash. \"Yuck!\" he yells, \"that's what stinks!\"",
+   "f": "audio/jenny/od_l52/8.mp3",
+   "s": "audio/jenny/od_l52/8s.mp3"
+  },
+  {
+   "en": "Hank brings the trash to the big bin and slams the lid shut.",
+   "f": "audio/jenny/od_l52/9.mp3",
+   "s": "audio/jenny/od_l52/9s.mp3"
+  },
+  {
+   "en": "Hank is glad he got rid of the stink.",
+   "f": "audio/jenny/od_l52/10.mp3",
+   "s": "audio/jenny/od_l52/10s.mp3"
+  }
+ ],
+ "od_l53": [
+  {
+   "en": "Quin goes to the dock with Jax.",
+   "f": "audio/jenny/od_l53/0.mp3",
+   "s": "audio/jenny/od_l53/0s.mp3"
+  },
+  {
+   "en": "They sit on the dock and look at the ships.",
+   "f": "audio/jenny/od_l53/1.mp3",
+   "s": "audio/jenny/od_l53/1s.mp3"
+  },
+  {
+   "en": "Jax looks up and sees a big clock. \"What is that clock for?\" he asks.",
+   "f": "audio/jenny/od_l53/2.mp3",
+   "s": "audio/jenny/od_l53/2s.mp3"
+  },
+  {
+   "en": "Quin says, \"There is a bell in the clock.\"",
+   "f": "audio/jenny/od_l53/3.mp3",
+   "s": "audio/jenny/od_l53/3s.mp3"
+  },
+  {
+   "en": "\"When the bell rings, the ships can go to the dock.\"",
+   "f": "audio/jenny/od_l53/4.mp3",
+   "s": "audio/jenny/od_l53/4s.mp3"
+  },
+  {
+   "en": "Quin and Jax look for ships that could go to the dock.",
+   "f": "audio/jenny/od_l53/5.mp3",
+   "s": "audio/jenny/od_l53/5s.mp3"
+  },
+  {
+   "en": "\"I think that tall black ship will go to the dock,\" said Quin.",
+   "f": "audio/jenny/od_l53/6.mp3",
+   "s": "audio/jenny/od_l53/6s.mp3"
+  },
+  {
+   "en": "\"I think this big pink ship will go to the dock,\" said Jax.",
+   "f": "audio/jenny/od_l53/7.mp3",
+   "s": "audio/jenny/od_l53/7s.mp3"
+  },
+  {
+   "en": "The bell rings. Ding dong. Ding dong.",
+   "f": "audio/jenny/od_l53/8.mp3",
+   "s": "audio/jenny/od_l53/8s.mp3"
+  },
+  {
+   "en": "Which ship will go to the dock?",
+   "f": "audio/jenny/od_l53/9.mp3",
+   "s": "audio/jenny/od_l53/9s.mp3"
+  },
+  {
+   "en": "The tall black ship goes past the dock.",
+   "f": "audio/jenny/od_l53/10.mp3",
+   "s": "audio/jenny/od_l53/10s.mp3"
+  },
+  {
+   "en": "The big pink ship goes past the dock.",
+   "f": "audio/jenny/od_l53/11.mp3",
+   "s": "audio/jenny/od_l53/11s.mp3"
+  },
+  {
+   "en": "\"Look!\" said Quin. Jax sees a small red ship.",
+   "f": "audio/jenny/od_l53/12.mp3",
+   "s": "audio/jenny/od_l53/12s.mp3"
+  },
+  {
+   "en": "The small red ship stops at the dock.",
+   "f": "audio/jenny/od_l53/13.mp3",
+   "s": "audio/jenny/od_l53/13s.mp3"
+  },
+  {
+   "en": "\"We should have said the red ship!\"",
+   "f": "audio/jenny/od_l53/14.mp3",
+   "s": "audio/jenny/od_l53/14s.mp3"
+  }
+ ],
+ "od_l54": [
+  {
+   "en": "Dale and Jade went into a maze to win a game.",
+   "f": "audio/jenny/od_l54/0.mp3",
+   "s": "audio/jenny/od_l54/0s.mp3"
+  },
+  {
+   "en": "The maze was long and full of snakes.",
+   "f": "audio/jenny/od_l54/1.mp3",
+   "s": "audio/jenny/od_l54/1s.mp3"
+  },
+  {
+   "en": "Dale said to Jade, \"I can not go on.\"",
+   "f": "audio/jenny/od_l54/2.mp3",
+   "s": "audio/jenny/od_l54/2s.mp3"
+  },
+  {
+   "en": "\"Yes, you can. You are brave!\" said Jade.",
+   "f": "audio/jenny/od_l54/3.mp3",
+   "s": "audio/jenny/od_l54/3s.mp3"
+  },
+  {
+   "en": "Dale and Jade walk and walk.",
+   "f": "audio/jenny/od_l54/4.mp3",
+   "s": "audio/jenny/od_l54/4s.mp3"
+  },
+  {
+   "en": "At last, they made a left and got to the end of the maze.",
+   "f": "audio/jenny/od_l54/5.mp3",
+   "s": "audio/jenny/od_l54/5s.mp3"
+  },
+  {
+   "en": "Then they see six small caves.",
+   "f": "audio/jenny/od_l54/6.mp3",
+   "s": "audio/jenny/od_l54/6s.mp3"
+  },
+  {
+   "en": "\"Let's go into the last cave.\" said Jade.",
+   "f": "audio/jenny/od_l54/7.mp3",
+   "s": "audio/jenny/od_l54/7s.mp3"
+  },
+  {
+   "en": "In the back of the cave, they see a gate! The gate is shut.",
+   "f": "audio/jenny/od_l54/8.mp3",
+   "s": "audio/jenny/od_l54/8s.mp3"
+  },
+  {
+   "en": "How will they pass?",
+   "f": "audio/jenny/od_l54/9.mp3",
+   "s": "audio/jenny/od_l54/9s.mp3"
+  },
+  {
+   "en": "Dale shakes the gate. Jade kicks the gate. The gate is still shut.",
+   "f": "audio/jenny/od_l54/10.mp3",
+   "s": "audio/jenny/od_l54/10s.mp3"
+  },
+  {
+   "en": "\"Look! yells Jade, \"the gate has a lock.\"",
+   "f": "audio/jenny/od_l54/11.mp3",
+   "s": "audio/jenny/od_l54/11s.mp3"
+  },
+  {
+   "en": "Dale twists the lock. Pop! The gate swings in.",
+   "f": "audio/jenny/od_l54/12.mp3",
+   "s": "audio/jenny/od_l54/12s.mp3"
+  },
+  {
+   "en": "Dale and Jade win the game!",
+   "f": "audio/jenny/od_l54/13.mp3",
+   "s": "audio/jenny/od_l54/13s.mp3"
+  }
+ ],
+ "od_l55": [
+  {
+   "en": "Mike can ride his bike quite well.",
+   "f": "audio/jenny/od_l55/0.mp3",
+   "s": "audio/jenny/od_l55/0s.mp3"
+  },
+  {
+   "en": "Mike likes to ride his bike to sell kites.",
+   "f": "audio/jenny/od_l55/1.mp3",
+   "s": "audio/jenny/od_l55/1s.mp3"
+  },
+  {
+   "en": "Mike takes nine kites and a bit of twine.",
+   "f": "audio/jenny/od_l55/2.mp3",
+   "s": "audio/jenny/od_l55/2s.mp3"
+  },
+  {
+   "en": "He strings the kites to his bike with the twine.",
+   "f": "audio/jenny/od_l55/3.mp3",
+   "s": "audio/jenny/od_l55/3s.mp3"
+  },
+  {
+   "en": "As he rides, the kites go up, up, up.",
+   "f": "audio/jenny/od_l55/4.mp3",
+   "s": "audio/jenny/od_l55/4s.mp3"
+  },
+  {
+   "en": "You can see the kites for miles.",
+   "f": "audio/jenny/od_l55/5.mp3",
+   "s": "audio/jenny/od_l55/5s.mp3"
+  },
+  {
+   "en": "Mike stops by a red gate and lets the kites wave.",
+   "f": "audio/jenny/od_l55/6.mp3",
+   "s": "audio/jenny/od_l55/6s.mp3"
+  },
+  {
+   "en": "\"Kites for sale!\" he yells. Kids run to his bike.",
+   "f": "audio/jenny/od_l55/7.mp3",
+   "s": "audio/jenny/od_l55/7s.mp3"
+  },
+  {
+   "en": "Mike sells his kites for a dime.",
+   "f": "audio/jenny/od_l55/8.mp3",
+   "s": "audio/jenny/od_l55/8s.mp3"
+  },
+  {
+   "en": "\"Thank you, Mike!\" yell the kids as they take their kites.",
+   "f": "audio/jenny/od_l55/9.mp3",
+   "s": "audio/jenny/od_l55/9s.mp3"
+  }
+ ],
+ "od_l56": [
+  {
+   "en": "Hope and Dad went to the lake for a swim.",
+   "f": "audio/jenny/od_l56/0.mp3",
+   "s": "audio/jenny/od_l56/0s.mp3"
+  },
+  {
+   "en": "They swam and swam.",
+   "f": "audio/jenny/od_l56/1.mp3",
+   "s": "audio/jenny/od_l56/1s.mp3"
+  },
+  {
+   "en": "\"It's time to go home, Hope,\" Dad yelled.",
+   "f": "audio/jenny/od_l56/2.mp3",
+   "s": "audio/jenny/od_l56/2s.mp3"
+  },
+  {
+   "en": "As Dad drove home, Hope could see smoke!",
+   "f": "audio/jenny/od_l56/3.mp3",
+   "s": "audio/jenny/od_l56/3s.mp3"
+  },
+  {
+   "en": "\"Dad there is smoke!\" yells Hope. \"It is next to the phone shop.\"",
+   "f": "audio/jenny/od_l56/4.mp3",
+   "s": "audio/jenny/od_l56/4s.mp3"
+  },
+  {
+   "en": "They drove fast to the phone shop.",
+   "f": "audio/jenny/od_l56/5.mp3",
+   "s": "audio/jenny/od_l56/5s.mp3"
+  },
+  {
+   "en": "When they got to the front of the shop they froze.",
+   "f": "audio/jenny/od_l56/6.mp3",
+   "s": "audio/jenny/od_l56/6s.mp3"
+  },
+  {
+   "en": "The shop was on fire! Dad calls 911.",
+   "f": "audio/jenny/od_l56/7.mp3",
+   "s": "audio/jenny/od_l56/7s.mp3"
+  },
+  {
+   "en": "\"Yes, send the fire trucks!\" Dad tells the man on the line.",
+   "f": "audio/jenny/od_l56/8.mp3",
+   "s": "audio/jenny/od_l56/8s.mp3"
+  },
+  {
+   "en": "While Dad is on the phone, Hope sees a man run out of the shop. He is safe.",
+   "f": "audio/jenny/od_l56/9.mp3",
+   "s": "audio/jenny/od_l56/9s.mp3"
+  },
+  {
+   "en": "The fire trucks came just in time to get rid of the flames.",
+   "f": "audio/jenny/od_l56/10.mp3",
+   "s": "audio/jenny/od_l56/10s.mp3"
+  },
+  {
+   "en": "Hope and Dad save the shop!",
+   "f": "audio/jenny/od_l56/11.mp3",
+   "s": "audio/jenny/od_l56/11s.mp3"
+  }
+ ],
+ "od_l57": [
+  {
+   "en": "Chan rides his skates to the lake.",
+   "f": "audio/jenny/od_l57/0.mp3",
+   "s": "audio/jenny/od_l57/0s.mp3"
+  },
+  {
+   "en": "When Chan gets to the lake, he looks for his pal Eve.",
+   "f": "audio/jenny/od_l57/1.mp3",
+   "s": "audio/jenny/od_l57/1s.mp3"
+  },
+  {
+   "en": "He sees Eve on the black dock.",
+   "f": "audio/jenny/od_l57/2.mp3",
+   "s": "audio/jenny/od_l57/2s.mp3"
+  },
+  {
+   "en": "\"Want to hike?\" asks Eve. \"Yep!\" Chan says.",
+   "f": "audio/jenny/od_l57/3.mp3",
+   "s": "audio/jenny/od_l57/3s.mp3"
+  },
+  {
+   "en": "\"OK. Grab these snacks for us to have on the hike,\" says Eve.",
+   "f": "audio/jenny/od_l57/4.mp3",
+   "s": "audio/jenny/od_l57/4s.mp3"
+  },
+  {
+   "en": "Eve and Chan hike for a long time.",
+   "f": "audio/jenny/od_l57/5.mp3",
+   "s": "audio/jenny/od_l57/5s.mp3"
+  },
+  {
+   "en": "\"This is a long hike!\" says Chan. \"Yes. It is five miles\" says Eve.",
+   "f": "audio/jenny/od_l57/6.mp3",
+   "s": "audio/jenny/od_l57/6s.mp3"
+  },
+  {
+   "en": "Eve and Chan talk as they walk.",
+   "f": "audio/jenny/od_l57/7.mp3",
+   "s": "audio/jenny/od_l57/7s.mp3"
+  },
+  {
+   "en": "Eve tells Chan when they are close to the top.",
+   "f": "audio/jenny/od_l57/8.mp3",
+   "s": "audio/jenny/od_l57/8s.mp3"
+  },
+  {
+   "en": "\"Here we are! The top of the hill!\" Eve yells.",
+   "f": "audio/jenny/od_l57/9.mp3",
+   "s": "audio/jenny/od_l57/9s.mp3"
+  },
+  {
+   "en": "Eve and Chan can see for miles.",
+   "f": "audio/jenny/od_l57/10.mp3",
+   "s": "audio/jenny/od_l57/10s.mp3"
+  },
+  {
+   "en": "\"Thank you for this grand hike,\" says Chan with a wide smile.",
+   "f": "audio/jenny/od_l57/11.mp3",
+   "s": "audio/jenny/od_l57/11s.mp3"
+  }
+ ],
+ "od_l58": [
+  {
+   "en": "June has a flute.",
+   "f": "audio/jenny/od_l58/0.mp3",
+   "s": "audio/jenny/od_l58/0s.mp3"
+  },
+  {
+   "en": "June likes to use the flute to make tunes.",
+   "f": "audio/jenny/od_l58/1.mp3",
+   "s": "audio/jenny/od_l58/1s.mp3"
+  },
+  {
+   "en": "There is one tune June likes best. She likes the song Sand Dunes.",
+   "f": "audio/jenny/od_l58/2.mp3",
+   "s": "audio/jenny/od_l58/2s.mp3"
+  },
+  {
+   "en": "June has a pal, Luke. Luke has no flute, but Luke likes to sing.",
+   "f": "audio/jenny/od_l58/3.mp3",
+   "s": "audio/jenny/od_l58/3s.mp3"
+  },
+  {
+   "en": "Once, June and Luke made tunes at lunch for their pals.",
+   "f": "audio/jenny/od_l58/4.mp3",
+   "s": "audio/jenny/od_l58/4s.mp3"
+  },
+  {
+   "en": "The last song they did was Sand Dunes.",
+   "f": "audio/jenny/od_l58/5.mp3",
+   "s": "audio/jenny/od_l58/5s.mp3"
+  },
+  {
+   "en": "June was on the flute and Luke sang. They did a fine job!",
+   "f": "audio/jenny/od_l58/6.mp3",
+   "s": "audio/jenny/od_l58/6s.mp3"
+  }
+ ],
+ "od_l59": [
+  {
+   "en": "Niles and Blake want to bake a cake for Tess.",
+   "f": "audio/jenny/od_l59/0.mp3",
+   "s": "audio/jenny/od_l59/0s.mp3"
+  },
+  {
+   "en": "Tess is their big sis.",
+   "f": "audio/jenny/od_l59/1.mp3",
+   "s": "audio/jenny/od_l59/1s.mp3"
+  },
+  {
+   "en": "She will be a bride, so they want to bake a white cake.",
+   "f": "audio/jenny/od_l59/2.mp3",
+   "s": "audio/jenny/od_l59/2s.mp3"
+  },
+  {
+   "en": "Niles and Blake mix the cake while Dad gets one pan.",
+   "f": "audio/jenny/od_l59/3.mp3",
+   "s": "audio/jenny/od_l59/3s.mp3"
+  },
+  {
+   "en": "The mix goes, Drip! Drip! into the pan.",
+   "f": "audio/jenny/od_l59/4.mp3",
+   "s": "audio/jenny/od_l59/4s.mp3"
+  },
+  {
+   "en": "They ask Dad for help with the stove.",
+   "f": "audio/jenny/od_l59/5.mp3",
+   "s": "audio/jenny/od_l59/5s.mp3"
+  },
+  {
+   "en": "The cake bakes for a long time.",
+   "f": "audio/jenny/od_l59/6.mp3",
+   "s": "audio/jenny/od_l59/6s.mp3"
+  },
+  {
+   "en": "Next the cake goes on a glass plate.",
+   "f": "audio/jenny/od_l59/7.mp3",
+   "s": "audio/jenny/od_l59/7s.mp3"
+  },
+  {
+   "en": "\"The cake looks so cute. I want to take a bite!\" says Niles.",
+   "f": "audio/jenny/od_l59/8.mp3",
+   "s": "audio/jenny/od_l59/8s.mp3"
+  },
+  {
+   "en": "\"We can not take a bite. This cake is for Tess!\" says Blake.",
+   "f": "audio/jenny/od_l59/9.mp3",
+   "s": "audio/jenny/od_l59/9s.mp3"
+  }
+ ],
+ "od_l60": [
+  {
+   "en": "\"What is the price for the box of white mice?\" Grace asks.",
+   "f": "audio/jenny/od_l60/0.mp3",
+   "s": "audio/jenny/od_l60/0s.mp3"
+  },
+  {
+   "en": "The man at the pet shop tells Grace they cost five bucks.",
+   "f": "audio/jenny/od_l60/1.mp3",
+   "s": "audio/jenny/od_l60/1s.mp3"
+  },
+  {
+   "en": "\"I have five bucks! I would like to take these mice,\" says Grace.",
+   "f": "audio/jenny/od_l60/2.mp3",
+   "s": "audio/jenny/od_l60/2s.mp3"
+  },
+  {
+   "en": "The man hands the box of mice to Grace.",
+   "f": "audio/jenny/od_l60/3.mp3",
+   "s": "audio/jenny/od_l60/3s.mp3"
+  },
+  {
+   "en": "Grace takes the mice home.",
+   "f": "audio/jenny/od_l60/4.mp3",
+   "s": "audio/jenny/od_l60/4s.mp3"
+  },
+  {
+   "en": "Grace makes a track for the white mice. She wants them to race.",
+   "f": "audio/jenny/od_l60/5.mp3",
+   "s": "audio/jenny/od_l60/5s.mp3"
+  },
+  {
+   "en": "Grace will place the mice on the track.",
+   "f": "audio/jenny/od_l60/6.mp3",
+   "s": "audio/jenny/od_l60/6s.mp3"
+  },
+  {
+   "en": "When Grace says \"GO!\" the mice race.",
+   "f": "audio/jenny/od_l60/7.mp3",
+   "s": "audio/jenny/od_l60/7s.mp3"
+  },
+  {
+   "en": "They run the track twice.",
+   "f": "audio/jenny/od_l60/8.mp3",
+   "s": "audio/jenny/od_l60/8s.mp3"
+  },
+  {
+   "en": "\"These mice are so fast!\" says Grace.",
+   "f": "audio/jenny/od_l60/9.mp3",
+   "s": "audio/jenny/od_l60/9s.mp3"
+  }
+ ],
+ "od_l61": [
+  {
+   "en": "Pete got a pet snake.",
+   "f": "audio/jenny/od_l61/0.mp3",
+   "s": "audio/jenny/od_l61/0s.mp3"
+  },
+  {
+   "en": "Pete gave the snake a name. \"You are Steve,\" Pete said to the snake.",
+   "f": "audio/jenny/od_l61/1.mp3",
+   "s": "audio/jenny/od_l61/1s.mp3"
+  },
+  {
+   "en": "Steve has a huge glass cage.",
+   "f": "audio/jenny/od_l61/2.mp3",
+   "s": "audio/jenny/od_l61/2s.mp3"
+  },
+  {
+   "en": "Pete has to lock the cage, so Steve is safe.",
+   "f": "audio/jenny/od_l61/3.mp3",
+   "s": "audio/jenny/od_l61/3s.mp3"
+  },
+  {
+   "en": "Steve likes his cage. He can hide next to the rocks.",
+   "f": "audio/jenny/od_l61/4.mp3",
+   "s": "audio/jenny/od_l61/4s.mp3"
+  },
+  {
+   "en": "He can rest in the sunshine or the shade.",
+   "f": "audio/jenny/od_l61/5.mp3",
+   "s": "audio/jenny/od_l61/5s.mp3"
+  },
+  {
+   "en": "At his age, Steve's skin sheds and his scales change.",
+   "f": "audio/jenny/od_l61/6.mp3",
+   "s": "audio/jenny/od_l61/6s.mp3"
+  },
+  {
+   "en": "This looks a bit strange, but Pete likes Steve all the same.",
+   "f": "audio/jenny/od_l61/7.mp3",
+   "s": "audio/jenny/od_l61/7s.mp3"
+  }
+ ],
+ "od_l62": [
+  {
+   "en": "June sells bikes.",
+   "f": "audio/jenny/od_l62/0.mp3",
+   "s": "audio/jenny/od_l62/0s.mp3"
+  },
+  {
+   "en": "She will give you such a nice price you will not think twice.",
+   "f": "audio/jenny/od_l62/1.mp3",
+   "s": "audio/jenny/od_l62/1s.mp3"
+  },
+  {
+   "en": "Steve and Grace come to June's shop to get bikes.",
+   "f": "audio/jenny/od_l62/2.mp3",
+   "s": "audio/jenny/od_l62/2s.mp3"
+  },
+  {
+   "en": "\"I love this red one, it looks fast,\" said Steve.",
+   "f": "audio/jenny/od_l62/3.mp3",
+   "s": "audio/jenny/od_l62/3s.mp3"
+  },
+  {
+   "en": "\"I love this blue one, it looks fun,\" said Grace.",
+   "f": "audio/jenny/od_l62/4.mp3",
+   "s": "audio/jenny/od_l62/4s.mp3"
+  },
+  {
+   "en": "\"Can you give us a good price,\" asks Grace.",
+   "f": "audio/jenny/od_l62/5.mp3",
+   "s": "audio/jenny/od_l62/5s.mp3"
+  },
+  {
+   "en": "\"Done and done,\" said June.",
+   "f": "audio/jenny/od_l62/6.mp3",
+   "s": "audio/jenny/od_l62/6s.mp3"
+  },
+  {
+   "en": "Steve and Grace smile and ride off with their bikes.",
+   "f": "audio/jenny/od_l62/7.mp3",
+   "s": "audio/jenny/od_l62/7s.mp3"
+  }
+ ],
+ "od_l63": [
+  {
+   "en": "Alex lives in a home close to the lake.",
+   "f": "audio/jenny/od_l63/0.mp3",
+   "s": "audio/jenny/od_l63/0s.mp3"
+  },
+  {
+   "en": "Two foxes live in a den next to him.",
+   "f": "audio/jenny/od_l63/1.mp3",
+   "s": "audio/jenny/od_l63/1s.mp3"
+  },
+  {
+   "en": "Alex likes to see the foxes in the bushes by their den.",
+   "f": "audio/jenny/od_l63/2.mp3",
+   "s": "audio/jenny/od_l63/2s.mp3"
+  },
+  {
+   "en": "Alex is nice to the foxes.",
+   "f": "audio/jenny/od_l63/3.mp3",
+   "s": "audio/jenny/od_l63/3s.mp3"
+  },
+  {
+   "en": "When Alex goes for walks, he brings boxes of snacks for the foxes.",
+   "f": "audio/jenny/od_l63/4.mp3",
+   "s": "audio/jenny/od_l63/4s.mp3"
+  },
+  {
+   "en": "Alex loves when the foxes munch on the snacks.",
+   "f": "audio/jenny/od_l63/5.mp3",
+   "s": "audio/jenny/od_l63/5s.mp3"
+  },
+  {
+   "en": "The foxes like Alex so much, they give him kisses.",
+   "f": "audio/jenny/od_l63/6.mp3",
+   "s": "audio/jenny/od_l63/6s.mp3"
+  },
+  {
+   "en": "Alex wishes he could see the foxes all the time.",
+   "f": "audio/jenny/od_l63/7.mp3",
+   "s": "audio/jenny/od_l63/7s.mp3"
+  },
+  {
+   "en": "But they like to spend lots of time in their den.",
+   "f": "audio/jenny/od_l63/8.mp3",
+   "s": "audio/jenny/od_l63/8s.mp3"
+  }
+ ],
+ "od_l64": [
+  {
+   "en": "Once upon a time there was a whale named Will.",
+   "f": "audio/jenny/od_l64/0.mp3",
+   "s": "audio/jenny/od_l64/0s.mp3"
+  },
+  {
+   "en": "Will lived with many whales in a pod. Will loved his pod.",
+   "f": "audio/jenny/od_l64/1.mp3",
+   "s": "audio/jenny/od_l64/1s.mp3"
+  },
+  {
+   "en": "The pod splashed and jumped in the waves.",
+   "f": "audio/jenny/od_l64/2.mp3",
+   "s": "audio/jenny/od_l64/2s.mp3"
+  },
+  {
+   "en": "The pod drifted from place to place.",
+   "f": "audio/jenny/od_l64/3.mp3",
+   "s": "audio/jenny/od_l64/3s.mp3"
+  },
+  {
+   "en": "One time, Will and his pod of whales ended up in a cove.",
+   "f": "audio/jenny/od_l64/4.mp3",
+   "s": "audio/jenny/od_l64/4s.mp3"
+  },
+  {
+   "en": "The cove was filled with fish and shrimp.",
+   "f": "audio/jenny/od_l64/5.mp3",
+   "s": "audio/jenny/od_l64/5s.mp3"
+  },
+  {
+   "en": "The fish swam in the waves. The shrimp drifted with the tide.",
+   "f": "audio/jenny/od_l64/6.mp3",
+   "s": "audio/jenny/od_l64/6s.mp3"
+  },
+  {
+   "en": "Will and his pod of whales flicked their fins to splash the fish.",
+   "f": "audio/jenny/od_l64/7.mp3",
+   "s": "audio/jenny/od_l64/7s.mp3"
+  },
+  {
+   "en": "The fish flicked their fins back at the whales.",
+   "f": "audio/jenny/od_l64/8.mp3",
+   "s": "audio/jenny/od_l64/8s.mp3"
+  },
+  {
+   "en": "The whales and the fish did not splash any of the shrimp.",
+   "f": "audio/jenny/od_l64/9.mp3",
+   "s": "audio/jenny/od_l64/9s.mp3"
+  },
+  {
+   "en": "And the shrimp did not splash any of the whales or the fish.",
+   "f": "audio/jenny/od_l64/10.mp3",
+   "s": "audio/jenny/od_l64/10s.mp3"
+  },
+  {
+   "en": "The whales and the fish had fun while the shrimp just drifted.",
+   "f": "audio/jenny/od_l64/11.mp3",
+   "s": "audio/jenny/od_l64/11s.mp3"
+  }
+ ],
+ "od_l65": [
+  {
+   "en": "Going to camp is so much fun.",
+   "f": "audio/jenny/od_l65/0.mp3",
+   "s": "audio/jenny/od_l65/0s.mp3"
+  },
+  {
+   "en": "We all get to spend time doing things we love.",
+   "f": "audio/jenny/od_l65/1.mp3",
+   "s": "audio/jenny/od_l65/1s.mp3"
+  },
+  {
+   "en": "Chance is fishing at the pond.",
+   "f": "audio/jenny/od_l65/2.mp3",
+   "s": "audio/jenny/od_l65/2s.mp3"
+  },
+  {
+   "en": "Ming and Beth are boxing in the ring.",
+   "f": "audio/jenny/od_l65/3.mp3",
+   "s": "audio/jenny/od_l65/3s.mp3"
+  },
+  {
+   "en": "Sage is resting in the tent.",
+   "f": "audio/jenny/od_l65/4.mp3",
+   "s": "audio/jenny/od_l65/4s.mp3"
+  },
+  {
+   "en": "Jace and Tess are acting on the stage.",
+   "f": "audio/jenny/od_l65/5.mp3",
+   "s": "audio/jenny/od_l65/5s.mp3"
+  },
+  {
+   "en": "Len is looking for bugs in the grass.",
+   "f": "audio/jenny/od_l65/6.mp3",
+   "s": "audio/jenny/od_l65/6s.mp3"
+  },
+  {
+   "en": "We will be sad when camp ends.",
+   "f": "audio/jenny/od_l65/7.mp3",
+   "s": "audio/jenny/od_l65/7s.mp3"
+  },
+  {
+   "en": "We love spending time at camp!",
+   "f": "audio/jenny/od_l65/8.mp3",
+   "s": "audio/jenny/od_l65/8s.mp3"
+  }
+ ],
+ "od_l67a": [
+  {
+   "en": "Mo was at home with his grandmom.",
+   "f": "audio/jenny/od_l67a/0.mp3",
+   "s": "audio/jenny/od_l67a/0s.mp3"
+  },
+  {
+   "en": "Mo sat in his sandbox while grandmom swept the tile.",
+   "f": "audio/jenny/od_l67a/1.mp3",
+   "s": "audio/jenny/od_l67a/1s.mp3"
+  },
+  {
+   "en": "When grandmom was done with the tile she yelled to Mo, \"bath time!\"",
+   "f": "audio/jenny/od_l67a/2.mp3",
+   "s": "audio/jenny/od_l67a/2s.mp3"
+  },
+  {
+   "en": "Mo did not want to take a bath. He still wanted to sit in his sandbox.",
+   "f": "audio/jenny/od_l67a/3.mp3",
+   "s": "audio/jenny/od_l67a/3s.mp3"
+  },
+  {
+   "en": "\"Mo, you must get in the bathtub because you are full of sand,\" said grandmom.",
+   "f": "audio/jenny/od_l67a/4.mp3",
+   "s": "audio/jenny/od_l67a/4s.mp3"
+  },
+  {
+   "en": "\"OK, fine,\" said Mo.",
+   "f": "audio/jenny/od_l67a/5.mp3",
+   "s": "audio/jenny/od_l67a/5s.mp3"
+  },
+  {
+   "en": "He picked up his stuff from the sandbox and got in the bathtub.",
+   "f": "audio/jenny/od_l67a/6.mp3",
+   "s": "audio/jenny/od_l67a/6s.mp3"
+  },
+  {
+   "en": "When Mo was done with his bath he sat with grandmom.",
+   "f": "audio/jenny/od_l67a/7.mp3",
+   "s": "audio/jenny/od_l67a/7s.mp3"
+  },
+  {
+   "en": "\"Can I tell you something, grandmom? The bath was not so bad.\"",
+   "f": "audio/jenny/od_l67a/8.mp3",
+   "s": "audio/jenny/od_l67a/8s.mp3"
+  },
+  {
+   "en": "\"It got rid of all the sand just like you said.\"",
+   "f": "audio/jenny/od_l67a/9.mp3",
+   "s": "audio/jenny/od_l67a/9s.mp3"
+  },
+  {
+   "en": "Grandmom gave Mo a big hug and a kiss.",
+   "f": "audio/jenny/od_l67a/10.mp3",
+   "s": "audio/jenny/od_l67a/10s.mp3"
+  }
+ ],
+ "od_l67b": [
+  {
+   "en": "Denzel and Edwin dash to the rocket contest.",
+   "f": "audio/jenny/od_l67b/0.mp3",
+   "s": "audio/jenny/od_l67b/0s.mp3"
+  },
+  {
+   "en": "The man at the gate says \"Get your tickets, get your tickets!\"",
+   "f": "audio/jenny/od_l67b/1.mp3",
+   "s": "audio/jenny/od_l67b/1s.mp3"
+  },
+  {
+   "en": "\"You do not want to miss the big rocket contest.\"",
+   "f": "audio/jenny/od_l67b/2.mp3",
+   "s": "audio/jenny/od_l67b/2s.mp3"
+  },
+  {
+   "en": "\"Which rocket will be the fastest and win the prize basket?\"",
+   "f": "audio/jenny/od_l67b/3.mp3",
+   "s": "audio/jenny/od_l67b/3s.mp3"
+  },
+  {
+   "en": "Denzel and Edwin get to the contest just in time.",
+   "f": "audio/jenny/od_l67b/4.mp3",
+   "s": "audio/jenny/od_l67b/4s.mp3"
+  },
+  {
+   "en": "They grab their blankets and look for a nice spot to sit.",
+   "f": "audio/jenny/od_l67b/5.mp3",
+   "s": "audio/jenny/od_l67b/5s.mp3"
+  },
+  {
+   "en": "They are all set to see the rockets go!",
+   "f": "audio/jenny/od_l67b/6.mp3",
+   "s": "audio/jenny/od_l67b/6s.mp3"
+  },
+  {
+   "en": "They see the blue rocket take off, then red, then pink, then white.",
+   "f": "audio/jenny/od_l67b/7.mp3",
+   "s": "audio/jenny/od_l67b/7s.mp3"
+  },
+  {
+   "en": "They go up, up, up, so fast.",
+   "f": "audio/jenny/od_l67b/8.mp3",
+   "s": "audio/jenny/od_l67b/8s.mp3"
+  },
+  {
+   "en": "Which is the fastest? The blue rocket wins!",
+   "f": "audio/jenny/od_l67b/9.mp3",
+   "s": "audio/jenny/od_l67b/9s.mp3"
+  }
+ ],
+ "od_l68": [
+  {
+   "en": "Music class is the best because we get to sing.",
+   "f": "audio/jenny/od_l68/0.mp3",
+   "s": "audio/jenny/od_l68/0s.mp3"
+  },
+  {
+   "en": "It is no secret that I love to sing.",
+   "f": "audio/jenny/od_l68/1.mp3",
+   "s": "audio/jenny/od_l68/1s.mp3"
+  },
+  {
+   "en": "If you sing well, you get to have a solo.",
+   "f": "audio/jenny/od_l68/2.mp3",
+   "s": "audio/jenny/od_l68/2s.mp3"
+  },
+  {
+   "en": "When I have a solo in music class, I pretend I am on a huge stage.",
+   "f": "audio/jenny/od_l68/3.mp3",
+   "s": "audio/jenny/od_l68/3s.mp3"
+  },
+  {
+   "en": "It is silent for a moment, then I begin.",
+   "f": "audio/jenny/od_l68/4.mp3",
+   "s": "audio/jenny/od_l68/4s.mp3"
+  },
+  {
+   "en": "I sing and sing like time is frozen.",
+   "f": "audio/jenny/od_l68/5.mp3",
+   "s": "audio/jenny/od_l68/5s.mp3"
+  },
+  {
+   "en": "At the end, my friends clap for me. That is a nice bonus.",
+   "f": "audio/jenny/od_l68/6.mp3",
+   "s": "audio/jenny/od_l68/6s.mp3"
+  }
+ ],
+ "od_l69": [
+  {
+   "en": "Kate and Mitch wanted to do something fun.",
+   "f": "audio/jenny/od_l69/0.mp3",
+   "s": "audio/jenny/od_l69/0s.mp3"
+  },
+  {
+   "en": "Kate hatched a thrilling plan.",
+   "f": "audio/jenny/od_l69/1.mp3",
+   "s": "audio/jenny/od_l69/1s.mp3"
+  },
+  {
+   "en": "She snatched a bucket and some poles from the hutch.",
+   "f": "audio/jenny/od_l69/2.mp3",
+   "s": "audio/jenny/od_l69/2s.mp3"
+  },
+  {
+   "en": "\"Let's go!\" Kate yelled.",
+   "f": "audio/jenny/od_l69/3.mp3",
+   "s": "audio/jenny/od_l69/3s.mp3"
+  },
+  {
+   "en": "Kate and Mitch went to the lake beyond the ditch.",
+   "f": "audio/jenny/od_l69/4.mp3",
+   "s": "audio/jenny/od_l69/4s.mp3"
+  },
+  {
+   "en": "\"Let's catch some fish,\" Kate calls out.",
+   "f": "audio/jenny/od_l69/5.mp3",
+   "s": "audio/jenny/od_l69/5s.mp3"
+  },
+  {
+   "en": "Mitch catches a fish! They pitch it in the bucket.",
+   "f": "audio/jenny/od_l69/6.mp3",
+   "s": "audio/jenny/od_l69/6s.mp3"
+  },
+  {
+   "en": "\"Nice catch! Let's get this fish back home,\" said Kate.",
+   "f": "audio/jenny/od_l69/7.mp3",
+   "s": "audio/jenny/od_l69/7s.mp3"
+  },
+  {
+   "en": "At home, Kate and Mitch toss the fish into their pond.",
+   "f": "audio/jenny/od_l69/8.mp3",
+   "s": "audio/jenny/od_l69/8s.mp3"
+  },
+  {
+   "en": "\"This fish can be our pet!\" said Kate.",
+   "f": "audio/jenny/od_l69/9.mp3",
+   "s": "audio/jenny/od_l69/9s.mp3"
+  }
+ ],
+ "od_l70": [
+  {
+   "en": "Calvin has a lodge at the edge of the glen.",
+   "f": "audio/jenny/od_l70/0.mp3",
+   "s": "audio/jenny/od_l70/0s.mp3"
+  },
+  {
+   "en": "The lodge has a fridge and a TV.",
+   "f": "audio/jenny/od_l70/1.mp3",
+   "s": "audio/jenny/od_l70/1s.mp3"
+  },
+  {
+   "en": "To get to the lodge, you must go on a bridge then pass the ridge by the lake.",
+   "f": "audio/jenny/od_l70/2.mp3",
+   "s": "audio/jenny/od_l70/2s.mp3"
+  },
+  {
+   "en": "You can see many animals move from place to place by the lake.",
+   "f": "audio/jenny/od_l70/3.mp3",
+   "s": "audio/jenny/od_l70/3s.mp3"
+  },
+  {
+   "en": "Calvin loves the lodge.",
+   "f": "audio/jenny/od_l70/4.mp3",
+   "s": "audio/jenny/od_l70/4s.mp3"
+  },
+  {
+   "en": "He pledges he will not move from it because his children come to visit him there.",
+   "f": "audio/jenny/od_l70/5.mp3",
+   "s": "audio/jenny/od_l70/5s.mp3"
+  },
+  {
+   "en": "Calvin and his children have lots of fun at the lodge.",
+   "f": "audio/jenny/od_l70/6.mp3",
+   "s": "audio/jenny/od_l70/6s.mp3"
+  },
+  {
+   "en": "They make music and sing songs by the fire.",
+   "f": "audio/jenny/od_l70/7.mp3",
+   "s": "audio/jenny/od_l70/7s.mp3"
+  },
+  {
+   "en": "Sometimes they even jump into the lake and swim with the animals.",
+   "f": "audio/jenny/od_l70/8.mp3",
+   "s": "audio/jenny/od_l70/8s.mp3"
+  },
+  {
+   "en": "The lodge is a hidden gem.",
+   "f": "audio/jenny/od_l70/9.mp3",
+   "s": "audio/jenny/od_l70/9s.mp3"
+  }
+ ],
+ "od_l71": [
+  {
+   "en": "Robin is walking Butch the bulldog.",
+   "f": "audio/jenny/od_l71/0.mp3",
+   "s": "audio/jenny/od_l71/0s.mp3"
+  },
+  {
+   "en": "They walk to a patch of grass beside a big ditch.",
+   "f": "audio/jenny/od_l71/1.mp3",
+   "s": "audio/jenny/od_l71/1s.mp3"
+  },
+  {
+   "en": "Robin tosses a stick and Butch dashes to fetch it.",
+   "f": "audio/jenny/od_l71/2.mp3",
+   "s": "audio/jenny/od_l71/2s.mp3"
+  },
+  {
+   "en": "The stick lands on the edge of the ditch.",
+   "f": "audio/jenny/od_l71/3.mp3",
+   "s": "audio/jenny/od_l71/3s.mp3"
+  },
+  {
+   "en": "\"Oh no! That is a bad place for the stick to land,\" thinks Robin.",
+   "f": "audio/jenny/od_l71/4.mp3",
+   "s": "audio/jenny/od_l71/4s.mp3"
+  },
+  {
+   "en": "\"Stop Butch!\" she yells. Butch stops and does not budge.",
+   "f": "audio/jenny/od_l71/5.mp3",
+   "s": "audio/jenny/od_l71/5s.mp3"
+  },
+  {
+   "en": "Robin walks up to the edge and grabs the stick.",
+   "f": "audio/jenny/od_l71/6.mp3",
+   "s": "audio/jenny/od_l71/6s.mp3"
+  },
+  {
+   "en": "\"Good job Butch! I got your stick. Do you want it back?\"",
+   "f": "audio/jenny/od_l71/7.mp3",
+   "s": "audio/jenny/od_l71/7s.mp3"
+  },
+  {
+   "en": "Robin tosses the stick and Butch jumps to catch it.",
+   "f": "audio/jenny/od_l71/8.mp3",
+   "s": "audio/jenny/od_l71/8s.mp3"
+  }
+ ],
+ "od_l72": [
+  {
+   "en": "Long ago, bold men and women drove west to find gold.",
+   "f": "audio/jenny/od_l72/0.mp3",
+   "s": "audio/jenny/od_l72/0s.mp3"
+  },
+  {
+   "en": "They left their old lives behind in hopes of being rich.",
+   "f": "audio/jenny/od_l72/1.mp3",
+   "s": "audio/jenny/od_l72/1s.mp3"
+  },
+  {
+   "en": "These were wild times.",
+   "f": "audio/jenny/od_l72/2.mp3",
+   "s": "audio/jenny/od_l72/2s.mp3"
+  },
+  {
+   "en": "Mines exploded with gold that could be sold for lots of cash.",
+   "f": "audio/jenny/od_l72/3.mp3",
+   "s": "audio/jenny/od_l72/3s.mp3"
+  },
+  {
+   "en": "Some folks got rich, but most did not find any gold.",
+   "f": "audio/jenny/od_l72/4.mp3",
+   "s": "audio/jenny/od_l72/4s.mp3"
+  },
+  {
+   "en": "The men and women who did not find gold went back to their old homes.",
+   "f": "audio/jenny/od_l72/5.mp3",
+   "s": "audio/jenny/od_l72/5s.mp3"
+  },
+  {
+   "en": "There they told the tale of their tragic time in the Wild West gold rush.",
+   "f": "audio/jenny/od_l72/6.mp3",
+   "s": "audio/jenny/od_l72/6s.mp3"
+  }
+ ],
+ "od_l73": [
+  {
+   "en": "Tyrell and Franklin love planes.",
+   "f": "audio/jenny/od_l73/0.mp3",
+   "s": "audio/jenny/od_l73/0s.mp3"
+  },
+  {
+   "en": "They love to see them fly in the sky.",
+   "f": "audio/jenny/od_l73/1.mp3",
+   "s": "audio/jenny/od_l73/1s.mp3"
+  },
+  {
+   "en": "Once, Tyrell and Franklin went to see four planes race.",
+   "f": "audio/jenny/od_l73/2.mp3",
+   "s": "audio/jenny/od_l73/2s.mp3"
+  },
+  {
+   "en": "There was a red plane, a white plane, a pink plane, and a black plane.",
+   "f": "audio/jenny/od_l73/3.mp3",
+   "s": "audio/jenny/od_l73/3s.mp3"
+  },
+  {
+   "en": "\"I bet the red plane will win!\" said Tyrell.",
+   "f": "audio/jenny/od_l73/4.mp3",
+   "s": "audio/jenny/od_l73/4s.mp3"
+  },
+  {
+   "en": "\"I think the white one will win!\" said Franklin.",
+   "f": "audio/jenny/od_l73/5.mp3",
+   "s": "audio/jenny/od_l73/5s.mp3"
+  },
+  {
+   "en": "Tyrell and Franklin spy the planes as they fly by in the sky.",
+   "f": "audio/jenny/od_l73/6.mp3",
+   "s": "audio/jenny/od_l73/6s.mp3"
+  },
+  {
+   "en": "In the end, the black plane made it to the finish line.",
+   "f": "audio/jenny/od_l73/7.mp3",
+   "s": "audio/jenny/od_l73/7s.mp3"
+  },
+  {
+   "en": "\"Oh well! The red and white planes can try to win next time,\" said Tyrell.",
+   "f": "audio/jenny/od_l73/8.mp3",
+   "s": "audio/jenny/od_l73/8s.mp3"
+  }
+ ],
+ "od_l74": [
+  {
+   "en": "Lily had been wishing for a puppy for a long time.",
+   "f": "audio/jenny/od_l74/0.mp3",
+   "s": "audio/jenny/od_l74/0s.mp3"
+  },
+  {
+   "en": "She wanted a silly puppy to run and jump with.",
+   "f": "audio/jenny/od_l74/1.mp3",
+   "s": "audio/jenny/od_l74/1s.mp3"
+  },
+  {
+   "en": "But her mommy said Lily could not have one because she was only seven.",
+   "f": "audio/jenny/od_l74/2.mp3",
+   "s": "audio/jenny/od_l74/2s.mp3"
+  },
+  {
+   "en": "Lily begged her mommy and daddy.",
+   "f": "audio/jenny/od_l74/3.mp3",
+   "s": "audio/jenny/od_l74/3s.mp3"
+  },
+  {
+   "en": "She said, \"I am not a baby. It would make me so happy to have a puppy.\"",
+   "f": "audio/jenny/od_l74/4.mp3",
+   "s": "audio/jenny/od_l74/4s.mp3"
+  },
+  {
+   "en": "Lily's mommy and daddy talked for a long time.",
+   "f": "audio/jenny/od_l74/5.mp3",
+   "s": "audio/jenny/od_l74/5s.mp3"
+  },
+  {
+   "en": "They said, \"We do think you will try your best. We will let you have a puppy.\"",
+   "f": "audio/jenny/od_l74/6.mp3",
+   "s": "audio/jenny/od_l74/6s.mp3"
+  },
+  {
+   "en": "Lily was so happy.",
+   "f": "audio/jenny/od_l74/7.mp3",
+   "s": "audio/jenny/od_l74/7s.mp3"
+  },
+  {
+   "en": "She went to the pet shop and picked a tiny puppy. She named him Cody.",
+   "f": "audio/jenny/od_l74/8.mp3",
+   "s": "audio/jenny/od_l74/8s.mp3"
+  },
+  {
+   "en": "Cody is the best puppy for this family.",
+   "f": "audio/jenny/od_l74/9.mp3",
+   "s": "audio/jenny/od_l74/9s.mp3"
+  }
+ ],
+ "od_l75": [
+  {
+   "en": "Uncle Billy wanted to take Able to the candy shop.",
+   "f": "audio/jenny/od_l75/0.mp3",
+   "s": "audio/jenny/od_l75/0s.mp3"
+  },
+  {
+   "en": "They drove to a lot and jumped on a shuttle to the shop.",
+   "f": "audio/jenny/od_l75/1.mp3",
+   "s": "audio/jenny/od_l75/1s.mp3"
+  },
+  {
+   "en": "When they walked into the candy shop, they smelled the fudge on the table.",
+   "f": "audio/jenny/od_l75/2.mp3",
+   "s": "audio/jenny/od_l75/2s.mp3"
+  },
+  {
+   "en": "Able wanted a sample of the maple fudge.",
+   "f": "audio/jenny/od_l75/3.mp3",
+   "s": "audio/jenny/od_l75/3s.mp3"
+  },
+  {
+   "en": "He hoped it would not be a hassle for the woman behind the table.",
+   "f": "audio/jenny/od_l75/4.mp3",
+   "s": "audio/jenny/od_l75/4s.mp3"
+  },
+  {
+   "en": "\"Can I have a sample?\" asked Able.",
+   "f": "audio/jenny/od_l75/5.mp3",
+   "s": "audio/jenny/od_l75/5s.mp3"
+  },
+  {
+   "en": "\"Yes, you can! Which would you like to sample?\" said the woman.",
+   "f": "audio/jenny/od_l75/6.mp3",
+   "s": "audio/jenny/od_l75/6s.mp3"
+  },
+  {
+   "en": "Able, with a giggle, asked for the maple fudge.",
+   "f": "audio/jenny/od_l75/7.mp3",
+   "s": "audio/jenny/od_l75/7s.mp3"
+  },
+  {
+   "en": "\"You picked the best one to sample!\" said the woman.",
+   "f": "audio/jenny/od_l75/8.mp3",
+   "s": "audio/jenny/od_l75/8s.mp3"
+  },
+  {
+   "en": "Able nibbled on the fudge. \"This is so yummy!\" he said while licking his lips.",
+   "f": "audio/jenny/od_l75/9.mp3",
+   "s": "audio/jenny/od_l75/9s.mp3"
+  },
+  {
+   "en": "Uncle Billy got a little bag of fudge for Able to take back home.",
+   "f": "audio/jenny/od_l75/10.mp3",
+   "s": "audio/jenny/od_l75/10s.mp3"
+  }
+ ],
+ "od_l76": [
+  {
+   "en": "Salma and Felix are going on a trip to the jungle.",
+   "f": "audio/jenny/od_l76/0.mp3",
+   "s": "audio/jenny/od_l76/0s.mp3"
+  },
+  {
+   "en": "They packed their duffle bags and got on a plane to Brazil.",
+   "f": "audio/jenny/od_l76/1.mp3",
+   "s": "audio/jenny/od_l76/1s.mp3"
+  },
+  {
+   "en": "Once in Brazil, they rode a shuttle to the jungle.",
+   "f": "audio/jenny/od_l76/2.mp3",
+   "s": "audio/jenny/od_l76/2s.mp3"
+  },
+  {
+   "en": "In the jungle, they saw an anaconda in the grass.",
+   "f": "audio/jenny/od_l76/3.mp3",
+   "s": "audio/jenny/od_l76/3s.mp3"
+  },
+  {
+   "en": "They also saw a chimp dangle from a vine.",
+   "f": "audio/jenny/od_l76/4.mp3",
+   "s": "audio/jenny/od_l76/4s.mp3"
+  },
+  {
+   "en": "At the end of their trip, they got to see the king of the jungle, the lion!",
+   "f": "audio/jenny/od_l76/5.mp3",
+   "s": "audio/jenny/od_l76/5s.mp3"
+  },
+  {
+   "en": "The lion looked hungry and dashed to find a yummy snack.",
+   "f": "audio/jenny/od_l76/6.mp3",
+   "s": "audio/jenny/od_l76/6s.mp3"
+  },
+  {
+   "en": "\"I am so happy we got to see these animals,\" said Salma. \"Me too!\" said Felix.",
+   "f": "audio/jenny/od_l76/7.mp3",
+   "s": "audio/jenny/od_l76/7s.mp3"
+  }
+ ],
+ "od_l77": [
+  {
+   "en": "Omar loves to be in his garden on his farm.",
+   "f": "audio/jenny/od_l77/0.mp3",
+   "s": "audio/jenny/od_l77/0s.mp3"
+  },
+  {
+   "en": "While it is still dark, he drags his old cart across the yard to the barn.",
+   "f": "audio/jenny/od_l77/1.mp3",
+   "s": "audio/jenny/od_l77/1s.mp3"
+  },
+  {
+   "en": "He fills the cart with plants for the garden.",
+   "f": "audio/jenny/od_l77/2.mp3",
+   "s": "audio/jenny/od_l77/2s.mp3"
+  },
+  {
+   "en": "When he gets to the garden, he looks at the plants one by one.",
+   "f": "audio/jenny/od_l77/3.mp3",
+   "s": "audio/jenny/od_l77/3s.mp3"
+  },
+  {
+   "en": "Then he finds them all the best place to live.",
+   "f": "audio/jenny/od_l77/4.mp3",
+   "s": "audio/jenny/od_l77/4s.mp3"
+  },
+  {
+   "en": "He finds big spaces for the large plants.",
+   "f": "audio/jenny/od_l77/5.mp3",
+   "s": "audio/jenny/od_l77/5s.mp3"
+  },
+  {
+   "en": "He finds shade for the plants that do not like the harsh sun.",
+   "f": "audio/jenny/od_l77/6.mp3",
+   "s": "audio/jenny/od_l77/6s.mp3"
+  },
+  {
+   "en": "He gives them all just what they want and makes them look so pretty.",
+   "f": "audio/jenny/od_l77/7.mp3",
+   "s": "audio/jenny/od_l77/7s.mp3"
+  },
+  {
+   "en": "When Omar is done, he brings the cart back to the barn.",
+   "f": "audio/jenny/od_l77/8.mp3",
+   "s": "audio/jenny/od_l77/8s.mp3"
+  },
+  {
+   "en": "Then he sits on his deck and looks at his garden with pride.",
+   "f": "audio/jenny/od_l77/9.mp3",
+   "s": "audio/jenny/od_l77/9s.mp3"
+  }
+ ],
+ "od_l78": [
+  {
+   "en": "Cory and his horse, North, traveled to the shore.",
+   "f": "audio/jenny/od_l78/0.mp3",
+   "s": "audio/jenny/od_l78/0s.mp3"
+  },
+  {
+   "en": "Cory held on to North's mane as North galloped across the sand.",
+   "f": "audio/jenny/od_l78/1.mp3",
+   "s": "audio/jenny/od_l78/1s.mp3"
+  },
+  {
+   "en": "They arrived at the shore before anyone else.",
+   "f": "audio/jenny/od_l78/2.mp3",
+   "s": "audio/jenny/od_l78/2s.mp3"
+  },
+  {
+   "en": "There had been a storm at sunset, so this morning the shore was a marvel.",
+   "f": "audio/jenny/od_l78/3.mp3",
+   "s": "audio/jenny/od_l78/3s.mp3"
+  },
+  {
+   "en": "There were hundreds of starfish along the shoreline.",
+   "f": "audio/jenny/od_l78/4.mp3",
+   "s": "audio/jenny/od_l78/4s.mp3"
+  },
+  {
+   "en": "The starfish got pulled to the shore in the storm.",
+   "f": "audio/jenny/od_l78/5.mp3",
+   "s": "audio/jenny/od_l78/5s.mp3"
+  },
+  {
+   "en": "They were so pretty, but if they were left on the shore they would dry up.",
+   "f": "audio/jenny/od_l78/6.mp3",
+   "s": "audio/jenny/od_l78/6s.mp3"
+  },
+  {
+   "en": "Cory jumped off North's back.",
+   "f": "audio/jenny/od_l78/7.mp3",
+   "s": "audio/jenny/od_l78/7s.mp3"
+  },
+  {
+   "en": "He picked up starfish one by one and placed them back where they came from.",
+   "f": "audio/jenny/od_l78/8.mp3",
+   "s": "audio/jenny/od_l78/8s.mp3"
+  },
+  {
+   "en": "Cory was happy he could transport the starfish back home.",
+   "f": "audio/jenny/od_l78/9.mp3",
+   "s": "audio/jenny/od_l78/9s.mp3"
+  }
+ ],
+ "od_l79": [
+  {
+   "en": "Mom and Marcus went to the market.",
+   "f": "audio/jenny/od_l79/0.mp3",
+   "s": "audio/jenny/od_l79/0s.mp3"
+  },
+  {
+   "en": "They wanted to pick up some pork, corn, rice, and a jar of mango jelly.",
+   "f": "audio/jenny/od_l79/1.mp3",
+   "s": "audio/jenny/od_l79/1s.mp3"
+  },
+  {
+   "en": "They liked this market more than the large store with all the people.",
+   "f": "audio/jenny/od_l79/2.mp3",
+   "s": "audio/jenny/od_l79/2s.mp3"
+  },
+  {
+   "en": "The market was on a farm.",
+   "f": "audio/jenny/od_l79/3.mp3",
+   "s": "audio/jenny/od_l79/3s.mp3"
+  },
+  {
+   "en": "Mom parked the car and Marcus got the cart.",
+   "f": "audio/jenny/od_l79/4.mp3",
+   "s": "audio/jenny/od_l79/4s.mp3"
+  },
+  {
+   "en": "This would be a short trip since they only wanted four things.",
+   "f": "audio/jenny/od_l79/5.mp3",
+   "s": "audio/jenny/od_l79/5s.mp3"
+  },
+  {
+   "en": "Marcus got the rice and jar of mango jelly.",
+   "f": "audio/jenny/od_l79/6.mp3",
+   "s": "audio/jenny/od_l79/6s.mp3"
+  },
+  {
+   "en": "Mom picked up the pork and corn.",
+   "f": "audio/jenny/od_l79/7.mp3",
+   "s": "audio/jenny/od_l79/7s.mp3"
+  },
+  {
+   "en": "Once they had all their items, they gave the saleswoman their cash.",
+   "f": "audio/jenny/od_l79/8.mp3",
+   "s": "audio/jenny/od_l79/8s.mp3"
+  },
+  {
+   "en": "Then, they departed the market.",
+   "f": "audio/jenny/od_l79/9.mp3",
+   "s": "audio/jenny/od_l79/9s.mp3"
+  },
+  {
+   "en": "They got back in their car and drove home for a yummy lunch.",
+   "f": "audio/jenny/od_l79/10.mp3",
+   "s": "audio/jenny/od_l79/10s.mp3"
+  }
+ ],
+ "od_l80": [
+  {
+   "en": "My sister adores plants.",
+   "f": "audio/jenny/od_l80/0.mp3",
+   "s": "audio/jenny/od_l80/0s.mp3"
+  },
+  {
+   "en": "She wants to be a farmer or a gardener when she gets older.",
+   "f": "audio/jenny/od_l80/1.mp3",
+   "s": "audio/jenny/od_l80/1s.mp3"
+  },
+  {
+   "en": "She has a number of plants at home, but the plant she loves the most is a fern.",
+   "f": "audio/jenny/od_l80/2.mp3",
+   "s": "audio/jenny/od_l80/2s.mp3"
+  },
+  {
+   "en": "She has five different kinds of ferns in her backyard.",
+   "f": "audio/jenny/od_l80/3.mp3",
+   "s": "audio/jenny/od_l80/3s.mp3"
+  },
+  {
+   "en": "When the ferns are on the verge of wilting, she uses her mister to get them wet.",
+   "f": "audio/jenny/od_l80/4.mp3",
+   "s": "audio/jenny/od_l80/4s.mp3"
+  },
+  {
+   "en": "After that, they perk back up.",
+   "f": "audio/jenny/od_l80/5.mp3",
+   "s": "audio/jenny/od_l80/5s.mp3"
+  },
+  {
+   "en": "If it is too hot, she gives the ferns some shade on the porch.",
+   "f": "audio/jenny/od_l80/6.mp3",
+   "s": "audio/jenny/od_l80/6s.mp3"
+  },
+  {
+   "en": "My sister thinks there is nothing more pretty than a fern!",
+   "f": "audio/jenny/od_l80/7.mp3",
+   "s": "audio/jenny/od_l80/7s.mp3"
+  }
+ ],
+ "od_l83": [
+  {
+   "en": "Travis and his father wanted to go fishing at the port.",
+   "f": "audio/jenny/od_l83/0.mp3",
+   "s": "audio/jenny/od_l83/0s.mp3"
+  },
+  {
+   "en": "They drove to the tackle store to pick up some items.",
+   "f": "audio/jenny/od_l83/1.mp3",
+   "s": "audio/jenny/od_l83/1s.mp3"
+  },
+  {
+   "en": "They had to get some fishing line and a jar of worms.",
+   "f": "audio/jenny/od_l83/2.mp3",
+   "s": "audio/jenny/od_l83/2s.mp3"
+  },
+  {
+   "en": "Travis found the jar of worms under a large rack of fishing poles.",
+   "f": "audio/jenny/od_l83/3.mp3",
+   "s": "audio/jenny/od_l83/3s.mp3"
+  },
+  {
+   "en": "His father found the fishing line.",
+   "f": "audio/jenny/od_l83/4.mp3",
+   "s": "audio/jenny/od_l83/4s.mp3"
+  },
+  {
+   "en": "He picked the extra sturdy line so they could catch big fish.",
+   "f": "audio/jenny/od_l83/5.mp3",
+   "s": "audio/jenny/od_l83/5s.mp3"
+  },
+  {
+   "en": "They gave the clerk a credit card for their items.",
+   "f": "audio/jenny/od_l83/6.mp3",
+   "s": "audio/jenny/od_l83/6s.mp3"
+  },
+  {
+   "en": "Travis and his father left the tackle store, got in the car, and drove north to the water.",
+   "f": "audio/jenny/od_l83/7.mp3",
+   "s": "audio/jenny/od_l83/7s.mp3"
+  },
+  {
+   "en": "This would be their third trip to the port.",
+   "f": "audio/jenny/od_l83/8.mp3",
+   "s": "audio/jenny/od_l83/8s.mp3"
+  },
+  {
+   "en": "Last time, they went home with five fish. This time, they hope to catch more.",
+   "f": "audio/jenny/od_l83/9.mp3",
+   "s": "audio/jenny/od_l83/9s.mp3"
+  }
+ ],
+ "od_l84": [
+  {
+   "en": "On Sundays, Gail visits her brother at his farm.",
+   "f": "audio/jenny/od_l84/0.mp3",
+   "s": "audio/jenny/od_l84/0s.mp3"
+  },
+  {
+   "en": "Gail loves to go to the farm because there is so much to do.",
+   "f": "audio/jenny/od_l84/1.mp3",
+   "s": "audio/jenny/od_l84/1s.mp3"
+  },
+  {
+   "en": "She starts the day in the garden.",
+   "f": "audio/jenny/od_l84/2.mp3",
+   "s": "audio/jenny/od_l84/2s.mp3"
+  },
+  {
+   "en": "If it did not rain, she sprays the plants with water.",
+   "f": "audio/jenny/od_l84/3.mp3",
+   "s": "audio/jenny/od_l84/3s.mp3"
+  },
+  {
+   "en": "Then, Gail and her brother walk on the trail from the garden to the pond.",
+   "f": "audio/jenny/od_l84/4.mp3",
+   "s": "audio/jenny/od_l84/4s.mp3"
+  },
+  {
+   "en": "As they walk, Gail hunts for snail shells.",
+   "f": "audio/jenny/od_l84/5.mp3",
+   "s": "audio/jenny/od_l84/5s.mp3"
+  },
+  {
+   "en": "When she finds shells, she tucks them in her pocket.",
+   "f": "audio/jenny/od_l84/6.mp3",
+   "s": "audio/jenny/od_l84/6s.mp3"
+  },
+  {
+   "en": "She will paint them when she gets home.",
+   "f": "audio/jenny/od_l84/7.mp3",
+   "s": "audio/jenny/od_l84/7s.mp3"
+  },
+  {
+   "en": "At the pond, her brother likes to fish.",
+   "f": "audio/jenny/od_l84/8.mp3",
+   "s": "audio/jenny/od_l84/8s.mp3"
+  },
+  {
+   "en": "He strings bait onto his fishing pole and waits for a bite.",
+   "f": "audio/jenny/od_l84/9.mp3",
+   "s": "audio/jenny/od_l84/9s.mp3"
+  },
+  {
+   "en": "While they wait, Gail plays in the mud and clay.",
+   "f": "audio/jenny/od_l84/10.mp3",
+   "s": "audio/jenny/od_l84/10s.mp3"
+  },
+  {
+   "en": "At the end of the day, they walk back up the trail to go home.",
+   "f": "audio/jenny/od_l84/11.mp3",
+   "s": "audio/jenny/od_l84/11s.mp3"
+  },
+  {
+   "en": "As they walk, they see the sun set and the day fade away.",
+   "f": "audio/jenny/od_l84/12.mp3",
+   "s": "audio/jenny/od_l84/12s.mp3"
+  }
+ ],
+ "od_l85": [
+  {
+   "en": "Once upon a time, there was a fox who lived in a valley.",
+   "f": "audio/jenny/od_l85/0.mp3",
+   "s": "audio/jenny/od_l85/0s.mp3"
+  },
+  {
+   "en": "She spent her days deep in the green forest.",
+   "f": "audio/jenny/od_l85/1.mp3",
+   "s": "audio/jenny/od_l85/1s.mp3"
+  },
+  {
+   "en": "Each day, she would wake up from her sleep and greet the forest animals.",
+   "f": "audio/jenny/od_l85/2.mp3",
+   "s": "audio/jenny/od_l85/2s.mp3"
+  },
+  {
+   "en": "She would say hello to the animals in the trees above her.",
+   "f": "audio/jenny/od_l85/3.mp3",
+   "s": "audio/jenny/od_l85/3s.mp3"
+  },
+  {
+   "en": "She would also say hello to the animals who rested by the stream.",
+   "f": "audio/jenny/od_l85/4.mp3",
+   "s": "audio/jenny/od_l85/4s.mp3"
+  },
+  {
+   "en": "One morning, the peace of the forest was broken by a horrid scream!",
+   "f": "audio/jenny/od_l85/5.mp3",
+   "s": "audio/jenny/od_l85/5s.mp3"
+  },
+  {
+   "en": "The fox looked up to see where the scream came from.",
+   "f": "audio/jenny/od_l85/6.mp3",
+   "s": "audio/jenny/od_l85/6s.mp3"
+  },
+  {
+   "en": "She saw a fallen tree. She peeked in and came upon a monkey.",
+   "f": "audio/jenny/od_l85/7.mp3",
+   "s": "audio/jenny/od_l85/7s.mp3"
+  },
+  {
+   "en": "The monkey was stuck in the fallen tree.",
+   "f": "audio/jenny/od_l85/8.mp3",
+   "s": "audio/jenny/od_l85/8s.mp3"
+  },
+  {
+   "en": "\"Can you please help me get free?\" pleaded the monkey.",
+   "f": "audio/jenny/od_l85/9.mp3",
+   "s": "audio/jenny/od_l85/9s.mp3"
+  },
+  {
+   "en": "\"I will try my best,\" the fox said.",
+   "f": "audio/jenny/od_l85/10.mp3",
+   "s": "audio/jenny/od_l85/10s.mp3"
+  },
+  {
+   "en": "The fox pushed very hard and in the end the monkey was freed!",
+   "f": "audio/jenny/od_l85/11.mp3",
+   "s": "audio/jenny/od_l85/11s.mp3"
+  },
+  {
+   "en": "\"Thank you so much,\" the monkey said as he leaped into another tree.",
+   "f": "audio/jenny/od_l85/12.mp3",
+   "s": "audio/jenny/od_l85/12s.mp3"
+  },
+  {
+   "en": "As the fox walked back to the valley, she beamed with pride for helping the monkey.",
+   "f": "audio/jenny/od_l85/13.mp3",
+   "s": "audio/jenny/od_l85/13s.mp3"
+  }
+ ],
+ "od_l86": [
+  {
+   "en": "Harvey owns a big yellow boat.",
+   "f": "audio/jenny/od_l86/0.mp3",
+   "s": "audio/jenny/od_l86/0s.mp3"
+  },
+  {
+   "en": "Every summer, he takes the boat on a trip to the coast.",
+   "f": "audio/jenny/od_l86/1.mp3",
+   "s": "audio/jenny/od_l86/1s.mp3"
+  },
+  {
+   "en": "This time, he wants to bring his friends, Layla and Joe, with him.",
+   "f": "audio/jenny/od_l86/2.mp3",
+   "s": "audio/jenny/od_l86/2s.mp3"
+  },
+  {
+   "en": "There is just one problem, Layla can not swim!",
+   "f": "audio/jenny/od_l86/3.mp3",
+   "s": "audio/jenny/od_l86/3s.mp3"
+  },
+  {
+   "en": "Layla must be able to swim if she wants to go on the boat.",
+   "f": "audio/jenny/od_l86/4.mp3",
+   "s": "audio/jenny/od_l86/4s.mp3"
+  },
+  {
+   "en": "Layla started swim lessons to grow her skills.",
+   "f": "audio/jenny/od_l86/5.mp3",
+   "s": "audio/jenny/od_l86/5s.mp3"
+  },
+  {
+   "en": "She even got a swim coach to teach her.",
+   "f": "audio/jenny/od_l86/6.mp3",
+   "s": "audio/jenny/od_l86/6s.mp3"
+  },
+  {
+   "en": "She started slow, but Joe helped her get better.",
+   "f": "audio/jenny/od_l86/7.mp3",
+   "s": "audio/jenny/od_l86/7s.mp3"
+  },
+  {
+   "en": "After four weeks of lessons, Layla could swim!",
+   "f": "audio/jenny/od_l86/8.mp3",
+   "s": "audio/jenny/od_l86/8s.mp3"
+  },
+  {
+   "en": "Now she could paddle, kick, and float all by herself.",
+   "f": "audio/jenny/od_l86/9.mp3",
+   "s": "audio/jenny/od_l86/9s.mp3"
+  },
+  {
+   "en": "Layla showed Harvey her skills. Harvey was thrilled!",
+   "f": "audio/jenny/od_l86/10.mp3",
+   "s": "audio/jenny/od_l86/10s.mp3"
+  },
+  {
+   "en": "The next day, Harvey and Layla and Joe set sail to the coast.",
+   "f": "audio/jenny/od_l86/11.mp3",
+   "s": "audio/jenny/od_l86/11s.mp3"
+  }
+ ],
+ "od_l87": [
+  {
+   "en": "Curt is a pilot. This means he must fly planes for work.",
+   "f": "audio/jenny/od_l87/0.mp3",
+   "s": "audio/jenny/od_l87/0s.mp3"
+  },
+  {
+   "en": "He sports a white shirt and a necktie when he is on the plane.",
+   "f": "audio/jenny/od_l87/1.mp3",
+   "s": "audio/jenny/od_l87/1s.mp3"
+  },
+  {
+   "en": "He has been flying for a long time.",
+   "f": "audio/jenny/od_l87/2.mp3",
+   "s": "audio/jenny/od_l87/2s.mp3"
+  },
+  {
+   "en": "Sometimes Curt must fly at night when there is no light in the sky.",
+   "f": "audio/jenny/od_l87/3.mp3",
+   "s": "audio/jenny/od_l87/3s.mp3"
+  },
+  {
+   "en": "At night, everyone on the plane is asleep and it is silent.",
+   "f": "audio/jenny/od_l87/4.mp3",
+   "s": "audio/jenny/od_l87/4s.mp3"
+  },
+  {
+   "en": "This is peaceful, but sometimes it gets boring.",
+   "f": "audio/jenny/od_l87/5.mp3",
+   "s": "audio/jenny/od_l87/5s.mp3"
+  },
+  {
+   "en": "Curt prefers to fly in the daylight.",
+   "f": "audio/jenny/od_l87/6.mp3",
+   "s": "audio/jenny/od_l87/6s.mp3"
+  },
+  {
+   "en": "This is when he can see the land below and talk to people.",
+   "f": "audio/jenny/od_l87/7.mp3",
+   "s": "audio/jenny/od_l87/7s.mp3"
+  },
+  {
+   "en": "Curt also likes seeing the sights in the places he goes.",
+   "f": "audio/jenny/od_l87/8.mp3",
+   "s": "audio/jenny/od_l87/8s.mp3"
+  },
+  {
+   "en": "He delights in exploring the parks, theaters, and stores wherever his flights take him.",
+   "f": "audio/jenny/od_l87/9.mp3",
+   "s": "audio/jenny/od_l87/9s.mp3"
+  },
+  {
+   "en": "But what he likes best is being high up in the sky.",
+   "f": "audio/jenny/od_l87/10.mp3",
+   "s": "audio/jenny/od_l87/10s.mp3"
+  },
+  {
+   "en": "Being a pilot is the right job for Curt!",
+   "f": "audio/jenny/od_l87/11.mp3",
+   "s": "audio/jenny/od_l87/11s.mp3"
+  }
+ ],
+ "od_l88": [
+  {
+   "en": "Aiden had to find a way to make money.",
+   "f": "audio/jenny/od_l88/0.mp3",
+   "s": "audio/jenny/od_l88/0s.mp3"
+  },
+  {
+   "en": "He needed to save up for his dream car.",
+   "f": "audio/jenny/od_l88/1.mp3",
+   "s": "audio/jenny/od_l88/1s.mp3"
+  },
+  {
+   "en": "He wanted to get a jeep, but jeeps are not cheap.",
+   "f": "audio/jenny/od_l88/2.mp3",
+   "s": "audio/jenny/od_l88/2s.mp3"
+  },
+  {
+   "en": "He needed to find a job that paid very well, so he could own his dream car. What could he do?",
+   "f": "audio/jenny/od_l88/3.mp3",
+   "s": "audio/jenny/od_l88/3s.mp3"
+  },
+  {
+   "en": "Aiden went to his father for advice. His father said he should study.",
+   "f": "audio/jenny/od_l88/4.mp3",
+   "s": "audio/jenny/od_l88/4s.mp3"
+  },
+  {
+   "en": "\"How will studying get me my dream car?\" Aiden asked.",
+   "f": "audio/jenny/od_l88/5.mp3",
+   "s": "audio/jenny/od_l88/5s.mp3"
+  },
+  {
+   "en": "His father explained that he could study a trade like welding or carpentry.",
+   "f": "audio/jenny/od_l88/6.mp3",
+   "s": "audio/jenny/od_l88/6s.mp3"
+  },
+  {
+   "en": "He could also take more classes to get a degree.",
+   "f": "audio/jenny/od_l88/7.mp3",
+   "s": "audio/jenny/od_l88/7s.mp3"
+  },
+  {
+   "en": "People who had a trade or a degree could make a lot of money.",
+   "f": "audio/jenny/od_l88/8.mp3",
+   "s": "audio/jenny/od_l88/8s.mp3"
+  },
+  {
+   "en": "Aiden needed to think over what his father had told him.",
+   "f": "audio/jenny/od_l88/9.mp3",
+   "s": "audio/jenny/od_l88/9s.mp3"
+  },
+  {
+   "en": "It would take longer to study, but in the end, Aiden would be able to get his dream car and more.",
+   "f": "audio/jenny/od_l88/10.mp3",
+   "s": "audio/jenny/od_l88/10s.mp3"
+  },
+  {
+   "en": "After days of thinking, Aiden chose to take more classes.",
+   "f": "audio/jenny/od_l88/11.mp3",
+   "s": "audio/jenny/od_l88/11s.mp3"
+  },
+  {
+   "en": "This would help him reach this goal and his next one, whatever that might be.",
+   "f": "audio/jenny/od_l88/12.mp3",
+   "s": "audio/jenny/od_l88/12s.mp3"
+  },
+  {
+   "en": "Aiden's father was almost always right.",
+   "f": "audio/jenny/od_l88/13.mp3",
+   "s": "audio/jenny/od_l88/13s.mp3"
+  }
+ ],
+ "od_l89": [
+  {
+   "en": "Brooklyn got a new book.",
+   "f": "audio/jenny/od_l89/0.mp3",
+   "s": "audio/jenny/od_l89/0s.mp3"
+  },
+  {
+   "en": "For weeks, Brooklyn had been looking for this book in every bookshop.",
+   "f": "audio/jenny/od_l89/1.mp3",
+   "s": "audio/jenny/od_l89/1s.mp3"
+  },
+  {
+   "en": "She put it at the top of her list because she was confident that this story would be a good one.",
+   "f": "audio/jenny/od_l89/2.mp3",
+   "s": "audio/jenny/od_l89/2s.mp3"
+  },
+  {
+   "en": "Brooklyn loved her reading time on the weekends.",
+   "f": "audio/jenny/od_l89/3.mp3",
+   "s": "audio/jenny/od_l89/3s.mp3"
+  },
+  {
+   "en": "Each Saturday, she was able to sit in her reading nook and dive into a good book.",
+   "f": "audio/jenny/od_l89/4.mp3",
+   "s": "audio/jenny/od_l89/4s.mp3"
+  },
+  {
+   "en": "Last weekend, she finished a story of a famed football star.",
+   "f": "audio/jenny/od_l89/5.mp3",
+   "s": "audio/jenny/od_l89/5s.mp3"
+  },
+  {
+   "en": "This weekend she would be starting Little Red Riding Hood.",
+   "f": "audio/jenny/od_l89/6.mp3",
+   "s": "audio/jenny/od_l89/6s.mp3"
+  },
+  {
+   "en": "But this story is not the classic she remembers from her childhood.",
+   "f": "audio/jenny/od_l89/7.mp3",
+   "s": "audio/jenny/od_l89/7s.mp3"
+  },
+  {
+   "en": "In that book, Little Red Riding Hood is a small child.",
+   "f": "audio/jenny/od_l89/8.mp3",
+   "s": "audio/jenny/od_l89/8s.mp3"
+  },
+  {
+   "en": "This modern story is a twisted tale.",
+   "f": "audio/jenny/od_l89/9.mp3",
+   "s": "audio/jenny/od_l89/9s.mp3"
+  },
+  {
+   "en": "Little Red Riding Hood is a grown-up when she goes for a walk in the woods.",
+   "f": "audio/jenny/od_l89/10.mp3",
+   "s": "audio/jenny/od_l89/10s.mp3"
+  },
+  {
+   "en": "Brooklyn could not wait to pull on her cozy hooded blanket and curl up in her nook with her book.",
+   "f": "audio/jenny/od_l89/11.mp3",
+   "s": "audio/jenny/od_l89/11s.mp3"
+  }
+ ],
+ "od_l90": [
+  {
+   "en": "The flustered groom rushed into the church.",
+   "f": "audio/jenny/od_l90/0.mp3",
+   "s": "audio/jenny/od_l90/0s.mp3"
+  },
+  {
+   "en": "He was very late.",
+   "f": "audio/jenny/od_l90/1.mp3",
+   "s": "audio/jenny/od_l90/1s.mp3"
+  },
+  {
+   "en": "Not only was he late, but he had not even finished dressing.",
+   "f": "audio/jenny/od_l90/2.mp3",
+   "s": "audio/jenny/od_l90/2s.mp3"
+  },
+  {
+   "en": "He was still pulling on his boots.",
+   "f": "audio/jenny/od_l90/3.mp3",
+   "s": "audio/jenny/od_l90/3s.mp3"
+  },
+  {
+   "en": "He ran to his best man and said, \"I slept in! My alarm did not go off!\"",
+   "f": "audio/jenny/od_l90/4.mp3",
+   "s": "audio/jenny/od_l90/4s.mp3"
+  },
+  {
+   "en": "\"Keep your cool! Better late than never,\" said the best man.",
+   "f": "audio/jenny/od_l90/5.mp3",
+   "s": "audio/jenny/od_l90/5s.mp3"
+  },
+  {
+   "en": "The groom smoothed his shirt as best as he could and finished pulling on his boots.",
+   "f": "audio/jenny/od_l90/6.mp3",
+   "s": "audio/jenny/od_l90/6s.mp3"
+  },
+  {
+   "en": "\"All set!\" said the groom. \"Time to see my bride.\"",
+   "f": "audio/jenny/od_l90/7.mp3",
+   "s": "audio/jenny/od_l90/7s.mp3"
+  },
+  {
+   "en": "Just then, booming music started to play, and the church doors swung open.",
+   "f": "audio/jenny/od_l90/8.mp3",
+   "s": "audio/jenny/od_l90/8s.mp3"
+  },
+  {
+   "en": "The bride was so graceful as she entered the room, she seemed to be floating.",
+   "f": "audio/jenny/od_l90/9.mp3",
+   "s": "audio/jenny/od_l90/9s.mp3"
+  },
+  {
+   "en": "As she reached the groom, she whispered, \"Better late than never.\"",
+   "f": "audio/jenny/od_l90/10.mp3",
+   "s": "audio/jenny/od_l90/10s.mp3"
+  },
+  {
+   "en": "The groom blushed and said, \"my alarm did not go off!\"",
+   "f": "audio/jenny/od_l90/11.mp3",
+   "s": "audio/jenny/od_l90/11s.mp3"
+  },
+  {
+   "en": "With a smile, the bride took her groom's hand and said, \"Next time I will put the alarm on for you.\"",
+   "f": "audio/jenny/od_l90/12.mp3",
+   "s": "audio/jenny/od_l90/12s.mp3"
+  }
+ ],
+ "od_l91": [
+  {
+   "en": "Drew and Marley were thrilled as they walked onto their first cruise ship.",
+   "f": "audio/jenny/od_l91/0.mp3",
+   "s": "audio/jenny/od_l91/0s.mp3"
+  },
+  {
+   "en": "They had been packing for this trip for months.",
+   "f": "audio/jenny/od_l91/1.mp3",
+   "s": "audio/jenny/od_l91/1s.mp3"
+  },
+  {
+   "en": "Their suitcases were so full they almost did not close.",
+   "f": "audio/jenny/od_l91/2.mp3",
+   "s": "audio/jenny/od_l91/2s.mp3"
+  },
+  {
+   "en": "When they got to their cabin, they looked out their window and saw the vast blue sea.",
+   "f": "audio/jenny/od_l91/3.mp3",
+   "s": "audio/jenny/od_l91/3s.mp3"
+  },
+  {
+   "en": "It was very pretty!",
+   "f": "audio/jenny/od_l91/4.mp3",
+   "s": "audio/jenny/od_l91/4s.mp3"
+  },
+  {
+   "en": "They left their suitcases in the cabin and went to grab a bite to eat by the pool.",
+   "f": "audio/jenny/od_l91/5.mp3",
+   "s": "audio/jenny/od_l91/5s.mp3"
+  },
+  {
+   "en": "Yes, the new cruise ship had a pool! How cool!",
+   "f": "audio/jenny/od_l91/6.mp3",
+   "s": "audio/jenny/od_l91/6s.mp3"
+  },
+  {
+   "en": "Drew drank apple juice while Marley chewed on some fruit.",
+   "f": "audio/jenny/od_l91/7.mp3",
+   "s": "audio/jenny/od_l91/7s.mp3"
+  },
+  {
+   "en": "They watched the crew greeting everyone as they came onto the ship.",
+   "f": "audio/jenny/od_l91/8.mp3",
+   "s": "audio/jenny/od_l91/8s.mp3"
+  },
+  {
+   "en": "\"This is going to be a fantastic trip!\" said Marley.",
+   "f": "audio/jenny/od_l91/9.mp3",
+   "s": "audio/jenny/od_l91/9s.mp3"
+  },
+  {
+   "en": "\"Yes, I think when we get back on Tuesday, I will feel relaxed and renewed!\" Drew said as the ship's horn blew. Honk! Honk!",
+   "f": "audio/jenny/od_l91/10.mp3",
+   "s": "audio/jenny/od_l91/10s.mp3"
+  },
+  {
+   "en": "\"And off we go!\" Marley squealed. It was a dream come true.",
+   "f": "audio/jenny/od_l91/11.mp3",
+   "s": "audio/jenny/od_l91/11s.mp3"
+  }
+ ],
+ "od_l92": [
+  {
+   "en": "Miss Booker had so many things to do.",
+   "f": "audio/jenny/od_l92/0.mp3",
+   "s": "audio/jenny/od_l92/0s.mp3"
+  },
+  {
+   "en": "Classes would be starting next week.",
+   "f": "audio/jenny/od_l92/1.mp3",
+   "s": "audio/jenny/od_l92/1s.mp3"
+  },
+  {
+   "en": "She wanted the classroom to be perfect for the children's first day!",
+   "f": "audio/jenny/od_l92/2.mp3",
+   "s": "audio/jenny/od_l92/2s.mp3"
+  },
+  {
+   "en": "On Tuesday, she needed to clean the floors and closets.",
+   "f": "audio/jenny/od_l92/3.mp3",
+   "s": "audio/jenny/od_l92/3s.mp3"
+  },
+  {
+   "en": "They were filled with dust and grime from the summer months.",
+   "f": "audio/jenny/od_l92/4.mp3",
+   "s": "audio/jenny/od_l92/4s.mp3"
+  },
+  {
+   "en": "On Thursday, she would need to unpack all the boxes.",
+   "f": "audio/jenny/od_l92/5.mp3",
+   "s": "audio/jenny/od_l92/5s.mp3"
+  },
+  {
+   "en": "The boxes contained her books, games, and puzzles.",
+   "f": "audio/jenny/od_l92/6.mp3",
+   "s": "audio/jenny/od_l92/6s.mp3"
+  },
+  {
+   "en": "On Friday, she would decorate the door and create a display in the hallway.",
+   "f": "audio/jenny/od_l92/7.mp3",
+   "s": "audio/jenny/od_l92/7s.mp3"
+  },
+  {
+   "en": "She also wanted to put up a new welcome banner.",
+   "f": "audio/jenny/od_l92/8.mp3",
+   "s": "audio/jenny/od_l92/8s.mp3"
+  },
+  {
+   "en": "Then on the weekend, she was going to plan the cool games and projects they would do during their first week.",
+   "f": "audio/jenny/od_l92/9.mp3",
+   "s": "audio/jenny/od_l92/9s.mp3"
+  },
+  {
+   "en": "Miss Booker was so excited for her new class!",
+   "f": "audio/jenny/od_l92/10.mp3",
+   "s": "audio/jenny/od_l92/10s.mp3"
+  }
+ ],
+ "od_l93": [
+  {
+   "en": "Audrey and Willow could not wait to see all the animals at the zoo.",
+   "f": "audio/jenny/od_l93/0.mp3",
+   "s": "audio/jenny/od_l93/0s.mp3"
+  },
+  {
+   "en": "As they reached the entrance, Audrey paused and asked, \"did you bring the tickets?\"",
+   "f": "audio/jenny/od_l93/1.mp3",
+   "s": "audio/jenny/od_l93/1s.mp3"
+  },
+  {
+   "en": "\"Yes! I have them right here,\" said Willow.",
+   "f": "audio/jenny/od_l93/2.mp3",
+   "s": "audio/jenny/od_l93/2s.mp3"
+  },
+  {
+   "en": "The first display they visited was full of birds.",
+   "f": "audio/jenny/od_l93/3.mp3",
+   "s": "audio/jenny/od_l93/3s.mp3"
+  },
+  {
+   "en": "\"Look at that pretty macaw! Its wings are like a rainbow,\" exclaimed Audrey.",
+   "f": "audio/jenny/od_l93/4.mp3",
+   "s": "audio/jenny/od_l93/4s.mp3"
+  },
+  {
+   "en": "\"I see the macaw,\" responded Willow, \"but look at this hawk! It caught a fish in its claws.\"",
+   "f": "audio/jenny/od_l93/5.mp3",
+   "s": "audio/jenny/od_l93/5s.mp3"
+  },
+  {
+   "en": "Willow could have spent hours at the bird display, but Audrey said she wanted to see more animals.",
+   "f": "audio/jenny/od_l93/6.mp3",
+   "s": "audio/jenny/od_l93/6s.mp3"
+  },
+  {
+   "en": "The next display contained a lion sleeping on a large lawn.",
+   "f": "audio/jenny/od_l93/7.mp3",
+   "s": "audio/jenny/od_l93/7s.mp3"
+  },
+  {
+   "en": "The lion woke up for five minutes, but then yawned and fell back asleep.",
+   "f": "audio/jenny/od_l93/8.mp3",
+   "s": "audio/jenny/od_l93/8s.mp3"
+  },
+  {
+   "en": "\"He seems to have day and night mixed up,\" snickered Audrey.",
+   "f": "audio/jenny/od_l93/9.mp3",
+   "s": "audio/jenny/od_l93/9s.mp3"
+  },
+  {
+   "en": "\"Well, it's not his fault. If I had to hunt for my food, I would want a nap too,\" Willow commented.",
+   "f": "audio/jenny/od_l93/10.mp3",
+   "s": "audio/jenny/od_l93/10s.mp3"
+  },
+  {
+   "en": "Audrey smirked and said, \"That reminds me, I am hungry. Can we go hunt for some food at the snack stand?\"",
+   "f": "audio/jenny/od_l93/11.mp3",
+   "s": "audio/jenny/od_l93/11s.mp3"
+  }
+ ],
+ "od_l94": [
+  {
+   "en": "\"Ready, set, go!\" yelled the track coach.",
+   "f": "audio/jenny/od_l94/0.mp3",
+   "s": "audio/jenny/od_l94/0s.mp3"
+  },
+  {
+   "en": "The first race of the fourth-grade track meet had begun.",
+   "f": "audio/jenny/od_l94/1.mp3",
+   "s": "audio/jenny/od_l94/1s.mp3"
+  },
+  {
+   "en": "Heather had been waiting for this track meet for months. She was ready to win.",
+   "f": "audio/jenny/od_l94/2.mp3",
+   "s": "audio/jenny/od_l94/2s.mp3"
+  },
+  {
+   "en": "At first, Heather took the lead.",
+   "f": "audio/jenny/od_l94/3.mp3",
+   "s": "audio/jenny/od_l94/3s.mp3"
+  },
+  {
+   "en": "But, as she sprinted to the finish line, she saw some other fourth graders catching up to her.",
+   "f": "audio/jenny/od_l94/4.mp3",
+   "s": "audio/jenny/od_l94/4s.mp3"
+  },
+  {
+   "en": "She did not want to give up her lead.",
+   "f": "audio/jenny/od_l94/5.mp3",
+   "s": "audio/jenny/od_l94/5s.mp3"
+  },
+  {
+   "en": "She worked on keeping her breath steady as she ran and leaped over the hurdles.",
+   "f": "audio/jenny/od_l94/6.mp3",
+   "s": "audio/jenny/od_l94/6s.mp3"
+  },
+  {
+   "en": "Heather was almost to the finish line when, all of a sudden, she saw something white wander onto the track.",
+   "f": "audio/jenny/od_l94/7.mp3",
+   "s": "audio/jenny/od_l94/7s.mp3"
+  },
+  {
+   "en": "\"A swan!\" yelled a child in the stands.",
+   "f": "audio/jenny/od_l94/8.mp3",
+   "s": "audio/jenny/od_l94/8s.mp3"
+  },
+  {
+   "en": "A swan wandered onto the track from the swamp up the road.",
+   "f": "audio/jenny/od_l94/9.mp3",
+   "s": "audio/jenny/od_l94/9s.mp3"
+  },
+  {
+   "en": "The swan began to waddle to the finish line.",
+   "f": "audio/jenny/od_l94/10.mp3",
+   "s": "audio/jenny/od_l94/10s.mp3"
+  },
+  {
+   "en": "Heather crossed the finish line at the same exact time as the swan.",
+   "f": "audio/jenny/od_l94/11.mp3",
+   "s": "audio/jenny/od_l94/11s.mp3"
+  },
+  {
+   "en": "\"So, who won the race?\" asked the class.",
+   "f": "audio/jenny/od_l94/12.mp3",
+   "s": "audio/jenny/od_l94/12s.mp3"
+  },
+  {
+   "en": "\"It's a tie! Heather and the swan both won!\" exclaimed the track coach.",
+   "f": "audio/jenny/od_l94/13.mp3",
+   "s": "audio/jenny/od_l94/13s.mp3"
+  }
+ ],
+ "od_l95": [
+  {
+   "en": "In February, Boyd and James had a choice to make.",
+   "f": "audio/jenny/od_l95/0.mp3",
+   "s": "audio/jenny/od_l95/0s.mp3"
+  },
+  {
+   "en": "Their mother said they could get a new pet, but they had to agree on which pet to get.",
+   "f": "audio/jenny/od_l95/1.mp3",
+   "s": "audio/jenny/od_l95/1s.mp3"
+  },
+  {
+   "en": "As the boys entered the pet store, their mother's voice rang in their heads.",
+   "f": "audio/jenny/od_l95/2.mp3",
+   "s": "audio/jenny/od_l95/2s.mp3"
+  },
+  {
+   "en": "\"Boys, you need to pick a pet that is cute, sweet, and spirited.\"",
+   "f": "audio/jenny/od_l95/3.mp3",
+   "s": "audio/jenny/od_l95/3s.mp3"
+  },
+  {
+   "en": "The boys looked at all the choices of pets.",
+   "f": "audio/jenny/od_l95/4.mp3",
+   "s": "audio/jenny/od_l95/4s.mp3"
+  },
+  {
+   "en": "Boyd saw a small kitten. \"This kitten is cute,\" said Boyd.",
+   "f": "audio/jenny/od_l95/5.mp3",
+   "s": "audio/jenny/od_l95/5s.mp3"
+  },
+  {
+   "en": "James pointed to a spunky puppy. \"This puppy looks sweet,\" said James.",
+   "f": "audio/jenny/od_l95/6.mp3",
+   "s": "audio/jenny/od_l95/6s.mp3"
+  },
+  {
+   "en": "Crash! Just then, the boys heard a big noise.",
+   "f": "audio/jenny/od_l95/7.mp3",
+   "s": "audio/jenny/od_l95/7s.mp3"
+  },
+  {
+   "en": "They turned to see a bin of dog toys spilled on the floor.",
+   "f": "audio/jenny/od_l95/8.mp3",
+   "s": "audio/jenny/od_l95/8s.mp3"
+  },
+  {
+   "en": "Right in the middle of this mess was a tiny yellow bird.",
+   "f": "audio/jenny/od_l95/9.mp3",
+   "s": "audio/jenny/od_l95/9s.mp3"
+  },
+  {
+   "en": "The bird must have gotten free from its cage and flew into the bin.",
+   "f": "audio/jenny/od_l95/10.mp3",
+   "s": "audio/jenny/od_l95/10s.mp3"
+  },
+  {
+   "en": "When the yellow bird saw the boys, she joined them and sat in Boyd's hands.",
+   "f": "audio/jenny/od_l95/11.mp3",
+   "s": "audio/jenny/od_l95/11s.mp3"
+  },
+  {
+   "en": "\"I think we have our new pet,\" Boyd said.",
+   "f": "audio/jenny/od_l95/12.mp3",
+   "s": "audio/jenny/od_l95/12s.mp3"
+  },
+  {
+   "en": "\"Yes, she is cute, sweet, and spirited,\" said James. \"And she made the choice for us!\"",
+   "f": "audio/jenny/od_l95/13.mp3",
+   "s": "audio/jenny/od_l95/13s.mp3"
+  }
+ ],
+ "od_l96": [
+  {
+   "en": "Joey is staying with his grandmother for the summer.",
+   "f": "audio/jenny/od_l96/0.mp3",
+   "s": "audio/jenny/od_l96/0s.mp3"
+  },
+  {
+   "en": "His grandmother owns a farmhouse close to town.",
+   "f": "audio/jenny/od_l96/1.mp3",
+   "s": "audio/jenny/od_l96/1s.mp3"
+  },
+  {
+   "en": "Joey likes to help his grandmother around the farm.",
+   "f": "audio/jenny/od_l96/2.mp3",
+   "s": "audio/jenny/od_l96/2s.mp3"
+  },
+  {
+   "en": "However, he most enjoys watching the animals who live outdoors.",
+   "f": "audio/jenny/od_l96/3.mp3",
+   "s": "audio/jenny/od_l96/3s.mp3"
+  },
+  {
+   "en": "On Monday, he saw a brown owl hunting a small mouse.",
+   "f": "audio/jenny/od_l96/4.mp3",
+   "s": "audio/jenny/od_l96/4s.mp3"
+  },
+  {
+   "en": "The mouse found its way back underground just before the owl swooped down.",
+   "f": "audio/jenny/od_l96/5.mp3",
+   "s": "audio/jenny/od_l96/5s.mp3"
+  },
+  {
+   "en": "On Wednesday, he walked down to the stream south of the farm.",
+   "f": "audio/jenny/od_l96/6.mp3",
+   "s": "audio/jenny/od_l96/6s.mp3"
+  },
+  {
+   "en": "This stream is full of trout and Joey likes to watch them swim.",
+   "f": "audio/jenny/od_l96/7.mp3",
+   "s": "audio/jenny/od_l96/7s.mp3"
+  },
+  {
+   "en": "Then on Friday, he went to the meadow where the cows graze.",
+   "f": "audio/jenny/od_l96/8.mp3",
+   "s": "audio/jenny/od_l96/8s.mp3"
+  },
+  {
+   "en": "He picked some wildflowers for his grandmother.",
+   "f": "audio/jenny/od_l96/9.mp3",
+   "s": "audio/jenny/od_l96/9s.mp3"
+  },
+  {
+   "en": "Joey hopes to return to his grandmother's farmhouse each summer.",
+   "f": "audio/jenny/od_l96/10.mp3",
+   "s": "audio/jenny/od_l96/10s.mp3"
+  }
+ ],
+ "od_l97": [
+  {
+   "en": "While walking home from work, Carson saw a coin laying on the ground.",
+   "f": "audio/jenny/od_l97/0.mp3",
+   "s": "audio/jenny/od_l97/0s.mp3"
+  },
+  {
+   "en": "\"This is my lucky day! I found a coin,\" said Carson.",
+   "f": "audio/jenny/od_l97/1.mp3",
+   "s": "audio/jenny/od_l97/1s.mp3"
+  },
+  {
+   "en": "But as Carson inspected the coin, he began to notice that he had never seen a coin quite like this before.",
+   "f": "audio/jenny/od_l97/2.mp3",
+   "s": "audio/jenny/od_l97/2s.mp3"
+  },
+  {
+   "en": "This coin had a hole in the middle of it, and Carson did not recognize the markings on it.",
+   "f": "audio/jenny/od_l97/3.mp3",
+   "s": "audio/jenny/od_l97/3s.mp3"
+  },
+  {
+   "en": "Carson wanted to find out where this coin came from.",
+   "f": "audio/jenny/od_l97/4.mp3",
+   "s": "audio/jenny/od_l97/4s.mp3"
+  },
+  {
+   "en": "When he got home, he went online to see what he could find out.",
+   "f": "audio/jenny/od_l97/5.mp3",
+   "s": "audio/jenny/od_l97/5s.mp3"
+  },
+  {
+   "en": "He looked for any coins with holes in the middle.",
+   "f": "audio/jenny/od_l97/6.mp3",
+   "s": "audio/jenny/od_l97/6s.mp3"
+  },
+  {
+   "en": "He found that there are several kinds of these coins around the world.",
+   "f": "audio/jenny/od_l97/7.mp3",
+   "s": "audio/jenny/od_l97/7s.mp3"
+  },
+  {
+   "en": "Japan, Norway, and Spain all have coins with holes in the middle.",
+   "f": "audio/jenny/od_l97/8.mp3",
+   "s": "audio/jenny/od_l97/8s.mp3"
+  },
+  {
+   "en": "However, as Carson looked at the coins on his computer screen in more detail, he found one that was an exact match.",
+   "f": "audio/jenny/od_l97/9.mp3",
+   "s": "audio/jenny/od_l97/9s.mp3"
+  },
+  {
+   "en": "He ran into the family room and shouted to his father and sister, \"My newfound coin is from Japan! Japanese coins are called yen.\"",
+   "f": "audio/jenny/od_l97/10.mp3",
+   "s": "audio/jenny/od_l97/10s.mp3"
+  },
+  {
+   "en": "\"Who could have lost it?\"",
+   "f": "audio/jenny/od_l97/11.mp3",
+   "s": "audio/jenny/od_l97/11s.mp3"
+  },
+  {
+   "en": "Carson's father considered for a minute, and then said, \"I remember the mailman telling me he had taken a trip to Japan last month.\"",
+   "f": "audio/jenny/od_l97/12.mp3",
+   "s": "audio/jenny/od_l97/12s.mp3"
+  },
+  {
+   "en": "\"It could be his. I will ask him on Wednesday!\"",
+   "f": "audio/jenny/od_l97/13.mp3",
+   "s": "audio/jenny/od_l97/13s.mp3"
+  }
+ ],
+ "od_l98": [
+  {
+   "en": "With her notebook in hand, Cassie walked into the forest ready to study some birds.",
+   "f": "audio/jenny/od_l98/0.mp3",
+   "s": "audio/jenny/od_l98/0s.mp3"
+  },
+  {
+   "en": "She loved birdwatching, and she had a knack for finding birds in new places.",
+   "f": "audio/jenny/od_l98/1.mp3",
+   "s": "audio/jenny/od_l98/1s.mp3"
+  },
+  {
+   "en": "As she walked, she wrote down the names of the different birds she saw.",
+   "f": "audio/jenny/od_l98/2.mp3",
+   "s": "audio/jenny/od_l98/2s.mp3"
+  },
+  {
+   "en": "She would even sketch a drawing of each bird in her notebook.",
+   "f": "audio/jenny/od_l98/3.mp3",
+   "s": "audio/jenny/od_l98/3s.mp3"
+  },
+  {
+   "en": "About one hour into her hike, Cassie knelt to rest and eat a snack.",
+   "f": "audio/jenny/od_l98/4.mp3",
+   "s": "audio/jenny/od_l98/4s.mp3"
+  },
+  {
+   "en": "As she ate, large crumbs fell to the ground.",
+   "f": "audio/jenny/od_l98/5.mp3",
+   "s": "audio/jenny/od_l98/5s.mp3"
+  },
+  {
+   "en": "Snap! Cassie heard a noise very close to her.",
+   "f": "audio/jenny/od_l98/6.mp3",
+   "s": "audio/jenny/od_l98/6s.mp3"
+  },
+  {
+   "en": "When she turned around, she saw a small brown bird pecking at her leftover crumbs.",
+   "f": "audio/jenny/od_l98/7.mp3",
+   "s": "audio/jenny/od_l98/7s.mp3"
+  },
+  {
+   "en": "It was a wren!",
+   "f": "audio/jenny/od_l98/8.mp3",
+   "s": "audio/jenny/od_l98/8s.mp3"
+  },
+  {
+   "en": "Cassie had never seen a wren in real life, but she knows about them from reading her books.",
+   "f": "audio/jenny/od_l98/9.mp3",
+   "s": "audio/jenny/od_l98/9s.mp3"
+  },
+  {
+   "en": "Cassie knows that wrens have short wings and hold their tails upright.",
+   "f": "audio/jenny/od_l98/10.mp3",
+   "s": "audio/jenny/od_l98/10s.mp3"
+  },
+  {
+   "en": "Wrens are also known for singing loud, complex songs.",
+   "f": "audio/jenny/od_l98/11.mp3",
+   "s": "audio/jenny/od_l98/11s.mp3"
+  },
+  {
+   "en": "This little wren seemed to love Cassie's snack.",
+   "f": "audio/jenny/od_l98/12.mp3",
+   "s": "audio/jenny/od_l98/12s.mp3"
+  },
+  {
+   "en": "When all the crumbs were gone, the wren lifted its wings.",
+   "f": "audio/jenny/od_l98/13.mp3",
+   "s": "audio/jenny/od_l98/13s.mp3"
+  },
+  {
+   "en": "Cassie watched it fly away into the forest.",
+   "f": "audio/jenny/od_l98/14.mp3",
+   "s": "audio/jenny/od_l98/14s.mp3"
+  },
+  {
+   "en": "Cassie was so thrilled with her wren sighting that she sang a long tune all the way home.",
+   "f": "audio/jenny/od_l98/15.mp3",
+   "s": "audio/jenny/od_l98/15s.mp3"
+  }
+ ],
+ "od_l99": [
+  {
+   "en": "The boys and girls of Miss Brown's third grade class are jumping up and down with delight when the buses pull up in front of them.",
+   "f": "audio/jenny/od_l99/0.mp3",
+   "s": "audio/jenny/od_l99/0s.mp3"
+  },
+  {
+   "en": "All the third grade classes are going on a trip to see a baseball game today.",
+   "f": "audio/jenny/od_l99/1.mp3",
+   "s": "audio/jenny/od_l99/1s.mp3"
+  },
+  {
+   "en": "After the teachers check who is present, the students and teachers make their way onto the buses and sit down.",
+   "f": "audio/jenny/od_l99/2.mp3",
+   "s": "audio/jenny/od_l99/2s.mp3"
+  },
+  {
+   "en": "As they drive to the baseball park, the students look out the windows and sing silly songs.",
+   "f": "audio/jenny/od_l99/3.mp3",
+   "s": "audio/jenny/od_l99/3s.mp3"
+  },
+  {
+   "en": "Once inside the park, they look at the numbers on the benches to find their seats.",
+   "f": "audio/jenny/od_l99/4.mp3",
+   "s": "audio/jenny/od_l99/4s.mp3"
+  },
+  {
+   "en": "The game starts a few minutes later.",
+   "f": "audio/jenny/od_l99/5.mp3",
+   "s": "audio/jenny/od_l99/5s.mp3"
+  },
+  {
+   "en": "The students cheer as they watch the home team score the first points.",
+   "f": "audio/jenny/od_l99/6.mp3",
+   "s": "audio/jenny/od_l99/6s.mp3"
+  },
+  {
+   "en": "The home team makes some impressive runs, passes, and pitches.",
+   "f": "audio/jenny/od_l99/7.mp3",
+   "s": "audio/jenny/od_l99/7s.mp3"
+  },
+  {
+   "en": "As the game is about to end, the classes scream with joy. They see themselves on the big screen!",
+   "f": "audio/jenny/od_l99/8.mp3",
+   "s": "audio/jenny/od_l99/8s.mp3"
+  },
+  {
+   "en": "On the ride back home, the students and teachers talk about the thrilling events of the day.",
+   "f": "audio/jenny/od_l99/9.mp3",
+   "s": "audio/jenny/od_l99/9s.mp3"
+  },
+  {
+   "en": "They all agree they should take a trip to the baseball park again soon.",
+   "f": "audio/jenny/od_l99/10.mp3",
+   "s": "audio/jenny/od_l99/10s.mp3"
+  }
+ ],
+ "od_l100": [
+  {
+   "en": "Akeem woke up one morning feeling quite strange.",
+   "f": "audio/jenny/od_l100/0.mp3",
+   "s": "audio/jenny/od_l100/0s.mp3"
+  },
+  {
+   "en": "His arms stretched longer than they ever have before.",
+   "f": "audio/jenny/od_l100/1.mp3",
+   "s": "audio/jenny/od_l100/1s.mp3"
+  },
+  {
+   "en": "When he stood up, he hit his head on a shelf!",
+   "f": "audio/jenny/od_l100/2.mp3",
+   "s": "audio/jenny/od_l100/2s.mp3"
+  },
+  {
+   "en": "He felt like he had a brand new body.",
+   "f": "audio/jenny/od_l100/3.mp3",
+   "s": "audio/jenny/od_l100/3s.mp3"
+  },
+  {
+   "en": "When Akeem got dressed, none of his clothes fit.",
+   "f": "audio/jenny/od_l100/4.mp3",
+   "s": "audio/jenny/od_l100/4s.mp3"
+  },
+  {
+   "en": "His arms were longer than his shirt sleeves.",
+   "f": "audio/jenny/od_l100/5.mp3",
+   "s": "audio/jenny/od_l100/5s.mp3"
+  },
+  {
+   "en": "His shoes were smaller than his feet.",
+   "f": "audio/jenny/od_l100/6.mp3",
+   "s": "audio/jenny/od_l100/6s.mp3"
+  },
+  {
+   "en": "Even his longest pants were now too short. What was he going to do?",
+   "f": "audio/jenny/od_l100/7.mp3",
+   "s": "audio/jenny/od_l100/7s.mp3"
+  },
+  {
+   "en": "Akeem walked into the kitchen with his too big body in his too small outfit.",
+   "f": "audio/jenny/od_l100/8.mp3",
+   "s": "audio/jenny/od_l100/8s.mp3"
+  },
+  {
+   "en": "\"Wow,\" grandma exclaimed, \"you had a growth spurt! You got taller overnight!\"",
+   "f": "audio/jenny/od_l100/9.mp3",
+   "s": "audio/jenny/od_l100/9s.mp3"
+  },
+  {
+   "en": "\"Now you may be the tallest kid in your class!\"",
+   "f": "audio/jenny/od_l100/10.mp3",
+   "s": "audio/jenny/od_l100/10s.mp3"
+  },
+  {
+   "en": "Akeem's big brother got up from the table and stood next to him.",
+   "f": "audio/jenny/od_l100/11.mp3",
+   "s": "audio/jenny/od_l100/11s.mp3"
+  },
+  {
+   "en": "The top of Akeem's head only reached his brother's elbows.",
+   "f": "audio/jenny/od_l100/12.mp3",
+   "s": "audio/jenny/od_l100/12s.mp3"
+  },
+  {
+   "en": "\"Well, you're still shorter than me,\" he said with a grin.",
+   "f": "audio/jenny/od_l100/13.mp3",
+   "s": "audio/jenny/od_l100/13s.mp3"
+  }
+ ],
+ "od_l101": [
+  {
+   "en": "When Kenzer and Sidney got to the front of the line, they finally saw the cars rushing past them.",
+   "f": "audio/jenny/od_l101/0.mp3",
+   "s": "audio/jenny/od_l101/0s.mp3"
+  },
+  {
+   "en": "Up close, they seemed a lot faster.",
+   "f": "audio/jenny/od_l101/1.mp3",
+   "s": "audio/jenny/od_l101/1s.mp3"
+  },
+  {
+   "en": "As the kids sat in their seats, they double checked that their seatbelts were firmly locked in.",
+   "f": "audio/jenny/od_l101/2.mp3",
+   "s": "audio/jenny/od_l101/2s.mp3"
+  },
+  {
+   "en": "Then, they breathed deeply and closed their eyes.",
+   "f": "audio/jenny/od_l101/3.mp3",
+   "s": "audio/jenny/od_l101/3s.mp3"
+  },
+  {
+   "en": "The rollercoaster inched up the tracks so slowly it hardly felt like they were moving.",
+   "f": "audio/jenny/od_l101/4.mp3",
+   "s": "audio/jenny/od_l101/4s.mp3"
+  },
+  {
+   "en": "When it got to the top, Kenzer timidly peered over the edge.",
+   "f": "audio/jenny/od_l101/5.mp3",
+   "s": "audio/jenny/od_l101/5s.mp3"
+  },
+  {
+   "en": "Just when it felt like they got stuck, the car fell quickly.",
+   "f": "audio/jenny/od_l101/6.mp3",
+   "s": "audio/jenny/od_l101/6s.mp3"
+  },
+  {
+   "en": "Instantly, they screamed loudly.",
+   "f": "audio/jenny/od_l101/7.mp3",
+   "s": "audio/jenny/od_l101/7s.mp3"
+  },
+  {
+   "en": "Kenzer's belly was doing backflips. Sidney's curls were blowing in the wind.",
+   "f": "audio/jenny/od_l101/8.mp3",
+   "s": "audio/jenny/od_l101/8s.mp3"
+  },
+  {
+   "en": "Their arms and legs were flailing in the sky.",
+   "f": "audio/jenny/od_l101/9.mp3",
+   "s": "audio/jenny/od_l101/9s.mp3"
+  },
+  {
+   "en": "Then, just as quickly as the ride started, it was finished.",
+   "f": "audio/jenny/od_l101/10.mp3",
+   "s": "audio/jenny/od_l101/10s.mp3"
+  },
+  {
+   "en": "They sat silently for a moment, hardly understanding what just happened.",
+   "f": "audio/jenny/od_l101/11.mp3",
+   "s": "audio/jenny/od_l101/11s.mp3"
+  },
+  {
+   "en": "As Kenzer and Sidney took off their seatbelts, they looked at each other and yelled, \"that was awesome!\"",
+   "f": "audio/jenny/od_l101/12.mp3",
+   "s": "audio/jenny/od_l101/12s.mp3"
+  },
+  {
+   "en": "Then they got back in line to take another ride on the roller coaster.",
+   "f": "audio/jenny/od_l101/13.mp3",
+   "s": "audio/jenny/od_l101/13s.mp3"
+  }
+ ],
+ "od_l102": [
+  {
+   "en": "Today Hailey was feeling restless.",
+   "f": "audio/jenny/od_l102/0.mp3",
+   "s": "audio/jenny/od_l102/0s.mp3"
+  },
+  {
+   "en": "She wanted so badly to go outside and play but there was a huge storm.",
+   "f": "audio/jenny/od_l102/1.mp3",
+   "s": "audio/jenny/od_l102/1s.mp3"
+  },
+  {
+   "en": "The wind was blowing powerfully, and the rain was extremely heavy.",
+   "f": "audio/jenny/od_l102/2.mp3",
+   "s": "audio/jenny/od_l102/2s.mp3"
+  },
+  {
+   "en": "It was not safe for Hailey to go outside.",
+   "f": "audio/jenny/od_l102/3.mp3",
+   "s": "audio/jenny/od_l102/3s.mp3"
+  },
+  {
+   "en": "She was clueless about how to have fun inside and started to become hopeless.",
+   "f": "audio/jenny/od_l102/4.mp3",
+   "s": "audio/jenny/od_l102/4s.mp3"
+  },
+  {
+   "en": "As she was searching her room for something to play with, she found an old box hidden deep under her bed.",
+   "f": "audio/jenny/od_l102/5.mp3",
+   "s": "audio/jenny/od_l102/5s.mp3"
+  },
+  {
+   "en": "She assumed it was full of useless junk, but when she opened it, she found one of her old games.",
+   "f": "audio/jenny/od_l102/6.mp3",
+   "s": "audio/jenny/od_l102/6s.mp3"
+  },
+  {
+   "en": "Hailey lost the game a long time ago and was thankful to find it.",
+   "f": "audio/jenny/od_l102/7.mp3",
+   "s": "audio/jenny/od_l102/7s.mp3"
+  },
+  {
+   "en": "At last, she was feeling hopeful.",
+   "f": "audio/jenny/od_l102/8.mp3",
+   "s": "audio/jenny/od_l102/8s.mp3"
+  },
+  {
+   "en": "She showed the game to her sister, and they played for countless hours. It was delightful.",
+   "f": "audio/jenny/od_l102/9.mp3",
+   "s": "audio/jenny/od_l102/9s.mp3"
+  },
+  {
+   "en": "They didn't even realize the storm had passed.",
+   "f": "audio/jenny/od_l102/10.mp3",
+   "s": "audio/jenny/od_l102/10s.mp3"
+  },
+  {
+   "en": "What Hailey assumed would be a pointless day turned out to be delightful!",
+   "f": "audio/jenny/od_l102/11.mp3",
+   "s": "audio/jenny/od_l102/11s.mp3"
+  }
+ ],
+ "od_l103": [
+  {
+   "en": "Something very unlucky happened to Lee last week.",
+   "f": "audio/jenny/od_l103/0.mp3",
+   "s": "audio/jenny/od_l103/0s.mp3"
+  },
+  {
+   "en": "As he was walking into his classroom, he did not see the puddle on the floor.",
+   "f": "audio/jenny/od_l103/1.mp3",
+   "s": "audio/jenny/od_l103/1s.mp3"
+  },
+  {
+   "en": "He slid and fell in front of his entire class.",
+   "f": "audio/jenny/od_l103/2.mp3",
+   "s": "audio/jenny/od_l103/2s.mp3"
+  },
+  {
+   "en": "That's not even the worst part!",
+   "f": "audio/jenny/od_l103/3.mp3",
+   "s": "audio/jenny/od_l103/3s.mp3"
+  },
+  {
+   "en": "Lee was holding a jar of marbles with the lid unscrewed.",
+   "f": "audio/jenny/od_l103/4.mp3",
+   "s": "audio/jenny/od_l103/4s.mp3"
+  },
+  {
+   "en": "When he fell, the marbles flew everywhere.",
+   "f": "audio/jenny/od_l103/5.mp3",
+   "s": "audio/jenny/od_l103/5s.mp3"
+  },
+  {
+   "en": "Lee laid on the floor, covered his face, and wanted to cry.",
+   "f": "audio/jenny/od_l103/6.mp3",
+   "s": "audio/jenny/od_l103/6s.mp3"
+  },
+  {
+   "en": "But then, all of a sudden, his best friend, Jayvon, sat down next to him.",
+   "f": "audio/jenny/od_l103/7.mp3",
+   "s": "audio/jenny/od_l103/7s.mp3"
+  },
+  {
+   "en": "Jayvon uncovered Lee's face and helped him up.",
+   "f": "audio/jenny/od_l103/8.mp3",
+   "s": "audio/jenny/od_l103/8s.mp3"
+  },
+  {
+   "en": "\"Don't worry,\" Jayvon said, \"people fall all the time.\"",
+   "f": "audio/jenny/od_l103/9.mp3",
+   "s": "audio/jenny/od_l103/9s.mp3"
+  },
+  {
+   "en": "At first, Lee felt uneasy.",
+   "f": "audio/jenny/od_l103/10.mp3",
+   "s": "audio/jenny/od_l103/10s.mp3"
+  },
+  {
+   "en": "When he looked around at his classmates, nobody made fun of him for falling.",
+   "f": "audio/jenny/od_l103/11.mp3",
+   "s": "audio/jenny/od_l103/11s.mp3"
+  },
+  {
+   "en": "Instead, Lee's classmates began picking up all the marbles that spilled.",
+   "f": "audio/jenny/od_l103/12.mp3",
+   "s": "audio/jenny/od_l103/12s.mp3"
+  },
+  {
+   "en": "Some of them even told him about times when mistakes like this happened to them.",
+   "f": "audio/jenny/od_l103/13.mp3",
+   "s": "audio/jenny/od_l103/13s.mp3"
+  },
+  {
+   "en": "It turns out, it is not that unusual to slip and fall.",
+   "f": "audio/jenny/od_l103/14.mp3",
+   "s": "audio/jenny/od_l103/14s.mp3"
+  },
+  {
+   "en": "\"I am thankful to have such nice friends,\" Lee said.",
+   "f": "audio/jenny/od_l103/15.mp3",
+   "s": "audio/jenny/od_l103/15s.mp3"
+  }
+ ],
+ "od_l104": [
+  {
+   "en": "Every Sunday David and Alexis go to Grandma's house for dinner.",
+   "f": "audio/jenny/od_l104/0.mp3",
+   "s": "audio/jenny/od_l104/0s.mp3"
+  },
+  {
+   "en": "This Sunday, they got to help Grandma cook.",
+   "f": "audio/jenny/od_l104/1.mp3",
+   "s": "audio/jenny/od_l104/1s.mp3"
+  },
+  {
+   "en": "\"Here, put these aprons on,\" Grandma said as she greeted the kids at the door.",
+   "f": "audio/jenny/od_l104/2.mp3",
+   "s": "audio/jenny/od_l104/2s.mp3"
+  },
+  {
+   "en": "David and Alexis helped each other untie and retie the aprons so they fit just right.",
+   "f": "audio/jenny/od_l104/3.mp3",
+   "s": "audio/jenny/od_l104/3s.mp3"
+  },
+  {
+   "en": "\"First, we must preheat the oven,\" said Grandma.",
+   "f": "audio/jenny/od_l104/4.mp3",
+   "s": "audio/jenny/od_l104/4s.mp3"
+  },
+  {
+   "en": "\"Next, we wash the potatoes and use a knife to remove the skin. David, that can be your job.\"",
+   "f": "audio/jenny/od_l104/5.mp3",
+   "s": "audio/jenny/od_l104/5s.mp3"
+  },
+  {
+   "en": "David began cutting the potatoes.",
+   "f": "audio/jenny/od_l104/6.mp3",
+   "s": "audio/jenny/od_l104/6s.mp3"
+  },
+  {
+   "en": "\"Now we need to boil some water. Alexis, this will be your job.\"",
+   "f": "audio/jenny/od_l104/7.mp3",
+   "s": "audio/jenny/od_l104/7s.mp3"
+  },
+  {
+   "en": "\"Dump this cup of water into the pot then refill it and add more until the pot is full.\"",
+   "f": "audio/jenny/od_l104/8.mp3",
+   "s": "audio/jenny/od_l104/8s.mp3"
+  },
+  {
+   "en": "Alexis began filling the pot.",
+   "f": "audio/jenny/od_l104/9.mp3",
+   "s": "audio/jenny/od_l104/9s.mp3"
+  },
+  {
+   "en": "\"Grandma, this potato still has a bit of skin. Should I redo it?\" asked David.",
+   "f": "audio/jenny/od_l104/10.mp3",
+   "s": "audio/jenny/od_l104/10s.mp3"
+  },
+  {
+   "en": "\"No, that is perfect,\" Grandma responded.",
+   "f": "audio/jenny/od_l104/11.mp3",
+   "s": "audio/jenny/od_l104/11s.mp3"
+  },
+  {
+   "en": "As the kids cooked, they retold jokes their friends told them and showed Grandma a preview of the new show they were watching.",
+   "f": "audio/jenny/od_l104/12.mp3",
+   "s": "audio/jenny/od_l104/12s.mp3"
+  },
+  {
+   "en": "When the meal was ready, David and Alexis sat down to eat.",
+   "f": "audio/jenny/od_l104/13.mp3",
+   "s": "audio/jenny/od_l104/13s.mp3"
+  },
+  {
+   "en": "Grandma got a cake from the fridge and placed it on the table. \"I premade this as a surprise for dessert!\" she said.",
+   "f": "audio/jenny/od_l104/14.mp3",
+   "s": "audio/jenny/od_l104/14s.mp3"
+  },
+  {
+   "en": "David and Alexis can't wait to return to Grandma's next week to cook some more.",
+   "f": "audio/jenny/od_l104/15.mp3",
+   "s": "audio/jenny/od_l104/15s.mp3"
+  }
+ ],
+ "od_l105": [
+  {
+   "en": "Poppy enjoys playing video games.",
+   "f": "audio/jenny/od_l105/0.mp3",
+   "s": "audio/jenny/od_l105/0s.mp3"
+  },
+  {
+   "en": "She is so talented that she plays in events against other gamers and wins quite a bit.",
+   "f": "audio/jenny/od_l105/1.mp3",
+   "s": "audio/jenny/od_l105/1s.mp3"
+  },
+  {
+   "en": "The only problem is that her video game console is old. She needs a replacement.",
+   "f": "audio/jenny/od_l105/2.mp3",
+   "s": "audio/jenny/od_l105/2s.mp3"
+  },
+  {
+   "en": "Her mom disagrees. Mom thinks the old console works just fine.",
+   "f": "audio/jenny/od_l105/3.mp3",
+   "s": "audio/jenny/od_l105/3s.mp3"
+  },
+  {
+   "en": "\"You don't understand,\" explained Poppy, \"it is so old that it will disqualify me from playing in some events.\"",
+   "f": "audio/jenny/od_l105/4.mp3",
+   "s": "audio/jenny/od_l105/4s.mp3"
+  },
+  {
+   "en": "\"I am at a huge disadvantage with this console.\"",
+   "f": "audio/jenny/od_l105/5.mp3",
+   "s": "audio/jenny/od_l105/5s.mp3"
+  },
+  {
+   "en": "Mom understood, but the truth was that a new console was just too expensive.",
+   "f": "audio/jenny/od_l105/6.mp3",
+   "s": "audio/jenny/od_l105/6s.mp3"
+  },
+  {
+   "en": "Poppy was so disappointed.",
+   "f": "audio/jenny/od_l105/7.mp3",
+   "s": "audio/jenny/od_l105/7s.mp3"
+  },
+  {
+   "en": "A few weeks later, Mom had a surprise for Poppy.",
+   "f": "audio/jenny/od_l105/8.mp3",
+   "s": "audio/jenny/od_l105/8s.mp3"
+  },
+  {
+   "en": "\"What is this?\" Poppy asked, looking at a big bag.",
+   "f": "audio/jenny/od_l105/9.mp3",
+   "s": "audio/jenny/od_l105/9s.mp3"
+  },
+  {
+   "en": "\"Open it and find out,\" said Mom with a smirk.",
+   "f": "audio/jenny/od_l105/10.mp3",
+   "s": "audio/jenny/od_l105/10s.mp3"
+  },
+  {
+   "en": "It was the new console! And a brand-new game.",
+   "f": "audio/jenny/od_l105/11.mp3",
+   "s": "audio/jenny/od_l105/11s.mp3"
+  },
+  {
+   "en": "\"It was on sale,\" Mom explained. \"At the discounted price, we could afford it.\"",
+   "f": "audio/jenny/od_l105/12.mp3",
+   "s": "audio/jenny/od_l105/12s.mp3"
+  },
+  {
+   "en": "\"Plus, I told the clerk that you compete, so he threw in this new game for free.\"",
+   "f": "audio/jenny/od_l105/13.mp3",
+   "s": "audio/jenny/od_l105/13s.mp3"
+  },
+  {
+   "en": "Poppy was elated. She gave mom a huge hug and rushed up to her room with the bag.",
+   "f": "audio/jenny/od_l105/14.mp3",
+   "s": "audio/jenny/od_l105/14s.mp3"
+  },
+  {
+   "en": "She disconnected her old console and connected the new one.",
+   "f": "audio/jenny/od_l105/15.mp3",
+   "s": "audio/jenny/od_l105/15s.mp3"
+  },
+  {
+   "en": "It was amazing! The graphics were so much better, and the new game was more of a challenge.",
+   "f": "audio/jenny/od_l105/16.mp3",
+   "s": "audio/jenny/od_l105/16s.mp3"
+  },
+  {
+   "en": "Poppy now had everything she needed to compete with the best players around.",
+   "f": "audio/jenny/od_l105/17.mp3",
+   "s": "audio/jenny/od_l105/17s.mp3"
+  }
+ ],
+ "od_l106": [
+  {
+   "en": "It is important to remember that words matter.",
+   "f": "audio/jenny/od_l106/0.mp3",
+   "s": "audio/jenny/od_l106/0s.mp3"
+  },
+  {
+   "en": "The words we say can impact how we feel and how we make other people feel.",
+   "f": "audio/jenny/od_l106/1.mp3",
+   "s": "audio/jenny/od_l106/1s.mp3"
+  },
+  {
+   "en": "Kind words are powerful.",
+   "f": "audio/jenny/od_l106/2.mp3",
+   "s": "audio/jenny/od_l106/2s.mp3"
+  },
+  {
+   "en": "We are more likely to get what we need when we ask nicely.",
+   "f": "audio/jenny/od_l106/3.mp3",
+   "s": "audio/jenny/od_l106/3s.mp3"
+  },
+  {
+   "en": "We can also use kind words to express our feelings and share what we are thankful for.",
+   "f": "audio/jenny/od_l106/4.mp3",
+   "s": "audio/jenny/od_l106/4s.mp3"
+  },
+  {
+   "en": "Think of a time someone gave you a compliment. It probably made you feel cheerful.",
+   "f": "audio/jenny/od_l106/5.mp3",
+   "s": "audio/jenny/od_l106/5s.mp3"
+  },
+  {
+   "en": "Unkind words are powerful too.",
+   "f": "audio/jenny/od_l106/6.mp3",
+   "s": "audio/jenny/od_l106/6s.mp3"
+  },
+  {
+   "en": "They can be deeply painful and disrespectful.",
+   "f": "audio/jenny/od_l106/7.mp3",
+   "s": "audio/jenny/od_l106/7s.mp3"
+  },
+  {
+   "en": "Has anyone ever said something unkind to you? It probably made you feel dreadful.",
+   "f": "audio/jenny/od_l106/8.mp3",
+   "s": "audio/jenny/od_l106/8s.mp3"
+  },
+  {
+   "en": "Nobody is flawless, we all make mistakes.",
+   "f": "audio/jenny/od_l106/9.mp3",
+   "s": "audio/jenny/od_l106/9s.mp3"
+  },
+  {
+   "en": "If we say something hurtful, we can stop, reflect, and retry.",
+   "f": "audio/jenny/od_l106/10.mp3",
+   "s": "audio/jenny/od_l106/10s.mp3"
+  },
+  {
+   "en": "Hopefully, we can all think deeply about the words we say to make everyone's day a bit more delightful.",
+   "f": "audio/jenny/od_l106/11.mp3",
+   "s": "audio/jenny/od_l106/11s.mp3"
+  }
+ ],
+ "od_l107": [
+  {
+   "en": "When Edwin got home from work, he dropped his bag on the floor and plopped on the couch.",
+   "f": "audio/jenny/od_l107/0.mp3",
+   "s": "audio/jenny/od_l107/0s.mp3"
+  },
+  {
+   "en": "\"What a busy day I had,\" he sighed. \"I am exhausted.\"",
+   "f": "audio/jenny/od_l107/1.mp3",
+   "s": "audio/jenny/od_l107/1s.mp3"
+  },
+  {
+   "en": "Edwin's roommate walked in. \"What made your day so busy?\" he asked.",
+   "f": "audio/jenny/od_l107/2.mp3",
+   "s": "audio/jenny/od_l107/2s.mp3"
+  },
+  {
+   "en": "Edwin explained.",
+   "f": "audio/jenny/od_l107/3.mp3",
+   "s": "audio/jenny/od_l107/3s.mp3"
+  },
+  {
+   "en": "\"It started this morning when I dropped off some letters at the post office.\"",
+   "f": "audio/jenny/od_l107/4.mp3",
+   "s": "audio/jenny/od_l107/4s.mp3"
+  },
+  {
+   "en": "\"The line was so long that I ended up running late for work.\"",
+   "f": "audio/jenny/od_l107/5.mp3",
+   "s": "audio/jenny/od_l107/5s.mp3"
+  },
+  {
+   "en": "\"Then, at work, I had so many meetings. It felt like they were never going to end.\"",
+   "f": "audio/jenny/od_l107/6.mp3",
+   "s": "audio/jenny/od_l107/6s.mp3"
+  },
+  {
+   "en": "\"I planned to come home for lunch, but I was so busy I skipped that trip.\"",
+   "f": "audio/jenny/od_l107/7.mp3",
+   "s": "audio/jenny/od_l107/7s.mp3"
+  },
+  {
+   "en": "\"I grabbed a sandwich and a drink from the diner on the corner.\"",
+   "f": "audio/jenny/od_l107/8.mp3",
+   "s": "audio/jenny/od_l107/8s.mp3"
+  },
+  {
+   "en": "\"As I was jogging back to the office, I tripped and dropped my drink.\"",
+   "f": "audio/jenny/od_l107/9.mp3",
+   "s": "audio/jenny/od_l107/9s.mp3"
+  },
+  {
+   "en": "\"But I was too busy to go back and get a new one.\"",
+   "f": "audio/jenny/od_l107/10.mp3",
+   "s": "audio/jenny/od_l107/10s.mp3"
+  },
+  {
+   "en": "\"When my day was finally over, I hopped in my car and drove home.\"",
+   "f": "audio/jenny/od_l107/11.mp3",
+   "s": "audio/jenny/od_l107/11s.mp3"
+  },
+  {
+   "en": "\"What are you planning to do this evening?\" Edwin's roommate asked.",
+   "f": "audio/jenny/od_l107/12.mp3",
+   "s": "audio/jenny/od_l107/12s.mp3"
+  },
+  {
+   "en": "\"Nothing!\" Edwin responded, \"I will be sitting right here on this couch, resting.\"",
+   "f": "audio/jenny/od_l107/13.mp3",
+   "s": "audio/jenny/od_l107/13s.mp3"
+  }
+ ],
+ "od_l108": [
+  {
+   "en": "One August day, Tyler went outside to play tag with his friends.",
+   "f": "audio/jenny/od_l108/0.mp3",
+   "s": "audio/jenny/od_l108/0s.mp3"
+  },
+  {
+   "en": "The sun was high in the sky. It felt like the hottest day of the year.",
+   "f": "audio/jenny/od_l108/1.mp3",
+   "s": "audio/jenny/od_l108/1s.mp3"
+  },
+  {
+   "en": "As Tyler was running around, his face got redder and redder and he felt hotter and hotter.",
+   "f": "audio/jenny/od_l108/2.mp3",
+   "s": "audio/jenny/od_l108/2s.mp3"
+  },
+  {
+   "en": "\"It's too hot outside to play tag,\" Tyler called to his friends, \"let's go swimming instead.\"",
+   "f": "audio/jenny/od_l108/3.mp3",
+   "s": "audio/jenny/od_l108/3s.mp3"
+  },
+  {
+   "en": "Tyler and his friends hopped on their bikes and rode to the pool.",
+   "f": "audio/jenny/od_l108/4.mp3",
+   "s": "audio/jenny/od_l108/4s.mp3"
+  },
+  {
+   "en": "At the pool, they had a contest to see who could make the biggest splash in the water.",
+   "f": "audio/jenny/od_l108/5.mp3",
+   "s": "audio/jenny/od_l108/5s.mp3"
+  },
+  {
+   "en": "Tyler made a pretty big splash, but his friends made bigger ones.",
+   "f": "audio/jenny/od_l108/6.mp3",
+   "s": "audio/jenny/od_l108/6s.mp3"
+  },
+  {
+   "en": "The friends had lots of fun at the pool.",
+   "f": "audio/jenny/od_l108/7.mp3",
+   "s": "audio/jenny/od_l108/7s.mp3"
+  },
+  {
+   "en": "The saddest part of the day was when they had to stop playing and go back home.",
+   "f": "audio/jenny/od_l108/8.mp3",
+   "s": "audio/jenny/od_l108/8s.mp3"
+  }
+ ],
+ "od_l109": [
+  {
+   "en": "Rashawn is a world class baker.",
+   "f": "audio/jenny/od_l109/0.mp3",
+   "s": "audio/jenny/od_l109/0s.mp3"
+  },
+  {
+   "en": "He has been baking since he was a little boy.",
+   "f": "audio/jenny/od_l109/1.mp3",
+   "s": "audio/jenny/od_l109/1s.mp3"
+  },
+  {
+   "en": "Every day you can find him dancing around the kitchen while making yummy treats.",
+   "f": "audio/jenny/od_l109/2.mp3",
+   "s": "audio/jenny/od_l109/2s.mp3"
+  },
+  {
+   "en": "He also loves trading tips with other bakers about how to make their dishes even better.",
+   "f": "audio/jenny/od_l109/3.mp3",
+   "s": "audio/jenny/od_l109/3s.mp3"
+  },
+  {
+   "en": "One day, Rashawn's friend, Payton, came over to visit.",
+   "f": "audio/jenny/od_l109/4.mp3",
+   "s": "audio/jenny/od_l109/4s.mp3"
+  },
+  {
+   "en": "Payton was hoping to taste some of Rashawn's newest treats.",
+   "f": "audio/jenny/od_l109/5.mp3",
+   "s": "audio/jenny/od_l109/5s.mp3"
+  },
+  {
+   "en": "\"You're right on time!\" Rashawn called. \"I was just taking a fresh pie out of the oven.\"",
+   "f": "audio/jenny/od_l109/6.mp3",
+   "s": "audio/jenny/od_l109/6s.mp3"
+  },
+  {
+   "en": "He cut two slices of pie and handed the larger slice to Payton.",
+   "f": "audio/jenny/od_l109/7.mp3",
+   "s": "audio/jenny/od_l109/7s.mp3"
+  },
+  {
+   "en": "\"I am sure you're going to love it,\" Rashawn said smiling.",
+   "f": "audio/jenny/od_l109/8.mp3",
+   "s": "audio/jenny/od_l109/8s.mp3"
+  },
+  {
+   "en": "\"Yuck!\" Payton yelled as she tasted the pie.",
+   "f": "audio/jenny/od_l109/9.mp3",
+   "s": "audio/jenny/od_l109/9s.mp3"
+  },
+  {
+   "en": "\"What do you mean, yuck?\" asked Rashawn, his smile fading, \"You don't like it?\"",
+   "f": "audio/jenny/od_l109/10.mp3",
+   "s": "audio/jenny/od_l109/10s.mp3"
+  },
+  {
+   "en": "\"Just joking!\" Payton said with a grin. \"This is the best pie I have ever tasted!\"",
+   "f": "audio/jenny/od_l109/11.mp3",
+   "s": "audio/jenny/od_l109/11s.mp3"
+  },
+  {
+   "en": "\"Oh good,\" Rashawn sighed as he sliced the rest of the pie up.",
+   "f": "audio/jenny/od_l109/12.mp3",
+   "s": "audio/jenny/od_l109/12s.mp3"
+  },
+  {
+   "en": "\"But next time, it would be nicer to say you liked it from the start.\"",
+   "f": "audio/jenny/od_l109/13.mp3",
+   "s": "audio/jenny/od_l109/13s.mp3"
+  }
+ ],
+ "od_l110": [
+  {
+   "en": "Violet loves helping animals.",
+   "f": "audio/jenny/od_l110/0.mp3",
+   "s": "audio/jenny/od_l110/0s.mp3"
+  },
+  {
+   "en": "Her favorite animals to look after are puppies.",
+   "f": "audio/jenny/od_l110/1.mp3",
+   "s": "audio/jenny/od_l110/1s.mp3"
+  },
+  {
+   "en": "Violet thinks puppies are the best because they are so cute and cuddly.",
+   "f": "audio/jenny/od_l110/2.mp3",
+   "s": "audio/jenny/od_l110/2s.mp3"
+  },
+  {
+   "en": "The way they run around and play always makes her laugh.",
+   "f": "audio/jenny/od_l110/3.mp3",
+   "s": "audio/jenny/od_l110/3s.mp3"
+  },
+  {
+   "en": "But looking after puppies isn't always easy.",
+   "f": "audio/jenny/od_l110/4.mp3",
+   "s": "audio/jenny/od_l110/4s.mp3"
+  },
+  {
+   "en": "Puppies need a lot of help.",
+   "f": "audio/jenny/od_l110/5.mp3",
+   "s": "audio/jenny/od_l110/5s.mp3"
+  },
+  {
+   "en": "The tiniest puppies need to be fed constantly.",
+   "f": "audio/jenny/od_l110/6.mp3",
+   "s": "audio/jenny/od_l110/6s.mp3"
+  },
+  {
+   "en": "It seems like their little bellies are never full.",
+   "f": "audio/jenny/od_l110/7.mp3",
+   "s": "audio/jenny/od_l110/7s.mp3"
+  },
+  {
+   "en": "When a puppy cries, Violet tries her best to find out what they need.",
+   "f": "audio/jenny/od_l110/8.mp3",
+   "s": "audio/jenny/od_l110/8s.mp3"
+  },
+  {
+   "en": "When the puppies need a bath, Violet scrubs them clean then dries them off.",
+   "f": "audio/jenny/od_l110/9.mp3",
+   "s": "audio/jenny/od_l110/9s.mp3"
+  },
+  {
+   "en": "When the puppies are sleepy, Violet lays them on the fluffiest blankets for a nap.",
+   "f": "audio/jenny/od_l110/10.mp3",
+   "s": "audio/jenny/od_l110/10s.mp3"
+  },
+  {
+   "en": "When the puppies need to go potty, Violet hurries to get them outside before they make a mess.",
+   "f": "audio/jenny/od_l110/11.mp3",
+   "s": "audio/jenny/od_l110/11s.mp3"
+  },
+  {
+   "en": "Most of the time, the puppies just want their tummies rubbed, which Violet is perfectly happy to do for them.",
+   "f": "audio/jenny/od_l110/12.mp3",
+   "s": "audio/jenny/od_l110/12s.mp3"
+  }
+ ],
+ "od_l111": [
+  {
+   "en": "Have you ever considered getting a pet lizard?",
+   "f": "audio/jenny/od_l111/0.mp3",
+   "s": "audio/jenny/od_l111/0s.mp3"
+  },
+  {
+   "en": "They may seem like an unusual choice, but they can be lovely pets.",
+   "f": "audio/jenny/od_l111/1.mp3",
+   "s": "audio/jenny/od_l111/1s.mp3"
+  },
+  {
+   "en": "Lizards are reptiles.",
+   "f": "audio/jenny/od_l111/2.mp3",
+   "s": "audio/jenny/od_l111/2s.mp3"
+  },
+  {
+   "en": "They can be big or small and many different colors.",
+   "f": "audio/jenny/od_l111/3.mp3",
+   "s": "audio/jenny/od_l111/3s.mp3"
+  },
+  {
+   "en": "You can create a nice habitat for your lizard to live in.",
+   "f": "audio/jenny/od_l111/4.mp3",
+   "s": "audio/jenny/od_l111/4s.mp3"
+  },
+  {
+   "en": "Start with a big cage so your lizard has room to roam.",
+   "f": "audio/jenny/od_l111/5.mp3",
+   "s": "audio/jenny/od_l111/5s.mp3"
+  },
+  {
+   "en": "You will also need some food for your lizard.",
+   "f": "audio/jenny/od_l111/6.mp3",
+   "s": "audio/jenny/od_l111/6s.mp3"
+  },
+  {
+   "en": "Lizards eat bugs and worms and plants.",
+   "f": "audio/jenny/od_l111/7.mp3",
+   "s": "audio/jenny/od_l111/7s.mp3"
+  },
+  {
+   "en": "Some even like to eat flowers.",
+   "f": "audio/jenny/od_l111/8.mp3",
+   "s": "audio/jenny/od_l111/8s.mp3"
+  },
+  {
+   "en": "Perhaps they like the flavor of the nectar inside the flowers.",
+   "f": "audio/jenny/od_l111/9.mp3",
+   "s": "audio/jenny/od_l111/9s.mp3"
+  },
+  {
+   "en": "Unlike dogs and cats, lizards do not need collars and do not need to be taken on walks.",
+   "f": "audio/jenny/od_l111/10.mp3",
+   "s": "audio/jenny/od_l111/10s.mp3"
+  },
+  {
+   "en": "Just remember, if they ever get sick, take them to a doctor who can help them get better.",
+   "f": "audio/jenny/od_l111/11.mp3",
+   "s": "audio/jenny/od_l111/11s.mp3"
+  },
+  {
+   "en": "So, what do you think? Would you want to have a pet lizard?",
+   "f": "audio/jenny/od_l111/12.mp3",
+   "s": "audio/jenny/od_l111/12s.mp3"
+  }
+ ],
+ "od_l112": [
+  {
+   "en": "Clare went shopping for a new pair of pants.",
+   "f": "audio/jenny/od_l112/0.mp3",
+   "s": "audio/jenny/od_l112/0s.mp3"
+  },
+  {
+   "en": "After going to five stores, she could not find the pair she wanted.",
+   "f": "audio/jenny/od_l112/1.mp3",
+   "s": "audio/jenny/od_l112/1s.mp3"
+  },
+  {
+   "en": "Then, at the sixth store, she found them.",
+   "f": "audio/jenny/od_l112/2.mp3",
+   "s": "audio/jenny/od_l112/2s.mp3"
+  },
+  {
+   "en": "The pair she picked flared out at the bottom.",
+   "f": "audio/jenny/od_l112/3.mp3",
+   "s": "audio/jenny/od_l112/3s.mp3"
+  },
+  {
+   "en": "They were light as air and so comfortable.",
+   "f": "audio/jenny/od_l112/4.mp3",
+   "s": "audio/jenny/od_l112/4s.mp3"
+  },
+  {
+   "en": "When she put them on, she stared at herself in the mirror.",
+   "f": "audio/jenny/od_l112/5.mp3",
+   "s": "audio/jenny/od_l112/5s.mp3"
+  },
+  {
+   "en": "Clare felt so fantastic in these pants that she twirled around and tossed her hair.",
+   "f": "audio/jenny/od_l112/6.mp3",
+   "s": "audio/jenny/od_l112/6s.mp3"
+  },
+  {
+   "en": "She wanted to purchase two pairs so she would have a spare pair to wear.",
+   "f": "audio/jenny/od_l112/7.mp3",
+   "s": "audio/jenny/od_l112/7s.mp3"
+  },
+  {
+   "en": "She brought the pants to the checkout counter.",
+   "f": "audio/jenny/od_l112/8.mp3",
+   "s": "audio/jenny/od_l112/8s.mp3"
+  },
+  {
+   "en": "\"Those are nice pairs of pants,\" said the clerk, \"if you take good care of them, they will last forever.\"",
+   "f": "audio/jenny/od_l112/9.mp3",
+   "s": "audio/jenny/od_l112/9s.mp3"
+  },
+  {
+   "en": "\"Thank you,\" answered Clare with a big smile, \"I sure will.\"",
+   "f": "audio/jenny/od_l112/10.mp3",
+   "s": "audio/jenny/od_l112/10s.mp3"
+  }
+ ],
+ "od_l113": [
+  {
+   "en": "Did you hear? The Strawberry Festival is nearly here!",
+   "f": "audio/jenny/od_l113/0.mp3",
+   "s": "audio/jenny/od_l113/0s.mp3"
+  },
+  {
+   "en": "Toward the beginning of each year, our town hosts this event to honor the strawberry farmers.",
+   "f": "audio/jenny/od_l113/1.mp3",
+   "s": "audio/jenny/od_l113/1s.mp3"
+  },
+  {
+   "en": "It is always a blast to attend.",
+   "f": "audio/jenny/od_l113/2.mp3",
+   "s": "audio/jenny/od_l113/2s.mp3"
+  },
+  {
+   "en": "You can eat all the yummiest strawberry treats including ice cream, cake, cookies, and milkshakes.",
+   "f": "audio/jenny/od_l113/3.mp3",
+   "s": "audio/jenny/od_l113/3s.mp3"
+  },
+  {
+   "en": "There are also rides and games.",
+   "f": "audio/jenny/od_l113/4.mp3",
+   "s": "audio/jenny/od_l113/4s.mp3"
+  },
+  {
+   "en": "The most interesting game is hosted by the man with the long beard.",
+   "f": "audio/jenny/od_l113/5.mp3",
+   "s": "audio/jenny/od_l113/5s.mp3"
+  },
+  {
+   "en": "He will guess your birthday.",
+   "f": "audio/jenny/od_l113/6.mp3",
+   "s": "audio/jenny/od_l113/6s.mp3"
+  },
+  {
+   "en": "Somehow, he is always right, but nobody knows how he does it.",
+   "f": "audio/jenny/od_l113/7.mp3",
+   "s": "audio/jenny/od_l113/7s.mp3"
+  },
+  {
+   "en": "There is also a person who does amazing card tricks.",
+   "f": "audio/jenny/od_l113/8.mp3",
+   "s": "audio/jenny/od_l113/8s.mp3"
+  },
+  {
+   "en": "If you give them a card, they will make it disappear!",
+   "f": "audio/jenny/od_l113/9.mp3",
+   "s": "audio/jenny/od_l113/9s.mp3"
+  },
+  {
+   "en": "What if the weather is bad, you ask? Never fear!",
+   "f": "audio/jenny/od_l113/10.mp3",
+   "s": "audio/jenny/od_l113/10s.mp3"
+  },
+  {
+   "en": "Even on a dreary day, there is fun to be had under the big tent.",
+   "f": "audio/jenny/od_l113/11.mp3",
+   "s": "audio/jenny/od_l113/11s.mp3"
+  },
+  {
+   "en": "Music, dancing, and crafts are sure to delight.",
+   "f": "audio/jenny/od_l113/12.mp3",
+   "s": "audio/jenny/od_l113/12s.mp3"
+  },
+  {
+   "en": "There are also clowns and comics to give you a good laugh.",
+   "f": "audio/jenny/od_l113/13.mp3",
+   "s": "audio/jenny/od_l113/13s.mp3"
+  },
+  {
+   "en": "Remember, the Strawberry Festival is only in town once a year.",
+   "f": "audio/jenny/od_l113/14.mp3",
+   "s": "audio/jenny/od_l113/14s.mp3"
+  },
+  {
+   "en": "Get your tickets now so you do not miss out on the fun!",
+   "f": "audio/jenny/od_l113/15.mp3",
+   "s": "audio/jenny/od_l113/15s.mp3"
+  }
+ ],
+ "od_l114": [
+  {
+   "en": "Greyson lives in a beige house on the corner of Eighth Street and Great Lake Road.",
+   "f": "audio/jenny/od_l114/0.mp3",
+   "s": "audio/jenny/od_l114/0s.mp3"
+  },
+  {
+   "en": "He has lived there for eighteen years.",
+   "f": "audio/jenny/od_l114/1.mp3",
+   "s": "audio/jenny/od_l114/1s.mp3"
+  },
+  {
+   "en": "Greyson loves his neighborhood because he has great neighbors.",
+   "f": "audio/jenny/od_l114/2.mp3",
+   "s": "audio/jenny/od_l114/2s.mp3"
+  },
+  {
+   "en": "Any time he passes someone on his street they always wave and say hey.",
+   "f": "audio/jenny/od_l114/3.mp3",
+   "s": "audio/jenny/od_l114/3s.mp3"
+  },
+  {
+   "en": "Greyson's next-door neighbor is Stewart.",
+   "f": "audio/jenny/od_l114/4.mp3",
+   "s": "audio/jenny/od_l114/4s.mp3"
+  },
+  {
+   "en": "Stewart loves to cook and has a huge grill in his backyard.",
+   "f": "audio/jenny/od_l114/5.mp3",
+   "s": "audio/jenny/od_l114/5s.mp3"
+  },
+  {
+   "en": "Every Friday, Stewart hosts a dinner party for Greyson and some other neighbors.",
+   "f": "audio/jenny/od_l114/6.mp3",
+   "s": "audio/jenny/od_l114/6s.mp3"
+  },
+  {
+   "en": "Last Friday, Stewart grilled steak and corn. It was quite tasty!",
+   "f": "audio/jenny/od_l114/7.mp3",
+   "s": "audio/jenny/od_l114/7s.mp3"
+  },
+  {
+   "en": "Greyson's neighbors across the street are Cosmo and Wanda.",
+   "f": "audio/jenny/od_l114/8.mp3",
+   "s": "audio/jenny/od_l114/8s.mp3"
+  },
+  {
+   "en": "They have three dogs, four cats, and one fish. That's eight pets!",
+   "f": "audio/jenny/od_l114/9.mp3",
+   "s": "audio/jenny/od_l114/9s.mp3"
+  },
+  {
+   "en": "Sometimes, Greyson walks the dogs for Cosmo and Wanda if they need a break.",
+   "f": "audio/jenny/od_l114/10.mp3",
+   "s": "audio/jenny/od_l114/10s.mp3"
+  },
+  {
+   "en": "When Greyson walks the dogs, they always go straight to the park to play fetch.",
+   "f": "audio/jenny/od_l114/11.mp3",
+   "s": "audio/jenny/od_l114/11s.mp3"
+  },
+  {
+   "en": "Greyson loves his beige house, his nice neighborhood, and his friendly neighbors.",
+   "f": "audio/jenny/od_l114/12.mp3",
+   "s": "audio/jenny/od_l114/12s.mp3"
+  },
+  {
+   "en": "He thinks he just might stay there for another eighteen years.",
+   "f": "audio/jenny/od_l114/13.mp3",
+   "s": "audio/jenny/od_l114/13s.mp3"
+  }
+ ],
+ "od_l115": [
+  {
+   "en": "Corey lives down the street from his nephew, Louis.",
+   "f": "audio/jenny/od_l115/0.mp3",
+   "s": "audio/jenny/od_l115/0s.mp3"
+  },
+  {
+   "en": "They love to spend time together.",
+   "f": "audio/jenny/od_l115/1.mp3",
+   "s": "audio/jenny/od_l115/1s.mp3"
+  },
+  {
+   "en": "Corey calls Louis the best nephew on earth and Louis calls Corey the best uncle on earth.",
+   "f": "audio/jenny/od_l115/2.mp3",
+   "s": "audio/jenny/od_l115/2s.mp3"
+  },
+  {
+   "en": "Last Saturday, Corey took Louis to the park to play.",
+   "f": "audio/jenny/od_l115/3.mp3",
+   "s": "audio/jenny/od_l115/3s.mp3"
+  },
+  {
+   "en": "Louis played a new game with a group of his friends.",
+   "f": "audio/jenny/od_l115/4.mp3",
+   "s": "audio/jenny/od_l115/4s.mp3"
+  },
+  {
+   "en": "The game was going well, but then a few of the kids started to argue about the rules.",
+   "f": "audio/jenny/od_l115/5.mp3",
+   "s": "audio/jenny/od_l115/5s.mp3"
+  },
+  {
+   "en": "The game could not continue while the kids were arguing.",
+   "f": "audio/jenny/od_l115/6.mp3",
+   "s": "audio/jenny/od_l115/6s.mp3"
+  },
+  {
+   "en": "This made the rest of the group angry.",
+   "f": "audio/jenny/od_l115/7.mp3",
+   "s": "audio/jenny/od_l115/7s.mp3"
+  },
+  {
+   "en": "After a few minutes, Corey came to the rescue.",
+   "f": "audio/jenny/od_l115/8.mp3",
+   "s": "audio/jenny/od_l115/8s.mp3"
+  },
+  {
+   "en": "He said, \"if you all continue to argue, you will not have any time left to play.\"",
+   "f": "audio/jenny/od_l115/9.mp3",
+   "s": "audio/jenny/od_l115/9s.mp3"
+  },
+  {
+   "en": "This made everyone stop and think.",
+   "f": "audio/jenny/od_l115/10.mp3",
+   "s": "audio/jenny/od_l115/10s.mp3"
+  },
+  {
+   "en": "The kids agreed that they wanted to spend their time playing instead of arguing.",
+   "f": "audio/jenny/od_l115/11.mp3",
+   "s": "audio/jenny/od_l115/11s.mp3"
+  },
+  {
+   "en": "\"See,\" Louis yelled, \"this is why Corey is the best uncle on earth!\"",
+   "f": "audio/jenny/od_l115/12.mp3",
+   "s": "audio/jenny/od_l115/12s.mp3"
+  }
+ ],
+ "od_l116": [
+  {
+   "en": "Stanley was preparing dinner one night when he thought to himself, \"I would love to learn how to make fresh bread.\"",
+   "f": "audio/jenny/od_l116/0.mp3",
+   "s": "audio/jenny/od_l116/0s.mp3"
+  },
+  {
+   "en": "He looked down at the loaf of crusty bread he bought from the store.",
+   "f": "audio/jenny/od_l116/1.mp3",
+   "s": "audio/jenny/od_l116/1s.mp3"
+  },
+  {
+   "en": "\"I bet I can make better bread than this.\"",
+   "f": "audio/jenny/od_l116/2.mp3",
+   "s": "audio/jenny/od_l116/2s.mp3"
+  },
+  {
+   "en": "The next morning, Stanley went to the store.",
+   "f": "audio/jenny/od_l116/3.mp3",
+   "s": "audio/jenny/od_l116/3s.mp3"
+  },
+  {
+   "en": "He wanted to buy all the ingredients to make fresh bread.",
+   "f": "audio/jenny/od_l116/4.mp3",
+   "s": "audio/jenny/od_l116/4s.mp3"
+  },
+  {
+   "en": "He needed flour and yeast to make the dough.",
+   "f": "audio/jenny/od_l116/5.mp3",
+   "s": "audio/jenny/od_l116/5s.mp3"
+  },
+  {
+   "en": "He picked those up and brought his basket to the counter.",
+   "f": "audio/jenny/od_l116/6.mp3",
+   "s": "audio/jenny/od_l116/6s.mp3"
+  },
+  {
+   "en": "\"Are you making bread?\" asked the guy behind the counter.",
+   "f": "audio/jenny/od_l116/7.mp3",
+   "s": "audio/jenny/od_l116/7s.mp3"
+  },
+  {
+   "en": "\"Well, I'm going to try,\" replied Stanley, although he still wasn't quite sure what he was doing.",
+   "f": "audio/jenny/od_l116/8.mp3",
+   "s": "audio/jenny/od_l116/8s.mp3"
+  },
+  {
+   "en": "\"You ought to buy a few more supplies,\" said the guy. \"Wait here.\"",
+   "f": "audio/jenny/od_l116/9.mp3",
+   "s": "audio/jenny/od_l116/9s.mp3"
+  },
+  {
+   "en": "A few minutes later, the guy returned with salt, oil and a few different seasonings.",
+   "f": "audio/jenny/od_l116/10.mp3",
+   "s": "audio/jenny/od_l116/10s.mp3"
+  },
+  {
+   "en": "\"This is what you need.\" he said, \"I also wrote down some tips to make your dough rise perfectly.\"",
+   "f": "audio/jenny/od_l116/11.mp3",
+   "s": "audio/jenny/od_l116/11s.mp3"
+  },
+  {
+   "en": "\"Wow!\" replied Stanley, \"that is so kind, thank you.\"",
+   "f": "audio/jenny/od_l116/12.mp3",
+   "s": "audio/jenny/od_l116/12s.mp3"
+  },
+  {
+   "en": "\"No problem,\" said the guy, \"I love making bread. Everyone calls me Dough Guy.\"",
+   "f": "audio/jenny/od_l116/13.mp3",
+   "s": "audio/jenny/od_l116/13s.mp3"
+  },
+  {
+   "en": "\"If your bread turns out well, would you bring back a slice for me to try?\"",
+   "f": "audio/jenny/od_l116/14.mp3",
+   "s": "audio/jenny/od_l116/14s.mp3"
+  },
+  {
+   "en": "\"I'll bring you a whole loaf!\" chuckled Stanley. \"Thanks, Dough Guy!\"",
+   "f": "audio/jenny/od_l116/15.mp3",
+   "s": "audio/jenny/od_l116/15s.mp3"
+  }
+ ],
+ "od_l117": [
+  {
+   "en": "Reginald took a train trip to New York City to visit his Uncle Quincy.",
+   "f": "audio/jenny/od_l117/0.mp3",
+   "s": "audio/jenny/od_l117/0s.mp3"
+  },
+  {
+   "en": "When he arrived, Uncle Quincy was there to greet him at the station.",
+   "f": "audio/jenny/od_l117/1.mp3",
+   "s": "audio/jenny/od_l117/1s.mp3"
+  },
+  {
+   "en": "\"Welcome!\" called Uncle Quincy with glee, \"I am so excited to have you as my guest for the week.\"",
+   "f": "audio/jenny/od_l117/2.mp3",
+   "s": "audio/jenny/od_l117/2s.mp3"
+  },
+  {
+   "en": "\"I can't wait to be your city guide.\"",
+   "f": "audio/jenny/od_l117/3.mp3",
+   "s": "audio/jenny/od_l117/3s.mp3"
+  },
+  {
+   "en": "\"I'm excited too!\" replied Reginald, \"I have been imagining this trip for a long time.\"",
+   "f": "audio/jenny/od_l117/4.mp3",
+   "s": "audio/jenny/od_l117/4s.mp3"
+  },
+  {
+   "en": "Their first excursion was to a fancy ice cream parlor.",
+   "f": "audio/jenny/od_l117/5.mp3",
+   "s": "audio/jenny/od_l117/5s.mp3"
+  },
+  {
+   "en": "Reginald got a giant scoop of cinnamon ice cream.",
+   "f": "audio/jenny/od_l117/6.mp3",
+   "s": "audio/jenny/od_l117/6s.mp3"
+  },
+  {
+   "en": "\"This is incredible,\" exclaimed Reginald between bites.",
+   "f": "audio/jenny/od_l117/7.mp3",
+   "s": "audio/jenny/od_l117/7s.mp3"
+  },
+  {
+   "en": "Next, the pair walked back to Uncle Quincy's apartment.",
+   "f": "audio/jenny/od_l117/8.mp3",
+   "s": "audio/jenny/od_l117/8s.mp3"
+  },
+  {
+   "en": "When they got there, they saw a letter taped to the door. It was marked urgent.",
+   "f": "audio/jenny/od_l117/9.mp3",
+   "s": "audio/jenny/od_l117/9s.mp3"
+  },
+  {
+   "en": "\"I wonder what that could be,\" said Uncle Quincy with a sly smile, \"open it up and see if there is a message inside.\"",
+   "f": "audio/jenny/od_l117/10.mp3",
+   "s": "audio/jenny/od_l117/10s.mp3"
+  },
+  {
+   "en": "Reginald opened the letter and two tickets fell into his hands.",
+   "f": "audio/jenny/od_l117/11.mp3",
+   "s": "audio/jenny/od_l117/11s.mp3"
+  },
+  {
+   "en": "\"Surprise! I managed to get us tickets to a concert at Madison Square Garden.\"",
+   "f": "audio/jenny/od_l117/12.mp3",
+   "s": "audio/jenny/od_l117/12s.mp3"
+  },
+  {
+   "en": "\"It was sold out, but my friend is a ticket agent. She got us the last two general admission seats.\"",
+   "f": "audio/jenny/od_l117/13.mp3",
+   "s": "audio/jenny/od_l117/13s.mp3"
+  },
+  {
+   "en": "\"Wow,\" gasped Reginald, \"I never would have guessed I'd get to see a real concert.\"",
+   "f": "audio/jenny/od_l117/14.mp3",
+   "s": "audio/jenny/od_l117/14s.mp3"
+  },
+  {
+   "en": "\"Thank you, Uncle Quincy. This is the best trip ever!\"",
+   "f": "audio/jenny/od_l117/15.mp3",
+   "s": "audio/jenny/od_l117/15s.mp3"
+  }
+ ],
+ "od_l118": [
+  {
+   "en": "Chris is in the school chorus.",
+   "f": "audio/jenny/od_l118/0.mp3",
+   "s": "audio/jenny/od_l118/0s.mp3"
+  },
+  {
+   "en": "The chorus is a group of students who sing together.",
+   "f": "audio/jenny/od_l118/1.mp3",
+   "s": "audio/jenny/od_l118/1s.mp3"
+  },
+  {
+   "en": "Chris goes to chorus practice every day after school.",
+   "f": "audio/jenny/od_l118/2.mp3",
+   "s": "audio/jenny/od_l118/2s.mp3"
+  },
+  {
+   "en": "At chorus practice, the students learn how to sing new songs.",
+   "f": "audio/jenny/od_l118/3.mp3",
+   "s": "audio/jenny/od_l118/3s.mp3"
+  },
+  {
+   "en": "First, everyone listens to their teacher sing the song.",
+   "f": "audio/jenny/od_l118/4.mp3",
+   "s": "audio/jenny/od_l118/4s.mp3"
+  },
+  {
+   "en": "Next, they hum the song. Then, they whistle the tune.",
+   "f": "audio/jenny/od_l118/5.mp3",
+   "s": "audio/jenny/od_l118/5s.mp3"
+  },
+  {
+   "en": "Finally, they all sing together.",
+   "f": "audio/jenny/od_l118/6.mp3",
+   "s": "audio/jenny/od_l118/6s.mp3"
+  },
+  {
+   "en": "After many weeks of practice, the chorus learned eight new songs.",
+   "f": "audio/jenny/od_l118/7.mp3",
+   "s": "audio/jenny/od_l118/7s.mp3"
+  },
+  {
+   "en": "They were now ready to sing with the orchestra.",
+   "f": "audio/jenny/od_l118/8.mp3",
+   "s": "audio/jenny/od_l118/8s.mp3"
+  },
+  {
+   "en": "The orchestra is a group of students who play instruments together.",
+   "f": "audio/jenny/od_l118/9.mp3",
+   "s": "audio/jenny/od_l118/9s.mp3"
+  },
+  {
+   "en": "The chorus and the orchestra met in the auditorium to perform.",
+   "f": "audio/jenny/od_l118/10.mp3",
+   "s": "audio/jenny/od_l118/10s.mp3"
+  },
+  {
+   "en": "The music they made was beautiful.",
+   "f": "audio/jenny/od_l118/11.mp3",
+   "s": "audio/jenny/od_l118/11s.mp3"
+  },
+  {
+   "en": "It echoed through the halls and brought joy to all who could hear it.",
+   "f": "audio/jenny/od_l118/12.mp3",
+   "s": "audio/jenny/od_l118/12s.mp3"
+  }
+ ],
+ "od_l119": [
+  {
+   "en": "Today is a big day for Ricardo.",
+   "f": "audio/jenny/od_l119/0.mp3",
+   "s": "audio/jenny/od_l119/0s.mp3"
+  },
+  {
+   "en": "The theater club is holding auditions for the school play.",
+   "f": "audio/jenny/od_l119/1.mp3",
+   "s": "audio/jenny/od_l119/1s.mp3"
+  },
+  {
+   "en": "Acting is Ricardo's passion. He is auditioning for the lead role.",
+   "f": "audio/jenny/od_l119/2.mp3",
+   "s": "audio/jenny/od_l119/2s.mp3"
+  },
+  {
+   "en": "This year's play is about a mission to outer space.",
+   "f": "audio/jenny/od_l119/3.mp3",
+   "s": "audio/jenny/od_l119/3s.mp3"
+  },
+  {
+   "en": "It is packed with action and ends with a real explosion!",
+   "f": "audio/jenny/od_l119/4.mp3",
+   "s": "audio/jenny/od_l119/4s.mp3"
+  },
+  {
+   "en": "Ricardo walked into the theater club meeting.",
+   "f": "audio/jenny/od_l119/5.mp3",
+   "s": "audio/jenny/od_l119/5s.mp3"
+  },
+  {
+   "en": "He excitedly handed his permission slip to the director and found a seat.",
+   "f": "audio/jenny/od_l119/6.mp3",
+   "s": "audio/jenny/od_l119/6s.mp3"
+  },
+  {
+   "en": "He listened as the director explained how the audition would work.",
+   "f": "audio/jenny/od_l119/7.mp3",
+   "s": "audio/jenny/od_l119/7s.mp3"
+  },
+  {
+   "en": "\"Remember to be creative and use your imaginations. Any questions before we begin?\"",
+   "f": "audio/jenny/od_l119/8.mp3",
+   "s": "audio/jenny/od_l119/8s.mp3"
+  },
+  {
+   "en": "No questions. Everyone was ready to begin.",
+   "f": "audio/jenny/od_l119/9.mp3",
+   "s": "audio/jenny/od_l119/9s.mp3"
+  },
+  {
+   "en": "The students took turns auditioning for the director.",
+   "f": "audio/jenny/od_l119/10.mp3",
+   "s": "audio/jenny/od_l119/10s.mp3"
+  },
+  {
+   "en": "There was a lot of competition, but Ricardo did a great job!",
+   "f": "audio/jenny/od_l119/11.mp3",
+   "s": "audio/jenny/od_l119/11s.mp3"
+  },
+  {
+   "en": "Once the auditions were finished, the director announced the parts.",
+   "f": "audio/jenny/od_l119/12.mp3",
+   "s": "audio/jenny/od_l119/12s.mp3"
+  },
+  {
+   "en": "\"This was a tough decision,\" she said. \"You each made a great impression.\"",
+   "f": "audio/jenny/od_l119/13.mp3",
+   "s": "audio/jenny/od_l119/13s.mp3"
+  },
+  {
+   "en": "\"The lead role goes to...Ricardo!\"",
+   "f": "audio/jenny/od_l119/14.mp3",
+   "s": "audio/jenny/od_l119/14s.mp3"
+  },
+  {
+   "en": "Ricardo leaped out of his seat with joy. His friends clapped for him.",
+   "f": "audio/jenny/od_l119/15.mp3",
+   "s": "audio/jenny/od_l119/15s.mp3"
+  },
+  {
+   "en": "He could not wait to run home and start memorizing his lines.",
+   "f": "audio/jenny/od_l119/16.mp3",
+   "s": "audio/jenny/od_l119/16s.mp3"
+  }
+ ],
+ "od_l120": [
+  {
+   "en": "Every Sunday, Lucy spends the afternoon with her babysitter, Kaylen.",
+   "f": "audio/jenny/od_l120/0.mp3",
+   "s": "audio/jenny/od_l120/0s.mp3"
+  },
+  {
+   "en": "Lucy loves Kaylen because Kaylen always takes Lucy on fun and exciting adventures.",
+   "f": "audio/jenny/od_l120/1.mp3",
+   "s": "audio/jenny/od_l120/1s.mp3"
+  },
+  {
+   "en": "Today, Kaylen was holding a magnifying glass in one hand and a notebook in the other.",
+   "f": "audio/jenny/od_l120/2.mp3",
+   "s": "audio/jenny/od_l120/2s.mp3"
+  },
+  {
+   "en": "\"Are you ready to go on an adventure?\" Kaylen asked Lucy. \"Yes!\" Lucy cried.",
+   "f": "audio/jenny/od_l120/3.mp3",
+   "s": "audio/jenny/od_l120/3s.mp3"
+  },
+  {
+   "en": "\"On today's adventure, we are going to become nature explorers,\" explained Kaylen.",
+   "f": "audio/jenny/od_l120/4.mp3",
+   "s": "audio/jenny/od_l120/4s.mp3"
+  },
+  {
+   "en": "\"our mission is to discover new creatures.\"",
+   "f": "audio/jenny/od_l120/5.mp3",
+   "s": "audio/jenny/od_l120/5s.mp3"
+  },
+  {
+   "en": "Kaylen led Lucy into the backyard and helped her use the magnifying glass to look closely at the plants in the garden.",
+   "f": "audio/jenny/od_l120/6.mp3",
+   "s": "audio/jenny/od_l120/6s.mp3"
+  },
+  {
+   "en": "Lucy found a worm digging in the dirt and a ladybug resting on a leaf.",
+   "f": "audio/jenny/od_l120/7.mp3",
+   "s": "audio/jenny/od_l120/7s.mp3"
+  },
+  {
+   "en": "She saw a butterfly land on a flower and a lizard scurry under a rock.",
+   "f": "audio/jenny/od_l120/8.mp3",
+   "s": "audio/jenny/od_l120/8s.mp3"
+  },
+  {
+   "en": "She captured a frog.",
+   "f": "audio/jenny/od_l120/9.mp3",
+   "s": "audio/jenny/od_l120/9s.mp3"
+  },
+  {
+   "en": "She even discovered a mother bird making a nest in a tree.",
+   "f": "audio/jenny/od_l120/10.mp3",
+   "s": "audio/jenny/od_l120/10s.mp3"
+  },
+  {
+   "en": "Kaylen helped Lucy draw pictures in her notebook of all the creatures she observed.",
+   "f": "audio/jenny/od_l120/11.mp3",
+   "s": "audio/jenny/od_l120/11s.mp3"
+  },
+  {
+   "en": "\"This was one of our best adventures yet,\" Lucy beamed.",
+   "f": "audio/jenny/od_l120/12.mp3",
+   "s": "audio/jenny/od_l120/12s.mp3"
+  }
+ ],
+ "od_l121": [
+  {
+   "en": "Chris wants to join a club.",
+   "f": "audio/jenny/od_l121/0.mp3",
+   "s": "audio/jenny/od_l121/0s.mp3"
+  },
+  {
+   "en": "She wants to learn a new skill and make new friends.",
+   "f": "audio/jenny/od_l121/1.mp3",
+   "s": "audio/jenny/od_l121/1s.mp3"
+  },
+  {
+   "en": "The only problem is that Chris has no idea what club to join!",
+   "f": "audio/jenny/od_l121/2.mp3",
+   "s": "audio/jenny/od_l121/2s.mp3"
+  },
+  {
+   "en": "Luckily, there is a showcase after school where Chris can learn about all the clubs.",
+   "f": "audio/jenny/od_l121/3.mp3",
+   "s": "audio/jenny/od_l121/3s.mp3"
+  },
+  {
+   "en": "The club showcase is in the gym.",
+   "f": "audio/jenny/od_l121/4.mp3",
+   "s": "audio/jenny/od_l121/4s.mp3"
+  },
+  {
+   "en": "There are rows and rows of tables with members of all the different clubs.",
+   "f": "audio/jenny/od_l121/5.mp3",
+   "s": "audio/jenny/od_l121/5s.mp3"
+  },
+  {
+   "en": "First, Chris visits the table for Art Club.",
+   "f": "audio/jenny/od_l121/6.mp3",
+   "s": "audio/jenny/od_l121/6s.mp3"
+  },
+  {
+   "en": "The Art Club members are sculptors, painters, and cartoonists.",
+   "f": "audio/jenny/od_l121/7.mp3",
+   "s": "audio/jenny/od_l121/7s.mp3"
+  },
+  {
+   "en": "Chris thought the art they created was nice, but she does not want to be an artist.",
+   "f": "audio/jenny/od_l121/8.mp3",
+   "s": "audio/jenny/od_l121/8s.mp3"
+  },
+  {
+   "en": "Next, Chris visits the table for Sports Club.",
+   "f": "audio/jenny/od_l121/9.mp3",
+   "s": "audio/jenny/od_l121/9s.mp3"
+  },
+  {
+   "en": "In Sports Club, you work with athletic trainers.",
+   "f": "audio/jenny/od_l121/10.mp3",
+   "s": "audio/jenny/od_l121/10s.mp3"
+  },
+  {
+   "en": "You can learn to be a basketball player or even a baseball catcher.",
+   "f": "audio/jenny/od_l121/11.mp3",
+   "s": "audio/jenny/od_l121/11s.mp3"
+  },
+  {
+   "en": "Chris thought of herself as more of a sports watcher than a sports player.",
+   "f": "audio/jenny/od_l121/12.mp3",
+   "s": "audio/jenny/od_l121/12s.mp3"
+  },
+  {
+   "en": "This is not the club for her.",
+   "f": "audio/jenny/od_l121/13.mp3",
+   "s": "audio/jenny/od_l121/13s.mp3"
+  },
+  {
+   "en": "Finally, Chris stops at the table for Garden Club.",
+   "f": "audio/jenny/od_l121/14.mp3",
+   "s": "audio/jenny/od_l121/14s.mp3"
+  },
+  {
+   "en": "In Garden Club, you learn how to grow and care for plants from real botanists.",
+   "f": "audio/jenny/od_l121/15.mp3",
+   "s": "audio/jenny/od_l121/15s.mp3"
+  },
+  {
+   "en": "A botanist is someone who studies plants.",
+   "f": "audio/jenny/od_l121/16.mp3",
+   "s": "audio/jenny/od_l121/16s.mp3"
+  },
+  {
+   "en": "You even work with real farmers to learn how to grow your own food.",
+   "f": "audio/jenny/od_l121/17.mp3",
+   "s": "audio/jenny/od_l121/17s.mp3"
+  },
+  {
+   "en": "Chris has always wanted to learn to garden. This is the perfect club for her.",
+   "f": "audio/jenny/od_l121/18.mp3",
+   "s": "audio/jenny/od_l121/18s.mp3"
+  },
+  {
+   "en": "She may even become a botanist or a farmer one day.",
+   "f": "audio/jenny/od_l121/19.mp3",
+   "s": "audio/jenny/od_l121/19s.mp3"
+  }
+ ],
+ "od_l122": [
+  {
+   "en": "Today at school, Miss Chang's students talked about the jobs they wanted to have when they grow up.",
+   "f": "audio/jenny/od_l122/0.mp3",
+   "s": "audio/jenny/od_l122/0s.mp3"
+  },
+  {
+   "en": "Kenya, Wendy, and Gavin wanted to be artists.",
+   "f": "audio/jenny/od_l122/1.mp3",
+   "s": "audio/jenny/od_l122/1s.mp3"
+  },
+  {
+   "en": "Hugo and Seema wanted to be farmers. Taylor wanted to be a dentist.",
+   "f": "audio/jenny/od_l122/2.mp3",
+   "s": "audio/jenny/od_l122/2s.mp3"
+  },
+  {
+   "en": "Each student seemed excited, except for Stella.",
+   "f": "audio/jenny/od_l122/3.mp3",
+   "s": "audio/jenny/od_l122/3s.mp3"
+  },
+  {
+   "en": "Ever since she could remember, Stella has always wanted to be a doctor so she could help people.",
+   "f": "audio/jenny/od_l122/4.mp3",
+   "s": "audio/jenny/od_l122/4s.mp3"
+  },
+  {
+   "en": "However, Stella is quite squeamish.",
+   "f": "audio/jenny/od_l122/5.mp3",
+   "s": "audio/jenny/od_l122/5s.mp3"
+  },
+  {
+   "en": "If she sees needles or blood, her face turns a palish color, and she does not feel well.",
+   "f": "audio/jenny/od_l122/6.mp3",
+   "s": "audio/jenny/od_l122/6s.mp3"
+  },
+  {
+   "en": "\"Have you ever thought about being a chemist instead?\" Miss Chang asked Stella.",
+   "f": "audio/jenny/od_l122/7.mp3",
+   "s": "audio/jenny/od_l122/7s.mp3"
+  },
+  {
+   "en": "\"What does a chemist do?\" Stella asked.",
+   "f": "audio/jenny/od_l122/8.mp3",
+   "s": "audio/jenny/od_l122/8s.mp3"
+  },
+  {
+   "en": "Miss Chang explained that chemists conduct experiments, learn, and solve problems.",
+   "f": "audio/jenny/od_l122/9.mp3",
+   "s": "audio/jenny/od_l122/9s.mp3"
+  },
+  {
+   "en": "\"Stella, you are bookish, so you love to read and learn.\"",
+   "f": "audio/jenny/od_l122/10.mp3",
+   "s": "audio/jenny/od_l122/10s.mp3"
+  },
+  {
+   "en": "\"You are a hard worker, who is not foolish.\"",
+   "f": "audio/jenny/od_l122/11.mp3",
+   "s": "audio/jenny/od_l122/11s.mp3"
+  },
+  {
+   "en": "\"You like to use your imagination and discover new things.\"",
+   "f": "audio/jenny/od_l122/12.mp3",
+   "s": "audio/jenny/od_l122/12s.mp3"
+  },
+  {
+   "en": "\"All these features will make you a great chemist.\"",
+   "f": "audio/jenny/od_l122/13.mp3",
+   "s": "audio/jenny/od_l122/13s.mp3"
+  },
+  {
+   "en": "Even though this was a newish idea, Stella was already getting excited.",
+   "f": "audio/jenny/od_l122/14.mp3",
+   "s": "audio/jenny/od_l122/14s.mp3"
+  },
+  {
+   "en": "\"Being a chemist seems like the best decision for me!\" exclaimed Stella.",
+   "f": "audio/jenny/od_l122/15.mp3",
+   "s": "audio/jenny/od_l122/15s.mp3"
+  }
+ ],
+ "od_l123": [
+  {
+   "en": "There is a spooky two-story house at the end of Eighth Street.",
+   "f": "audio/jenny/od_l123/0.mp3",
+   "s": "audio/jenny/od_l123/0s.mp3"
+  },
+  {
+   "en": "Nobody knows who lives there, and nobody ever goes in or comes out.",
+   "f": "audio/jenny/od_l123/1.mp3",
+   "s": "audio/jenny/od_l123/1s.mp3"
+  },
+  {
+   "en": "Most of the kids in the neighborhood think this house is haunted.",
+   "f": "audio/jenny/od_l123/2.mp3",
+   "s": "audio/jenny/od_l123/2s.mp3"
+  },
+  {
+   "en": "Sammy, a fifth grader with curly brown hair, always wondered what would happen if she knocked on the door of that spooky old house.",
+   "f": "audio/jenny/od_l123/3.mp3",
+   "s": "audio/jenny/od_l123/3s.mp3"
+  },
+  {
+   "en": "One stormy night, Sammy and her younger brother walked over to the spooky house and crept up to the front porch.",
+   "f": "audio/jenny/od_l123/4.mp3",
+   "s": "audio/jenny/od_l123/4s.mp3"
+  },
+  {
+   "en": "The dusty wood floor creaked under their feet.",
+   "f": "audio/jenny/od_l123/5.mp3",
+   "s": "audio/jenny/od_l123/5s.mp3"
+  },
+  {
+   "en": "Sammy raised her shaky arm and knocked on the door.",
+   "f": "audio/jenny/od_l123/6.mp3",
+   "s": "audio/jenny/od_l123/6s.mp3"
+  },
+  {
+   "en": "All of a sudden, the siblings heard a loud noise.",
+   "f": "audio/jenny/od_l123/7.mp3",
+   "s": "audio/jenny/od_l123/7s.mp3"
+  },
+  {
+   "en": "They were too scared to wait to find out what it was.",
+   "f": "audio/jenny/od_l123/8.mp3",
+   "s": "audio/jenny/od_l123/8s.mp3"
+  },
+  {
+   "en": "They made a speedy exit across the muddy yard and ran all the way home.",
+   "f": "audio/jenny/od_l123/9.mp3",
+   "s": "audio/jenny/od_l123/9s.mp3"
+  },
+  {
+   "en": "By the time they got home, they were messy and sweaty and ready for a bath.",
+   "f": "audio/jenny/od_l123/10.mp3",
+   "s": "audio/jenny/od_l123/10s.mp3"
+  },
+  {
+   "en": "Sammy and her brother knew they would never go back to the spooky old house again, particularly on such a dark and stormy night.",
+   "f": "audio/jenny/od_l123/11.mp3",
+   "s": "audio/jenny/od_l123/11s.mp3"
+  },
+  {
+   "en": "They may never find out if the house was truly haunted.",
+   "f": "audio/jenny/od_l123/12.mp3",
+   "s": "audio/jenny/od_l123/12s.mp3"
+  }
+ ],
+ "od_l124": [
+  {
+   "en": "We all have good days and bad days.",
+   "f": "audio/jenny/od_l124/0.mp3",
+   "s": "audio/jenny/od_l124/0s.mp3"
+  },
+  {
+   "en": "Good days are filled with brightness and happiness.",
+   "f": "audio/jenny/od_l124/1.mp3",
+   "s": "audio/jenny/od_l124/1s.mp3"
+  },
+  {
+   "en": "On good days it is easy to be nice to our friends and everything seems fun.",
+   "f": "audio/jenny/od_l124/2.mp3",
+   "s": "audio/jenny/od_l124/2s.mp3"
+  },
+  {
+   "en": "On good days annoying things don't really bother us, and we feel a sense of calmness in our bodies.",
+   "f": "audio/jenny/od_l124/3.mp3",
+   "s": "audio/jenny/od_l124/3s.mp3"
+  },
+  {
+   "en": "Bad days, on the other hand, are not so great.",
+   "f": "audio/jenny/od_l124/4.mp3",
+   "s": "audio/jenny/od_l124/4s.mp3"
+  },
+  {
+   "en": "On bad days we may be filled with sadness or loneliness.",
+   "f": "audio/jenny/od_l124/5.mp3",
+   "s": "audio/jenny/od_l124/5s.mp3"
+  },
+  {
+   "en": "Bad days can feel dark and scary.",
+   "f": "audio/jenny/od_l124/6.mp3",
+   "s": "audio/jenny/od_l124/6s.mp3"
+  },
+  {
+   "en": "On bad days, it can be hard to be nice.",
+   "f": "audio/jenny/od_l124/7.mp3",
+   "s": "audio/jenny/od_l124/7s.mp3"
+  },
+  {
+   "en": "On bad days lots of things might bother us, and we might not be in the mood for silliness.",
+   "f": "audio/jenny/od_l124/8.mp3",
+   "s": "audio/jenny/od_l124/8s.mp3"
+  },
+  {
+   "en": "When we are having a good day, we have the energy we need to spread kindness to the people around us.",
+   "f": "audio/jenny/od_l124/9.mp3",
+   "s": "audio/jenny/od_l124/9s.mp3"
+  },
+  {
+   "en": "We can lend a smile or a helping hand and share our brightness with others.",
+   "f": "audio/jenny/od_l124/10.mp3",
+   "s": "audio/jenny/od_l124/10s.mp3"
+  },
+  {
+   "en": "In return, when we are having a bad day, we can lean on those kindness spreaders for the extra help we need.",
+   "f": "audio/jenny/od_l124/11.mp3",
+   "s": "audio/jenny/od_l124/11s.mp3"
+  },
+  {
+   "en": "Because if everyone shares a little extra kindness on their good days, we can all help each other get through our bad days.",
+   "f": "audio/jenny/od_l124/12.mp3",
+   "s": "audio/jenny/od_l124/12s.mp3"
+  }
+ ],
+ "od_l125": [
+  {
+   "en": "Mom knocked on Trey's bedroom door early one Saturday morning.",
+   "f": "audio/jenny/od_l125/0.mp3",
+   "s": "audio/jenny/od_l125/0s.mp3"
+  },
+  {
+   "en": "\"Time to get up,\" she exclaimed, \"we have a lot to do to get ready for Grandma's retirement party!\"",
+   "f": "audio/jenny/od_l125/1.mp3",
+   "s": "audio/jenny/od_l125/1s.mp3"
+  },
+  {
+   "en": "Trey yawned and stretched and made his way downstairs.",
+   "f": "audio/jenny/od_l125/2.mp3",
+   "s": "audio/jenny/od_l125/2s.mp3"
+  },
+  {
+   "en": "He could feel the excitement in the air.",
+   "f": "audio/jenny/od_l125/3.mp3",
+   "s": "audio/jenny/od_l125/3s.mp3"
+  },
+  {
+   "en": "All of his aunts and uncles were already here.",
+   "f": "audio/jenny/od_l125/4.mp3",
+   "s": "audio/jenny/od_l125/4s.mp3"
+  },
+  {
+   "en": "He watched in amazement as everyone worked together cooking, cleaning, and setting up games and music for entertainment.",
+   "f": "audio/jenny/od_l125/5.mp3",
+   "s": "audio/jenny/od_l125/5s.mp3"
+  },
+  {
+   "en": "\"What is a retirement party?\" Trey asked his older sister.",
+   "f": "audio/jenny/od_l125/6.mp3",
+   "s": "audio/jenny/od_l125/6s.mp3"
+  },
+  {
+   "en": "\"It's a celebration that Grandma has finished her employment,\" she replied.",
+   "f": "audio/jenny/od_l125/7.mp3",
+   "s": "audio/jenny/od_l125/7s.mp3"
+  },
+  {
+   "en": "\"Grandma is now finished with her job as a doctor.\"",
+   "f": "audio/jenny/od_l125/8.mp3",
+   "s": "audio/jenny/od_l125/8s.mp3"
+  },
+  {
+   "en": "When Grandma got there, Trey ran out the door and across the pavement to give her a hug.",
+   "f": "audio/jenny/od_l125/9.mp3",
+   "s": "audio/jenny/od_l125/9s.mp3"
+  },
+  {
+   "en": "\"Grandma! Now that you are done being a doctor, what will you do all day?\"",
+   "f": "audio/jenny/od_l125/10.mp3",
+   "s": "audio/jenny/od_l125/10s.mp3"
+  },
+  {
+   "en": "Grandma chuckled. \"Well, I am going to take lots of exciting trips, read my books, and spend more time with you and your sister.\"",
+   "f": "audio/jenny/od_l125/11.mp3",
+   "s": "audio/jenny/od_l125/11s.mp3"
+  },
+  {
+   "en": "\"Wow! That sounds like fun. When does my retirement start?\" asked Trey.",
+   "f": "audio/jenny/od_l125/12.mp3",
+   "s": "audio/jenny/od_l125/12s.mp3"
+  }
+ ],
+ "od_l126": [
+  {
+   "en": "Cesar's dog, Cooper, loves to play with toys.",
+   "f": "audio/jenny/od_l126/0.mp3",
+   "s": "audio/jenny/od_l126/0s.mp3"
+  },
+  {
+   "en": "Chew toys are his favorite.",
+   "f": "audio/jenny/od_l126/1.mp3",
+   "s": "audio/jenny/od_l126/1s.mp3"
+  },
+  {
+   "en": "The only problem is that Cooper treats his toys like they are disposable.",
+   "f": "audio/jenny/od_l126/2.mp3",
+   "s": "audio/jenny/od_l126/2s.mp3"
+  },
+  {
+   "en": "You see, Cooper has super strong teeth and he likes to chew and tug on his toys until they are destroyed.",
+   "f": "audio/jenny/od_l126/3.mp3",
+   "s": "audio/jenny/od_l126/3s.mp3"
+  },
+  {
+   "en": "Cooper's toys tend to last about a week.",
+   "f": "audio/jenny/od_l126/4.mp3",
+   "s": "audio/jenny/od_l126/4s.mp3"
+  },
+  {
+   "en": "Once he pulled a toy apart in less than an hour!",
+   "f": "audio/jenny/od_l126/5.mp3",
+   "s": "audio/jenny/od_l126/5s.mp3"
+  },
+  {
+   "en": "One day, Cesar brought home a gift for Cooper.",
+   "f": "audio/jenny/od_l126/6.mp3",
+   "s": "audio/jenny/od_l126/6s.mp3"
+  },
+  {
+   "en": "\"I think I finally found an indestructible dog toy,\" he proclaimed.",
+   "f": "audio/jenny/od_l126/7.mp3",
+   "s": "audio/jenny/od_l126/7s.mp3"
+  },
+  {
+   "en": "His family examined the toy. It was a set of three rubber rings linked together.",
+   "f": "audio/jenny/od_l126/8.mp3",
+   "s": "audio/jenny/od_l126/8s.mp3"
+  },
+  {
+   "en": "\"These rings are extremely flexible and impossible to break,\" Cesar explained.",
+   "f": "audio/jenny/od_l126/9.mp3",
+   "s": "audio/jenny/od_l126/9s.mp3"
+  },
+  {
+   "en": "\"They are washable so we can keep them clean.\"",
+   "f": "audio/jenny/od_l126/10.mp3",
+   "s": "audio/jenny/od_l126/10s.mp3"
+  },
+  {
+   "en": "\"They even glow in the dark so they are visible at night!\"",
+   "f": "audio/jenny/od_l126/11.mp3",
+   "s": "audio/jenny/od_l126/11s.mp3"
+  },
+  {
+   "en": "Was it possible? Was this finally the perfect toy for Cooper?",
+   "f": "audio/jenny/od_l126/12.mp3",
+   "s": "audio/jenny/od_l126/12s.mp3"
+  },
+  {
+   "en": "Cooper loved his new rings and chewed on them every day.",
+   "f": "audio/jenny/od_l126/13.mp3",
+   "s": "audio/jenny/od_l126/13s.mp3"
+  },
+  {
+   "en": "Three months later, the rings had a few visible chew marks, but they were still useable.",
+   "f": "audio/jenny/od_l126/14.mp3",
+   "s": "audio/jenny/od_l126/14s.mp3"
+  },
+  {
+   "en": "It was remarkable. This was the longest Cooper had ever kept a toy without tearing it apart.",
+   "f": "audio/jenny/od_l126/15.mp3",
+   "s": "audio/jenny/od_l126/15s.mp3"
+  },
+  {
+   "en": "Cesar and his family were all thrilled that they finally found an indestructible toy for their goofy, lovable pup.",
+   "f": "audio/jenny/od_l126/16.mp3",
+   "s": "audio/jenny/od_l126/16s.mp3"
+  }
+ ],
+ "od_l127": [
+  {
+   "en": "Macy, Stacy, and Tracy are triplets.",
+   "f": "audio/jenny/od_l127/0.mp3",
+   "s": "audio/jenny/od_l127/0s.mp3"
+  },
+  {
+   "en": "They do everything together.",
+   "f": "audio/jenny/od_l127/1.mp3",
+   "s": "audio/jenny/od_l127/1s.mp3"
+  },
+  {
+   "en": "Each morning they wake up and put on matching uniforms.",
+   "f": "audio/jenny/od_l127/2.mp3",
+   "s": "audio/jenny/od_l127/2s.mp3"
+  },
+  {
+   "en": "Then, they get on their bicycles and ride to school.",
+   "f": "audio/jenny/od_l127/3.mp3",
+   "s": "audio/jenny/od_l127/3s.mp3"
+  },
+  {
+   "en": "At school, they take all the same classes.",
+   "f": "audio/jenny/od_l127/4.mp3",
+   "s": "audio/jenny/od_l127/4s.mp3"
+  },
+  {
+   "en": "Their first class is French.",
+   "f": "audio/jenny/od_l127/5.mp3",
+   "s": "audio/jenny/od_l127/5s.mp3"
+  },
+  {
+   "en": "The triplets are bilingual because they already speak English and Spanish.",
+   "f": "audio/jenny/od_l127/6.mp3",
+   "s": "audio/jenny/od_l127/6s.mp3"
+  },
+  {
+   "en": "Once they learn French, they will be trilingual!",
+   "f": "audio/jenny/od_l127/7.mp3",
+   "s": "audio/jenny/od_l127/7s.mp3"
+  },
+  {
+   "en": "Their next class is math. In math class, they learn all about different kinds of triangles.",
+   "f": "audio/jenny/od_l127/8.mp3",
+   "s": "audio/jenny/od_l127/8s.mp3"
+  },
+  {
+   "en": "Then, in music class they practice a new song.",
+   "f": "audio/jenny/od_l127/9.mp3",
+   "s": "audio/jenny/od_l127/9s.mp3"
+  },
+  {
+   "en": "They always sing in unison at the biweekly show.",
+   "f": "audio/jenny/od_l127/10.mp3",
+   "s": "audio/jenny/od_l127/10s.mp3"
+  },
+  {
+   "en": "After lunch, they go to reading class. This is the triplets' favorite class.",
+   "f": "audio/jenny/od_l127/11.mp3",
+   "s": "audio/jenny/od_l127/11s.mp3"
+  },
+  {
+   "en": "Their teacher is reading the last book in a new trilogy to them.",
+   "f": "audio/jenny/od_l127/12.mp3",
+   "s": "audio/jenny/od_l127/12s.mp3"
+  },
+  {
+   "en": "They can not wait to learn how this story ends.",
+   "f": "audio/jenny/od_l127/13.mp3",
+   "s": "audio/jenny/od_l127/13s.mp3"
+  },
+  {
+   "en": "At the end of the day, the triplets get back on their bicycles and ride home together.",
+   "f": "audio/jenny/od_l127/14.mp3",
+   "s": "audio/jenny/od_l127/14s.mp3"
+  },
+  {
+   "en": "They are an unbreakable trio.",
+   "f": "audio/jenny/od_l127/15.mp3",
+   "s": "audio/jenny/od_l127/15s.mp3"
+  }
+ ],
+ "od_l128": [
+  {
+   "en": "The carnival is in town!",
+   "f": "audio/jenny/od_l128/0.mp3",
+   "s": "audio/jenny/od_l128/0s.mp3"
+  },
+  {
+   "en": "Get your tickets, grab a friend, and head on down to the fair grounds.",
+   "f": "audio/jenny/od_l128/1.mp3",
+   "s": "audio/jenny/od_l128/1s.mp3"
+  },
+  {
+   "en": "With so many options for excitement and entertainment, everyone is bound to have a great day at the carnival.",
+   "f": "audio/jenny/od_l128/2.mp3",
+   "s": "audio/jenny/od_l128/2s.mp3"
+  },
+  {
+   "en": "If you are seeking adventure, head over to the midway.",
+   "f": "audio/jenny/od_l128/3.mp3",
+   "s": "audio/jenny/od_l128/3s.mp3"
+  },
+  {
+   "en": "This is where you will find the rides.",
+   "f": "audio/jenny/od_l128/4.mp3",
+   "s": "audio/jenny/od_l128/4s.mp3"
+  },
+  {
+   "en": "Slide down the bumpy super slide, walk through the spooky haunted house, or buckle up for a ride on the speedy roller coaster.",
+   "f": "audio/jenny/od_l128/5.mp3",
+   "s": "audio/jenny/od_l128/5s.mp3"
+  },
+  {
+   "en": "If you get hungry, wander over to the food trucks.",
+   "f": "audio/jenny/od_l128/6.mp3",
+   "s": "audio/jenny/od_l128/6s.mp3"
+  },
+  {
+   "en": "Here you will find every treat imaginable.",
+   "f": "audio/jenny/od_l128/7.mp3",
+   "s": "audio/jenny/od_l128/7s.mp3"
+  },
+  {
+   "en": "A giant corndog, a funnel cake, and an ice-cold lemonade are the perfect carnival combination.",
+   "f": "audio/jenny/od_l128/8.mp3",
+   "s": "audio/jenny/od_l128/8s.mp3"
+  },
+  {
+   "en": "If you get too hot and sweaty outside, step into the expo hall.",
+   "f": "audio/jenny/od_l128/9.mp3",
+   "s": "audio/jenny/od_l128/9s.mp3"
+  },
+  {
+   "en": "Here you will meet farmers who can teach you about animals like chickens, pigs, and goats.",
+   "f": "audio/jenny/od_l128/10.mp3",
+   "s": "audio/jenny/od_l128/10s.mp3"
+  },
+  {
+   "en": "You may even get to hold a baby chick!",
+   "f": "audio/jenny/od_l128/11.mp3",
+   "s": "audio/jenny/od_l128/11s.mp3"
+  },
+  {
+   "en": "Also, there may be a cartoonist who will draw your caricature and a band playing music.",
+   "f": "audio/jenny/od_l128/12.mp3",
+   "s": "audio/jenny/od_l128/12s.mp3"
+  },
+  {
+   "en": "At the end of the day, everyone gathers to watch the firework display in the night sky.",
+   "f": "audio/jenny/od_l128/13.mp3",
+   "s": "audio/jenny/od_l128/13s.mp3"
+  },
+  {
+   "en": "This part is never a disappointment.",
+   "f": "audio/jenny/od_l128/14.mp3",
+   "s": "audio/jenny/od_l128/14s.mp3"
+  },
+  {
+   "en": "Spending the day at the carnival is always enjoyable.",
+   "f": "audio/jenny/od_l128/15.mp3",
+   "s": "audio/jenny/od_l128/15s.mp3"
+  }
+ ],
+ "od_u3p1": [
+  {
+   "en": "Career Day Information",
+   "f": "audio/jenny/od_u3p1/0.mp3",
+   "s": "audio/jenny/od_u3p1/0s.mp3"
+  },
+  {
+   "en": "Midori International Nursery School",
+   "f": "audio/jenny/od_u3p1/1.mp3",
+   "s": "audio/jenny/od_u3p1/1s.mp3"
+  },
+  {
+   "en": "You can experience the job of a nursery school teacher.",
+   "f": "audio/jenny/od_u3p1/2.mp3",
+   "s": "audio/jenny/od_u3p1/2s.mp3"
+  },
+  {
+   "en": "Make your own name tag.",
+   "f": "audio/jenny/od_u3p1/3.mp3",
+   "s": "audio/jenny/od_u3p1/3s.mp3"
+  },
+  {
+   "en": "Bring your own chopsticks and cup.",
+   "f": "audio/jenny/od_u3p1/4.mp3",
+   "s": "audio/jenny/od_u3p1/4s.mp3"
+  },
+  {
+   "en": "Bring one English picture book.",
+   "f": "audio/jenny/od_u3p1/5.mp3",
+   "s": "audio/jenny/od_u3p1/5s.mp3"
+  },
+  {
+   "en": "You will read it to the children.",
+   "f": "audio/jenny/od_u3p1/6.mp3",
+   "s": "audio/jenny/od_u3p1/6s.mp3"
+  },
+  {
+   "en": "Bring your sports shoes to play with the children.",
+   "f": "audio/jenny/od_u3p1/7.mp3",
+   "s": "audio/jenny/od_u3p1/7s.mp3"
+  },
+  {
+   "en": "Take your garbage home with you.",
+   "f": "audio/jenny/od_u3p1/8.mp3",
+   "s": "audio/jenny/od_u3p1/8s.mp3"
+  },
+  {
+   "en": "Park your bike by the entrance.",
+   "f": "audio/jenny/od_u3p1/9.mp3",
+   "s": "audio/jenny/od_u3p1/9s.mp3"
+  }
+ ],
+ "od_u3p2": [
+  {
+   "en": "Hi, Ms. Chen.",
+   "f": "audio/jenny/od_u3p2/0.mp3",
+   "s": "audio/jenny/od_u3p2/0s.mp3"
+  },
+  {
+   "en": "I'm going to visit Midori International Nursery School on Career Day.",
+   "f": "audio/jenny/od_u3p2/1.mp3",
+   "s": "audio/jenny/od_u3p2/1s.mp3"
+  },
+  {
+   "en": "I chose the school because I like small children.",
+   "f": "audio/jenny/od_u3p2/2.mp3",
+   "s": "audio/jenny/od_u3p2/2s.mp3"
+  },
+  {
+   "en": "I need to read an English picture book to the children.",
+   "f": "audio/jenny/od_u3p2/3.mp3",
+   "s": "audio/jenny/od_u3p2/3s.mp3"
+  },
+  {
+   "en": "What book will you read?",
+   "f": "audio/jenny/od_u3p2/4.mp3",
+   "s": "audio/jenny/od_u3p2/4s.mp3"
+  },
+  {
+   "en": "Well, I'm still thinking about it.",
+   "f": "audio/jenny/od_u3p2/5.mp3",
+   "s": "audio/jenny/od_u3p2/5s.mp3"
+  },
+  {
+   "en": "How about The Very Hungry Caterpillar?",
+   "f": "audio/jenny/od_u3p2/6.mp3",
+   "s": "audio/jenny/od_u3p2/6s.mp3"
+  },
+  {
+   "en": "Do you know it?",
+   "f": "audio/jenny/od_u3p2/7.mp3",
+   "s": "audio/jenny/od_u3p2/7s.mp3"
+  },
+  {
+   "en": "Yes. That picture book has colorful illustrations!",
+   "f": "audio/jenny/od_u3p2/8.mp3",
+   "s": "audio/jenny/od_u3p2/8s.mp3"
+  },
+  {
+   "en": "The children will like it.",
+   "f": "audio/jenny/od_u3p2/9.mp3",
+   "s": "audio/jenny/od_u3p2/9s.mp3"
+  },
+  {
+   "en": "I'm happy to hear that.",
+   "f": "audio/jenny/od_u3p2/10.mp3",
+   "s": "audio/jenny/od_u3p2/10s.mp3"
+  }
+ ],
+ "od_u3rt1": [
+  {
+   "en": "Everyone, look!",
+   "f": "audio/jenny/od_u3rt1/0.mp3",
+   "s": "audio/jenny/od_u3rt1/0s.mp3"
+  },
+  {
+   "en": "Here are some pretty pictures to look at.",
+   "f": "audio/jenny/od_u3rt1/1.mp3",
+   "s": "audio/jenny/od_u3rt1/1s.mp3"
+  },
+  {
+   "en": "Are you interested in butterflies?",
+   "f": "audio/jenny/od_u3rt1/2.mp3",
+   "s": "audio/jenny/od_u3rt1/2s.mp3"
+  },
+  {
+   "en": "This book taught me important things to remember.",
+   "f": "audio/jenny/od_u3rt1/3.mp3",
+   "s": "audio/jenny/od_u3rt1/3s.mp3"
+  },
+  {
+   "en": "OK, let's start.",
+   "f": "audio/jenny/od_u3rt1/4.mp3",
+   "s": "audio/jenny/od_u3rt1/4s.mp3"
+  },
+  {
+   "en": "In the light of the moon a little egg lay on a leaf.",
+   "f": "audio/jenny/od_u3rt1/5.mp3",
+   "s": "audio/jenny/od_u3rt1/5s.mp3"
+  },
+  {
+   "en": "One Sunday morning the warm sun came up and—pop!—out of the egg came a tiny and very hungry caterpillar.",
+   "f": "audio/jenny/od_u3rt1/6.mp3",
+   "s": "audio/jenny/od_u3rt1/6s.mp3"
+  },
+  {
+   "en": "He started to look for some food.",
+   "f": "audio/jenny/od_u3rt1/7.mp3",
+   "s": "audio/jenny/od_u3rt1/7s.mp3"
+  },
+  {
+   "en": "On Monday he ate through one apple. But he was still hungry.",
+   "f": "audio/jenny/od_u3rt1/8.mp3",
+   "s": "audio/jenny/od_u3rt1/8s.mp3"
+  },
+  {
+   "en": "On Tuesday he ate through two pears, but he was still hungry.",
+   "f": "audio/jenny/od_u3rt1/9.mp3",
+   "s": "audio/jenny/od_u3rt1/9s.mp3"
+  },
+  {
+   "en": "On Wednesday he ate through three plums, but he was still hungry.",
+   "f": "audio/jenny/od_u3rt1/10.mp3",
+   "s": "audio/jenny/od_u3rt1/10s.mp3"
+  },
+  {
+   "en": "On Thursday he ate through four strawberries, but he was still hungry.",
+   "f": "audio/jenny/od_u3rt1/11.mp3",
+   "s": "audio/jenny/od_u3rt1/11s.mp3"
+  }
+ ],
+ "od_u3rt2": [
+  {
+   "en": "Dear teachers,",
+   "f": "audio/jenny/od_u3rt2/0.mp3",
+   "s": "audio/jenny/od_u3rt2/0s.mp3"
+  },
+  {
+   "en": "Thank you for the wonderful experience.",
+   "f": "audio/jenny/od_u3rt2/1.mp3",
+   "s": "audio/jenny/od_u3rt2/1s.mp3"
+  },
+  {
+   "en": "I learned some important things.",
+   "f": "audio/jenny/od_u3rt2/2.mp3",
+   "s": "audio/jenny/od_u3rt2/2s.mp3"
+  },
+  {
+   "en": "First, it is important to look at the children's faces when I talk.",
+   "f": "audio/jenny/od_u3rt2/3.mp3",
+   "s": "audio/jenny/od_u3rt2/3s.mp3"
+  },
+  {
+   "en": "Second, it is necessary to adjust my reading speed when I tell a story to the children.",
+   "f": "audio/jenny/od_u3rt2/4.mp3",
+   "s": "audio/jenny/od_u3rt2/4s.mp3"
+  },
+  {
+   "en": "It was difficult to read the sentences clearly, but the children tried to understand them.",
+   "f": "audio/jenny/od_u3rt2/5.mp3",
+   "s": "audio/jenny/od_u3rt2/5s.mp3"
+  },
+  {
+   "en": "They smiled and clapped their hands.",
+   "f": "audio/jenny/od_u3rt2/6.mp3",
+   "s": "audio/jenny/od_u3rt2/6s.mp3"
+  },
+  {
+   "en": "I was glad to see their happy faces.",
+   "f": "audio/jenny/od_u3rt2/7.mp3",
+   "s": "audio/jenny/od_u3rt2/7s.mp3"
+  },
+  {
+   "en": "I want to be a nursery school teacher.",
+   "f": "audio/jenny/od_u3rt2/8.mp3",
+   "s": "audio/jenny/od_u3rt2/8s.mp3"
+  },
+  {
+   "en": "Actually, I got up early to read The Very Hungry Caterpillar again and again.",
+   "f": "audio/jenny/od_u3rt2/9.mp3",
+   "s": "audio/jenny/od_u3rt2/9s.mp3"
+  },
+  {
+   "en": "From now on, I'm going to read out loud every day to practice.",
+   "f": "audio/jenny/od_u3rt2/10.mp3",
+   "s": "audio/jenny/od_u3rt2/10s.mp3"
+  },
+  {
+   "en": "Thank you again.",
+   "f": "audio/jenny/od_u3rt2/11.mp3",
+   "s": "audio/jenny/od_u3rt2/11s.mp3"
+  },
+  {
+   "en": "Sincerely, Anna",
+   "f": "audio/jenny/od_u3rt2/12.mp3",
+   "s": "audio/jenny/od_u3rt2/12s.mp3"
+  }
+ ],
+ "od_sa1": [
+  {
+   "en": "I'm going to talk about my favorite Japanese food, okonomiyaki.",
+   "f": "audio/jenny/od_sa1/0.mp3",
+   "s": "audio/jenny/od_sa1/0s.mp3"
+  },
+  {
+   "en": "It looks like a pancake or pizza.",
+   "f": "audio/jenny/od_sa1/1.mp3",
+   "s": "audio/jenny/od_sa1/1s.mp3"
+  },
+  {
+   "en": "It's popular with people of all ages.",
+   "f": "audio/jenny/od_sa1/2.mp3",
+   "s": "audio/jenny/od_sa1/2s.mp3"
+  },
+  {
+   "en": "You can make it easily.",
+   "f": "audio/jenny/od_sa1/3.mp3",
+   "s": "audio/jenny/od_sa1/3s.mp3"
+  },
+  {
+   "en": "We usually make okonomiyaki with flour, cabbage, eggs, and water.",
+   "f": "audio/jenny/od_sa1/4.mp3",
+   "s": "audio/jenny/od_sa1/4s.mp3"
+  },
+  {
+   "en": "It's fun to add many different ingredients to it.",
+   "f": "audio/jenny/od_sa1/5.mp3",
+   "s": "audio/jenny/od_sa1/5s.mp3"
+  },
+  {
+   "en": "For example, you can add meat, seafood, vegetables, cheese, or rice cakes.",
+   "f": "audio/jenny/od_sa1/6.mp3",
+   "s": "audio/jenny/od_sa1/6s.mp3"
+  },
+  {
+   "en": "Pork okonomiyaki is my favorite.",
+   "f": "audio/jenny/od_sa1/7.mp3",
+   "s": "audio/jenny/od_sa1/7s.mp3"
+  },
+  {
+   "en": "I love it because its sauce and crispy pork are tasty.",
+   "f": "audio/jenny/od_sa1/8.mp3",
+   "s": "audio/jenny/od_sa1/8s.mp3"
+  },
+  {
+   "en": "For these reasons, okonomiyaki is very popular in Japan.",
+   "f": "audio/jenny/od_sa1/9.mp3",
+   "s": "audio/jenny/od_sa1/9s.mp3"
+  }
+ ],
+ "od_lr1a": [
+  {
+   "en": "When we need to see the time, we look at clocks or watches.",
+   "f": "audio/jenny/od_lr1a/0.mp3",
+   "s": "audio/jenny/od_lr1a/0s.mp3"
+  },
+  {
+   "en": "Today we can check the time very easily.",
+   "f": "audio/jenny/od_lr1a/1.mp3",
+   "s": "audio/jenny/od_lr1a/1s.mp3"
+  },
+  {
+   "en": "However, it was not so easy long ago.",
+   "f": "audio/jenny/od_lr1a/2.mp3",
+   "s": "audio/jenny/od_lr1a/2s.mp3"
+  },
+  {
+   "en": "Timekeeping has a very interesting history.",
+   "f": "audio/jenny/od_lr1a/3.mp3",
+   "s": "audio/jenny/od_lr1a/3s.mp3"
+  },
+  {
+   "en": "Ancient people used nature to read the time.",
+   "f": "audio/jenny/od_lr1a/4.mp3",
+   "s": "audio/jenny/od_lr1a/4s.mp3"
+  },
+  {
+   "en": "About 6,000 years ago, Egyptians used the sun.",
+   "f": "audio/jenny/od_lr1a/5.mp3",
+   "s": "audio/jenny/od_lr1a/5s.mp3"
+  },
+  {
+   "en": "They put sticks in the ground, and the shadows told them the time.",
+   "f": "audio/jenny/od_lr1a/6.mp3",
+   "s": "audio/jenny/od_lr1a/6s.mp3"
+  },
+  {
+   "en": "These were some of the first clocks in the world.",
+   "f": "audio/jenny/od_lr1a/7.mp3",
+   "s": "audio/jenny/od_lr1a/7s.mp3"
+  }
+ ],
+ "od_lr1b": [
+  {
+   "en": "At night, people could not use the sun.",
+   "f": "audio/jenny/od_lr1b/0.mp3",
+   "s": "audio/jenny/od_lr1b/0s.mp3"
+  },
+  {
+   "en": "About 3,500 years ago, Egyptians started to measure time without it.",
+   "f": "audio/jenny/od_lr1b/1.mp3",
+   "s": "audio/jenny/od_lr1b/1s.mp3"
+  },
+  {
+   "en": "They put water in pots.",
+   "f": "audio/jenny/od_lr1b/2.mp3",
+   "s": "audio/jenny/od_lr1b/2s.mp3"
+  },
+  {
+   "en": "The pots had tiny holes in them.",
+   "f": "audio/jenny/od_lr1b/3.mp3",
+   "s": "audio/jenny/od_lr1b/3s.mp3"
+  },
+  {
+   "en": "The water decreased little by little.",
+   "f": "audio/jenny/od_lr1b/4.mp3",
+   "s": "audio/jenny/od_lr1b/4s.mp3"
+  },
+  {
+   "en": "The lines in the pots told them the time.",
+   "f": "audio/jenny/od_lr1b/5.mp3",
+   "s": "audio/jenny/od_lr1b/5s.mp3"
+  },
+  {
+   "en": "About 1,500 years ago, other people used fire.",
+   "f": "audio/jenny/od_lr1b/6.mp3",
+   "s": "audio/jenny/od_lr1b/6s.mp3"
+  },
+  {
+   "en": "They burned candles, for example.",
+   "f": "audio/jenny/od_lr1b/7.mp3",
+   "s": "audio/jenny/od_lr1b/7s.mp3"
+  },
+  {
+   "en": "The candles gave them light, and people saw the time by the lines on them.",
+   "f": "audio/jenny/od_lr1b/8.mp3",
+   "s": "audio/jenny/od_lr1b/8s.mp3"
+  }
+ ],
+ "od_lr1c": [
+  {
+   "en": "About 700 years ago, people started to make mechanical clocks.",
+   "f": "audio/jenny/od_lr1c/0.mp3",
+   "s": "audio/jenny/od_lr1c/0s.mp3"
+  },
+  {
+   "en": "At first, they used weights to power these clocks.",
+   "f": "audio/jenny/od_lr1c/1.mp3",
+   "s": "audio/jenny/od_lr1c/1s.mp3"
+  },
+  {
+   "en": "The clocks told the hour with bells.",
+   "f": "audio/jenny/od_lr1c/2.mp3",
+   "s": "audio/jenny/od_lr1c/2s.mp3"
+  },
+  {
+   "en": "However, the weights were big and heavy, so these clocks were difficult to move.",
+   "f": "audio/jenny/od_lr1c/3.mp3",
+   "s": "audio/jenny/od_lr1c/3s.mp3"
+  },
+  {
+   "en": "About 500 years ago, people improved their clocks.",
+   "f": "audio/jenny/od_lr1c/4.mp3",
+   "s": "audio/jenny/od_lr1c/4s.mp3"
+  },
+  {
+   "en": "They used springs to power the clocks.",
+   "f": "audio/jenny/od_lr1c/5.mp3",
+   "s": "audio/jenny/od_lr1c/5s.mp3"
+  },
+  {
+   "en": "The springs were small and light.",
+   "f": "audio/jenny/od_lr1c/6.mp3",
+   "s": "audio/jenny/od_lr1c/6s.mp3"
+  },
+  {
+   "en": "So, people could move the clocks easily.",
+   "f": "audio/jenny/od_lr1c/7.mp3",
+   "s": "audio/jenny/od_lr1c/7s.mp3"
+  },
+  {
+   "en": "Eventually, people began to carry watches.",
+   "f": "audio/jenny/od_lr1c/8.mp3",
+   "s": "audio/jenny/od_lr1c/8s.mp3"
+  }
+ ],
+ "od_lr1d": [
+  {
+   "en": "Today, we have many types of clocks and watches.",
+   "f": "audio/jenny/od_lr1d/0.mp3",
+   "s": "audio/jenny/od_lr1d/0s.mp3"
+  },
+  {
+   "en": "This is the result of many great inventions and many people's efforts.",
+   "f": "audio/jenny/od_lr1d/1.mp3",
+   "s": "audio/jenny/od_lr1d/1s.mp3"
+  },
+  {
+   "en": "Even now, clocks and watches are improving.",
+   "f": "audio/jenny/od_lr1d/2.mp3",
+   "s": "audio/jenny/od_lr1d/2s.mp3"
+  },
+  {
+   "en": "We cannot really see time, but ancient people tried to recognize it.",
+   "f": "audio/jenny/od_lr1d/3.mp3",
+   "s": "audio/jenny/od_lr1d/3s.mp3"
+  },
+  {
+   "en": "They used different ideas and technologies to measure it.",
+   "f": "audio/jenny/od_lr1d/4.mp3",
+   "s": "audio/jenny/od_lr1d/4s.mp3"
+  },
+  {
+   "en": "When we look at our clocks and watches, we can easily see the time.",
+   "f": "audio/jenny/od_lr1d/5.mp3",
+   "s": "audio/jenny/od_lr1d/5s.mp3"
+  },
+  {
+   "en": "Now it is time to recognize the wisdom of those ancient people.",
+   "f": "audio/jenny/od_lr1d/6.mp3",
+   "s": "audio/jenny/od_lr1d/6s.mp3"
+  }
+ ]
 }
