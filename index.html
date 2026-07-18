@@ -162,6 +162,23 @@
     while(h.length%4) h+="=";
     DATA=JSON.parse(decodeURIComponent(escape(atob(h))));
   }catch(e){}
+
+  // ---- LINEアプリ内ブラウザ対策 ----
+  // LINEの中のブラウザ（WebView）では音声認識・マイク許可が下りない（service-not-allowed）。
+  // URLに openExternalBrowser=1 を付けて開き直すと、LINEが外部ブラウザ（Safari/Chrome）で開いてくれる（LINE公式パラメータ）。
+  var extUrl=location.origin+location.pathname+"?openExternalBrowser=1"+location.hash;
+  if(/\bLine\//i.test(navigator.userAgent||"")){
+    if(!/openExternalBrowser=1/.test(location.search)) location.replace(extUrl); // ループ防止：付いていたら再リダイレクトしない
+    document.body.innerHTML='<div class="wrap">'+
+      '<div class="hero"><div class="k">ONDOKU CHECK</div><h1>🎤 音読チェック</h1></div>'+
+      '<div class="card"><div style="font-size:40px">🧭</div>'+
+      '<h2 style="font-size:18px; margin-top:6px">Safari で ひらこう！</h2>'+
+      '<div class="note">LINEの中のブラウザでは マイクが つかえないよ。<br>自動で Safari（外のブラウザ）が ひらかなかったら、下のボタンを おしてね。</div>'+
+      '<div class="actions"><a class="btn go" style="display:inline-block; text-decoration:none" href="'+extUrl+'">Safari で ひらく ▶</a></div>'+
+      '</div></div>';
+    return;
+  }
+
   if(!DATA || !DATA.sents || !DATA.sents.length){
     document.body.innerHTML='<div class="wrap"><div class="card"><div style="font-size:40px">🐛</div>'+
       '<h2 style="font-size:18px">データが見つからないよ</h2>'+
