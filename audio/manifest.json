@@ -1,44 +1,1155 @@
 {
-  "od_l81": [
-    {
-      "en": "Irma the turtle loved to surf.",
-      "f": "audio/od_l81/0.m4a?v=2"
-    },
-    {
-      "en": "Her mother, Shirly, was the first girl surfer in their turtle village, and Irma wanted to be just like her.",
-      "f": "audio/od_l81/1.m4a?v=2"
-    },
-    {
-      "en": "Every morning Irma would rush to the shoreline.",
-      "f": "audio/od_l81/2.m4a?v=2"
-    },
-    {
-      "en": "When she was surfing, Irma would do flips and turns.",
-      "f": "audio/od_l81/3.m4a?v=2"
-    },
-    {
-      "en": "She would twirl like a twister.",
-      "f": "audio/od_l81/4.m4a?v=2"
-    },
-    {
-      "en": "All the other animals were shocked that a girl turtle could surf so well!",
-      "f": "audio/od_l81/5.m4a?v=2"
-    },
-    {
-      "en": "Irma would just yell, \"A girl can do anything!\" just like her mother told her.",
-      "f": "audio/od_l81/6.m4a?v=2"
-    },
-    {
-      "en": "Irma would surf until sunset.",
-      "f": "audio/od_l81/7.m4a?v=2"
-    },
-    {
-      "en": "When the sun was no longer in the sky, she would skip back home.",
-      "f": "audio/od_l81/8.m4a?v=2"
-    },
-    {
-      "en": "Once she was home, she would curl up in her turtle bed and relax.",
-      "f": "audio/od_l81/9.m4a?v=2"
-    }
-  ]
+ "od_l81": [
+  {
+   "en": "Irma the turtle loved to surf.",
+   "f": "audio/od_l81/0.m4a?v=2"
+  },
+  {
+   "en": "Her mother, Shirly, was the first girl surfer in their turtle village, and Irma wanted to be just like her.",
+   "f": "audio/od_l81/1.m4a?v=2"
+  },
+  {
+   "en": "Every morning Irma would rush to the shoreline.",
+   "f": "audio/od_l81/2.m4a?v=2"
+  },
+  {
+   "en": "When she was surfing, Irma would do flips and turns.",
+   "f": "audio/od_l81/3.m4a?v=2"
+  },
+  {
+   "en": "She would twirl like a twister.",
+   "f": "audio/od_l81/4.m4a?v=2"
+  },
+  {
+   "en": "All the other animals were shocked that a girl turtle could surf so well!",
+   "f": "audio/od_l81/5.m4a?v=2"
+  },
+  {
+   "en": "Irma would just yell, \"A girl can do anything!\" just like her mother told her.",
+   "f": "audio/od_l81/6.m4a?v=2"
+  },
+  {
+   "en": "Irma would surf until sunset.",
+   "f": "audio/od_l81/7.m4a?v=2"
+  },
+  {
+   "en": "When the sun was no longer in the sky, she would skip back home.",
+   "f": "audio/od_l81/8.m4a?v=2"
+  },
+  {
+   "en": "Once she was home, she would curl up in her turtle bed and relax.",
+   "f": "audio/od_l81/9.m4a?v=2"
+  }
+ ],
+ "od_l8": [
+  {
+   "en": "I sit. I tap.",
+   "f": "audio/jenny/od_l8/0.mp3",
+   "s": "audio/jenny/od_l8/0s.mp3"
+  },
+  {
+   "en": "I sit and I tap.",
+   "f": "audio/jenny/od_l8/1.mp3",
+   "s": "audio/jenny/od_l8/1s.mp3"
+  },
+  {
+   "en": "I tap and I sit.",
+   "f": "audio/jenny/od_l8/2.mp3",
+   "s": "audio/jenny/od_l8/2s.mp3"
+  },
+  {
+   "en": "Pim and I sit.",
+   "f": "audio/jenny/od_l8/3.mp3",
+   "s": "audio/jenny/od_l8/3s.mp3"
+  },
+  {
+   "en": "Pim and I tap.",
+   "f": "audio/jenny/od_l8/4.mp3",
+   "s": "audio/jenny/od_l8/4s.mp3"
+  }
+ ],
+ "od_l9": [
+  {
+   "en": "A map. I tap the map.",
+   "f": "audio/jenny/od_l9/0.mp3",
+   "s": "audio/jenny/od_l9/0s.mp3"
+  },
+  {
+   "en": "A tin. A pin is in the tin.",
+   "f": "audio/jenny/od_l9/1.mp3",
+   "s": "audio/jenny/od_l9/1s.mp3"
+  },
+  {
+   "en": "I tap the pin. I tap it in.",
+   "f": "audio/jenny/od_l9/2.mp3",
+   "s": "audio/jenny/od_l9/2s.mp3"
+  },
+  {
+   "en": "The pin is in the map.",
+   "f": "audio/jenny/od_l9/3.mp3",
+   "s": "audio/jenny/od_l9/3s.mp3"
+  }
+ ],
+ "od_l10": [
+  {
+   "en": "A pit. Min is in the pit.",
+   "f": "audio/jenny/od_l10/0.mp3",
+   "s": "audio/jenny/od_l10/0s.mp3"
+  },
+  {
+   "en": "Nat is in the pit.",
+   "f": "audio/jenny/od_l10/1.mp3",
+   "s": "audio/jenny/od_l10/1s.mp3"
+  },
+  {
+   "en": "Min and Nat fit.",
+   "f": "audio/jenny/od_l10/2.mp3",
+   "s": "audio/jenny/od_l10/2s.mp3"
+  },
+  {
+   "en": "Min and Nat sit in the pit.",
+   "f": "audio/jenny/od_l10/3.mp3",
+   "s": "audio/jenny/od_l10/3s.mp3"
+  },
+  {
+   "en": "Sap is in the pit.",
+   "f": "audio/jenny/od_l10/4.mp3",
+   "s": "audio/jenny/od_l10/4s.mp3"
+  },
+  {
+   "en": "Min and Nat sat in sap!",
+   "f": "audio/jenny/od_l10/5.mp3",
+   "s": "audio/jenny/od_l10/5s.mp3"
+  }
+ ],
+ "od_l11": [
+  {
+   "en": "Sam is tan. Pam is tan.",
+   "f": "audio/jenny/od_l11/0.mp3",
+   "s": "audio/jenny/od_l11/0s.mp3"
+  },
+  {
+   "en": "Pam is as tan as Sam.",
+   "f": "audio/jenny/od_l11/1.mp3",
+   "s": "audio/jenny/od_l11/1s.mp3"
+  },
+  {
+   "en": "Sam and Pam sat on the mat.",
+   "f": "audio/jenny/od_l11/2.mp3",
+   "s": "audio/jenny/od_l11/2s.mp3"
+  },
+  {
+   "en": "Sam and Pam tap the mat.",
+   "f": "audio/jenny/od_l11/3.mp3",
+   "s": "audio/jenny/od_l11/3s.mp3"
+  },
+  {
+   "en": "Sam and Pam tap and tap and tap.",
+   "f": "audio/jenny/od_l11/4.mp3",
+   "s": "audio/jenny/od_l11/4s.mp3"
+  },
+  {
+   "en": "Sam and Pam nap.",
+   "f": "audio/jenny/od_l11/5.mp3",
+   "s": "audio/jenny/od_l11/5s.mp3"
+  }
+ ],
+ "od_l12": [
+  {
+   "en": "Tom is a man. Tom is not a fan.",
+   "f": "audio/jenny/od_l12/0.mp3",
+   "s": "audio/jenny/od_l12/0s.mp3"
+  },
+  {
+   "en": "A fan is not a man.",
+   "f": "audio/jenny/od_l12/1.mp3",
+   "s": "audio/jenny/od_l12/1s.mp3"
+  },
+  {
+   "en": "Tom is on the mat.",
+   "f": "audio/jenny/od_l12/2.mp3",
+   "s": "audio/jenny/od_l12/2s.mp3"
+  },
+  {
+   "en": "The fan is on the mat.",
+   "f": "audio/jenny/od_l12/3.mp3",
+   "s": "audio/jenny/od_l12/3s.mp3"
+  },
+  {
+   "en": "Tom and the fan fit on the mat.",
+   "f": "audio/jenny/od_l12/4.mp3",
+   "s": "audio/jenny/od_l12/4s.mp3"
+  }
+ ],
+ "od_l13": [
+  {
+   "en": "Dad is sad. Dad did not fit in the pit.",
+   "f": "audio/jenny/od_l13/0.mp3",
+   "s": "audio/jenny/od_l13/0s.mp3"
+  },
+  {
+   "en": "Sid is not sad. Sid can fit in the pit.",
+   "f": "audio/jenny/od_l13/1.mp3",
+   "s": "audio/jenny/od_l13/1s.mp3"
+  },
+  {
+   "en": "Dad is mad. Dad did not sit in the pit.",
+   "f": "audio/jenny/od_l13/2.mp3",
+   "s": "audio/jenny/od_l13/2s.mp3"
+  },
+  {
+   "en": "Sid is not mad. Sid can sit in the pit.",
+   "f": "audio/jenny/od_l13/3.mp3",
+   "s": "audio/jenny/od_l13/3s.mp3"
+  }
+ ],
+ "od_l14": [
+  {
+   "en": "Can Cam fit on the cot?",
+   "f": "audio/jenny/od_l14/0.mp3",
+   "s": "audio/jenny/od_l14/0s.mp3"
+  },
+  {
+   "en": "Cam can not fit on the cot.",
+   "f": "audio/jenny/od_l14/1.mp3",
+   "s": "audio/jenny/od_l14/1s.mp3"
+  },
+  {
+   "en": "Can the cat fit on the cot?",
+   "f": "audio/jenny/od_l14/2.mp3",
+   "s": "audio/jenny/od_l14/2s.mp3"
+  },
+  {
+   "en": "The cat can fit on the cot.",
+   "f": "audio/jenny/od_l14/3.mp3",
+   "s": "audio/jenny/od_l14/3s.mp3"
+  },
+  {
+   "en": "The cat can nap on the cot.",
+   "f": "audio/jenny/od_l14/4.mp3",
+   "s": "audio/jenny/od_l14/4s.mp3"
+  },
+  {
+   "en": "Cam can not nap on the cot.",
+   "f": "audio/jenny/od_l14/5.mp3",
+   "s": "audio/jenny/od_l14/5s.mp3"
+  },
+  {
+   "en": "Cam can nap on the mat.",
+   "f": "audio/jenny/od_l14/6.mp3",
+   "s": "audio/jenny/od_l14/6s.mp3"
+  }
+ ],
+ "od_l15": [
+  {
+   "en": "The pup is up! The pup is on us. It's fun.",
+   "f": "audio/jenny/od_l15/0.mp3",
+   "s": "audio/jenny/od_l15/0s.mp3"
+  },
+  {
+   "en": "Mom said the pup can sit on the mat in the sun.",
+   "f": "audio/jenny/od_l15/1.mp3",
+   "s": "audio/jenny/od_l15/1s.mp3"
+  },
+  {
+   "en": "The pup did not sit on the mat.",
+   "f": "audio/jenny/od_l15/2.mp3",
+   "s": "audio/jenny/od_l15/2s.mp3"
+  },
+  {
+   "en": "The pup is in the mud!",
+   "f": "audio/jenny/od_l15/3.mp3",
+   "s": "audio/jenny/od_l15/3s.mp3"
+  }
+ ],
+ "od_l16": [
+  {
+   "en": "Gus is a dog. Gus the dog is fun.",
+   "f": "audio/jenny/od_l16/0.mp3",
+   "s": "audio/jenny/od_l16/0s.mp3"
+  },
+  {
+   "en": "Gus the dog can dig. Gus can dig in a pit.",
+   "f": "audio/jenny/od_l16/1.mp3",
+   "s": "audio/jenny/od_l16/1s.mp3"
+  },
+  {
+   "en": "Gus dug and dug and dug.",
+   "f": "audio/jenny/od_l16/2.mp3",
+   "s": "audio/jenny/od_l16/2s.mp3"
+  },
+  {
+   "en": "Gus dug in the mud!",
+   "f": "audio/jenny/od_l16/3.mp3",
+   "s": "audio/jenny/od_l16/3s.mp3"
+  },
+  {
+   "en": "\"Gus! Do not dig in the mud!\" said Mom.",
+   "f": "audio/jenny/od_l16/4.mp3",
+   "s": "audio/jenny/od_l16/4s.mp3"
+  }
+ ],
+ "od_l17": [
+  {
+   "en": "Sib got on the bus.",
+   "f": "audio/jenny/od_l17/0.mp3",
+   "s": "audio/jenny/od_l17/0s.mp3"
+  },
+  {
+   "en": "Bob, Gab, and Bim got on the bus.",
+   "f": "audio/jenny/od_l17/1.mp3",
+   "s": "audio/jenny/od_l17/1s.mp3"
+  },
+  {
+   "en": "A big bad bug got on the bus.",
+   "f": "audio/jenny/od_l17/2.mp3",
+   "s": "audio/jenny/od_l17/2s.mp3"
+  },
+  {
+   "en": "\"I can not sit on the bus,\" said Sib.",
+   "f": "audio/jenny/od_l17/3.mp3",
+   "s": "audio/jenny/od_l17/3s.mp3"
+  },
+  {
+   "en": "Sib got up. Bob got up.",
+   "f": "audio/jenny/od_l17/4.mp3",
+   "s": "audio/jenny/od_l17/4s.mp3"
+  },
+  {
+   "en": "Gab got up and Bim got up.",
+   "f": "audio/jenny/od_l17/5.mp3",
+   "s": "audio/jenny/od_l17/5s.mp3"
+  },
+  {
+   "en": "But the big bad bug did not.",
+   "f": "audio/jenny/od_l17/6.mp3",
+   "s": "audio/jenny/od_l17/6s.mp3"
+  }
+ ],
+ "od_l18": [
+  {
+   "en": "Mom and Dad get a big bed.",
+   "f": "audio/jenny/od_l18/0.mp3",
+   "s": "audio/jenny/od_l18/0s.mp3"
+  },
+  {
+   "en": "Ben and Ted get on the big bed.",
+   "f": "audio/jenny/od_l18/1.mp3",
+   "s": "audio/jenny/od_l18/1s.mp3"
+  },
+  {
+   "en": "Gab and Dot get on the big bed.",
+   "f": "audio/jenny/od_l18/2.mp3",
+   "s": "audio/jenny/od_l18/2s.mp3"
+  },
+  {
+   "en": "Tam the cat and Gus the dog get on the big bed.",
+   "f": "audio/jenny/od_l18/3.mp3",
+   "s": "audio/jenny/od_l18/3s.mp3"
+  },
+  {
+   "en": "Ned and Ed get on the big bed.",
+   "f": "audio/jenny/od_l18/4.mp3",
+   "s": "audio/jenny/od_l18/4s.mp3"
+  },
+  {
+   "en": "Mom and Dad get on the big bed.",
+   "f": "audio/jenny/od_l18/5.mp3",
+   "s": "audio/jenny/od_l18/5s.mp3"
+  },
+  {
+   "en": "Ten fit on the big bed!",
+   "f": "audio/jenny/od_l18/6.mp3",
+   "s": "audio/jenny/od_l18/6s.mp3"
+  }
+ ],
+ "od_l19": [
+  {
+   "en": "I see a pig. The pig is in its pen.",
+   "f": "audio/jenny/od_l19/0.mp3",
+   "s": "audio/jenny/od_l19/0s.mp3"
+  },
+  {
+   "en": "I see a cat. The cat is on the bed.",
+   "f": "audio/jenny/od_l19/1.mp3",
+   "s": "audio/jenny/od_l19/1s.mp3"
+  },
+  {
+   "en": "I see a dog. The dog is in its den.",
+   "f": "audio/jenny/od_l19/2.mp3",
+   "s": "audio/jenny/od_l19/2s.mp3"
+  },
+  {
+   "en": "I see a bug. The bug is on a bat!",
+   "f": "audio/jenny/od_l19/3.mp3",
+   "s": "audio/jenny/od_l19/3s.mp3"
+  }
+ ],
+ "od_l20": [
+  {
+   "en": "Tam and Meg got cats.",
+   "f": "audio/jenny/od_l20/0.mp3",
+   "s": "audio/jenny/od_l20/0s.mp3"
+  },
+  {
+   "en": "\"The cats can fit on the bed,\" said Tam.",
+   "f": "audio/jenny/od_l20/1.mp3",
+   "s": "audio/jenny/od_l20/1s.mp3"
+  },
+  {
+   "en": "\"The cats can sit on top of the cot,\" said Meg.",
+   "f": "audio/jenny/od_l20/2.mp3",
+   "s": "audio/jenny/od_l20/2s.mp3"
+  },
+  {
+   "en": "Tam pets the cats. Meg pets the cats.",
+   "f": "audio/jenny/od_l20/3.mp3",
+   "s": "audio/jenny/od_l20/3s.mp3"
+  },
+  {
+   "en": "The cats nap.",
+   "f": "audio/jenny/od_l20/4.mp3",
+   "s": "audio/jenny/od_l20/4s.mp3"
+  }
+ ],
+ "od_l21": [
+  {
+   "en": "Mom sees the cubs.",
+   "f": "audio/jenny/od_l21/0.mp3",
+   "s": "audio/jenny/od_l21/0s.mp3"
+  },
+  {
+   "en": "Mom and the cubs get in the den.",
+   "f": "audio/jenny/od_l21/1.mp3",
+   "s": "audio/jenny/od_l21/1s.mp3"
+  },
+  {
+   "en": "The den is big. Mom sits in the den.",
+   "f": "audio/jenny/od_l21/2.mp3",
+   "s": "audio/jenny/od_l21/2s.mp3"
+  },
+  {
+   "en": "The cubs see bugs and bats in the den.",
+   "f": "audio/jenny/od_l21/3.mp3",
+   "s": "audio/jenny/od_l21/3s.mp3"
+  },
+  {
+   "en": "The cubs get the bugs.",
+   "f": "audio/jenny/od_l21/4.mp3",
+   "s": "audio/jenny/od_l21/4s.mp3"
+  },
+  {
+   "en": "The cubs do not get the bats.",
+   "f": "audio/jenny/od_l21/5.mp3",
+   "s": "audio/jenny/od_l21/5s.mp3"
+  },
+  {
+   "en": "Mom and the cubs nap in the den.",
+   "f": "audio/jenny/od_l21/6.mp3",
+   "s": "audio/jenny/od_l21/6s.mp3"
+  }
+ ],
+ "od_l22": [
+  {
+   "en": "Kip is the best pup. Kip sits. Kip skips.",
+   "f": "audio/jenny/od_l22/0.mp3",
+   "s": "audio/jenny/od_l22/0s.mp3"
+  },
+  {
+   "en": "Kip runs in the sun.",
+   "f": "audio/jenny/od_l22/1.mp3",
+   "s": "audio/jenny/od_l22/1s.mp3"
+  },
+  {
+   "en": "Kip runs fast to get a disk.",
+   "f": "audio/jenny/od_l22/2.mp3",
+   "s": "audio/jenny/od_l22/2s.mp3"
+  },
+  {
+   "en": "But Kip did not see the mud.",
+   "f": "audio/jenny/od_l22/3.mp3",
+   "s": "audio/jenny/od_l22/3s.mp3"
+  },
+  {
+   "en": "\"Stop, Kip!,\" Dad said. But Kip can not stop.",
+   "f": "audio/jenny/od_l22/4.mp3",
+   "s": "audio/jenny/od_l22/4s.mp3"
+  },
+  {
+   "en": "Kip skids into the mud.",
+   "f": "audio/jenny/od_l22/5.mp3",
+   "s": "audio/jenny/od_l22/5s.mp3"
+  },
+  {
+   "en": "Dad gets Kip in the tub.",
+   "f": "audio/jenny/od_l22/6.mp3",
+   "s": "audio/jenny/od_l22/6s.mp3"
+  }
+ ],
+ "od_l23": [
+  {
+   "en": "The hen sits in the big hut.",
+   "f": "audio/jenny/od_l23/0.mp3",
+   "s": "audio/jenny/od_l23/0s.mp3"
+  },
+  {
+   "en": "The hog sees the hut.",
+   "f": "audio/jenny/od_l23/1.mp3",
+   "s": "audio/jenny/od_l23/1s.mp3"
+  },
+  {
+   "en": "The hog asks the hen if he can sit in the hut.",
+   "f": "audio/jenny/od_l23/2.mp3",
+   "s": "audio/jenny/od_l23/2s.mp3"
+  },
+  {
+   "en": "The hog and the hen sit in the hut.",
+   "f": "audio/jenny/od_l23/3.mp3",
+   "s": "audio/jenny/od_l23/3s.mp3"
+  },
+  {
+   "en": "The dog sees the hut.",
+   "f": "audio/jenny/od_l23/4.mp3",
+   "s": "audio/jenny/od_l23/4s.mp3"
+  },
+  {
+   "en": "The dog asks the hen if he can sit in the hut.",
+   "f": "audio/jenny/od_l23/5.mp3",
+   "s": "audio/jenny/od_l23/5s.mp3"
+  },
+  {
+   "en": "The dog, the hog, and the hen sit in the big hut.",
+   "f": "audio/jenny/od_l23/6.mp3",
+   "s": "audio/jenny/od_l23/6s.mp3"
+  }
+ ],
+ "od_l24": [
+  {
+   "en": "The red cat sees a rat. The rat runs.",
+   "f": "audio/jenny/od_l24/0.mp3",
+   "s": "audio/jenny/od_l24/0s.mp3"
+  },
+  {
+   "en": "The red cat runs to get the rat.",
+   "f": "audio/jenny/od_l24/1.mp3",
+   "s": "audio/jenny/od_l24/1s.mp3"
+  },
+  {
+   "en": "The rat is fast. The red cat is not as fast.",
+   "f": "audio/jenny/od_l24/2.mp3",
+   "s": "audio/jenny/od_l24/2s.mp3"
+  },
+  {
+   "en": "The rat runs to a raft. The rat got on the raft.",
+   "f": "audio/jenny/od_l24/3.mp3",
+   "s": "audio/jenny/od_l24/3s.mp3"
+  },
+  {
+   "en": "The red cat did not fit on the raft.",
+   "f": "audio/jenny/od_l24/4.mp3",
+   "s": "audio/jenny/od_l24/4s.mp3"
+  },
+  {
+   "en": "The rat got rid of the red cat.",
+   "f": "audio/jenny/od_l24/5.mp3",
+   "s": "audio/jenny/od_l24/5s.mp3"
+  }
+ ],
+ "od_l25": [
+  {
+   "en": "Greg and Brent get drums.",
+   "f": "audio/jenny/od_l25/0.mp3",
+   "s": "audio/jenny/od_l25/0s.mp3"
+  },
+  {
+   "en": "Greg's drum is big and red.",
+   "f": "audio/jenny/od_l25/1.mp3",
+   "s": "audio/jenny/od_l25/1s.mp3"
+  },
+  {
+   "en": "Greg taps the drum. The drum is fun.",
+   "f": "audio/jenny/od_l25/2.mp3",
+   "s": "audio/jenny/od_l25/2s.mp3"
+  },
+  {
+   "en": "Greg trips and drops his drum. BAM!",
+   "f": "audio/jenny/od_l25/3.mp3",
+   "s": "audio/jenny/od_l25/3s.mp3"
+  },
+  {
+   "en": "The drum is bent. Greg is sad.",
+   "f": "audio/jenny/od_l25/4.mp3",
+   "s": "audio/jenny/od_l25/4s.mp3"
+  },
+  {
+   "en": "\"Do not fret, Greg,\" said Brent.",
+   "f": "audio/jenny/od_l25/5.mp3",
+   "s": "audio/jenny/od_l25/5s.mp3"
+  },
+  {
+   "en": "Brent grabs his drum and hands it to Greg.",
+   "f": "audio/jenny/od_l25/6.mp3",
+   "s": "audio/jenny/od_l25/6s.mp3"
+  },
+  {
+   "en": "Greg grins at Brent.",
+   "f": "audio/jenny/od_l25/7.mp3",
+   "s": "audio/jenny/od_l25/7s.mp3"
+  },
+  {
+   "en": "Greg and Brent tap Brent's drum.",
+   "f": "audio/jenny/od_l25/8.mp3",
+   "s": "audio/jenny/od_l25/8s.mp3"
+  }
+ ],
+ "od_l26": [
+  {
+   "en": "Gil is in a big lab.",
+   "f": "audio/jenny/od_l26/0.mp3",
+   "s": "audio/jenny/od_l26/0s.mp3"
+  },
+  {
+   "en": "Gil got lost in the big lab.",
+   "f": "audio/jenny/od_l26/1.mp3",
+   "s": "audio/jenny/od_l26/1s.mp3"
+  },
+  {
+   "en": "The lamp in the lab is not on.",
+   "f": "audio/jenny/od_l26/2.mp3",
+   "s": "audio/jenny/od_l26/2s.mp3"
+  },
+  {
+   "en": "Gil can not see. \"Help!\" said Gil.",
+   "f": "audio/jenny/od_l26/3.mp3",
+   "s": "audio/jenny/od_l26/3s.mp3"
+  },
+  {
+   "en": "Mel gets to the lab. Mel can help.",
+   "f": "audio/jenny/od_l26/4.mp3",
+   "s": "audio/jenny/od_l26/4s.mp3"
+  },
+  {
+   "en": "Mel taps the lamp. The lamp is on.",
+   "f": "audio/jenny/od_l26/5.mp3",
+   "s": "audio/jenny/od_l26/5s.mp3"
+  },
+  {
+   "en": "Gil can see at last!",
+   "f": "audio/jenny/od_l26/6.mp3",
+   "s": "audio/jenny/od_l26/6s.mp3"
+  },
+  {
+   "en": "Mel hands Gil his books. Gil left the lab.",
+   "f": "audio/jenny/od_l26/7.mp3",
+   "s": "audio/jenny/od_l26/7s.mp3"
+  }
+ ],
+ "od_l27": [
+  {
+   "en": "Glen and Al are slugs. Glen and Al are pals.",
+   "f": "audio/jenny/od_l27/0.mp3",
+   "s": "audio/jenny/od_l27/0s.mp3"
+  },
+  {
+   "en": "Al can not run. Glen can not trot.",
+   "f": "audio/jenny/od_l27/1.mp3",
+   "s": "audio/jenny/od_l27/1s.mp3"
+  },
+  {
+   "en": "Glen and Al are not fast.",
+   "f": "audio/jenny/od_l27/2.mp3",
+   "s": "audio/jenny/od_l27/2s.mp3"
+  },
+  {
+   "en": "Al is glum. \"Slugs can not do a lot,\" Al said.",
+   "f": "audio/jenny/od_l27/3.mp3",
+   "s": "audio/jenny/od_l27/3s.mp3"
+  },
+  {
+   "en": "\"Slugs can rest!\" Glen said.",
+   "f": "audio/jenny/od_l27/4.mp3",
+   "s": "audio/jenny/od_l27/4s.mp3"
+  },
+  {
+   "en": "Glen and Al plop on top of a plant.",
+   "f": "audio/jenny/od_l27/5.mp3",
+   "s": "audio/jenny/od_l27/5s.mp3"
+  },
+  {
+   "en": "Slugs are the best at rest. Al is glad.",
+   "f": "audio/jenny/od_l27/6.mp3",
+   "s": "audio/jenny/od_l27/6s.mp3"
+  },
+  {
+   "en": "Glen and Al nap on the plant.",
+   "f": "audio/jenny/od_l27/7.mp3",
+   "s": "audio/jenny/od_l27/7s.mp3"
+  }
+ ],
+ "od_l28": [
+  {
+   "en": "Wes is a hog. A hog is a big pig.",
+   "f": "audio/jenny/od_l28/0.mp3",
+   "s": "audio/jenny/od_l28/0s.mp3"
+  },
+  {
+   "en": "The sun is up. Wes' skin is hot.",
+   "f": "audio/jenny/od_l28/1.mp3",
+   "s": "audio/jenny/od_l28/1s.mp3"
+  },
+  {
+   "en": "He rolls in the mud in his pen. Wes is wet.",
+   "f": "audio/jenny/od_l28/2.mp3",
+   "s": "audio/jenny/od_l28/2s.mp3"
+  },
+  {
+   "en": "The mud drip, drip, drips from his skin.",
+   "f": "audio/jenny/od_l28/3.mp3",
+   "s": "audio/jenny/od_l28/3s.mp3"
+  },
+  {
+   "en": "\"Ahh!,\" said Wes.",
+   "f": "audio/jenny/od_l28/4.mp3",
+   "s": "audio/jenny/od_l28/4s.mp3"
+  },
+  {
+   "en": "He is glad he gets to sit in the mud.",
+   "f": "audio/jenny/od_l28/5.mp3",
+   "s": "audio/jenny/od_l28/5s.mp3"
+  }
+ ],
+ "od_l29": [
+  {
+   "en": "Jim is in a jet. The jet is fast.",
+   "f": "audio/jenny/od_l29/0.mp3",
+   "s": "audio/jenny/od_l29/0s.mp3"
+  },
+  {
+   "en": "His job is to jump from the jet.",
+   "f": "audio/jenny/od_l29/1.mp3",
+   "s": "audio/jenny/od_l29/1s.mp3"
+  },
+  {
+   "en": "He sees a pond he can jump in.",
+   "f": "audio/jenny/od_l29/2.mp3",
+   "s": "audio/jenny/od_l29/2s.mp3"
+  },
+  {
+   "en": "Jim jumps from the jet.",
+   "f": "audio/jenny/od_l29/3.mp3",
+   "s": "audio/jenny/od_l29/3s.mp3"
+  },
+  {
+   "en": "He lands in the pond and gets wet.",
+   "f": "audio/jenny/od_l29/4.mp3",
+   "s": "audio/jenny/od_l29/4s.mp3"
+  },
+  {
+   "en": "Jim swims in the pond and looks up at the jet.",
+   "f": "audio/jenny/od_l29/5.mp3",
+   "s": "audio/jenny/od_l29/5s.mp3"
+  }
+ ],
+ "od_l30": [
+  {
+   "en": "A yak looks at a plant. It's a yam plant.",
+   "f": "audio/jenny/od_l30/0.mp3",
+   "s": "audio/jenny/od_l30/0s.mp3"
+  },
+  {
+   "en": "The yak digs to get a yam from the plant.",
+   "f": "audio/jenny/od_l30/1.mp3",
+   "s": "audio/jenny/od_l30/1s.mp3"
+  },
+  {
+   "en": "The yak stomps on the yam to cut it into bits.",
+   "f": "audio/jenny/od_l30/2.mp3",
+   "s": "audio/jenny/od_l30/2s.mp3"
+  },
+  {
+   "en": "A dog sees the plant.",
+   "f": "audio/jenny/od_l30/3.mp3",
+   "s": "audio/jenny/od_l30/3s.mp3"
+  },
+  {
+   "en": "The dog digs to get a yam from the plant.",
+   "f": "audio/jenny/od_l30/4.mp3",
+   "s": "audio/jenny/od_l30/4s.mp3"
+  },
+  {
+   "en": "The dog can not stomp on the yam.",
+   "f": "audio/jenny/od_l30/5.mp3",
+   "s": "audio/jenny/od_l30/5s.mp3"
+  },
+  {
+   "en": "The yak helps the dog.",
+   "f": "audio/jenny/od_l30/6.mp3",
+   "s": "audio/jenny/od_l30/6s.mp3"
+  },
+  {
+   "en": "\"Yum,\" said the yak, \"yams are the best!\"",
+   "f": "audio/jenny/od_l30/7.mp3",
+   "s": "audio/jenny/od_l30/7s.mp3"
+  },
+  {
+   "en": "\"Yes,\" said the dog, \"yum, yum, yum!\"",
+   "f": "audio/jenny/od_l30/8.mp3",
+   "s": "audio/jenny/od_l30/8s.mp3"
+  }
+ ],
+ "od_l31": [
+  {
+   "en": "Pax got a big red box from his dad.",
+   "f": "audio/jenny/od_l31/0.mp3",
+   "s": "audio/jenny/od_l31/0s.mp3"
+  },
+  {
+   "en": "\"Look at this box!\" Pax said to Rex. \"Let's jump in it.\"",
+   "f": "audio/jenny/od_l31/1.mp3",
+   "s": "audio/jenny/od_l31/1s.mp3"
+  },
+  {
+   "en": "Pax jumps in the big red box. Rex is next.",
+   "f": "audio/jenny/od_l31/2.mp3",
+   "s": "audio/jenny/od_l31/2s.mp3"
+  },
+  {
+   "en": "\"Can you help me, Pax?\" said Rex.",
+   "f": "audio/jenny/od_l31/3.mp3",
+   "s": "audio/jenny/od_l31/3s.mp3"
+  },
+  {
+   "en": "\"Yes! I can help you,\" said Pax.",
+   "f": "audio/jenny/od_l31/4.mp3",
+   "s": "audio/jenny/od_l31/4s.mp3"
+  },
+  {
+   "en": "Pax helps Rex get in the box.",
+   "f": "audio/jenny/od_l31/5.mp3",
+   "s": "audio/jenny/od_l31/5s.mp3"
+  },
+  {
+   "en": "Pax and Rex jump in the box.",
+   "f": "audio/jenny/od_l31/6.mp3",
+   "s": "audio/jenny/od_l31/6s.mp3"
+  },
+  {
+   "en": "\"The box is fun!\" said Pax and Rex.",
+   "f": "audio/jenny/od_l31/7.mp3",
+   "s": "audio/jenny/od_l31/7s.mp3"
+  }
+ ],
+ "od_l32": [
+  {
+   "en": "Quint is next to run. He is on a quest to win.",
+   "f": "audio/jenny/od_l32/0.mp3",
+   "s": "audio/jenny/od_l32/0s.mp3"
+  },
+  {
+   "en": "He can not quit.",
+   "f": "audio/jenny/od_l32/1.mp3",
+   "s": "audio/jenny/od_l32/1s.mp3"
+  },
+  {
+   "en": "\"You can not quit,\" said his mom.",
+   "f": "audio/jenny/od_l32/2.mp3",
+   "s": "audio/jenny/od_l32/2s.mp3"
+  },
+  {
+   "en": "\"You can do it,\" said his dad.",
+   "f": "audio/jenny/od_l32/3.mp3",
+   "s": "audio/jenny/od_l32/3s.mp3"
+  },
+  {
+   "en": "Quint runs fast. He can see the end.",
+   "f": "audio/jenny/od_l32/4.mp3",
+   "s": "audio/jenny/od_l32/4s.mp3"
+  },
+  {
+   "en": "Quint gets to the end and wins.",
+   "f": "audio/jenny/od_l32/5.mp3",
+   "s": "audio/jenny/od_l32/5s.mp3"
+  },
+  {
+   "en": "\"Yes! I went fast! I did the best!\" said Quint.",
+   "f": "audio/jenny/od_l32/6.mp3",
+   "s": "audio/jenny/od_l32/6s.mp3"
+  }
+ ],
+ "od_l66": [
+  {
+   "en": "Jo has a best friend named Russ.",
+   "f": "audio/jenny/od_l66/0.mp3",
+   "s": "audio/jenny/od_l66/0s.mp3"
+  },
+  {
+   "en": "Russ and Jo go on bike rides in the fall.",
+   "f": "audio/jenny/od_l66/1.mp3",
+   "s": "audio/jenny/od_l66/1s.mp3"
+  },
+  {
+   "en": "In the spring, they swim in the lake.",
+   "f": "audio/jenny/od_l66/2.mp3",
+   "s": "audio/jenny/od_l66/2s.mp3"
+  },
+  {
+   "en": "At the lake, Jo brings snacks and Russ brings drinks.",
+   "f": "audio/jenny/od_l66/3.mp3",
+   "s": "audio/jenny/od_l66/3s.mp3"
+  },
+  {
+   "en": "They also love acting, singing, and telling jokes.",
+   "f": "audio/jenny/od_l66/4.mp3",
+   "s": "audio/jenny/od_l66/4s.mp3"
+  },
+  {
+   "en": "Russ likes spending time with Jo and Jo likes spending time with Russ.",
+   "f": "audio/jenny/od_l66/5.mp3",
+   "s": "audio/jenny/od_l66/5s.mp3"
+  },
+  {
+   "en": "Russ and Jo will be friends for a long time.",
+   "f": "audio/jenny/od_l66/6.mp3",
+   "s": "audio/jenny/od_l66/6s.mp3"
+  }
+ ],
+ "od_l82": [
+  {
+   "en": "Morgan has wanted a pet for a long time.",
+   "f": "audio/jenny/od_l82/0.mp3",
+   "s": "audio/jenny/od_l82/0s.mp3"
+  },
+  {
+   "en": "One morning, there was a small box on the table with her name on it.",
+   "f": "audio/jenny/od_l82/1.mp3",
+   "s": "audio/jenny/od_l82/1s.mp3"
+  },
+  {
+   "en": "Inside the box, there was a bunch of dirt.",
+   "f": "audio/jenny/od_l82/2.mp3",
+   "s": "audio/jenny/od_l82/2s.mp3"
+  },
+  {
+   "en": "Under the dirt was her new pet, a worm!",
+   "f": "audio/jenny/od_l82/3.mp3",
+   "s": "audio/jenny/od_l82/3s.mp3"
+  },
+  {
+   "en": "Morgan was sad. She thinks a worm is the worst pet in the world.",
+   "f": "audio/jenny/od_l82/4.mp3",
+   "s": "audio/jenny/od_l82/4s.mp3"
+  },
+  {
+   "en": "She wanted a dog or cat or even a hamster, not a squirmy worm!",
+   "f": "audio/jenny/od_l82/5.mp3",
+   "s": "audio/jenny/od_l82/5s.mp3"
+  },
+  {
+   "en": "What were her mom and dad thinking? This pet will not work.",
+   "f": "audio/jenny/od_l82/6.mp3",
+   "s": "audio/jenny/od_l82/6s.mp3"
+  },
+  {
+   "en": "She started to cry.",
+   "f": "audio/jenny/od_l82/7.mp3",
+   "s": "audio/jenny/od_l82/7s.mp3"
+  },
+  {
+   "en": "Just then, mom and dad came in and said, \"We got you! It was a joke!\"",
+   "f": "audio/jenny/od_l82/8.mp3",
+   "s": "audio/jenny/od_l82/8s.mp3"
+  },
+  {
+   "en": "\"We are going to the pet shop!\"",
+   "f": "audio/jenny/od_l82/9.mp3",
+   "s": "audio/jenny/od_l82/9s.mp3"
+  },
+  {
+   "en": "Morgan was so happy. She wiped her face and gave mom and dad a hug.",
+   "f": "audio/jenny/od_l82/10.mp3",
+   "s": "audio/jenny/od_l82/10s.mp3"
+  },
+  {
+   "en": "She was going to get the best pet ever!",
+   "f": "audio/jenny/od_l82/11.mp3",
+   "s": "audio/jenny/od_l82/11s.mp3"
+  }
+ ],
+ "_words": {
+  "the": "audio/jenny/words/the.mp3",
+  "you": "audio/jenny/words/you.mp3",
+  "to": "audio/jenny/words/to.mp3",
+  "do": "audio/jenny/words/do.mp3",
+  "of": "audio/jenny/words/of.mp3",
+  "said": "audio/jenny/words/said.mp3",
+  "is": "audio/jenny/words/is.mp3",
+  "his": "audio/jenny/words/his.mp3",
+  "as": "audio/jenny/words/as.mp3",
+  "has": "audio/jenny/words/has.mp3",
+  "was": "audio/jenny/words/was.mp3",
+  "are": "audio/jenny/words/are.mp3",
+  "know": "audio/jenny/words/know.mp3",
+  "knew": "audio/jenny/words/knew.mp3",
+  "all": "audio/jenny/words/all.mp3",
+  "from": "audio/jenny/words/from.mp3",
+  "front": "audio/jenny/words/front.mp3",
+  "off": "audio/jenny/words/off.mp3",
+  "too": "audio/jenny/words/too.mp3",
+  "some": "audio/jenny/words/some.mp3",
+  "come": "audio/jenny/words/come.mp3",
+  "none": "audio/jenny/words/none.mp3",
+  "done": "audio/jenny/words/done.mp3",
+  "love": "audio/jenny/words/love.mp3",
+  "use": "audio/jenny/words/use.mp3",
+  "here": "audio/jenny/words/here.mp3",
+  "give": "audio/jenny/words/give.mp3",
+  "live": "audio/jenny/words/live.mp3",
+  "work": "audio/jenny/words/work.mp3",
+  "word": "audio/jenny/words/word.mp3",
+  "want": "audio/jenny/words/want.mp3",
+  "what": "audio/jenny/words/what.mp3",
+  "they": "audio/jenny/words/they.mp3",
+  "could": "audio/jenny/words/could.mp3",
+  "would": "audio/jenny/words/would.mp3",
+  "should": "audio/jenny/words/should.mp3",
+  "your": "audio/jenny/words/your.mp3",
+  "were": "audio/jenny/words/were.mp3",
+  "walk": "audio/jenny/words/walk.mp3",
+  "talk": "audio/jenny/words/talk.mp3",
+  "who": "audio/jenny/words/who.mp3",
+  "there": "audio/jenny/words/there.mp3",
+  "where": "audio/jenny/words/where.mp3",
+  "have": "audio/jenny/words/have.mp3",
+  "world": "audio/jenny/words/world.mp3",
+  "father": "audio/jenny/words/father.mp3",
+  "water": "audio/jenny/words/water.mp3",
+  "watch": "audio/jenny/words/watch.mp3",
+  "their": "audio/jenny/words/their.mp3",
+  "says": "audio/jenny/words/says.mp3",
+  "great": "audio/jenny/words/great.mp3",
+  "break": "audio/jenny/words/break.mp3",
+  "often": "audio/jenny/words/often.mp3",
+  "listen": "audio/jenny/words/listen.mp3",
+  "gone": "audio/jenny/words/gone.mp3",
+  "write": "audio/jenny/words/write.mp3",
+  "half": "audio/jenny/words/half.mp3",
+  "every": "audio/jenny/words/every.mp3",
+  "whole": "audio/jenny/words/whole.mp3",
+  "two": "audio/jenny/words/two.mp3",
+  "any": "audio/jenny/words/any.mp3",
+  "many": "audio/jenny/words/many.mp3",
+  "people": "audio/jenny/words/people.mp3",
+  "been": "audio/jenny/words/been.mp3",
+  "one": "audio/jenny/words/one.mp3",
+  "once": "audio/jenny/words/once.mp3",
+  "above": "audio/jenny/words/above.mp3",
+  "does": "audio/jenny/words/does.mp3",
+  "very": "audio/jenny/words/very.mp3",
+  "four": "audio/jenny/words/four.mp3",
+  "fourth": "audio/jenny/words/fourth.mp3",
+  "forty": "audio/jenny/words/forty.mp3",
+  "today": "audio/jenny/words/today.mp3",
+  "other": "audio/jenny/words/other.mp3",
+  "mother": "audio/jenny/words/mother.mp3",
+  "brother": "audio/jenny/words/brother.mp3",
+  "another": "audio/jenny/words/another.mp3",
+  "because": "audio/jenny/words/because.mp3",
+  "won": "audio/jenny/words/won.mp3",
+  "son": "audio/jenny/words/son.mp3",
+  "minute": "audio/jenny/words/minute.mp3",
+  "hour": "audio/jenny/words/hour.mp3",
+  "thought": "audio/jenny/words/thought.mp3",
+  "fought": "audio/jenny/words/fought.mp3",
+  "bought": "audio/jenny/words/bought.mp3",
+  "brought": "audio/jenny/words/brought.mp3",
+  "put": "audio/jenny/words/put.mp3",
+  "push": "audio/jenny/words/push.mp3",
+  "pull": "audio/jenny/words/pull.mp3",
+  "full": "audio/jenny/words/full.mp3",
+  "move": "audio/jenny/words/move.mp3",
+  "pretty": "audio/jenny/words/pretty.mp3",
+  "pear": "audio/jenny/words/pear.mp3",
+  "bear": "audio/jenny/words/bear.mp3",
+  "tear": "audio/jenny/words/tear.mp3",
+  "wear": "audio/jenny/words/wear.mp3",
+  "again": "audio/jenny/words/again.mp3",
+  "against": "audio/jenny/words/against.mp3",
+  "friend": "audio/jenny/words/friend.mp3",
+  "almost": "audio/jenny/words/almost.mp3",
+  "though": "audio/jenny/words/though.mp3",
+  "although": "audio/jenny/words/although.mp3",
+  "always": "audio/jenny/words/always.mp3",
+  "among": "audio/jenny/words/among.mp3",
+  "anyone": "audio/jenny/words/anyone.mp3",
+  "nothing": "audio/jenny/words/nothing.mp3",
+  "ocean": "audio/jenny/words/ocean.mp3",
+  "eight": "audio/jenny/words/eight.mp3",
+  "weight": "audio/jenny/words/weight.mp3",
+  "straight": "audio/jenny/words/straight.mp3",
+  "door": "audio/jenny/words/door.mp3",
+  "poor": "audio/jenny/words/poor.mp3",
+  "floor": "audio/jenny/words/floor.mp3",
+  "shoe": "audio/jenny/words/shoe.mp3",
+  "prove": "audio/jenny/words/prove.mp3",
+  "woman": "audio/jenny/words/woman.mp3",
+  "women": "audio/jenny/words/women.mp3",
+  "backward": "audio/jenny/words/backward.mp3",
+  "forward": "audio/jenny/words/forward.mp3",
+  "month": "audio/jenny/words/month.mp3",
+  "sign": "audio/jenny/words/sign.mp3",
+  "wednesday": "audio/jenny/words/wednesday.mp3",
+  "about": "audio/jenny/words/about.mp3",
+  "eye": "audio/jenny/words/eye.mp3",
+  "heart": "audio/jenny/words/heart.mp3",
+  "truth": "audio/jenny/words/truth.mp3",
+  "truly": "audio/jenny/words/truly.mp3",
+  "whom": "audio/jenny/words/whom.mp3",
+  "whose": "audio/jenny/words/whose.mp3",
+  "honest": "audio/jenny/words/honest.mp3",
+  "honor": "audio/jenny/words/honor.mp3",
+  "thorough": "audio/jenny/words/thorough.mp3",
+  "buy": "audio/jenny/words/buy.mp3",
+  "build": "audio/jenny/words/build.mp3",
+  "built": "audio/jenny/words/built.mp3",
+  "aunt": "audio/jenny/words/aunt.mp3",
+  "cousin": "audio/jenny/words/cousin.mp3",
+  "young": "audio/jenny/words/young.mp3",
+  "touch": "audio/jenny/words/touch.mp3",
+  "toward": "audio/jenny/words/toward.mp3",
+  "enough": "audio/jenny/words/enough.mp3",
+  "rough": "audio/jenny/words/rough.mp3",
+  "tough": "audio/jenny/words/tough.mp3",
+  "laugh": "audio/jenny/words/laugh.mp3",
+  "learn": "audio/jenny/words/learn.mp3",
+  "earth": "audio/jenny/words/earth.mp3",
+  "early": "audio/jenny/words/early.mp3",
+  "sugar": "audio/jenny/words/sugar.mp3",
+  "sure": "audio/jenny/words/sure.mp3",
+  "busy": "audio/jenny/words/busy.mp3",
+  "through": "audio/jenny/words/through.mp3",
+  "false": "audio/jenny/words/false.mp3",
+  "cough": "audio/jenny/words/cough.mp3",
+  "beauty": "audio/jenny/words/beauty.mp3",
+  "beautiful": "audio/jenny/words/beautiful.mp3",
+  "imagine": "audio/jenny/words/imagine.mp3",
+  "doubt": "audio/jenny/words/doubt.mp3",
+  "height": "audio/jenny/words/height.mp3",
+  "business": "audio/jenny/words/business.mp3",
+  "guess": "audio/jenny/words/guess.mp3",
+  "guest": "audio/jenny/words/guest.mp3",
+  "guide": "audio/jenny/words/guide.mp3",
+  "guy": "audio/jenny/words/guy.mp3",
+  "guard": "audio/jenny/words/guard.mp3",
+  "journey": "audio/jenny/words/journey.mp3",
+  "journal": "audio/jenny/words/journal.mp3",
+  "muscle": "audio/jenny/words/muscle.mp3",
+  "answer": "audio/jenny/words/answer.mp3",
+  "island": "audio/jenny/words/island.mp3",
+  "science": "audio/jenny/words/science.mp3",
+  "machine": "audio/jenny/words/machine.mp3",
+  "character": "audio/jenny/words/character.mp3",
+  "favorite": "audio/jenny/words/favorite.mp3",
+  "breakfast": "audio/jenny/words/breakfast.mp3",
+  "february": "audio/jenny/words/february.mp3"
+ }
 }
