@@ -86,7 +86,8 @@
         ② 「マイクの使用を許可しますか？」→ <b>許可</b><br>
         ③ 緑のマイクをおして、文を <b>はっきり声に出して</b> 読もう<br>
         ④ よみおわったら <b>よめた！✓</b> をおす<br>
-        ⑤ どの単語が読めたか、みどり✓・赤✗ でわかるよ
+        ⑤ どの単語が読めたか、みどり✓・赤✗ でわかるよ<br>
+        ⑥ むずかしいことばは <b>3回チャレンジ</b>したら「けんきゅう中🔬」にして すすんでOK！先生に つたわるよ
       </div>
       <div class="actions"><button class="btn go" id="btnStart">はじめる ▶</button></div>
       <div id="srWarn"></div>
@@ -107,6 +108,7 @@
     </div>
     <div class="actions">
       <button class="btn ghost" id="btnModel">🔊 お手本</button>
+      <button class="btn ghost" id="btnModelSlow">🐢 ゆっくり</button>
       <button class="btn go hidden" id="btnJudge">よめた！ ✓</button>
       <button class="btn go hidden" id="btnNext">つぎへ ▶</button>
     </div>
@@ -142,6 +144,7 @@
       <div class="sendst" id="recSt"></div>
     </div>
     <div class="actions">
+      <button class="btn ghost hidden" id="btnRetryNg">🔬 けんきゅう中だけ もう一回</button>
       <button class="btn ghost" id="btnRetry">もう一回 🔁</button>
       <button class="btn go" id="btnClose">クエストにもどる 🏡</button>
     </div>
@@ -204,21 +207,22 @@
       for(var i=0;i<pref.length;i++) for(var j=0;j<vs.length;j++){ if(vs[j].name && vs[j].name.indexOf(pref[i])===0 && /^en/i.test(vs[j].lang)) return vs[j]; }
       for(var k=0;k<vs.length;k++){ if(vs[k].lang==="en-US") return vs[k]; }
     }catch(e){} return null; }
-  function sayEn(t){ try{ if(!window.speechSynthesis)return; speechSynthesis.cancel(); speechSynthesis.resume();
-    var u=new SpeechSynthesisUtterance(String(t).replace(/\bA\b/g,"a")); u.lang="en-US"; u.rate=.85;
+  function sayEn(t, slow){ try{ if(!window.speechSynthesis)return; speechSynthesis.cancel(); speechSynthesis.resume();
+    var u=new SpeechSynthesisUtterance(String(t).replace(/\bA\b/g,"a")); u.lang="en-US"; u.rate=slow?.5:.85;
     var v=pickVoice(); if(v)u.voice=v; speechSynthesis.speak(u); }catch(e){} }
-  function playModel(i){
+  function playModel(i, slow){
     try{ if(modelAud){ modelAud.onended=null; modelAud.onerror=null; modelAud.pause(); modelAud=null; } }catch(e){}
     var url=DATA.audio && DATA.audio[i];
     if(url){
       try{
         var a=new Audio(url); modelAud=a;
-        a.onerror=function(){ sayEn(SENTS[i].en); };
-        var p=a.play(); if(p&&p.catch) p.catch(function(){ sayEn(SENTS[i].en); });
+        if(slow){ try{ a.playbackRate=.65; a.preservesPitch=true; }catch(e2){} }
+        a.onerror=function(){ sayEn(SENTS[i].en, slow); };
+        var p=a.play(); if(p&&p.catch) p.catch(function(){ sayEn(SENTS[i].en, slow); });
         return;
       }catch(e){}
     }
-    sayEn(SENTS[i].en);
+    sayEn(SENTS[i].en, slow);
   }
 
   // ---- 語の正規化・同一判定 ----
@@ -297,8 +301,10 @@
     return { en:s.en, ja:s.ja||"", words:words, wordTok:wordTok,
       flat:[].concat.apply([],wordTok),
       judgeable:wordTok.map(function(t){return t.length>0}),
-      best:null, heard:"" };
+      best:null, heard:"", tries:0, research:false };
   });
+  // ORDER＝この回でやる文（けんきゅう中だけの再チャレンジで絞り込める）
+  var ORDER=SENTS.map(function(_,i){return i}), pos=0;
   var idx=0;
   // 固有名詞を集める：文頭以外で大文字はじまりの語（Irma, Shirly など）＋
   // 文頭でも「よくある英単語」でなければ人名とみなす（Pim and I sit. の Pim など）
@@ -331,10 +337,11 @@
     $("#ja").textContent=s.ja;
   }
   function showStep(){
+    idx=ORDER[pos];
     var s=SENTS[idx];
-    $("#pLbl").textContent=(WORD?"ことば ":"文 ")+(idx+1);
-    $("#pCnt").textContent=(idx+1)+" / "+SENTS.length;
-    $("#fill").style.width=(idx/SENTS.length*100)+"%";
+    $("#pLbl").textContent=(WORD?"ことば ":"文 ")+(idx+1)+(s.tries>0?("　🎯チャレンジ "+s.tries):"");
+    $("#pCnt").textContent=(pos+1)+" / "+ORDER.length;
+    $("#fill").style.width=(pos/ORDER.length*100)+"%";
     renderSentence(s.best && s.best.wordHit);
     $("#fb").textContent=""; $("#fb").className="fb";
     $("#heard").textContent="";
@@ -410,15 +417,32 @@
       }
       var hit=judgeWords(s,cands);
       var total=s.judgeable.filter(Boolean).length;
+      s.tries=(s.tries||0)+1;
       // 前より良ければ更新（悪くならない）
       if(!s.best || hit.ok>s.best.ok){ s.best=hit; s.heard=cands[0]; }
       if(idx!==startIdx) return; // すでに次の文へ進んでいたら、記録だけ残して画面はさわらない
-      $("#heard").innerHTML='きこえた英語：<span class="en">'+escT(cands[0])+'</span>';
       renderSentence(hit.wordHit);
       var fb=$("#fb");
-      if(hit.ok>=total){ fb.className="fb ok"; fb.textContent="パーフェクト！🎉"; }
-      else{ fb.className="fb tr"; fb.textContent="✓ "+hit.ok+" / "+total+"　赤いところ、もう一回チャレンジ？💪"; }
-      $("#micLbl").textContent="もう一回よむ？（いいほうのけっかが のこるよ）";
+      if(hit.ok>=total){
+        s.research=false;
+        fb.className="fb ok"; fb.textContent="パーフェクト！🎉";
+        $("#heard").innerHTML='きこえた英語：<span class="en">'+escT(cands[0])+'</span>';
+        $("#micLbl").textContent="つぎへ すすもう ▶";
+      }
+      // ★3回チャレンジしたら「けんきゅう中🔬」＝がんばりを認めて先へ。先生にも自動で伝わる
+      else if(s.tries>=3){
+        s.research=true;
+        fb.className="fb ok";
+        fb.innerHTML="🔬 3回チャレンジ、りっぱ！<br>このことばは <b>けんきゅう中</b> にして すすもう ▶<br><span style='font-size:12px'>（先生に つたえておくね。またチャレンジすると ⭐がふえるよ）</span>";
+        $("#heard").innerHTML='きこえた英語：<span class="en">'+escT(cands[0])+'</span>';
+        $("#micLbl").textContent="よくがんばった！「つぎへ ▶」で すすもう";
+      }
+      else{
+        fb.className="fb tr";
+        fb.textContent="✓ "+hit.ok+" / "+total+"　🎯チャレンジ "+s.tries+" / 3";
+        $("#heard").innerHTML='🔍 きこえた英語：<span class="en">'+escT(cands[0])+'</span><br><span style="font-size:12px">お手本🔊と 聞きくらべて、ちがいを けんきゅうしてみよう</span>';
+        $("#micLbl").textContent="もう一回よむ？（いいほうのけっかが のこるよ）";
+      }
       $("#btnNext").classList.remove("hidden");
     }
     function begin(){
@@ -465,7 +489,7 @@
   // ---- けっか集計・送信 ----
   function finish(){
     $("#scrRun").classList.add("hidden"); $("#scrDone").classList.remove("hidden");
-    var ok=0, total=0, missed=[], missSeen={}, detail=[];
+    var ok=0, total=0, missed=[], missSeen={}, detail=[], research=[], resSeen={}, anyNg=false;
     var sumHtml="";
     SENTS.forEach(function(s,si){
       var t=s.judgeable.filter(Boolean).length; total+=t;
@@ -473,22 +497,34 @@
       var o=s.best?s.best.ok:0; ok+=o;
       var ngWords=[];
       s.words.forEach(function(w,i){ if(s.judgeable[i]&&!hit[i]){ var key=w.toLowerCase().replace(/[^a-z']/g,"");
-        ngWords.push(w); if(key&&!missSeen[key]){missSeen[key]=1; missed.push(w.replace(/[^A-Za-z']/g,""));} } });
-      detail.push((si+1)+") "+s.en+(ngWords.length?(" → ✗ "+ngWords.join(", ")):" → ぜんぶ⭕"));
+        ngWords.push(w); if(key&&!missSeen[key]){missSeen[key]=1; missed.push(w.replace(/[^A-Za-z']/g,""));}
+        if(s.research && key && !resSeen[key]){resSeen[key]=1; research.push(w.replace(/[^A-Za-z']/g,""));} } });
+      if(ngWords.length) anyNg=true;
+      // 先生向けの記録：チャレンジ回数と「どう聞こえたか」も残す（発音指導のヒントになる）
+      detail.push((si+1)+") "+s.en+"（🎯"+(s.tries||0)+"回）"+
+        (ngWords.length?(" → "+(s.research?"🔬けんきゅう中: ":"✗ ")+ngWords.join(", ")+(s.heard?("／きこえた:「"+s.heard+"」"):"")):" → ぜんぶ⭕"));
       sumHtml+='<div class="sum-sent">'+s.words.map(function(w,i){
-        var cls=(!s.judgeable[i]||hit[i])?"wd ok":"wd ng"; return '<span class="'+cls+'">'+escT(w)+'</span>'; }).join(" ")+'</div>';
+        var cls=(!s.judgeable[i]||hit[i])?"wd ok":"wd ng"; return '<span class="'+cls+'">'+escT(w)+'</span>'; }).join(" ")+(s.research?' <span style="font-size:13px">🔬</span>':'')+'</div>';
     });
     var pct=total?Math.round(ok/total*100):0;
     $("#pct").textContent=pct+"%";
     $("#stars").textContent = pct>=90?"⭐⭐⭐" : pct>=70?"⭐⭐☆" : "⭐☆☆";
     $("#doneEmoji").textContent = pct>=90?"🦋":"🎉";
-    if(missed.length){ $("#miss").innerHTML=missed.slice(0,20).map(function(w){return '<span>'+escT(w)+'</span>'}).join(""); }
+    if(missed.length){
+      var head = research.length
+        ? '🔬 けんきゅう中の ことば（3回チャレンジずみ！先生に つたえたよ）'
+        : 'れんしゅうすると強くなる語 💪';
+      $("#missWrap").querySelector("div").textContent=head;
+      $("#miss").innerHTML=missed.slice(0,20).map(function(w){
+        return '<span>'+(resSeen[w.toLowerCase().replace(/[^a-z']/g,"")]?'🔬 ':'')+escT(w)+'</span>'}).join("");
+    }
     else { $("#missWrap").innerHTML='<div class="fb ok" style="margin-top:8px">ぜんぶ読めた！パーフェクト 🎉</div>'; }
     $("#sumList").innerHTML=sumHtml;
     $("#fill") && ($("#fill").style.width="100%");
+    $("#btnRetryNg").classList.toggle("hidden", !anyNg);
 
     var payload={ action:"ondoku", name:DATA.name||"", lessonTitle:DATA.lessonTitle||"",
-      pct:pct, okCount:ok, total:total, missed:missed, detail:detail.join("\n") };
+      pct:pct, okCount:ok, total:total, missed:missed, research:research, detail:detail.join("\n") };
     // ① クエスト本体（開いたタブ）へ結果を返す
     try{ if(window.opener) window.opener.postMessage({type:"ondokuResult", pct:pct, missed:missed}, "*"); }catch(e){}
     // ② 先生のスプレッドシート「音読記録」へ送信
@@ -506,19 +542,30 @@
   // ---- 画面遷移 ----
   $("#btnStart").onclick=function(){
     $("#scrStart").classList.add("hidden"); $("#scrRun").classList.remove("hidden");
-    idx=0; showStep();
+    ORDER=SENTS.map(function(_,i){return i}); pos=0; showStep();
   };
   $("#mic").onclick=function(){ if(listening){ if(stopReq)stopReq(); return; } $("#runErr").innerHTML=""; startRec(); };
   $("#btnJudge").onclick=function(){ if(listening && stopReq) stopReq(); };
   $("#btnModel").onclick=function(){ playModel(idx); };
+  $("#btnModelSlow").onclick=function(){ playModel(idx, true); };
   $("#btnNext").onclick=function(){
     if(listening && stopReq){ stopReq(); }
-    if(idx>=SENTS.length-1){ finish(); } else { idx++; showStep(); }
+    if(pos>=ORDER.length-1){ finish(); } else { pos++; showStep(); }
   };
   $("#btnRetry").onclick=function(){
-    SENTS.forEach(function(s){ s.best=null; s.heard=""; });
+    SENTS.forEach(function(s){ s.best=null; s.heard=""; s.tries=0; s.research=false; });
     $("#scrDone").classList.add("hidden"); $("#scrRun").classList.remove("hidden");
-    idx=0; showStep();
+    ORDER=SENTS.map(function(_,i){return i}); pos=0; showStep();
+  };
+  // 🔬 パーフェクトじゃなかった文・ことばだけ、もう一回（3回チャレンジも仕切り直し）
+  $("#btnRetryNg").onclick=function(){
+    var ng=[]; SENTS.forEach(function(s,i){
+      var t=s.judgeable.filter(Boolean).length;
+      if(!(s.best && s.best.ok>=t)){ s.best=null; s.heard=""; s.tries=0; s.research=false; ng.push(i); }
+    });
+    if(!ng.length) return;
+    $("#scrDone").classList.add("hidden"); $("#scrRun").classList.remove("hidden");
+    ORDER=ng; pos=0; showStep();
   };
   $("#btnClose").onclick=function(){ try{window.close()}catch(e){} };
 
