@@ -85,7 +85,7 @@
         ① 下のボタンをおす<br>
         ② 「マイクの使用を許可しますか？」→ <b>許可</b><br>
         ③ 緑のマイクをおして、文を <b>はっきり声に出して</b> 読もう<br>
-        ④ よみおわったら <b>よめた！✓</b> をおす<br>
+        ④ よみおわったら もういちど <b>🎤</b> をおす<br>
         ⑤ どの単語が読めたか、みどり✓・赤✗ でわかるよ<br>
         ⑥ むずかしいことばは <b>3回チャレンジ</b>したら「けんきゅう中🔬」にして すすんでOK！先生に つたわるよ
       </div>
@@ -380,7 +380,7 @@
   //  ・continuous=true（息つぎで切れない）
   //  ・確定前の聞き取り（interim）も判定に使う（iPhoneのSafariは確定が来ないことがある）
   //  ・ブラウザが勝手に聞き取りを終えても、それまでの結果を持ったまま自動でつなぎ直す
-  //  ・判定するのは本人が「よめた！✓」（またはマイク）をおしたとき。60秒たったら安全のため自動判定
+  //  ・判定するのは本人がマイクをもう一度おしたとき（よめた✓ボタンは2026-07-29廃止・マイク一本化）。60秒たったら安全のため自動判定
   var REC_MAX_MS=60000, REC_RESTART_MAX=12, stopReq=null;
   function startRec(){
     if(!SR || listening) return;
@@ -391,7 +391,7 @@
     $("#mic").classList.add("listening"); $("#mic").textContent="👂";
     $("#micLbl").textContent="じゅんびちゅう…";
     $("#fb").textContent=""; $("#fb").className="fb"; $("#heard").textContent="";
-    $("#btnJudge").classList.remove("hidden"); $("#btnNext").classList.add("hidden");
+    $("#btnNext").classList.add("hidden");
     stopReq=function(){ wantStop=true; try{rec.stop()}catch(e){} };
     maxTimer=setTimeout(function(){ wantStop=true; try{rec.stop()}catch(e){} }, REC_MAX_MS);
     function allText(){
@@ -448,7 +448,7 @@
     function begin(){
       try{ rec=new SR(); }catch(e){ settle(); return; }
       rec.lang="en-US"; rec.interimResults=true; rec.maxAlternatives=5; rec.continuous=true;
-      rec.onstart=function(){ if(!settled && !allText() && !lastInterim) $("#micLbl").textContent="きいてるよ 📖 よみおわったら「よめた！✓」をおしてね"; };
+      rec.onstart=function(){ if(!settled && !allText() && !lastInterim) $("#micLbl").textContent="きいてるよ 📖 よみおわったらもういちど 🎤 をおしてね"; };
       rec.onresult=function(ev){
         finals=[]; var interim="";
         for(var i=0;i<ev.results.length;i++){
