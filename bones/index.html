@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Zoomのレッスンで見せる、回せる骨格＋筋肉の3Dモデル。骨や筋肉をクリックすると日本語・英語・ラテン語の名前と説明が出ます。">
+<style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>うごく骨格模型</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400;1,500&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@600;700&display=swap">
+<style>
+  :root{
+    --ink:#10151a; --ink2:#171e25; --ink3:#1f2831; --ink4:#27323c;
+    --ivory:#eae0c9; --ivory-hi:#fff4de; --dim:#9aa4a8; --dim2:#6d787e;
+    --sanguine:#c4573c; --sanguine-lo:#8e3d2b;
+    --verd:#6fb3a8; --verd-lo:#3d6b66;
+    --rule:rgba(234,224,201,.14);
+    --jp:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+    --mincho:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+    --latin:"EB Garamond",Georgia,serif;
+    --lbl:15px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--ivory);font-family:var(--jp);
+       -webkit-font-smoothing:antialiased}
+  .wrap{min-height:100vh;display:flex;flex-direction:column;padding:0 16px 16px;max-width:1400px;margin:0 auto}
+
+  /* ---- header ---- */
+  header{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;
+         padding-block:18px 14px;border-bottom:1px solid var(--rule)}
+  h1{font-family:var(--mincho);font-weight:700;font-size:clamp(20px,3.2vw,27px);
+     letter-spacing:.06em;margin:0;color:var(--ivory-hi);text-wrap:balance}
+  .sub{font-size:12.5px;color:var(--dim);letter-spacing:.04em;margin:4px 0 0}
+  .hspace{flex:1}
+  .big-btn{font-family:var(--jp);font-size:13px;font-weight:700;letter-spacing:.06em;
+    color:var(--ink);background:var(--verd);border:0;border-radius:999px;
+    padding:9px 18px;cursor:pointer;white-space:nowrap}
+  .big-btn:hover{background:#8ecabf}
+
+  /* ---- layout ---- */
+  main{flex:1;display:grid;grid-template-columns:minmax(0,1fr) 302px;gap:16px;padding-top:14px;align-items:start}
+
+  /* ---- stage ---- */
+  #stage{position:relative;border:1px solid var(--rule);border-radius:3px;overflow:hidden;
+    background:radial-gradient(120% 90% at 50% 8%,#212c35 0%,#141b21 45%,#0d1216 100%);
+    height:min(74vh,720px);min-height:340px}
+  #c{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+  #c.dragging{cursor:grabbing}
+  #labels{position:absolute;inset:0;pointer-events:none}
+  .lbl{position:absolute;transform:translate(0,-50%);white-space:nowrap;
+       font-size:var(--lbl);line-height:1.15;text-shadow:0 1px 6px rgba(8,12,15,.95),0 0 14px rgba(8,12,15,.8);
+       transition:opacity .18s}
+  .lbl b{font-family:var(--mincho);font-weight:600;letter-spacing:.05em;color:var(--ivory-hi)}
+  .lbl i{display:block;font-family:var(--latin);font-style:italic;
+         font-size:.78em;color:var(--dim);letter-spacing:.02em}
+  .lbl.m b{color:#f2b7a3}
+  .lbl.left{transform:translate(-100%,-50%);text-align:right}
+  .lbl.back{opacity:.3}
+  #leads{position:absolute;inset:0;width:100%;height:100%}
+  #leads path{fill:none;stroke:var(--verd);stroke-width:1;opacity:.55}
+  #leads path.m{stroke:var(--sanguine)}
+  #leads circle{fill:var(--verd);stroke:rgba(13,18,22,.85);stroke-width:2.5}
+  #leads circle.m{fill:var(--sanguine)}
+  #leads .off{display:none}
+  .lbl.sel b{color:#fff;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+
+  .hint{position:absolute;left:14px;bottom:12px;font-size:11.5px;color:var(--dim2);letter-spacing:.05em}
+
+  /* ---- control bar ---- */
+  .bar{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;
+       border:1px solid var(--rule);border-radius:3px;background:var(--ink2);padding:11px 13px}
+  .grp{display:flex;align-items:center;gap:8px}
+  .grp-t{font-size:10.5px;letter-spacing:.16em;color:var(--dim2);text-transform:uppercase}
+  .seg{display:flex;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+  .seg button{font-family:var(--jp);font-size:13px;font-weight:500;color:var(--dim);
+    background:transparent;border:0;border-right:1px solid var(--rule);padding:7px 13px;cursor:pointer}
+  .seg button:last-child{border-right:0}
+  .seg button:hover{color:var(--ivory);background:var(--ink3)}
+  .seg button[aria-pressed="true"]{background:var(--ivory);color:var(--ink);font-weight:700}
+  .seg.mus button[aria-pressed="true"]{background:var(--sanguine);color:#fff5ef}
+  .chip{font-family:var(--jp);font-size:13px;color:var(--dim);background:transparent;
+    border:1px solid var(--rule);border-radius:999px;padding:7px 14px;cursor:pointer}
+  .chip:hover{color:var(--ivory);border-color:var(--ivory)}
+  .chip[aria-pressed="true"]{background:var(--verd-lo);border-color:var(--verd);color:var(--ivory-hi)}
+  input[type=range]{width:104px;accent-color:var(--sanguine)}
+  .vnum{font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums;min-width:34px}
+  button:focus-visible,input:focus-visible{outline:2px solid var(--verd);outline-offset:2px}
+
+  /* ---- rail ---- */
+  aside{display:flex;flex-direction:column;gap:14px;position:sticky;top:14px}
+  .card{border:1px solid var(--rule);border-radius:3px;background:var(--ink2);padding:15px 16px}
+  .card.sel{border-left:3px solid var(--verd)}
+  .card.sel.m{border-left-color:var(--sanguine)}
+  .kicker{font-size:10.5px;letter-spacing:.18em;color:var(--dim2);text-transform:uppercase;margin:0 0 9px}
+  .nm{font-family:var(--mincho);font-weight:700;font-size:24px;letter-spacing:.05em;
+      color:var(--ivory-hi);margin:0;line-height:1.25}
+  .nm-en{font-size:13px;color:var(--verd);letter-spacing:.05em;margin:5px 0 0;font-weight:500}
+  .card.m .nm-en{color:#e08f76}
+  .nm-la{font-family:var(--latin);font-style:italic;font-size:14.5px;color:var(--dim);margin:1px 0 0}
+  .note{font-size:13.5px;line-height:1.85;color:#cfd6d3;margin:12px 0 0;
+        border-top:1px solid var(--rule);padding-top:11px}
+  .zoom-to{margin-top:12px;font-family:var(--jp);font-size:12.5px;color:var(--ivory);
+    background:var(--ink3);border:1px solid var(--rule);border-radius:2px;padding:8px 12px;cursor:pointer;width:100%}
+  .zoom-to:hover{background:var(--ink4)}
+  .list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .list button{font-family:var(--jp);font-size:12.5px;color:var(--dim);background:transparent;
+    border:1px solid var(--rule);border-radius:2px;padding:5px 9px;cursor:pointer}
+  .list button:hover{color:var(--ivory-hi);border-color:var(--ivory)}
+  .list button.on{background:var(--ivory);color:var(--ink);border-color:var(--ivory);font-weight:700}
+  .list button.mus.on{background:var(--sanguine);color:#fff5ef;border-color:var(--sanguine)}
+  .keys{font-size:11.5px;line-height:2;color:var(--dim2);letter-spacing:.03em}
+  .keys kbd{font-family:var(--latin);font-style:normal;font-size:12px;color:var(--dim);
+    border:1px solid var(--rule);border-radius:2px;padding:1px 6px;margin-right:6px}
+
+  /* ---- presenting ---- */
+  .presenting header,.presenting aside,.presenting .hint{display:none}
+  .presenting .wrap{padding:0;max-width:none}
+  .presenting main{grid-template-columns:1fr;gap:0;padding-top:0}
+  .presenting #stage{height:calc(100vh - 66px);border:0;border-radius:0}
+  .presenting .bar{margin:0;border:0;border-top:1px solid var(--rule);border-radius:0;padding:9px 14px}
+  .presenting{--lbl:21px}
+  .presenting .float-card{display:block}
+  .float-card{display:none;position:absolute;left:18px;bottom:18px;max-width:min(360px,44vw);
+    background:rgba(16,21,26,.9);border:1px solid var(--rule);border-left:3px solid var(--verd);
+    border-radius:3px;padding:15px 18px}
+  .float-card.m{border-left-color:var(--sanguine)}
+  #exitPres{position:absolute;right:14px;top:12px;display:none}
+  .presenting #exitPres{display:block}
+
+  @media (max-width:900px){
+    main{grid-template-columns:1fr}
+    aside{position:static}
+    #stage{height:56vh;min-height:300px}
+  }
+  @media (max-width:640px){:root{--lbl:12.5px}}
+  @media (prefers-reduced-motion:reduce){.lbl{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>うごく骨格模型</h1>
+      <p class="sub">ドラッグで回す・クリックで名前　／　骨 206個のうち主要15か所＋主要な筋肉9か所</p>
+    </div>
+    <div class="hspace"></div>
+    <button class="big-btn" id="presBtn">画面共有モード（大きく表示）</button>
+  </header>
+
+  <main>
+    <div>
+      <div id="stage">
+        <canvas id="c"></canvas>
+        <div id="labels"></div>
+        <div class="hint">ドラッグ＝回転　／　ホイール・ピンチ＝拡大　／　骨や筋肉をクリック＝名前と説明</div>
+        <button class="big-btn" id="exitPres">もどる</button>
+        <div class="float-card" id="floatCard"></div>
+      </div>
+
+      <div class="bar">
+        <div class="grp">
+          <span class="grp-t">ひょうじ</span>
+          <div class="seg" id="layerSeg">
+            <button data-layer="bone" aria-pressed="false">骨だけ</button>
+            <button data-layer="both" aria-pressed="true">骨＋筋肉</button>
+            <button data-layer="muscle" aria-pressed="false">筋肉だけ</button>
+          </div>
+        </div>
+        <div class="grp">
+          <span class="grp-t">筋肉のこさ</span>
+          <input type="range" id="opa" min="15" max="100" value="55" aria-label="筋肉の不透明度">
+          <span class="vnum" id="opaV">55%</span>
+        </div>
+        <div class="grp">
+          <button class="chip" id="labelBtn" aria-pressed="true">ラベル</button>
+          <div class="seg" id="langSeg">
+            <button data-lang="ja" aria-pressed="true">日本語</button>
+            <button data-lang="en" aria-pressed="false">English</button>
+          </div>
+        </div>
+        <div class="grp">
+          <button class="chip" id="spinBtn" aria-pressed="false">自動で回す</button>
+        </div>
+        <div class="grp">
+          <span class="grp-t">しせん</span>
+          <button class="chip" data-view="front">正面</button>
+          <button class="chip" data-view="side">よこ</button>
+          <button class="chip" data-view="back">背中</button>
+          <button class="chip" data-view="chest">胸・呼吸</button>
+          <button class="chip" data-view="head">頭と首</button>
+          <button class="chip" data-view="reset">全身にもどす</button>
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="card sel" id="infoCard"></div>
+      <div class="card">
+        <p class="kicker">クリックできる部位</p>
+        <div class="list" id="partList"></div>
+      </div>
+      <div class="card">
+        <p class="kicker">キーボード</p>
+        <div class="keys">
+          <div><kbd>1</kbd>〜<kbd>6</kbd> しせんを変える</div>
+          <div><kbd>B</kbd> 骨だけ　<kbd>M</kbd> 筋肉だけ　<kbd>N</kbd> 骨＋筋肉</div>
+          <div><kbd>L</kbd> ラベル　<kbd>Space</kbd> 自動で回す</div>
+          <div><kbd>F</kbd> 画面共有モード</div>
+        </div>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var V=THREE.Vector3;
+  var canvas=document.getElementById('c'), stage=document.getElementById('stage');
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(38,1,0.1,300);
+
+  var hemi=new THREE.HemisphereLight(0xbfd8e8,0x2a2118,.62); scene.add(hemi);
+  var key=new THREE.DirectionalLight(0xfff2dc,.95); key.position.set(7,11,13); scene.add(key);
+  var fill=new THREE.DirectionalLight(0x8fc0cf,.40); fill.position.set(-9,3,-7); scene.add(fill);
+  var rim=new THREE.DirectionalLight(0xc4573c,.30); rim.position.set(0,-5,-9); scene.add(rim);
+
+  var root=new THREE.Group(); scene.add(root);
+
+  /* ---------- material helpers ---------- */
+  function boneMat(){return new THREE.MeshStandardMaterial({color:0xeae0c9,roughness:.62,metalness:.03});}
+  function musMat(){return new THREE.MeshStandardMaterial({color:0xc4573c,roughness:.55,metalness:.02,transparent:true,opacity:.55,depthWrite:false});}
+  var darkMat=new THREE.MeshStandardMaterial({color:0x1b2026,roughness:.9});
+
+  /* ---------- geometry helpers ---------- */
+  function seg(g,mat,a,b,r1,r2){
+    var A=new V(a[0],a[1],a[2]),B=new V(b[0],b[1],b[2]);
+    var d=new V().subVectors(B,A),len=d.length();
+    var m=new THREE.Mesh(new THREE.CylinderGeometry(r2===undefined?r1:r2,r1,len,14,1),mat);
+    m.position.copy(A).add(B).multiplyScalar(.5);
+    m.quaternion.setFromUnitVectors(new V(0,1,0),d.clone().normalize());
+    g.add(m); return m;
+  }
+  function ball(g,mat,p,r,s){
+    var m=new THREE.Mesh(new THREE.SphereGeometry(r,20,14),mat);
+    m.position.set(p[0],p[1],p[2]);
+    if(s)m.scale.set(s[0],s[1],s[2]);
+    g.add(m); return m;
+  }
+  function box(g,mat,p,s,rot){
+    var m=new THREE.Mesh(new THREE.BoxGeometry(s[0],s[1],s[2]),mat);
+    m.position.set(p[0],p[1],p[2]);
+    if(rot)m.rotation.set(rot[0],rot[1],rot[2]);
+    g.add(m); return m;
+  }
+  function tube(g,mat,pts,r,seglen){
+    var v=pts.map(function(p){return new V(p[0],p[1],p[2]);});
+    var curve=new THREE.CatmullRomCurve3(v);
+    var m=new THREE.Mesh(new THREE.TubeGeometry(curve,seglen||26,r,8,false),mat);
+    g.add(m); return m;
+  }
+  function mirrorX(pts){return pts.map(function(p){return [-p[0],p[1],p[2]];});}
+
+  /* ---------- parts registry ---------- */
+  var parts=[];
+  function part(cfg,build){
+    var g=new THREE.Group();
+    var mat=cfg.kind==='muscle'?musMat():boneMat();
+    build(g,mat);
+    g.traverse(function(o){if(o.isMesh)o.userData.pid=cfg.id;});
+    root.add(g);
+    cfg.group=g; cfg.mat=mat; cfg.anchor=new V(cfg.at[0],cfg.at[1],cfg.at[2]);
+    parts.push(cfg); return cfg;
+  }
+
+  /* ================= BONES ================= */
+  part({id:'skull',kind:'bone',key:true,ja:'頭蓋骨',en:'skull',la:'Cranium',at:[0,8.5,.2],
+    note:'22個の骨がパズルのように組み合わさって、脳を守っています。赤ちゃんのころはすき間があり、成長しながらつながっていきます。'},
+    function(g,m){
+      ball(g,m,[0,7.25,.05],1.18,[1,1.13,1.12]);
+      ball(g,m,[0,6.6,.55],.85,[1,.62,.8]);
+      ball(g,darkMat,[.42,6.95,1.02],.29,[1,.92,.62]);
+      ball(g,darkMat,[-.42,6.95,1.02],.29,[1,.92,.62]);
+      box(g,darkMat,[0,6.58,1.2],[.17,.32,.22]);
+      tube(g,m,[[-.72,6.5,.5],[-.62,6.15,.95],[0,6.05,1.2],[.62,6.15,.95],[.72,6.5,.5]],.13);
+    });
+  part({id:'mandible',kind:'bone',ja:'下あご',en:'jaw',la:'Mandibula',at:[1.35,6.35,.75],
+    note:'頭の骨のなかで大きく動くのはここだけ。食べる・話す・音読するときにいちばん働く骨です。'},
+    function(g,m){
+      tube(g,m,[[-.78,6.45,.35],[-.7,6.0,.85],[0,5.88,1.15],[.7,6.0,.85],[.78,6.45,.35]],.15);
+      seg(g,m,[.78,6.45,.35],[.85,6.9,-.1],.11);
+      seg(g,m,[-.78,6.45,.35],[-.85,6.9,-.1],.11);
+    });
+  part({id:'spine',kind:'bone',key:true,ja:'背骨（脊柱）',en:'spine',la:'Columna vertebralis',at:[-.3,3.2,-1.5],
+    note:'24個の椎骨が積み重なった柱。まっすぐではなくゆるやかなS字カーブで、歩くときの衝撃を逃がしています。'},
+    function(g,m){
+      for(var i=0;i<24;i++){
+        var t=i/23;
+        var y=6.15-t*5.6;
+        var z=-.35+Math.sin(t*Math.PI*1.9)*.34-t*.15;
+        var r=.17+t*.16;
+        ball(g,m,[0,y,z],r,[1.1,.62,1]);
+        box(g,m,[0,y,z-r-.16],[.14,.13,.34],[.25,0,0]);
+      }
+    });
+  part({id:'ribs',kind:'bone',key:true,ja:'肋骨',en:'ribs',la:'Costae',at:[-2.35,4.6,.6],
+    note:'左右12対のかご。心臓と肺を守りながら、息を吸うたびに持ち上がって胸をふくらませます。'},
+    function(g,m){
+      for(var i=0;i<10;i++){
+        var t=i/9, y=5.35-t*2.95;
+        var w=.85+Math.sin(t*Math.PI*.85)*.62;
+        var dp=.9+Math.sin(t*Math.PI*.8)*.45;
+        var drop=.35+t*.55;
+        var pts=[[.22,y,-.5],[.55*w+.3,y-drop*.15,-.35*dp],
+                 [.95*w+.28,y-drop*.4,.25*dp],[.72*w+.2,y-drop*.75,.72*dp],
+                 [.22,y-drop,.62*dp+.28]];
+        tube(g,m,pts,.082);
+        tube(g,m,mirrorX(pts),.082);
+      }
+    });
+  part({id:'sternum',kind:'bone',ja:'胸骨',en:'breastbone',la:'Sternum',at:[0,5.05,1.85],
+    note:'胸のまん中にある平たい骨。左右の肋骨をつなぎとめる、かごの留め具です。'},
+    function(g,m){
+      box(g,m,[0,4.5,1.32],[.46,2.2,.2]);
+      box(g,m,[0,3.28,1.24],[.28,.42,.16]);
+    });
+  part({id:'clavicle',kind:'bone',ja:'鎖骨',en:'collarbone',la:'Clavicula',at:[1.5,6.15,1.0],
+    note:'腕と胴体をつなぐ、たった一本の骨。ここが折れると腕が肩からぶら下がってしまいます。'},
+    function(g,m){
+      var p=[[.15,5.5,1.15],[.85,5.62,.95],[1.55,5.55,.42],[1.95,5.35,.05]];
+      tube(g,m,p,.105); tube(g,m,mirrorX(p),.105);
+    });
+  part({id:'scapula',kind:'bone',ja:'肩甲骨',en:'shoulder blade',la:'Scapula',at:[-2.45,4.9,-1.4],
+    note:'背中にういている三角の板。骨どうしでほとんど固定されず、筋肉でつり下げられているので大きく動きます。'},
+    function(g,m){
+      box(g,m,[1.28,4.72,-.82],[1.05,1.35,.12],[.1,.42,.16]);
+      box(g,m,[-1.28,4.72,-.82],[1.05,1.35,.12],[.1,-.42,-.16]);
+      seg(g,m,[.85,5.3,-1.0],[1.95,5.2,-.35],.11);
+      seg(g,m,[-.85,5.3,-1.0],[-1.95,5.2,-.35],.11);
+    });
+  part({id:'humerus',kind:'bone',key:true,ja:'上腕骨',en:'upper arm bone',la:'Humerus',at:[2.9,4.0,.3],
+    note:'肩からひじまでの一本骨。この骨のまわりに力こぶの筋肉がついています。'},
+    function(g,m){
+      [1,-1].forEach(function(s){
+        ball(g,m,[2.02*s,5.2,0],.36);
+        seg(g,m,[2.02*s,5.2,0],[2.42*s,2.72,-.08],.22,.19);
+        ball(g,m,[2.42*s,2.66,-.08],.26);
+      });
+    });
+  part({id:'forearm',kind:'bone',key:true,ja:'前腕（橈骨・尺骨）',en:'forearm bones',la:'Radius & Ulna',at:[3.5,1.6,.3],
+    note:'2本セット。この2本が交差するように回るから、手のひらを上にも下にも向けられます。'},
+    function(g,m){
+      [1,-1].forEach(function(s){
+        seg(g,m,[2.36*s,2.6,.1],[2.78*s,.55,.22],.15);
+        seg(g,m,[2.5*s,2.6,-.2],[2.92*s,.55,-.05],.13);
+      });
+    });
+  part({id:'hand',kind:'bone',ja:'手の骨',en:'hand bones',la:'Ossa manus',at:[3.7,-.65,.4],
+    note:'片手だけで27個。体全体の骨の4分の1以上が、両手に集まっています。'},
+    function(g,m){
+      [1,-1].forEach(function(s){
+        box(g,m,[2.86*s,.2,.1],[.42,.5,.28],[0,0,-.08*s]);
+        for(var i=0;i<4;i++){
+          var x=2.72*s+ (i-1.5)*.16*s;
+          seg(g,m,[x,-.05,.1+ (i-1.5)*.06],[x+.06*s,-.72,.14+(i-1.5)*.08],.048);
+        }
+        seg(g,m,[3.02*s,.05,.2],[3.32*s,-.35,.4],.055);
+      });
+    });
+  part({id:'pelvis',kind:'bone',key:true,ja:'骨盤',en:'pelvis',la:'Pelvis',at:[-2.35,.35,.5],
+    note:'上半身をのせる土台であり、内臓のうつわ。左右のおしりの骨と仙骨が合わさった、体で一番大きな輪の骨です。'},
+    function(g,m){
+      var ring=[[0,.35,-.55],[1.05,.5,-.15],[1.25,-.15,.5],[.5,-.62,.85],[0,-.68,.9]];
+      tube(g,m,ring,.19); tube(g,m,mirrorX(ring),.19);
+      box(g,m,[1.0,.52,-.05],[.86,1.0,.15],[.22,.5,.16]);
+      box(g,m,[-1.0,.52,-.05],[.86,1.0,.15],[.22,-.5,-.16]);
+      ball(g,m,[.92,-.38,.05],.3);
+      ball(g,m,[-.92,-.38,.05],.3);
+    });
+  part({id:'femur',kind:'bone',key:true,ja:'大腿骨',en:'thigh bone',la:'Femur',at:[-2.2,-2.1,.4],
+    note:'体でいちばん長くて強い骨。身長のおよそ4分の1の長さがあり、垂直なら1トン近くの力に耐えます。'},
+    function(g,m){
+      [1,-1].forEach(function(s){
+        ball(g,m,[.92*s,-.38,.05],.28);
+        seg(g,m,[.92*s,-.45,.05],[1.02*s,-3.7,.05],.26,.23);
+        ball(g,m,[1.02*s,-3.75,.05],.3,[1.2,.9,1]);
+      });
+    });
+  part({id:'patella',kind:'bone',ja:'膝蓋骨（ひざの皿）',en:'kneecap',la:'Patella',at:[1.85,-3.95,1.15],
+    note:'筋肉のなかに浮かぶ小さな皿。ひざを伸ばす力のテコを大きくする、体内の小さな滑車です。'},
+    function(g,m){
+      ball(g,m,[1.02,-3.85,.42],.22,[1,1.15,.55]);
+      ball(g,m,[-1.02,-3.85,.42],.22,[1,1.15,.55]);
+    });
+  part({id:'lowerleg',kind:'bone',key:true,ja:'下腿（脛骨・腓骨）',en:'shin bones',la:'Tibia & Fibula',at:[-2.2,-5.6,.4],
+    note:'すねの太い骨（脛骨）と、外側の細い骨（腓骨）。体重を支えるのはほとんど太いほうです。'},
+    function(g,m){
+      [1,-1].forEach(function(s){
+        seg(g,m,[1.0*s,-3.9,.05],[1.05*s,-7.0,.08],.21,.15);
+        seg(g,m,[1.3*s,-3.95,-.02],[1.22*s,-6.95,.0],.1);
+      });
+    });
+  part({id:'foot',kind:'bone',ja:'足の骨',en:'foot bones',la:'Ossa pedis',at:[1.95,-7.75,1.5],
+    note:'片足26個。アーチ（土踏まず）を作って、着地の衝撃をばねのように吸収しています。'},
+    function(g,m){
+      [1,-1].forEach(function(s){
+        ball(g,m,[1.05*s,-7.15,.05],.24);
+        box(g,m,[1.05*s,-7.42,.15],[.5,.32,.7]);
+        for(var i=0;i<4;i++){
+          seg(g,m,[1.05*s+(i-1.5)*.13*s,-7.5,.45],[1.05*s+(i-1.5)*.17*s,-7.62,1.15],.055);
+        }
+      });
+    });
+
+  /* ================= MUSCLES ================= */
+  part({id:'pect',kind:'muscle',key:true,ja:'大胸筋',en:'chest muscle',la:'Pectoralis major',at:[1.95,5.2,1.7],
+    note:'胸の前面をおおう扇形の筋肉。腕を前に押し出したり、抱えこむ動きをつくります。'},
+    function(g,m){
+      ball(g,m,[.82,4.62,1.15],1.0,[1.0,.82,.42]);
+      ball(g,m,[-.82,4.62,1.15],1.0,[1.0,.82,.42]);
+    });
+  part({id:'rectus',kind:'muscle',key:true,ja:'腹直筋',en:'abdominal muscle',la:'Rectus abdominis',at:[1.45,2.0,1.6],
+    note:'いわゆるシックスパック。上体を丸めるほか、声を長く出すときに息を押し出す助けもします。'},
+    function(g,m){
+      for(var i=0;i<4;i++){
+        var y=3.1-i*.62;
+        ball(g,m,[.34,y,1.02],.36,[.9,.72,.42]);
+        ball(g,m,[-.34,y,1.02],.36,[.9,.72,.42]);
+      }
+      ball(g,m,[0,.85,.95],.62,[1.05,.75,.42]);
+    });
+  part({id:'deltoid',kind:'muscle',ja:'三角筋',en:'shoulder muscle',la:'Deltoideus',at:[3.2,5.4,.7],
+    note:'肩をおおう三角の筋肉。腕を横に持ち上げるときの主役で、肩のまるみをつくります。'},
+    function(g,m){
+      ball(g,m,[2.05,5.05,0],.68,[.85,1.0,.9]);
+      ball(g,m,[-2.05,5.05,0],.68,[.85,1.0,.9]);
+    });
+  part({id:'biceps',kind:'muscle',key:true,ja:'上腕二頭筋',en:'biceps',la:'Biceps brachii',at:[3.35,3.7,.95],
+    note:'いわゆる力こぶ。ひじを曲げると縮んで短く太くなる——筋肉が動くしくみが一番わかりやすい場所です。'},
+    function(g,m){
+      [1,-1].forEach(function(s){
+        seg(g,m,[2.05*s,4.95,.18],[2.4*s,2.95,.16],.34,.2);
+        seg(g,m,[2.12*s,4.95,-.25],[2.42*s,2.9,-.2],.24,.16);
+      });
+    });
+  part({id:'quad',kind:'muscle',key:true,ja:'大腿四頭筋',en:'thigh muscle',la:'Quadriceps femoris',at:[2.2,-2.3,1.15],
+    note:'体でいちばん大きな筋肉のグループ。立ち上がる・階段をのぼるときにひざを伸ばします。'},
+    function(g,m){
+      [1,-1].forEach(function(s){
+        seg(g,m,[.95*s,-.6,.15],[1.02*s,-3.6,.3],.52,.34);
+      });
+    });
+  part({id:'calf',kind:'muscle',ja:'下腿三頭筋（ふくらはぎ）',en:'calf muscle',la:'Triceps surae',at:[-2.1,-5.2,-1.1],
+    note:'かかとの腱（アキレス腱）につながり、つま先立ちをつくります。「第二の心臓」と呼ばれ、血液を上へ送り返します。'},
+    function(g,m){
+      [1,-1].forEach(function(s){
+        ball(g,m,[1.08*s,-4.85,-.28],.46,[.85,1.25,.9]);
+        seg(g,m,[1.08*s,-5.8,-.25],[1.05*s,-7.05,-.05],.16,.1);
+      });
+    });
+  part({id:'diaphragm',kind:'muscle',key:true,ja:'横隔膜',en:'diaphragm',la:'Diaphragma',at:[-2.6,2.65,.7],
+    note:'肺の下にあるドーム型の膜状の筋肉。息を吸うときに下がり、吐くときに上がります。声を出す・音読するときの「息の エンジン」です。'},
+    function(g,m){
+      var d=new THREE.Mesh(new THREE.SphereGeometry(1.55,28,14,0,Math.PI*2,0,Math.PI*.58),m);
+      d.scale.set(1.05,.72,.95); d.position.set(0,2.35,.05);
+      m.side=THREE.DoubleSide; g.add(d);
+      tube(g,m,[[-1.5,2.35,0],[0,2.05,.35],[1.5,2.35,0]],.1);
+    });
+  part({id:'intercostal',kind:'muscle',ja:'肋間筋',en:'intercostal muscles',la:'Mm. intercostales',at:[-2.5,4.3,.75],
+    note:'肋骨と肋骨のあいだをうめる筋肉。かごを広げたりすぼめたりして、横隔膜といっしょに呼吸をつくります。'},
+    function(g,m){
+      for(var i=0;i<5;i++){
+        var t=i/4.5+.06, y=5.05-t*2.5;
+        var w=.85+Math.sin(t*Math.PI*.85)*.62, dp=.9+Math.sin(t*Math.PI*.8)*.45, drop=.35+t*.55;
+        var pts=[[.3,y,-.45],[.55*w+.3,y-drop*.15,-.3*dp],[.95*w+.26,y-drop*.4,.25*dp],
+                 [.72*w+.18,y-drop*.75,.7*dp],[.26,y-drop,.6*dp+.26]];
+        tube(g,m,pts,.13); tube(g,m,mirrorX(pts),.13);
+      }
+    });
+  part({id:'scm',kind:'muscle',ja:'胸鎖乳突筋',en:'neck muscle',la:'Sternocleidomastoideus',at:[-1.7,6.4,1.0],
+    note:'耳の下から鎖骨へ斜めに走る首の筋肉。顔を横に向ける動きと、深く息を吸うときの補助をします。'},
+    function(g,m){
+      seg(g,m,[.6,6.6,.42],[.26,5.5,1.0],.17,.13);
+      seg(g,m,[-.6,6.6,.42],[-.26,5.5,1.0],.17,.13);
+    });
+
+  /* ---------- camera / orbit ---------- */
+  var theta=0,phi=1.42,dist=26,target=new V(0,.45,0);
+  var thetaT=theta,phiT=phi,distT=dist,targetT=target.clone();
+  function applyCam(){
+    camera.position.set(
+      target.x+dist*Math.sin(phi)*Math.sin(theta),
+      target.y+dist*Math.cos(phi),
+      target.z+dist*Math.sin(phi)*Math.cos(theta));
+    camera.lookAt(target);
+  }
+  var VIEWS={
+    front:{t:0,p:1.42,d:26,c:[0,.45,0]},
+    side:{t:Math.PI/2,p:1.42,d:26,c:[0,.45,0]},
+    back:{t:Math.PI,p:1.42,d:26,c:[0,.45,0]},
+    chest:{t:-0.42,p:1.30,d:13,c:[0,3.9,0]},
+    head:{t:-0.35,p:1.38,d:9.5,c:[0,6.6,0]},
+    reset:{t:0,p:1.42,d:26,c:[0,.45,0]}
+  };
+  function goView(v){var s=VIEWS[v];if(!s)return;thetaT=s.t;phiT=s.p;distT=s.d;targetT.set(s.c[0],s.c[1],s.c[2]);}
+
+  var down=false,lx=0,ly=0,moved=0,spin=false;
+  canvas.addEventListener('pointerdown',function(e){down=true;moved=0;lx=e.clientX;ly=e.clientY;canvas.classList.add('dragging');canvas.setPointerCapture(e.pointerId);});
+  canvas.addEventListener('pointermove',function(e){
+    if(!down)return;
+    var dx=e.clientX-lx,dy=e.clientY-ly;lx=e.clientX;ly=e.clientY;moved+=Math.abs(dx)+Math.abs(dy);
+    thetaT-=dx*.008; phiT=Math.max(.22,Math.min(2.92,phiT-dy*.006));
+  });
+  function up(e){if(!down)return;down=false;canvas.classList.remove('dragging');if(moved<6)pick(e);}
+  canvas.addEventListener('pointerup',up);
+  canvas.addEventListener('pointercancel',function(){down=false;canvas.classList.remove('dragging');});
+  canvas.addEventListener('wheel',function(e){e.preventDefault();distT=Math.max(5,Math.min(46,distT*(1+e.deltaY*.0011)));},{passive:false});
+  var pinch=0;
+  canvas.addEventListener('touchmove',function(e){
+    if(e.touches.length===2){
+      var a=e.touches[0],b=e.touches[1];
+      var d=Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY);
+      if(pinch)distT=Math.max(5,Math.min(46,distT*pinch/d));
+      pinch=d; e.preventDefault();
+    }
+  },{passive:false});
+  canvas.addEventListener('touchend',function(){pinch=0;});
+
+  /* ---------- picking ---------- */
+  var ray=new THREE.Raycaster(), pt=new THREE.Vector2();
+  function pick(e){
+    var r=canvas.getBoundingClientRect();
+    pt.x=((e.clientX-r.left)/r.width)*2-1;
+    pt.y=-((e.clientY-r.top)/r.height)*2+1;
+    ray.setFromCamera(pt,camera);
+    var hits=ray.intersectObjects(root.children,true);
+    for(var i=0;i<hits.length;i++){
+      var o=hits[i].object;
+      if(o.visible&&o.parent.visible&&o.userData.pid){select(o.userData.pid);return;}
+    }
+    select(null);
+  }
+
+  /* ---------- state ---------- */
+  var state={layer:'both',opacity:.55,labels:true,lang:'ja',sel:null};
+  function byId(id){for(var i=0;i<parts.length;i++)if(parts[i].id===id)return parts[i];return null;}
+
+  function applyLayer(){
+    parts.forEach(function(p){
+      var on = state.layer==='both' ? true : (state.layer==='bone'?p.kind==='bone':p.kind==='muscle');
+      p.group.visible=on;
+      if(p.kind==='muscle'){
+        var o = state.layer==='muscle' ? Math.max(state.opacity,.9) : state.opacity;
+        p.mat.opacity=o; p.mat.transparent=o<.99; p.mat.depthWrite=o>=.9;
+      }
+    });
+    if(state.sel){var s=byId(state.sel); if(s&&!s.group.visible)select(null);}
+    renderList();
+  }
+
+  function highlight(){
+    parts.forEach(function(p){
+      var on=p.id===state.sel;
+      p.mat.emissive.setHex(on?(p.kind==='muscle'?0x521a0e:0x3f4a2a):0x000000);
+      p.mat.color.setHex(p.kind==='muscle'
+        ? (on?0xe4694a:0xc4573c)
+        : (on?0xfff6e2:0xeae0c9));
+    });
+  }
+
+  var infoCard=document.getElementById('infoCard'), floatCard=document.getElementById('floatCard');
+  var GUIDE='<p class="kicker">つかいかた</p><p class="nm" style="font-size:19px;line-height:1.6">骨や筋肉を<br>クリックしてみて</p>'+
+    '<p class="note">名前（日本語・英語・ラテン語）とかんたんな説明が出ます。ドラッグで回して、うしろ側も見せられます。</p>';
+  function renderCard(){
+    var p=state.sel?byId(state.sel):null;
+    if(!p){ infoCard.className='card sel'; infoCard.innerHTML=GUIDE; floatCard.innerHTML=''; floatCard.className='float-card'; return; }
+    var body='<p class="kicker">'+(p.kind==='muscle'?'きんにく / muscle':'ほね / bone')+'</p>'+
+      '<h2 class="nm">'+p.ja+'</h2>'+
+      '<p class="nm-en">'+p.en+'</p>'+
+      '<p class="nm-la">'+p.la+'</p>'+
+      '<p class="note">'+p.note+'</p>';
+    infoCard.className='card sel'+(p.kind==='muscle'?' m':'');
+    infoCard.innerHTML=body+'<button class="zoom-to" id="zoomTo">ここに寄って見せる</button>';
+    document.getElementById('zoomTo').onclick=function(){
+      targetT.copy(p.anchor).multiplyScalar(.55); targetT.y=p.anchor.y*.92; distT=Math.max(7,p.anchor.length()*1.5+5);
+    };
+    floatCard.className='float-card'+(p.kind==='muscle'?' m':'');
+    floatCard.innerHTML=body;
+  }
+
+  function select(id){ state.sel=id; highlight(); renderCard(); renderList(); }
+
+  var listEl=document.getElementById('partList');
+  function renderList(){
+    var html='';
+    parts.forEach(function(p){
+      if(!p.group.visible)return;
+      html+='<button data-pid="'+p.id+'" class="'+(p.kind==='muscle'?'mus ':'')+(state.sel===p.id?'on':'')+'">'+p.ja+'</button>';
+    });
+    listEl.innerHTML=html;
+    Array.prototype.forEach.call(listEl.querySelectorAll('button'),function(b){
+      b.onclick=function(){select(b.getAttribute('data-pid'));};
+    });
+  }
+
+  /* ---------- labels ---------- */
+  var labelLayer=document.getElementById('labels'), labelEls={};
+  var NS='http://www.w3.org/2000/svg';
+  var svg=document.createElementNS(NS,'svg'); svg.setAttribute('id','leads'); labelLayer.appendChild(svg);
+  parts.forEach(function(p){
+    var d=document.createElement('div');
+    d.className='lbl'+(p.kind==='muscle'?' m':'');
+    labelLayer.appendChild(d);
+    var path=document.createElementNS(NS,'path');
+    var dot=document.createElementNS(NS,'circle'); dot.setAttribute('r','3.4');
+    if(p.kind==='muscle'){path.setAttribute('class','m');dot.setAttribute('class','m');}
+    svg.appendChild(path); svg.appendChild(dot);
+    labelEls[p.id]={el:d,path:path,dot:dot,html:'',w:0};
+  });
+  var proj=new V(), ctr=new V();
+  function updateLabels(){
+    var w=stage.clientWidth,h=stage.clientHeight;
+    svg.setAttribute('viewBox','0 0 '+w+' '+h);
+    var gut = w<640 ? .60 : .72;
+    var rows={l:[],r:[]};
+    parts.forEach(function(p){
+      var L=labelEls[p.id];
+      var on = p.group.visible && (state.labels ? (p.key||state.sel===p.id) : state.sel===p.id);
+      proj.copy(p.anchor).project(camera);
+      if(!on||proj.z>1){L.el.style.display='none';L.path.classList.add('off');L.dot.classList.add('off');return;}
+      var px=(proj.x*.5+.5)*w, py=(-proj.y*.5+.5)*h;
+      ctr.set(0,p.anchor.y,0).project(camera);
+      var cx=(ctr.x*.5+.5)*w;
+      var right = px>=cx;
+      var toCam=new V().subVectors(p.anchor,camera.position).normalize();
+      var flat=new V(p.anchor.x,0,p.anchor.z);
+      var back = flat.lengthSq()>0.04 && toCam.dot(flat.normalize())>0.15;
+      var html = state.lang==='ja'
+        ? '<b>'+p.ja+'</b><i>'+p.en+'</i>'
+        : '<b>'+p.en+'</b><i>'+p.ja+'</i>';
+      L.el.style.display='block';
+      L.el.className='lbl'+(p.kind==='muscle'?' m':'')+(right?'':' left')+(back?' back':'')+(state.sel===p.id?' sel':'');
+      if(L.html!==html){L.el.innerHTML=html;L.html=html;L.w=0;}
+      if(!L.w)L.w=L.el.offsetWidth;
+      var lx = right ? Math.min(Math.max(px+46,w*gut), Math.max(w-L.w-10,px+18))
+                     : Math.max(Math.min(px-46,w*(1-gut)), Math.min(L.w+10,px-18));
+      L.path.classList.remove('off'); L.dot.classList.remove('off');
+      rows[right?'r':'l'].push({L:L,px:px,py:py,lx:lx,ly:py,right:right});
+    });
+    ['l','r'].forEach(function(k){
+      var arr=rows[k]; arr.sort(function(a,b){return a.py-b.py;});
+      var gap=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lbl'))*2.5;
+      var last=-1e9;
+      arr.forEach(function(o){
+        if(o.ly-last<gap)o.ly=last+gap;
+        last=o.ly;
+        o.L.el.style.left=o.lx+'px'; o.L.el.style.top=o.ly+'px';
+        var s1=o.right?-1:1, elbow=o.lx+s1*14;
+        o.L.path.setAttribute('d','M'+o.px.toFixed(1)+' '+o.py.toFixed(1)+'L'+elbow.toFixed(1)+' '+o.ly.toFixed(1)+'L'+(o.lx+s1*5).toFixed(1)+' '+o.ly.toFixed(1));
+        o.L.dot.setAttribute('cx',o.px.toFixed(1)); o.L.dot.setAttribute('cy',o.py.toFixed(1));
+        var op=o.L.el.classList.contains('back')?'.28':'.6';
+        o.L.path.style.opacity=op; o.L.dot.style.opacity=op;
+      });
+    });
+  }
+
+  /* ---------- controls ---------- */
+  var layerSeg=document.getElementById('layerSeg');
+  layerSeg.onclick=function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    setLayer(b.getAttribute('data-layer'));
+  };
+  function setLayer(l){
+    state.layer=l; applyLayer();
+    Array.prototype.forEach.call(layerSeg.querySelectorAll('button'),function(b){
+      b.setAttribute('aria-pressed',b.getAttribute('data-layer')===l?'true':'false');});
+  }
+  var opa=document.getElementById('opa'),opaV=document.getElementById('opaV');
+  opa.oninput=function(){state.opacity=+opa.value/100;opaV.textContent=opa.value+'%';applyLayer();};
+
+  var labelBtn=document.getElementById('labelBtn');
+  labelBtn.onclick=function(){state.labels=!state.labels;labelBtn.setAttribute('aria-pressed',state.labels?'true':'false');};
+
+  var langSeg=document.getElementById('langSeg');
+  langSeg.onclick=function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    state.lang=b.getAttribute('data-lang');
+    Array.prototype.forEach.call(langSeg.querySelectorAll('button'),function(x){
+      x.setAttribute('aria-pressed',x===b?'true':'false');});
+  };
+
+  var spinBtn=document.getElementById('spinBtn');
+  spinBtn.onclick=function(){spin=!spin;spinBtn.setAttribute('aria-pressed',spin?'true':'false');};
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-view]'),function(b){
+    b.onclick=function(){goView(b.getAttribute('data-view'));};
+  });
+
+  var presBtn=document.getElementById('presBtn'),exitPres=document.getElementById('exitPres');
+  function pres(on){document.documentElement.classList.toggle('presenting',on);resize();}
+  presBtn.onclick=function(){pres(true);};
+  exitPres.onclick=function(){pres(false);};
+
+  document.addEventListener('keydown',function(e){
+    if(e.target.tagName==='INPUT')return;
+    var k=e.key.toLowerCase();
+    var vs=['front','side','back','chest','head','reset'];
+    if(k>='1'&&k<='6'){goView(vs[+k-1]);}
+    else if(k==='b')setLayer('bone');
+    else if(k==='m')setLayer('muscle');
+    else if(k==='n')setLayer('both');
+    else if(k==='l')labelBtn.click();
+    else if(k==='f')pres(!document.documentElement.classList.contains('presenting'));
+    else if(k==='escape')pres(false);
+    else if(k===' '){e.preventDefault();spinBtn.click();}
+  });
+
+  /* ---------- loop ---------- */
+  function resize(){
+    var w=stage.clientWidth,h=stage.clientHeight;
+    renderer.setSize(w,h,false);
+    camera.aspect=w/h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize',resize);
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tick(){
+    requestAnimationFrame(tick);
+    if(spin)thetaT+=0.0038;
+    var e=reduce?1:0.13;
+    theta+=(thetaT-theta)*e; phi+=(phiT-phi)*e; dist+=(distT-dist)*e;
+    target.lerp(targetT,e);
+    applyCam();
+    updateLabels();
+    renderer.render(scene,camera);
+  }
+  resize(); applyLayer(); highlight(); renderCard(); tick();
+})();
+</script>
+</body>
+</html>
