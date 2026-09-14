@@ -634,7 +634,14 @@
       var rc=$("#recCard"); if(rc) rc.innerHTML='<div class="note">この端末では ろくおんが つかえないみたい。SafariかChromeの さいしんばんで ひらいてね。</div>';
       return;
     }
-    var mr=null, chunks=[], blob=null, recording=false, timer=null, MAXSEC=180, recStream=null;
+    // 2026-09-14 ひろみさん指示：止め忘れても10分で自動停止。iPhoneで画面が消えるとJSタイマーが止まって上限が効かない（実例：17時間の録音）ので、
+    //   ①時計（Date.now）で経過をはかる ②1秒ごとのデータ到着時にも確認 ③画面が消えた/別アプリに移ったら その場で停止して保存
+    var mr=null, chunks=[], blob=null, recording=false, timer=null, MAXSEC=600, recStream=null, recT0=0;
+    function recElapsed(){ return Math.floor((Date.now()-recT0)/1000); }
+    function recStopIfOver(reason){ if(recording && recElapsed()>=MAXSEC){ try{mr.stop()}catch(e){} return true; } return false; }
+    function recStopHidden(){ if(recording){ try{mr.stop()}catch(e){} var l=$("#recLbl"); if(l) l.textContent="がめんが きえたので ここまでを ろくおんしたよ。きいてみて、よければ「先生に おくる」"; } }
+    document.addEventListener("visibilitychange",function(){ if(document.hidden) recStopHidden(); });
+    window.addEventListener("pagehide",recStopHidden);
     // マイクは1回もらったら閉じない（とりなおす時に また許可ダイアログを出さない）。ページを閉じれば自動で解放される
     function getMic(){ if(recStream && recStream.active) return Promise.resolve(recStream); return navigator.mediaDevices.getUserMedia({audio:true}).then(function(st){ recStream=st; return st; }); }
     function fmt(s){ return Math.floor(s/60)+":"+("0"+(s%60)).slice(-2); }
@@ -650,7 +657,7 @@
         var mime=pickMime();
         try{ mr = mime ? new MediaRecorder(stream,{mimeType:mime}) : new MediaRecorder(stream); }
         catch(e){ mr=new MediaRecorder(stream); }
-        mr.ondataavailable=function(ev){ if(ev.data && ev.data.size) chunks.push(ev.data); };
+        mr.ondataavailable=function(ev){ if(ev.data && ev.data.size) chunks.push(ev.data); recStopIfOver("data"); };
         mr.onstop=function(){
           recording=false; clearInterval(timer);
           var fb3=document.getElementById("recFab"); if(fb3) fb3.style.display="none";
@@ -658,18 +665,18 @@
           blob=new Blob(chunks,{type:mr.mimeType||"audio/mp4"});
           var a=$("#recPlay"); a.src=URL.createObjectURL(blob); a.style.display="block";
           $("#recActions").classList.remove("hidden");
-          $("#recLbl").textContent="きいてみて、よければ「先生に おくる」";
+          if(!/がめんが きえた/.test($("#recLbl").textContent)) $("#recLbl").textContent=(recElapsed()>=MAXSEC?"10分になったので じどうで とめたよ。":"")+"きいてみて、よければ「先生に おくる」";
         };
-        var sec=0;
+        var sec=0; recT0=Date.now();
         recording=true;
         var fb2=document.getElementById("recFab"); if(fb2) fb2.style.display="block";
         $("#recBtn").classList.add("listening"); $("#recBtn").textContent="⏹";
-        $("#recLbl").textContent="ろくおん中… 0:00　よみおわったら ⏹ をおしてね";
-        timer=setInterval(function(){ sec++;
-          $("#recLbl").textContent="ろくおん中… "+fmt(sec)+"　よみおわったら ⏹ をおしてね";
-          if(sec>=MAXSEC){ try{mr.stop()}catch(e){} }
+        $("#recLbl").textContent="ろくおん中… 0:00　よみおわったら ⏹ をおしてね（10分で じどうで とまるよ）";
+        timer=setInterval(function(){ sec=recElapsed();
+          $("#recLbl").textContent="ろくおん中… "+fmt(sec)+"　よみおわったら ⏹ をおしてね（10分で じどうで とまるよ）";
+          recStopIfOver("timer");
         },1000);
-        mr.start();
+        mr.start(1000);
       }).catch(function(){ recStream=null; $("#recLbl").textContent="マイクが つかえなかった…もう一回 おしてね"; });
     };
     $("#recRedo").onclick=function(){
