@@ -664,7 +664,7 @@
           $("#recBtn").classList.remove("listening"); $("#recBtn").textContent="🎙️";
           blob=new Blob(chunks,{type:mr.mimeType||"audio/mp4"});
           var a=$("#recPlay"); a.src=URL.createObjectURL(blob); a.style.display="block";
-          $("#recActions").classList.remove("hidden");
+          $("#recActions").classList.remove("hidden"); $("#recSend").disabled=false;
           if(!/がめんが きえた/.test($("#recLbl").textContent)) $("#recLbl").textContent=(recElapsed()>=MAXSEC?"10分になったので じどうで とめたよ。":"")+"きいてみて、よければ「先生に おくる」";
         };
         var sec=0; recT0=Date.now();
@@ -681,29 +681,76 @@
     };
     $("#recRedo").onclick=function(){
       blob=null; $("#recPlay").style.display="none"; $("#recActions").classList.add("hidden");
-      $("#recLbl").textContent="ボタンを おして ろくおん スタート"; $("#recSt").textContent="";
+      $("#recLbl").textContent="ボタンを おして ろくおん スタート"; $("#recSt").textContent=""; $("#recSend").disabled=false;
     };
+    // ---- 📮 おくる（2026-10-02 ひろみさん指示：まち時間なし）----
+    //   「先生に おくる」を おしたら すぐ「おくったよ」（クエスト本体にも すぐ 知らせる）。とどける のは うらで つづける。
+    //   とどく前に ページを とじても なくならないように、とどくまで 端末（IndexedDB）に とっておき、つぎに このページを ひらいた時に おくりなおす。
+    //   おなじ ろくおんは 1回だけ おくれる（とりなおせば また おくれる）。
+    var OB_DB="ondokuOutbox", OB_ST="recs", sending=0, sentBlob=null, notifiedBlob=null, closeWait=false;
+    function obOpen(){ return new Promise(function(res,rej){ try{ var rq=indexedDB.open(OB_DB,1);
+      rq.onupgradeneeded=function(){ rq.result.createObjectStore(OB_ST,{keyPath:"id"}); };
+      rq.onsuccess=function(){ res(rq.result); }; rq.onerror=function(){ rej(rq.error); }; }catch(e){ rej(e); } }); }
+    function obTx(mode, fn){ return obOpen().then(function(db){ return new Promise(function(res,rej){ var out, tx=db.transaction(OB_ST,mode);
+      var rq=fn(tx.objectStore(OB_ST)); if(rq) rq.onsuccess=function(){ out=rq.result; };
+      tx.oncomplete=function(){ db.close(); res(out); }; tx.onerror=tx.onabort=function(){ db.close(); rej(tx.error); }; }); }); }
+    function obPut(it){ return obTx("readwrite", function(st){ st.put(it); }); }
+    function obDel(id){ return obTx("readwrite", function(st){ st.delete(id); }); }
+    function obAll(){ return obTx("readonly", function(st){ return st.getAll(); }); }
+    function upload(it){
+      return fetch(it.exec,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},
+        body:JSON.stringify({action:"ondokuAudio", name:it.name, lessonTitle:it.lessonTitle, mime:it.mime, audio:it.b64, rid:it.id})})
+      .then(function(r){return r.json()}).then(function(j){ if(!(j&&j.ok)) throw new Error("ng"); });
+    }
+    function uploadRetry(it,n){ return upload(it).catch(function(e){ if(n<=1) throw e;
+      return new Promise(function(r){ setTimeout(r,3000); }).then(function(){ return uploadRetry(it,n-1); }); }); }
+    function closeIfWaiting(){ if(closeWait && sending<=0){ try{window.close()}catch(e){} } }
+    // 「クエストにもどる」：とどけている とちゅうなら、おわるまで まってから とじる（さいだい20秒。のこりは つぎに ひらいた時に おくる）
+    function recCloseBtn(){
+      if(sending>0){ closeWait=true; $("#recSt").textContent="✅ おくったよ！ いま 先生に とどけているよ…（あと すこし）";
+        setTimeout(function(){ try{window.close()}catch(e){} },20000); return; }
+      try{window.close()}catch(e){}
+    }
+    ["#btnClose","#btnClose2"].forEach(function(q){ var b=document.querySelector(q); if(b) b.onclick=recCloseBtn; });
     $("#recSend").onclick=function(){
       if(!blob) return;
+      if(blob===sentBlob){ $("#recSt").textContent="✅ もう おくったよ！"; return; }
       if(!DATA.exec){ $("#recSt").textContent="⚠️ おくり先が ないみたい（先生に 画面を 見せてね）"; return; }
-      $("#recSt").textContent="おくっています…（すこし まってね）";
+      var theBlob=blob; sentBlob=theBlob;
+      $("#recSt").textContent="✅ 先生に おくったよ！";
       $("#recSend").disabled=true;
+      // クエスト本体に「おくったよ」を すぐ 知らせる（提出ボーナス＋✉️記録）。おなじ ろくおんで 2回は 知らせない
+      if(notifiedBlob!==theBlob){ notifiedBlob=theBlob;
+        try{ if(window.opener) window.opener.postMessage({type:"ondokuRecSent", lessonId:DATA.lessonId||"", lessonTitle:DATA.lessonTitle||""}, "*"); }catch(e){} }
+      sending++;
       var fr=new FileReader();
       fr.onload=function(){
-        var b64=String(fr.result).split(",")[1]||"";
-        fetch(DATA.exec,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},
-          body:JSON.stringify({action:"ondokuAudio", name:DATA.name||"", lessonTitle:DATA.lessonTitle||"", mime:blob.type||"audio/mp4", audio:b64})})
-        .then(function(r){return r.json()})
-        .then(function(j){
-          $("#recSt").textContent = j&&j.ok ? "✅ 先生に とどいたよ！ていしゅつボーナス +10 🦋" : "⚠️ おくれなかった…もう一回 ためしてね";
-          $("#recSend").disabled=false;
-          // クエスト本体に「おくったよ」を知らせる（提出ボーナス＋✉️記録）
-          try{ if(j&&j.ok&&window.opener) window.opener.postMessage({type:"ondokuRecSent", lessonId:DATA.lessonId||"", lessonTitle:DATA.lessonTitle||""}, "*"); }catch(e){}
-        })
-        .catch(function(){ $("#recSt").textContent="⚠️ おくれなかった…もう一回 ためしてね"; $("#recSend").disabled=false; });
+        var it={id:Date.now()+"_"+Math.random().toString(36).slice(2,8), ts:Date.now(), exec:DATA.exec, name:DATA.name||"", lessonTitle:DATA.lessonTitle||"",
+          mime:theBlob.type||"audio/mp4", b64:String(fr.result).split(",")[1]||""};
+        var kept=false, saved=obPut(it).then(function(){ kept=true; }).catch(function(){});
+        uploadRetry(it,3).then(function(){
+          sending--; saved.then(function(){ if(kept) return obDel(it.id); }).catch(function(){});
+        }).catch(function(){
+          sending--;
+          saved.then(function(){
+            if(kept){ if(sentBlob===theBlob) $("#recSt").textContent="✅ おくったよ！（でんぱが よわいみたい。つぎに ひらいた時に じどうで とどけるね）"; }
+            else if(sentBlob===theBlob){ sentBlob=null; $("#recSt").textContent="⚠️ とどかなかった…もう一回「先生に おくる」を おしてね"; $("#recSend").disabled=false; }
+          });
+        }).then(closeIfWaiting);
       };
-      fr.readAsDataURL(blob);
+      fr.onerror=function(){ sending--; sentBlob=null; $("#recSt").textContent="⚠️ とどかなかった…もう一回「先生に おくる」を おしてね"; $("#recSend").disabled=false; closeIfWaiting(); };
+      fr.readAsDataURL(theBlob);
     };
+    // 📮 まえに とどかなかった ろくおんを おくりなおす（3分より前のものだけ＝いま おくっている とちゅうのものは さわらない。14日より前は すてる）
+    setTimeout(function(){
+      if(!window.indexedDB) return;
+      obAll().then(function(list){
+        var now=Date.now(), q=(list||[]).filter(function(it){ return now-it.ts>180000; });
+        (function next(){ var it=q.shift(); if(!it) return;
+          if(now-it.ts>14*86400000){ obDel(it.id).then(next,next); return; }
+          upload(it).then(function(){ return obDel(it.id); }).then(next, function(){}); })();
+      }).catch(function(){});
+    }, 1500);
   })();
 })();
 </script>
