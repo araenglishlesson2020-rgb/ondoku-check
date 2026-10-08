@@ -7840,5 +7840,183 @@
    "f": "audio/jenny/od_u5rt2/8.mp3",
    "s": "audio/jenny/od_u5rt2/8s.mp3"
   }
+ ],
+ "od_u6p1": [
+  {
+   "en": "Sport Trivia Quiz!",
+   "f": "audio/jenny/od_u6p1/0.mp3",
+   "s": "audio/jenny/od_u6p1/0s.mp3"
+  },
+  {
+   "en": "Which is larger, a basketball court or a tennis court?",
+   "f": "audio/jenny/od_u6p1/1.mp3",
+   "s": "audio/jenny/od_u6p1/1s.mp3"
+  },
+  {
+   "en": "A basketball court is larger than a tennis court.",
+   "f": "audio/jenny/od_u6p1/2.mp3",
+   "s": "audio/jenny/od_u6p1/2s.mp3"
+  },
+  {
+   "en": "Which is smaller, a basketball or a volleyball?",
+   "f": "audio/jenny/od_u6p1/3.mp3",
+   "s": "audio/jenny/od_u6p1/3s.mp3"
+  },
+  {
+   "en": "A volleyball is smaller than a basketball.",
+   "f": "audio/jenny/od_u6p1/4.mp3",
+   "s": "audio/jenny/od_u6p1/4s.mp3"
+  },
+  {
+   "en": "Which is the smallest of these three?  A soccer ball, a basketball, or a volleyball?",
+   "f": "audio/jenny/od_u6p1/5.mp3",
+   "s": "audio/jenny/od_u6p1/5s.mp3"
+  },
+  {
+   "en": "A volleyball is the smallest of the three.",
+   "f": "audio/jenny/od_u6p1/6.mp3",
+   "s": "audio/jenny/od_u6p1/6s.mp3"
+  }
+ ],
+ "od_u6p2": [
+  {
+   "en": "Anna, I'd like to get your answers for a survey.  Do you like sports?",
+   "f": "audio/jenny/od_u6p2/0.mp3",
+   "s": "audio/jenny/od_u6p2/0s.mp3"
+  },
+  {
+   "en": "Yes, I do.",
+   "f": "audio/jenny/od_u6p2/1.mp3",
+   "s": "audio/jenny/od_u6p2/1s.mp3"
+  },
+  {
+   "en": "Great!  What is your favorite sport?",
+   "f": "audio/jenny/od_u6p2/2.mp3",
+   "s": "audio/jenny/od_u6p2/2s.mp3"
+  },
+  {
+   "en": "I like curling.  It's popular in the U.K.",
+   "f": "audio/jenny/od_u6p2/3.mp3",
+   "s": "audio/jenny/od_u6p2/3s.mp3"
+  },
+  {
+   "en": "I see.  Why do you like it?",
+   "f": "audio/jenny/od_u6p2/4.mp3",
+   "s": "audio/jenny/od_u6p2/4s.mp3"
+  },
+  {
+   "en": "It's more interesting than other sports.  It's a game of great strategy and skill.",
+   "f": "audio/jenny/od_u6p2/5.mp3",
+   "s": "audio/jenny/od_u6p2/5s.mp3"
+  },
+  {
+   "en": "I think curling is the most interesting sport of all.",
+   "f": "audio/jenny/od_u6p2/6.mp3",
+   "s": "audio/jenny/od_u6p2/6s.mp3"
+  },
+  {
+   "en": "OK.  Thank you, Anna.",
+   "f": "audio/jenny/od_u6p2/7.mp3",
+   "s": "audio/jenny/od_u6p2/7s.mp3"
+  }
+ ],
+ "od_u6rt1": [
+  {
+   "en": "Our survey was about sports.",
+   "f": "audio/jenny/od_u6rt1/0.mp3",
+   "s": "audio/jenny/od_u6rt1/0s.mp3"
+  },
+  {
+   "en": "“Do you like sports?”  We asked our classmates this question first.",
+   "f": "audio/jenny/od_u6rt1/1.mp3",
+   "s": "audio/jenny/od_u6rt1/1s.mp3"
+  },
+  {
+   "en": "Then we asked the “yes” group, “What is your favorite sport?”",
+   "f": "audio/jenny/od_u6rt1/2.mp3",
+   "s": "audio/jenny/od_u6rt1/2s.mp3"
+  },
+  {
+   "en": "Please look at these graphs.",
+   "f": "audio/jenny/od_u6rt1/3.mp3",
+   "s": "audio/jenny/od_u6rt1/3s.mp3"
+  },
+  {
+   "en": "According to our results, 80 percent of our classmates like sports.",
+   "f": "audio/jenny/od_u6rt1/4.mp3",
+   "s": "audio/jenny/od_u6rt1/4s.mp3"
+  },
+  {
+   "en": "As for favorite sports, 12 of our classmates like basketball the best.",
+   "f": "audio/jenny/od_u6rt1/5.mp3",
+   "s": "audio/jenny/od_u6rt1/5s.mp3"
+  },
+  {
+   "en": "Seven of them like tennis the best, and soccer got the same number.",
+   "f": "audio/jenny/od_u6rt1/6.mp3",
+   "s": "audio/jenny/od_u6rt1/6s.mp3"
+  },
+  {
+   "en": "Six like other sports, such as baseball, volleyball, or curling.",
+   "f": "audio/jenny/od_u6rt1/7.mp3",
+   "s": "audio/jenny/od_u6rt1/7s.mp3"
+  },
+  {
+   "en": "In conclusion, we found that basketball is the most popular sport in our class.",
+   "f": "audio/jenny/od_u6rt1/8.mp3",
+   "s": "audio/jenny/od_u6rt1/8s.mp3"
+  },
+  {
+   "en": "However, more than half of our classmates like other sports better than basketball.",
+   "f": "audio/jenny/od_u6rt1/9.mp3",
+   "s": "audio/jenny/od_u6rt1/9s.mp3"
+  },
+  {
+   "en": "We were surprised that soccer is not the most popular sport in our class.",
+   "f": "audio/jenny/od_u6rt1/10.mp3",
+   "s": "audio/jenny/od_u6rt1/10s.mp3"
+  }
+ ],
+ "od_u6rt2": [
+  {
+   "en": "Your topic was good.  I like soccer the best.",
+   "f": "audio/jenny/od_u6rt2/0.mp3",
+   "s": "audio/jenny/od_u6rt2/0s.mp3"
+  },
+  {
+   "en": "In our class, it is the second most popular sport, and it is as popular as tennis.",
+   "f": "audio/jenny/od_u6rt2/1.mp3",
+   "s": "audio/jenny/od_u6rt2/1s.mp3"
+  },
+  {
+   "en": "I am glad to know that.",
+   "f": "audio/jenny/od_u6rt2/2.mp3",
+   "s": "audio/jenny/od_u6rt2/2s.mp3"
+  },
+  {
+   "en": "Now I feel like talking about my favorite soccer player with my classmates.",
+   "f": "audio/jenny/od_u6rt2/3.mp3",
+   "s": "audio/jenny/od_u6rt2/3s.mp3"
+  },
+  {
+   "en": "You spoke clearly.  You also used graphs to show your data.",
+   "f": "audio/jenny/od_u6rt2/4.mp3",
+   "s": "audio/jenny/od_u6rt2/4s.mp3"
+  },
+  {
+   "en": "I could easily understand the results of your survey.",
+   "f": "audio/jenny/od_u6rt2/5.mp3",
+   "s": "audio/jenny/od_u6rt2/5s.mp3"
+  },
+  {
+   "en": "Your slides were good, but some of the letters were too small.",
+   "f": "audio/jenny/od_u6rt2/6.mp3",
+   "s": "audio/jenny/od_u6rt2/6s.mp3"
+  },
+  {
+   "en": "I could not see them well.  Please use larger letters next time.",
+   "f": "audio/jenny/od_u6rt2/7.mp3",
+   "s": "audio/jenny/od_u6rt2/7s.mp3"
+  }
  ]
 }
