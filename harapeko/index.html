@@ -7,7 +7,7 @@
 // fetch(POST {action:'rpc', fn, args}) で Apps Script の doPost（handleRpc_）に送る。
 (function(){
   var EXEC="https://script.google.com/macros/s/AKfycbxXxNHogj9Rs5oVNbGio-xJLOPy-jmix20MLfGuqf0gW7tkv5sC9EGQKDyD7icAWCg/exec";
-  var FNS=["login","loginByPw","checkActive","growth","companions","pickCompanion","getLessons","getOndoku","getOndokuUpdates","recAudio","saveRecord","saveState","loadState"];
+  var FNS=["login","loginByPw","checkActive","growth","companions","pickCompanion","getLessons","getOndoku","getOndokuUpdates","recAudio","saveRecord","saveState","loadState","visit","videoCheck","savePhoto","getPhotos"];
   function Runner(ok,ng){ this._ok=ok||null; this._ng=ng||null; }
   Runner.prototype.withSuccessHandler=function(f){ return new Runner(f,this._ng); };
   Runner.prototype.withFailureHandler=function(f){ return new Runner(this._ok,f); };
@@ -395,6 +395,20 @@
   .od-sent.on{border-color:var(--leaf); background:color-mix(in srgb,var(--leaf) 12%, var(--surface))}
   .od-big{font-family:var(--font-en); font-size:25px; line-height:1.5; font-weight:700; word-break:break-word}
   .od-note{font-family:var(--font-round); font-size:12.5px; color:var(--muted); margin-top:10px; line-height:1.7}
+  /* ===== 2026-10-13 新機能3つ：🎬動画みた✅／📷ホワイトボード／🐾あしあと ===== */
+  .vid-row,.wb-row{background:var(--surface); border:1.5px solid var(--line); border-radius:16px; padding:10px 12px; margin:0 0 10px; box-shadow:var(--shadow-sm)}
+  .vid-row .ttl,.wb-row .ttl{font-family:var(--font-round); font-weight:800; font-size:14.5px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; color:var(--ink)}
+  .vid-row .cnt{font-size:12px; color:var(--muted); font-weight:700}
+  .vids{display:grid; grid-template-columns:repeat(5,1fr); gap:6px}
+  .vid{border:2px solid var(--line); border-radius:12px; padding:8px 2px 7px; text-align:center; font-family:var(--font-round); font-size:11.5px; font-weight:700; background:var(--surface2); color:var(--ink); cursor:pointer; line-height:1.15}
+  .vid b{display:block; font-size:18px; line-height:1.1; margin-bottom:3px}
+  .vid.on{border-color:var(--leaf); background:color-mix(in srgb,var(--leaf) 14%, var(--surface))}
+  .vid.nx{border-color:var(--apple); box-shadow:0 0 0 3px color-mix(in srgb,var(--apple) 18%, transparent)}
+  .vid.nx b{animation:nxblink 1.4s ease-in-out infinite}
+  .vid-note,.wb-note{font-family:var(--font-round); font-size:12px; color:var(--muted); text-align:center; margin-top:6px; line-height:1.5}
+  .wb-prev{width:100%; max-height:240px; object-fit:contain; border-radius:12px; border:1.5px solid var(--line); margin-top:10px; background:#fff}
+  .footbar{background:var(--surface); border:1.5px solid var(--line); border-radius:16px; box-shadow:var(--shadow-sm); padding:10px 14px; margin:10px 0 0; font-family:var(--font-round); font-weight:800; font-size:15.5px; color:var(--leaf-deep); text-align:center; line-height:1.6}
+  .footbar .fb2{display:block; font-size:13.5px; color:var(--ink); font-weight:700}
 </style>
 
 <div id="app">
@@ -430,6 +444,7 @@
         <div class="catbig" id="catBig">🥚</div>
         <div class="catline" id="catLine"></div>
       </div>
+      <div id="footBar"></div>
       <div id="contBar"></div>
       <div class="tiles" id="tiles"></div>
       <div id="pendBar"></div>
@@ -473,6 +488,8 @@
       </div>
       <div class="catwrap"><div class="cat" id="cat"></div></div>
       <div class="catcount" id="catcount"></div>
+      <div id="vidRow"></div>
+      <div id="wbRow"></div>
       <div class="stages" id="stages"></div>
       <div class="scorebar">
         <div class="stat"><b id="hScore">0</b><span>スコア</span></div>
@@ -1309,6 +1326,127 @@
     GROWTH=null; // 次にレッスン一覧へ戻ったとき育成バッジを取り直す
   }
 
+  // ===== 🐾 あしあと（2026-10-13 ひろみさん）：「きょう N番のり！」「今 おともだちも N人 やってる！」の2つだけ・名前は出さない =====
+  var FOOT=null, VISIT_TMR=null;
+  function fetchVisit(){
+    if(!USER || !(CONFIG.backend && window.google && google.script && google.script.run)) return;
+    try{ google.script.run.withSuccessHandler(function(r){ if(r && r.ok){ FOOT=r; renderFootBar(); } }).withFailureHandler(function(){}).visit(USER); }catch(e){}
+  }
+  function renderFootBar(){
+    var fb=$("#footBar"); if(!fb) return;
+    if(!USER || !FOOT){ fb.innerHTML=""; return; }
+    var now=Number(FOOT.now)||0;
+    fb.innerHTML='<div class="footbar">🐾 きょう '+(Number(FOOT.rank)||1)+'番のり！'+
+      (now>0?'<span class="fb2">👫 今 おともだちも '+now+'人 やってる！</span>':'')+'</div>';
+  }
+  // 5分ごとに取り直す（見ている間だけ）→「今やってる」が合う
+  VISIT_TMR=setInterval(function(){ if(USER && document.visibilityState==="visible") fetchVisit(); }, 5*60000);
+  document.addEventListener("visibilitychange", function(){ if(document.visibilityState==="visible" && USER) fetchVisit(); });
+
+  // ===== 🎬 レッスン動画「みた✅」（2026-10-13 ひろみさん）：L8以降の UFLI BOOK は Day1/Day2/BOOK/Word/Heart Word の5本。ロックはしない・リンクなし =====
+  var VIDEOS=[{id:"day1",nm:"Day1"},{id:"day2",nm:"Day2"},{id:"book",nm:"BOOK"},{id:"word",nm:"Word"},{id:"heart",nm:"Heart Word"}];
+  function hasVideos(L){ var nm=L?lessonNum(L):null; return !!(L && isBook(L) && nm && nm.n>=8); }
+  function vidsSeen(ls){ ls.vids=ls.vids||{}; return VIDEOS.filter(function(v){return !!ls.vids[v.id]}).length; }
+  function renderVidRow(){
+    var box=$("#vidRow"); if(!box) return; box.innerHTML="";
+    if(!LES || !hasVideos(LES)) return;
+    var ls=LS; var n=vidsSeen(ls);
+    var fresh=!reqStages(LES).some(function(s){ return ls.cleared[s.id]>0; }); // まだクエストを始めていない → 最初の未視聴が「▶」で光る
+    var firstUn=null; VIDEOS.forEach(function(v){ if(!firstUn && !ls.vids[v.id]) firstUn=v.id; });
+    box.innerHTML='<div class="vid-row"><div class="ttl"><span>🎬 レッスン動画（5つ）</span><span class="cnt">'+n+' / 5 みた'+(n>=5?' 🎬':'')+'</span></div><div class="vids">'+
+      VIDEOS.map(function(v){ var on=!!ls.vids[v.id], nx=(fresh && v.id===firstUn);
+        return '<button class="vid'+(on?' on':'')+(nx?' nx':'')+'" data-v="'+v.id+'"><b>'+(on?'✅':(nx?'▶':'☐'))+'</b>'+v.nm.replace(' ','<br>')+'</button>'; }).join('')+
+      '</div><div class="vid-note">'+(n>=5?'🎬 5つ ぜんぶ みたよ！（タップで もどせるよ）':'みおわったら タップで ✅（もう一回 タップで もどせるよ）')+'</div></div>';
+    box.querySelectorAll(".vid").forEach(function(b){ b.onclick=function(){ toggleVideo(b.getAttribute("data-v")); }; });
+  }
+  function toggleVideo(vid){
+    var v=VIDEOS.filter(function(x){return x.id===vid})[0]; if(!v || !LES) return;
+    LS.vids=LS.vids||{};
+    var on=!LS.vids[vid];
+    if(on) LS.vids[vid]=todayStr(0); else delete LS.vids[vid];
+    save();
+    try{ if(CONFIG.backend && window.google && google.script && google.script.run) google.script.run.videoCheck(USER, fullTitle(LES), v.nm, on); }catch(e){}
+    if(on){ sfx.correct(); if(vidsSeen(LS)>=5 && !LS.vidsBonus){ LS.vidsBonus=1; gemsAdd(3); save(); showVidsDone(); } }
+    renderVidRow(); if(typeof renderHomeStats==="function") renderHomeStats();
+  }
+  function showVidsDone(){
+    var m=$("#modal");
+    m.innerHTML='<div class="big-fruit">🎬</div><h2>動画 5つ ぜんぶ みた！</h2><div class="rscore">💎 おたから <b>+3</b><br>つぎは 📷 ホワイトボード → クエストへ</div><button class="btn go" id="ok" style="margin-top:12px">すすむ ▶</button>';
+    sfx.win(); $("#overlay").classList.add("on");
+    $("#ok").onclick=function(){ $("#overlay").classList.remove("on"); renderHome(); };
+  }
+
+  // ===== 📷 ホワイトボードを 先生に おくる（2026-10-13 ひろみさん）：UFLI BOOK のレッスン。いつでも・何まいでも。1日1まい目は💎+3 =====
+  var PHOTO_MSG={}; // レッスン名 → 先生からの ひとこと（最新）
+  function fetchPhotos(){
+    if(!USER || !(CONFIG.backend && window.google && google.script && google.script.run)) return;
+    try{ google.script.run.withSuccessHandler(function(r){
+      if(!r) return; PHOTO_MSG={}; (r.list||[]).forEach(function(x){ if(x.msg && !PHOTO_MSG[x.lesson]) PHOTO_MSG[x.lesson]=x.msg; });
+      if($("#home").classList.contains("on")) renderWbRow();
+      if(r.fresh && r.fresh.length && !$("#overlay").classList.contains("on")) showPhotoMsgs(r.fresh);
+    }).withFailureHandler(function(){}).getPhotos(USER); }catch(e){}
+  }
+  function showPhotoMsgs(list){
+    var m=$("#modal");
+    m.innerHTML='<div class="big-fruit">💬</div><h2>先生から ひとこと</h2><div class="rscore" style="text-align:left;line-height:1.7">'+
+      list.map(function(x){ return '📷 '+esc(x.lesson)+'<br>「'+esc(x.msg)+'」'; }).join('<br><br>')+'</div><button class="btn go" id="ok" style="margin-top:12px">わかった！</button>';
+    $("#overlay").classList.add("on"); $("#ok").onclick=function(){ $("#overlay").classList.remove("on"); };
+  }
+  function esc(t){ return String(t==null?"":t).replace(/[&<>"]/g,function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  function renderWbRow(){
+    var box=$("#wbRow"); if(!box) return; box.innerHTML="";
+    if(!LES || !isBook(LES)) return;
+    var wb=LS.wb||{}; var msg=PHOTO_MSG[fullTitle(LES)]||"";
+    box.innerHTML='<div class="wb-row"><div class="ttl"><span>📷 ホワイトボードを 先生に おくる</span>'+(wb.n?'<span class="cnt">✉️ '+wb.n+'まい</span>':'')+'</div>'+
+      '<button class="btn go" id="wbOpen" style="width:100%">📷 しゃしんを とって おくる</button>'+
+      '<div class="wb-note">'+(wb.at?('✉️ '+esc(wb.at)+' に おくったよ（何まいでも おくれるよ）'):'ホワイトボードに かいた字を 先生に 見せよう（いつでもOK）')+
+      (msg?'<br>💬 先生から：「'+esc(msg)+'」':'')+'</div></div>';
+    $("#wbOpen").onclick=openPhoto;
+  }
+  function shrinkImage(file, cb){
+    var img=new Image(); var url=URL.createObjectURL(file);
+    img.onload=function(){ try{
+      var MAX=1200, w=img.naturalWidth, h=img.naturalHeight, sc=Math.min(1, MAX/Math.max(w,h,1));
+      var c=document.createElement("canvas"); c.width=Math.max(1,Math.round(w*sc)); c.height=Math.max(1,Math.round(h*sc));
+      c.getContext("2d").drawImage(img,0,0,c.width,c.height); URL.revokeObjectURL(url); cb(c.toDataURL("image/jpeg",0.82));
+    }catch(e){ cb(null); } };
+    img.onerror=function(){ URL.revokeObjectURL(url); cb(null); };
+    img.src=url;
+  }
+  function openPhoto(){
+    var m=$("#modal"); var DU=null;
+    m.innerHTML='<div class="big-fruit">📷</div><h2>ホワイトボードを おくる</h2><div class="rscore" id="wbHint">カメラで とるか、アルバムから えらんでね</div>'+
+      '<input type="file" id="wbFile" accept="image/*" capture="environment" style="display:none">'+
+      '<img id="wbPrev" class="wb-prev" alt="" style="display:none">'+
+      '<button class="btn go" id="wbTake" style="width:100%;margin-top:12px">📷 しゃしんを とる</button>'+
+      '<button class="btn go" id="wbSend" style="width:100%;margin-top:8px;display:none">✉️ 先生に おくる</button>'+
+      '<button class="link" id="wbClose" style="margin-top:8px">やめる</button>';
+    $("#overlay").classList.add("on");
+    var fi=$("#wbFile"), pv=$("#wbPrev"), tk=$("#wbTake"), sd=$("#wbSend");
+    tk.onclick=function(){ fi.value=""; fi.click(); };
+    fi.onchange=function(){ var f=fi.files&&fi.files[0]; if(!f) return; $("#wbHint").textContent="よみこみ中…";
+      shrinkImage(f, function(du){ if(!du){ $("#wbHint").textContent="⚠️ しゃしんが よみこめなかった。もう一回 とってね"; return; }
+        DU=du; pv.src=du; pv.style.display=""; tk.textContent="🔄 とりなおす"; sd.style.display=""; $("#wbHint").textContent="これで いい？"; }); };
+    sd.onclick=function(){ if(!DU) return; sd.disabled=true; sd.textContent="おくっています…";
+      var fail=function(){ sd.disabled=false; sd.textContent="✉️ 先生に おくる"; $("#wbHint").textContent="⚠️ おくれなかった。もう一回 おしてね"; };
+      if(!(CONFIG.backend && window.google && google.script && google.script.run)){ fail(); return; }
+      try{ google.script.run.withSuccessHandler(function(r){
+        if(!(r && r.ok)){ fail(); return; }
+        var d=new Date(); var at=(d.getMonth()+1)+"/"+d.getDate()+" "+d.getHours()+":"+("0"+d.getMinutes()).slice(-2);
+        LS.wb={n:((LS.wb&&LS.wb.n)||0)+1, at:at};
+        var bonus=(LS.wbDay!==todayStr(0)); if(bonus){ LS.wbDay=todayStr(0); gemsAdd(3); }
+        save(); showPhotoSent(bonus);
+      }).withFailureHandler(fail).savePhoto({name:USER, lesson:fullTitle(LES), word:"ホワイトボード", dataUrl:DU}); }catch(e){ fail(); }
+    };
+    $("#wbClose").onclick=function(){ $("#overlay").classList.remove("on"); };
+  }
+  function showPhotoSent(bonus){
+    var m=$("#modal");
+    m.innerHTML='<div class="big-fruit">✅</div><h2>先生に おくったよ！</h2><div class="rscore">'+(bonus?'💎 おたから <b>+3</b><br>':'')+'つぎは クエストへ すすもう</div><button class="btn go" id="ok" style="margin-top:12px">クエストへ すすむ ▶</button>';
+    sfx.win(); $("#overlay").classList.add("on");
+    $("#ok").onclick=function(){ $("#overlay").classList.remove("on"); renderHome(); };
+  }
+
   // ===== 状態（レッスン別に保存） =====
   var KEY="nh2vocab_v3";
   var UKEY="nh2vocab_user"; // 一度ログインした名前を端末に記憶（次回からパスワード省略）
@@ -1371,6 +1509,11 @@
       m.readsBy={}; [L1.readsBy||{}, L2.readsBy||{}].forEach(function(o){ for(var k in o) m.readsBy[k]=mx(m.readsBy[k],o[k]); });
       m.plays={}; [L1.plays||{}, L2.plays||{}].forEach(function(o){ for(var k in o) m.plays[k]=mx(m.plays[k],o[k]); });
       if(L1.masterBonus||L2.masterBonus) m.masterBonus=1;
+      // 🎬 動画みた✅（合わせる）／📷 ホワイトボード（回数は多い方・日付は新しい方）
+      var vd={}; [L1.vids||{}, L2.vids||{}].forEach(function(o){ for(var k in o) vd[k]=o[k]; }); if(Object.keys(vd).length) m.vids=vd;
+      if(L1.vidsBonus||L2.vidsBonus) m.vidsBonus=1;
+      if(L1.wb||L2.wb){ var w1=L1.wb||{}, w2=L2.wb||{}; m.wb={n:mx(w1.n,w2.n), at:(String(w1.at||"")>=String(w2.at||"")?(w1.at||w2.at||""):w2.at)}; }
+      if(L1.wbDay||L2.wbDay) m.wbDay=(String(L1.wbDay||"")>=String(L2.wbDay||""))?(L1.wbDay||L2.wbDay):L2.wbDay;
       if(LN.resume) m.resume=LN.resume; else if((L1.resume||L2.resume)) m.resume=L1.resume||L2.resume;
       out.lessons[id]=m;
     }
@@ -1536,6 +1679,7 @@
   // → 次に本人がログインした時に🎁モーダルで届き、「受取」列に自動で印がつく（二重取りなし）。
   var REC_LIST=null;
   function checkOndokuUpdates(){
+    fetchVisit(); fetchPhotos(); // 🐾 あしあと／📷 先生からのひとこと（ログインのたび）
     FOODSYNC.cloud=false; FOODSYNC.recs=false; // ログインのたびに ☁️と🎙️一覧を 待ちなおす（直後に cloudLoad(afterCloud) が よばれる）
     try{
       if(!(CONFIG.backend && window.google && google.script && google.script.run)){ FOODSYNC.recs=true; foodSync(null); return; }
@@ -1635,7 +1779,7 @@
 
   function renderLessons(){
     dailyCheck(); howtoHint();
-    renderMyRecsCard();
+    renderMyRecsCard(); renderFootBar();
     var box=$("#lessonList"); box.innerHTML="";
     $("#lsKicker").textContent = USER ? ("こんにちは、"+USER+" さん") : "New Horizon 2 · 単語トレーニング";
     renderGrowth(); if(USER && !GROWTH) fetchGrowth();
@@ -1818,6 +1962,7 @@
   function renderHome(){
     var W=pairedWord(LES); if(W){ LES=W; LS=lstate(W.id); } // 本文ステージから戻ったら統合ホームへ
     var P=pairedOndoku(LES), PS=P?lstate(P.id):null;
+    renderVidRow(); renderWbRow(); // 🎬 動画みた✅ → 📷 ホワイトボード → （下の）クエスト の順（2026-10-13）
     $("#homeTitle").textContent=fullTitle(LES); $("#homeSub").textContent="";
     var st=$("#stages"); st.innerHTML="";
     // 必須ステージ（単語→本文）を先に、おまけ（言う・シャドー）は区切りのあとに並べる
@@ -2705,7 +2850,7 @@
     $("#overlay").classList.add("on");
     $("#ok").onclick=function(){ $("#overlay").classList.remove("on"); };
   };
-  $("#logoutBtn").onclick=function(){ USER=null; clearUser(); $("#lgName").value=""; $("#lgPw").value=""; show("login"); };
+  $("#logoutBtn").onclick=function(){ USER=null; clearUser(); FOOT=null; PHOTO_MSG={}; renderFootBar(); $("#lgName").value=""; $("#lgPw").value=""; show("login"); };
   $("#lgBtn").onclick=doLogin;
   $("#lgPw").addEventListener("keydown",function(e){ if(e.key==="Enter")doLogin(); });
 
