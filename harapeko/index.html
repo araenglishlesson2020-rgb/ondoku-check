@@ -1319,7 +1319,8 @@
       if(od && od.length){ normOndoku(od); ONDOKU_CUR=od;
         LESSONS=LESSONS.filter(function(l){return l.mode!=="ondoku"}).concat(od);
         LESSON_ORDER=LESSONS.map(function(l){return l.id;}); if(USER) renderLessons();
-        if(REC_LIST) foodSync(REC_LIST); } // 本文一覧が 🎙️一覧より おそく とどいた時：レッスン名の照合を やりなおす（教科書本文の 🎙️が 数えもれしない）
+        if(REC_LIST) foodSync(REC_LIST); // 本文一覧が 🎙️一覧より おそく とどいた時：レッスン名の照合を やりなおす（教科書本文の 🎙️が 数えもれしない）
+        try{ if(LAST_CHECKS) applyPendingChecks(LAST_CHECKS); }catch(e){} } // 🎤 シート経由の チェック結果も 本文一覧が そろってから やりなおす（2026-10-14）
     }).withFailureHandler(function(){}).getOndoku(); }catch(e){}
   }
   function reportResult(payload){
@@ -2730,15 +2731,17 @@
   function lessonById(id){ for(var i=0;i<LESSONS.length;i++){ if(LESSONS[i].id===id) return LESSONS[i]; } return null; }
   function lessonByTitle(t){ for(var i=0;i<LESSONS.length;i++){ if(fullTitle(LESSONS[i])===t) return LESSONS[i]; } return null; }
   function refreshScreen(){ try{ if($("#home").classList.contains("on") && LES){ LS=lstate(LES.id); renderHome(); } else if($("#lessons").classList.contains("on")) renderLessons(); }catch(e){} }
-  // checks＝getOndokuUpdates の checks（新しい順）。反映できた数を返す
+  // checks＝getOndokuUpdates の checks（新しい順）。反映できた数を返す。本が まだ 読み込まれていない時は 反映ずみに しない（本文一覧が とどいたら やりなおす）
+  var LAST_CHECKS=null;
   function applyPendingChecks(checks){
+    if(checks) LAST_CHECKS=checks;
     if(!checks || !checks.length) return 0;
     var n=0, list=checks.slice().reverse(); // 古い順に
     list.forEach(function(c){
       if(!c || !c.rid || chkDone(c.rid)) return;
-      chkMark(c.rid);
       var L=(c.lessonId?lessonById(c.lessonId):null) || (c.lesson?lessonByTitle(c.lesson):null);
       if(!L) return;
+      chkMark(c.rid);
       if(applyCheckResult(L, Number(c.pct)||0, c.missed||[], true)) n++;
     });
     if(n) save();
