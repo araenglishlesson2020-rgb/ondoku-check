@@ -171,6 +171,19 @@
     DATA=JSON.parse(decodeURIComponent(escape(atob(h))));
   }catch(e){}
 
+  // ---- クエストに もどる（2026-10-14）----
+  // この画面は クエスト本体から window.open で ひらかれるので、ふつうは window.close() で もどれる。
+  // ただし LINEの中から Safari に うつった時・ホーム画面に追加した入口から ひらいた時 などは「ひらいた元」が無く、close() が きかない
+  // （＝ボタンを おしても この画面のまま＝10/14 保護者さんの報告）。その時は クエストのURL（DATA.back／DATA.exec）へ 自分で もどる。
+  var BACK_URL=(DATA && (DATA.back || DATA.exec)) || "";
+  function backToQuest(){
+    try{ window.close(); }catch(e){}
+    setTimeout(function(){ // ここに来る＝とじられなかった
+      if(BACK_URL){ location.replace(BACK_URL); }
+      else { alert("この画面を とじて、クエストの画面に もどってね"); }
+    }, 500);
+  }
+
   // ---- LINEアプリ内ブラウザ対策 ----
   // LINEの中のブラウザ（WebView）では音声認識・マイク許可が下りない（service-not-allowed）。
   // URLに openExternalBrowser=1 を付けて開き直すと、LINEが外部ブラウザ（Safari/Chrome）で開いてくれる（LINE公式パラメータ）。
@@ -554,10 +567,12 @@
     $("#fill") && ($("#fill").style.width="100%");
     $("#btnRetryNg").classList.toggle("hidden", !anyNg);
 
-    var payload={ action:"ondoku", name:DATA.name||"", lessonTitle:DATA.lessonTitle||"",
+    // 1回の けっかに 番号（rid）を つける：通知とシートの両方に入れて、クエスト側で 二重反映を 防ぐ（2026-10-14）
+    var rid=Date.now()+"_"+Math.random().toString(36).slice(2,8);
+    var payload={ action:"ondoku", name:DATA.name||"", lessonTitle:DATA.lessonTitle||"", lessonId:DATA.lessonId||"", rid:rid,
       pct:pct, okCount:ok, total:total, missed:missed, research:research, detail:detail.join("\n") };
-    // ① クエスト本体（開いたタブ）へ結果を返す
-    try{ if(window.opener) window.opener.postMessage({type:"ondokuResult", pct:pct, missed:missed}, "*"); }catch(e){}
+    // ① クエスト本体（開いたタブ）へ結果を返す（ひらいた元が無い時は とどかない → ②のシートから クエストが 拾う）
+    try{ if(window.opener) window.opener.postMessage({type:"ondokuResult", pct:pct, missed:missed, rid:rid, lessonId:DATA.lessonId||""}, "*"); }catch(e){}
     // ② 先生のスプレッドシート「音読記録」へ送信
     if(DATA.exec){
       $("#sendst").textContent="けっかを先生に送信中…";
@@ -598,7 +613,7 @@
     $("#scrDone").classList.add("hidden"); $("#scrRun").classList.remove("hidden");
     ORDER=ng; pos=0; showStep();
   };
-  $("#btnClose").onclick=function(){ try{window.close()}catch(e){} };
+  $("#btnClose").onclick=backToQuest;
 
   // ---- 🎙️ ろくおんだけモード（クエストの「🎙️ろくおんして先生におくる」から。チェックなしでいつでも） ----
   if(DATA.mode==="rec"){
@@ -625,7 +640,7 @@
     var recClose=document.createElement("div"); recClose.className="actions";
     recClose.innerHTML='<button class="btn go" id="btnClose2">クエストにもどる 🏡</button>';
     recSec.appendChild(recClose);
-    recClose.querySelector("#btnClose2").onclick=function(){ try{window.close()}catch(e){} };
+    recClose.querySelector("#btnClose2").onclick=backToQuest;
   }
 
   // ---- 🎙️ ろくおんして先生におくる（けっか画面のさいご） ----
@@ -699,17 +714,17 @@
     function obAll(){ return obTx("readonly", function(st){ return st.getAll(); }); }
     function upload(it){
       return fetch(it.exec,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},
-        body:JSON.stringify({action:"ondokuAudio", name:it.name, lessonTitle:it.lessonTitle, mime:it.mime, audio:it.b64, rid:it.id})})
+        body:JSON.stringify({action:"ondokuAudio", name:it.name, lessonTitle:it.lessonTitle, lessonId:it.lessonId||"", mime:it.mime, audio:it.b64, rid:it.id})})
       .then(function(r){return r.json()}).then(function(j){ if(!(j&&j.ok)) throw new Error("ng"); });
     }
     function uploadRetry(it,n){ return upload(it).catch(function(e){ if(n<=1) throw e;
       return new Promise(function(r){ setTimeout(r,3000); }).then(function(){ return uploadRetry(it,n-1); }); }); }
-    function closeIfWaiting(){ if(closeWait && sending<=0){ try{window.close()}catch(e){} } }
+    function closeIfWaiting(){ if(closeWait && sending<=0){ closeWait=false; backToQuest(); } }
     // 「クエストにもどる」：とどけている とちゅうなら、おわるまで まってから とじる（さいだい20秒。のこりは つぎに ひらいた時に おくる）
     function recCloseBtn(){
       if(sending>0){ closeWait=true; $("#recSt").textContent="✅ おくったよ！ いま 先生に とどけているよ…（あと すこし）";
-        setTimeout(function(){ try{window.close()}catch(e){} },20000); return; }
-      try{window.close()}catch(e){}
+        setTimeout(function(){ if(closeWait){ closeWait=false; backToQuest(); } },20000); return; }
+      backToQuest();
     }
     ["#btnClose","#btnClose2"].forEach(function(q){ var b=document.querySelector(q); if(b) b.onclick=recCloseBtn; });
     $("#recSend").onclick=function(){
@@ -725,7 +740,7 @@
       sending++;
       var fr=new FileReader();
       fr.onload=function(){
-        var it={id:Date.now()+"_"+Math.random().toString(36).slice(2,8), ts:Date.now(), exec:DATA.exec, name:DATA.name||"", lessonTitle:DATA.lessonTitle||"",
+        var it={id:Date.now()+"_"+Math.random().toString(36).slice(2,8), ts:Date.now(), exec:DATA.exec, name:DATA.name||"", lessonTitle:DATA.lessonTitle||"", lessonId:DATA.lessonId||"",
           mime:theBlob.type||"audio/mp4", b64:String(fr.result).split(",")[1]||""};
         var kept=false, saved=obPut(it).then(function(){ kept=true; }).catch(function(){});
         uploadRetry(it,3).then(function(){

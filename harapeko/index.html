@@ -444,6 +444,7 @@
         <div class="catbig" id="catBig">🥚</div>
         <div class="catline" id="catLine"></div>
       </div>
+      <div id="lineBar"></div>
       <div id="footBar"></div>
       <div id="contBar"></div>
       <div class="tiles" id="tiles"></div>
@@ -1500,6 +1501,7 @@
     if(loc.foodV||srv.foodV) out.foodV=mx(loc.foodV,srv.foodV);
     if(NEW.foodDebt!==undefined) out.foodDebt=NEW.foodDebt; else if(loc.foodDebt!==undefined) out.foodDebt=loc.foodDebt; else if(srv.foodDebt!==undefined) out.foodDebt=srv.foodDebt;
     out.bfSeen={}; [srv.bfSeen||{}, loc.bfSeen||{}].forEach(function(o){ for(var k in o) out.bfSeen[k]=1; });
+    out.chkDone={}; [srv.chkDone||{}, loc.chkDone||{}].forEach(function(o){ for(var k in o) out.chkDone[k]=mx(out.chkDone[k],o[k]); }); // 🎤 反映ずみの チェック番号（合わせる）
     out.lessons={};
     var ids={}; for(var a in (loc.lessons||{})) ids[a]=1; for(var b in (srv.lessons||{})) ids[b]=1;
     for(var id in ids){
@@ -1689,6 +1691,7 @@
         renderMyRecsCard();
         FOODSYNC.recs=true; foodSync(REC_LIST);
         if(res.fresh && res.fresh.length) showBonusModal(res.fresh);
+        try{ applyPendingChecks(res.checks); }catch(e){} // 🎤 通知が とどかなかった チェックの けっか（2026-10-14）
       }).withFailureHandler(function(){ FOODSYNC.recs=true; foodSync(null); }).getOndokuUpdates(USER);
     }catch(e){}
   }
@@ -2015,7 +2018,7 @@
     $("#hScore").textContent=state.score; $("#hStars").textContent=lessonStars(LS,LES)+(P?lessonStars(PS,P):0); $("#hGems").textContent=(LS.gems||0)+(P?(PS.gems||0):0);
     drawCat(false);
   }
-  function show(id){ clearNudge(); document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("on")}); $("#"+id).classList.add("on"); window.scrollTo(0,0);
+  function show(id){ clearNudge(); document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("on")}); $("#"+id).classList.add("on"); window.scrollTo(0,0); if(id==="lessons"){ try{ renderLineBar(); }catch(e){} }
     // 🏠ボタン：ログイン画面と一覧画面では隠す（それ以外＝迷子になり得る画面では常に表示）
     var fab=$("#homeFab"); if(fab) fab.style.display=(id==="login"||id==="lessons")?"none":"flex"; }
 
@@ -2531,6 +2534,32 @@
       '<div class="actions"><button class="btn go" id="odOpen">🎤 チェックをはじめる</button></div>';
     $("#odOpen").onclick=function(){ openCheckPage(""); };
   }
+  // この画面（クエスト本体）に もどるためのURL（2026-10-14）：判定ページの「クエストにもどる」が window.close() で もどれない時
+  //   （LINEの中から Safari に うつった時・ホーム画面の入口から ひらいた時 など＝10/14 保護者さんの報告）に、判定ページが ここへ 自分で もどる。
+  //   GitHub Pages版＝いまのURLそのまま／Apps Script版＝exec のURL＋ ?u=名前&k=合言葉（分かる時だけ。無ければ ログイン画面に なるだけ）
+  function backUrl(){
+    try{
+      if(/github\.io$/i.test(location.hostname||"")) return location.origin+location.pathname+location.search;
+      var ex=(document.getElementById("execUrl")||{}).value||""; if(ex.indexOf("http")!==0) return "";
+      var k=(document.getElementById("autoPw")||{}).value||"", u=(document.getElementById("autoName")||{}).value||"";
+      if(!k){ k=($("#lgPw")||{}).value||""; u=k?(USER||""):""; }
+      var q=[]; if(u) q.push("u="+encodeURIComponent(u)); if(k) q.push("k="+encodeURIComponent(k));
+      return ex+(q.length?"?"+q.join("&"):"");
+    }catch(e){ return ""; }
+  }
+  // 📱 LINEの中の ブラウザで ひらいている時：🎤チェック／🎙️ろくおんは Safari で ひらかれ、おわっても この画面に もどれない（2026-10-14）
+  //   → レッスン一覧の上に「Safari で ひらく」を出す（LINE公式の openExternalBrowser=1 で 外のブラウザへ）。それ以外のブラウザでは 何も出さない
+  function renderLineBar(){
+    var b=$("#lineBar"); if(!b) return;
+    try{
+      if(!/\bLine\//i.test(navigator.userAgent||"")){ b.innerHTML=""; return; }
+      var u=backUrl(); if(!u){ b.innerHTML=""; return; }
+      u+=(u.indexOf("?")>=0?"&":"?")+"openExternalBrowser=1";
+      b.innerHTML='<div class="card" style="margin:8px 0 4px; text-align:left">'+
+        '<div style="font-weight:700">📱 LINEの中だと、🎤チェックや 🎙️ろくおんの あとに ここへ もどれないことが あるよ</div>'+
+        '<div class="actions" style="margin-top:8px"><a class="btn go" target="_top" href="'+u.replace(/"/g,"&quot;")+'">Safari で ひらく ▶</a></div></div>';
+    }catch(e){ b.innerHTML=""; }
+  }
   // 判定ページ（別タブ）を開く。mode="rec"=ろくおんだけ／mode="word"=ハートワード単語判定。Lopt=統合ホームから本文を渡す用
   function openCheckPage(mode, Lopt){
     var L=Lopt||LES;
@@ -2540,7 +2569,7 @@
     var payload={ name:USER||"", lessonId:L.id, lessonTitle:fullTitle(L), mode:mode||"",
       sents:items.map(function(s){return {en:s.en, ja:s.ja||""}}),
       audio:items.map(function(s){ var e=audioFor(s.en); return (e&&e.f)||"" }),
-      exec:ex };
+      exec:ex, back:backUrl() };
     var h=btoa(unescape(encodeURIComponent(JSON.stringify(payload)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
     // openExternalBrowser=1：LINEの中のブラウザで開かれた時にSafari/Chromeへ逃がす（LINE公式パラメータ・通常ブラウザでは無視される）
     window.open(CHECK_URL+"?openExternalBrowser=1#"+h, "_blank");
@@ -2562,6 +2591,8 @@
           var before=state.foodPending||0, n0={}, k; for(k in (state.recN||{})) n0[k]=state.recN[k];
           REC_LIST=res.recs||[]; foodSync(REC_LIST);
           for(k in (state.recN||{})){ if(state.recN[k]>(n0[k]||0)) REC_RAISED[k]=Date.now(); } // シートで 数えた本（おくれて 通知が きても 二重に 数えない）
+          var gotChk=0; try{ gotChk=applyPendingChecks(res.checks); }catch(e){} // 🎤 通知が とどかなかった チェックの けっか（2026-10-14）
+          if(gotChk) REC_WAIT=0;
           var got=(state.foodPending||0)>before;
           if(got) REC_WAIT=0; // とどいた → もう数えなおさない
           if($("#home").classList.contains("on") && LES) renderHome();
@@ -2635,7 +2666,14 @@
       return;
     }
     if(d.type!=="ondokuResult") return;
-    if(!LES || (LES.mode!=="ondoku" && LES.mode!=="heart")) return; // 音読＝文／ハートワード＝単語 どちらの判定結果も同じ形で戻る
+    if(d.rid){ if(chkDone(d.rid)) return; chkMark(d.rid); } // おなじ けっかを 2回 反映しない（シート経由と 通知の両方が とどいた時）
+    REC_WAIT=0; clearTimeout(REC_TMR); // 通知が とどいた → シートからの 拾いなおし（recResync）は 不要
+    var lid=d.lessonId||"";
+    if(!LES || (LES.mode!=="ondoku" && LES.mode!=="heart") || (lid && LES.id!==lid)){
+      // 本を ひらいていない／ちがう本（画面が よみなおされた・ログインしなおした 等）→ その本を さがして 反映（2026-10-14）
+      var L2=lid?lessonById(lid):null; if(L2) applyCheckResult(L2, Number(d.pct)||0, d.missed||[], false);
+      return;
+    }
     var meta=stagesFor(LES).filter(function(s){return s.id==="check"})[0];
     if(!meta) return;
     var st = d.pct>=90?3 : d.pct>=70?2 : 1;
@@ -2652,8 +2690,8 @@
   function odFinish(meta, starsN, extra){
     clearNudge();
     var kind=(LES.mode==="heart")?"ハートワード":"音読";
+    bumpPlays(LS,meta.id); // 🔁 通算回数（本文は readsBy と同じ数になる）※⭐更新より先に（はじめてのクリアが2回と数えられていた・2026-10-14）
     if(starsN>(LS.cleared[meta.id]||0)) LS.cleared[meta.id]=starsN;
-    bumpPlays(LS,meta.id); // 🔁 通算回数（本文は readsBy と同じ数になる）
     clearResume(meta.id); // さいごまでやったら「とちゅう」記録は消す
     // 📖 よんだ回数（2026-09-10）：本文を さいごまで読むたび +1（BOOK 1 きく＆リピート／BOOK 2 シャドー／BOOK 3 チェック どれでも1回）。🌍は v2（3回ごと・foodCheck）
     var readsTxt="";
@@ -2682,13 +2720,83 @@
     $("#ok").onclick=function(){ $("#overlay").classList.remove("on"); renderHome(); show("home"); if((state.foodPending||0)>0 && foodGot>0) showFoodPick(function(){ if($("#home").classList.contains("on")) renderHome(); }); };
   }
 
+  // ===== 🎤チェックの けっかを「シート」からも 反映する（2026-10-14・10/14 保護者さん報告の対策）=====
+  // 判定ページの通知（postMessage）は、LINE→Safari／ホーム画面の入口／タブの読みなおし などで とどかないことがある。
+  // 判定ページは けっかを シート「音読記録」にも 送っているので、ログイン時と「もどってきた時」(recResync) に シートから 拾って 反映する。
+  // 二重反映は rid（1回ごとの番号）で防ぐ。state.chkDone={rid:時刻}（7日で掃除・☁️合流は 合わせる）
+  function chkDone(rid){ return !!(rid && state.chkDone && state.chkDone[rid]); }
+  function chkMark(rid){ if(!rid) return; state.chkDone=state.chkDone||{}; state.chkDone[rid]=Date.now();
+    var lim=Date.now()-7*86400000, k; for(k in state.chkDone){ if(Number(state.chkDone[k])<lim) delete state.chkDone[k]; } }
+  function lessonById(id){ for(var i=0;i<LESSONS.length;i++){ if(LESSONS[i].id===id) return LESSONS[i]; } return null; }
+  function lessonByTitle(t){ for(var i=0;i<LESSONS.length;i++){ if(fullTitle(LESSONS[i])===t) return LESSONS[i]; } return null; }
+  function refreshScreen(){ try{ if($("#home").classList.contains("on") && LES){ LS=lstate(LES.id); renderHome(); } else if($("#lessons").classList.contains("on")) renderLessons(); }catch(e){} }
+  // checks＝getOndokuUpdates の checks（新しい順）。反映できた数を返す
+  function applyPendingChecks(checks){
+    if(!checks || !checks.length) return 0;
+    var n=0, list=checks.slice().reverse(); // 古い順に
+    list.forEach(function(c){
+      if(!c || !c.rid || chkDone(c.rid)) return;
+      chkMark(c.rid);
+      var L=(c.lessonId?lessonById(c.lessonId):null) || (c.lesson?lessonByTitle(c.lesson):null);
+      if(!L) return;
+      if(applyCheckResult(L, Number(c.pct)||0, c.missed||[], true)) n++;
+    });
+    if(n) save();
+    return n;
+  }
+  // odFinish と同じ中身を、ひらいている本（LES/LS）に たよらず その本（L）に 反映する。fromSheet=true なら「とどいたよ」の見出しで知らせる
+  function applyCheckResult(L, pct, missed, fromSheet){
+    var meta=stagesFor(L).filter(function(s){return s.id==="check"})[0]; if(!meta) return false;
+    var ls=lstate(L.id), kind=(L.mode==="heart")?"ハートワード":"音読";
+    var st = pct>=90?3 : pct>=70?2 : 1;
+    ls.grow=(ls.grow||0)+3;
+    var pts=Math.round((Number(pct)||0)/2); state.score+=pts;
+    var g=Math.min((missed||[]).length,8); if(g){ state.gems=(state.gems||0)+g; ls.gems=(ls.gems||0)+g; }
+    bumpPlays(ls,meta.id); // ⭐更新より先に
+    ls.cleared=ls.cleared||{}; if(st>(ls.cleared[meta.id]||0)) ls.cleared[meta.id]=st;
+    if(ls.resume && ls.resume[meta.id]) delete ls.resume[meta.id];
+    var extra="正しく読めた語：<b>"+(Number(pct)||0)+"%</b>"+
+      (missed&&missed.length?('<br>にがてな語：<span class="en">'+escT(missed.slice(0,12).join(", "))+'</span>'):"")+
+      "<br>スコア +"+pts+(g?("　💎おたから +"+g):"");
+    var foodGot=0;
+    if(L.mode==="ondoku"){
+      if(odSess && odSess.counted && odSess.id===L.id){ ls.part=Math.max(0,(ls.part||0)-1); odSess=null; }
+      ls.reads=(ls.reads||0)+1; ls.readsBy=ls.readsBy||{}; ls.readsBy[meta.id]=(ls.readsBy[meta.id]||0)+1;
+      foodGot=foodCheck(L.id);
+      extra+="<br>📖 この本を よんだ回数 <b>"+ls.reads+"回</b><br>"+(foodGot>0?"🌍 ごちそうを えらべるよ！":("🌍 ごちそうまで "+foodDots(L.id)));
+    }
+    var isOpt=isOptStage(L,meta.id);
+    if(isOpt){ state.gems=(state.gems||0)+3; ls.gems=(ls.gems||0)+3; extra+="<br>💎 おまけクリア おたから <b>+3</b>"; }
+    save();
+    reportResult({name:USER,lesson:L.id,lessonTitle:fullTitle(L),stage:kind+"・"+meta.nm,stars:ls.cleared[meta.id],score:state.score,complete:mergedAllDone(L,ls)});
+    var isAll=mergedAllDone(L,ls) && !isOpt;
+    var W2=pairedWord(L), BLS=W2?lstate(W2.id):ls;
+    if(isAll && !BLS.masterBonus){ BLS.masterBonus=1; state.score+=50; save(); extra+="<br>🏅 "+(W2?"レッスン":kind)+"マスターボーナス <b>+50</b>"; }
+    var showIt=function(){
+      if($("#overlay").classList.contains("on")){ setTimeout(showIt, 2500); return; } // ほかの お知らせが 出ている間は 待つ
+      var m=$("#modal");
+      m.innerHTML='<div class="big-fruit">'+(isAll?'🏅':meta.fr)+'</div>'+
+        (fromSheet?'<div class="rscore">🎤 チェックの けっかが とどいたよ！<br><b>'+escT(fullTitle(L))+'</b></div>':'')+
+        '<h2>'+(isAll?kind+'マスター！':meta.nm+' クリア！')+'</h2>'+
+        '<div class="rstars">'+stars(ls.cleared[meta.id])+'</div>'+
+        '<div class="rscore">'+extra+'</div>'+
+        '<button class="btn go" id="ok">つぎへ ▶</button>';
+      (isAll?sfx.win:sfx.correct)(); if(isAll)confetti();
+      $("#overlay").classList.add("on");
+      $("#ok").onclick=function(){ $("#overlay").classList.remove("on"); refreshScreen(); if((state.foodPending||0)>0 && foodGot>0) showFoodPick(refreshScreen); };
+    };
+    showIt();
+    refreshScreen();
+    return true;
+  }
+
   function finishStage(){
     clearNudge();
     $("#fill").style.width="100%";
     // ★星：クリアで⭐⭐。見つけた💎を全部ひろう（＝全部できるようになる）と⭐⭐⭐。減点は無し。
     // ★cleared の初期値に無いステージID（中学651の listenwrite 等）は undefined との比較が
     //   常に false になり永久に未クリアのままだった → ||0 で比較する
-    if(!cur.isReview){ var st=cur.missed.length===0?3:2; if(st>(LS.cleared[cur.id]||0)) LS.cleared[cur.id]=st; bumpPlays(LS,cur.id); } // 🔁 通算回数（おたからチャレンジの再走は数えない）
+    if(!cur.isReview){ var st=cur.missed.length===0?3:2; bumpPlays(LS,cur.id); if(st>(LS.cleared[cur.id]||0)) LS.cleared[cur.id]=st; } // 🔁 通算回数（おたからチャレンジの再走は数えない）※⭐更新より先に（2026-10-14）
     else { if(cur.missed.length===0 && (LS.cleared[cur.id]||0)<3) LS.cleared[cur.id]=3; }
     clearResume(cur.id); // さいごまでやったら「とちゅう」記録は消す
     save();
