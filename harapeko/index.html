@@ -905,11 +905,16 @@
       '<path d="M48,25 C44,16 38,12 34,10 M52,25 C56,16 62,12 66,10" stroke="'+sp.body+'" stroke-width="1.4" fill="none"/><circle cx="34" cy="10" r="1.6" fill="'+sp.body+'"/><circle cx="66" cy="10" r="1.6" fill="'+sp.body+'"/></svg>';
   }
 
-  // そだちバッジ（通算でやった日数 t：t%7＝0🥚/1🐛/2🫛/3〜6🦋。月曜に戻らない。4〜7日目は やった日ごとに なかまを3択で1ぴき→4ひきで次の卵）
+  // そだちバッジ（通算でやった日数 t：1🐛/2🫛/3〜7🦋（4〜7日目は やった日ごとに なかまを3択で1ぴき→4ひきめで もりへ→🥚）。月曜に戻らない。2026-10-15 cycInfo 参照）
   var GROWTH=null;
   // ルール（2026-09-10/11 ひろみさん）：1日1つでもやれば1段階そだつ・3日で🦋（通算・月曜に戻らない）。4〜7日目に なかまを3びきから1ぴき（2 frogs式・永久保存）。4ひきで ちょうちょは森へ→新しい🥚（やった日7日で1サイクル）。何が生まれるかは実在の蝶53種から生徒ごとの順（bfFor）。レッスン完了は🏅
-  // 🦋 サイクル（やった日7日で1まわり）：c=なんかいめ・r=0🥚 1🐛 2🫛 3〜6🦋。卵から何が生まれるか＝生徒ごとに順番がちがう（名前でシャッフル・53種ぜんぶ出るまで重複なし）
-  function cycInfo(t){ var c=Math.floor(t/7), r=t%7; return {c:c, r:r, sp:bfFor(c)}; }
+  // 🦋 サイクル（やった日7日で1まわり・2026-10-15 ズレ修正）：t=通算やった日数。t=0は さいしょの🥚。
+  //   r(=pos)：1🐛 2🫛 3🦋うまれた 4〜7🦋＋なかま（やった日ごとに1ぴき＝4ひき）→ 7日目に 4ひきめを えらんだら ちょうちょは もりへ → 🥚（つぎの日 1つ やると つぎの🐛）
+  //   旧 t%7（r=0🥚）は「4ひきめの日に🥚」になり、r=6の文「4ひきめ→たまご」とズレていた（ひろみさん報告 10/15）。なかまの権利の計算（サーバー entitled）は旧と同じ値。
+  //   卵から何が生まれるか＝生徒ごとに順番がちがう（名前でシャッフル・53種ぜんぶ出るまで重複なし）
+  function cycInfo(t){ t=Math.max(0,Number(t)||0); if(t===0) return {c:0, r:0, sp:bfFor(0)}; var c=Math.floor((t-1)/7), r=((t-1)%7)+1; return {c:c, r:r, sp:bfFor(c)}; }
+  // 7日目で 4ひきめを えらびおわった（＝ちょうちょは もりへ・🥚表示）。COMP.picked＝えらんだ総数・1サイクル4ひき
+  function cycFlown(ci){ return ci.r===7 && !!COMP && !((COMP.pending||0)>0) && (Number(COMP.picked)||0) >= 4*(ci.c+1); }
   function bfPerm(){ var n=BUTTERFLIES.length, a=[]; for(var i=0;i<n;i++) a.push(i);
     var seed=0, nm=String(USER||''); for(var k=0;k<nm.length;k++) seed=(seed*31+nm.charCodeAt(k))>>>0; seed=seed||7;
     for(var i2=n-1;i2>0;i2--){ seed=(seed*1103515245+12345)>>>0; var j2=seed%(i2+1); var tmp=a[i2]; a[i2]=a[j2]; a[j2]=tmp; } return a; }
@@ -918,7 +923,10 @@
   function growthMsg(g){
     var t=(g.tdays!=null)?g.tdays:((g.wdays!=null)?g.wdays:(g.days||0)); // 通算（月曜に戻らない）
     var ci=cycInfo(t), r=ci.r, sp=ci.sp, pend=(COMP&&COMP.pending)||0, nth=(ci.c+1)+'かいめ';
-    if(r>=3 && pend>0) return {i:'🦋', sp:sp, t:sp.ja+'！きょうの なかまを えらぼう 🐾'+(r==6?'（4ひきめ→ もりへ とんで、あたらしい たまごに）':'')};
+    if(cycFlown(ci)) return {i:'🥚', t:'なかま 4ひき！'+sp.ja+'は もりへ とんで いったよ。あたらしい たまご。あした 1つ やると '+(ci.c+2)+'かいめの あおむしが うまれるよ'};
+    if(r>=3 && pend>0){ var nk=(Number(COMP&&COMP.picked)||0)-4*ci.c+1; // この ちょうちょの 何びきめか（まえの ちょうちょの ぶんが のこっていたら 0以下→出さない）
+      return {i:'🦋', sp:sp, t:sp.ja+'！きょうの なかまを えらぼう 🐾'+(nk>=4?'（4ひきめ → もりへ とんで、あたらしい たまごに）':(nk>=1?'（'+nk+'ひきめ）':''))}; }
+    if(r==7) return {i:'🦋', sp:sp, t:sp.ja+'（'+sp.en+'）。4ひきめの なかまを えらぶと もりへ とんで、あたらしい たまごに'};
     if(r>=3) return {i:'🦋', sp:sp, t:sp.ja+'（'+sp.en+'）が うまれた！あした 1つ やると なかまを 1ぴき えらべるよ（あと '+(7-r)+'ひきで つぎの たまご）'};
     if(r==2) return {i:'🫛', t:'さなぎに なった！あと 1日 やると ちょうちょ。なにが うまれるかな？'};
     if(r==1) return {i:'🐛', t:'あおむしが うまれた！あと 2日 やると ちょうちょ！'};
@@ -975,6 +983,7 @@
   }
   function shortGrowth(g){
     var t=(g.tdays!=null)?g.tdays:((g.wdays!=null)?g.wdays:(g.days||0)); var ci=cycInfo(t), r=ci.r, pend=(COMP&&COMP.pending)||0;
+    if(cycFlown(ci)) return ci.sp.ja+"は もりへ。あたらしい たまご 🥚";
     if(pend>0) return "なかまを えらぼう 🐾";
     if(r>=3) return ci.sp.ja+"が うまれた！";
     if(r==2) return "あと 1日で 🦋";
