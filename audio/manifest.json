@@ -8018,5 +8018,94 @@
    "f": "audio/jenny/od_u6rt2/7.mp3",
    "s": "audio/jenny/od_u6rt2/7s.mp3"
   }
+ ],
+ "od_l7a": [
+  {
+   "en": "I am Sam.",
+   "f": "audio/jenny/od_l7a/0.mp3",
+   "s": "audio/jenny/od_l7a/0s.mp3"
+  },
+  {
+   "en": "I sat at the mat.",
+   "f": "audio/jenny/od_l7a/1.mp3",
+   "s": "audio/jenny/od_l7a/1s.mp3"
+  },
+  {
+   "en": "Pam sat at the mat.",
+   "f": "audio/jenny/od_l7a/2.mp3",
+   "s": "audio/jenny/od_l7a/2s.mp3"
+  },
+  {
+   "en": "Sam and Pam tap the mat.",
+   "f": "audio/jenny/od_l7a/3.mp3",
+   "s": "audio/jenny/od_l7a/3s.mp3"
+  },
+  {
+   "en": "Tap, tap, tap!",
+   "f": "audio/jenny/od_l7a/4.mp3",
+   "s": "audio/jenny/od_l7a/4s.mp3"
+  },
+  {
+   "en": "Sam and Pam pat the mat.",
+   "f": "audio/jenny/od_l7a/5.mp3",
+   "s": "audio/jenny/od_l7a/5s.mp3"
+  },
+  {
+   "en": "Pat, pat, pat!",
+   "f": "audio/jenny/od_l7a/6.mp3",
+   "s": "audio/jenny/od_l7a/6s.mp3"
+  },
+  {
+   "en": "A fat mat!",
+   "f": "audio/jenny/od_l7a/7.mp3",
+   "s": "audio/jenny/od_l7a/7s.mp3"
+  },
+  {
+   "en": "Sam and Pam sat and sat.",
+   "f": "audio/jenny/od_l7a/8.mp3",
+   "s": "audio/jenny/od_l7a/8s.mp3"
+  }
+ ],
+ "od_l7b": [
+  {
+   "en": "A map!",
+   "f": "audio/jenny/od_l7b/0.mp3",
+   "s": "audio/jenny/od_l7b/0s.mp3"
+  },
+  {
+   "en": "I tap the map.",
+   "f": "audio/jenny/od_l7b/1.mp3",
+   "s": "audio/jenny/od_l7b/1s.mp3"
+  },
+  {
+   "en": "Tap, tap, tap.",
+   "f": "audio/jenny/od_l7b/2.mp3",
+   "s": "audio/jenny/od_l7b/2s.mp3"
+  },
+  {
+   "en": "Pam and I tap the map.",
+   "f": "audio/jenny/od_l7b/3.mp3",
+   "s": "audio/jenny/od_l7b/3s.mp3"
+  },
+  {
+   "en": "Tam and I tap the map.",
+   "f": "audio/jenny/od_l7b/4.mp3",
+   "s": "audio/jenny/od_l7b/4s.mp3"
+  },
+  {
+   "en": "I am at the mat!",
+   "f": "audio/jenny/od_l7b/5.mp3",
+   "s": "audio/jenny/od_l7b/5s.mp3"
+  },
+  {
+   "en": "Sam sat at the mat.",
+   "f": "audio/jenny/od_l7b/6.mp3",
+   "s": "audio/jenny/od_l7b/6s.mp3"
+  },
+  {
+   "en": "I pat Sam. Pat, pat, pat.",
+   "f": "audio/jenny/od_l7b/7.mp3",
+   "s": "audio/jenny/od_l7b/7s.mp3"
+  }
  ]
 }
