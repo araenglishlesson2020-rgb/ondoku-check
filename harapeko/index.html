@@ -918,10 +918,9 @@
     t=Math.max(0,Number(t)||0); if(t===0) return {c:0, r:0, pos:0, sp:bfFor(0)}; var c=Math.floor((t-1)/7), r=((t-1)%7)+1; return {c:c, r:r, pos:r, sp:bfFor(c)}; }
   // 7日目で 4ひきめを えらびおわった（＝ちょうちょは もりへ・🥚表示）
   function cycFlown(ci){ return ci.r===7 && !!COMP && !((COMP.pending||0)>0); }
-  // 2026-10-16 名前を「漢字姓＋ひらがな名」に統一（ひろみさん指示）。ちょうちょの順番は名前から作るので、旧名を種にして図鑑が変わらないようにする
-  var BF_SEED_NAME={'藤村りょうた':'りょうた','柴田あさひ':'あさひ','辻さくら':'さくら','大工いつき':'いつき','坪根いつき':'つぼねいつき','春名ことみ':'ことみ','石井じんいちろう':'じんいちろう'};
+  // 2026-10-16 名前を「漢字姓＋ひらがな名」に統一。ちょうちょの順番は名前から作るので、サーバーが返す「種」（旧名・SEED）を優先して図鑑が変わらないようにする
   function bfPerm(){ var n=BUTTERFLIES.length, a=[]; for(var i=0;i<n;i++) a.push(i);
-    var seed=0, nm=String(BF_SEED_NAME[String(USER||'')]||USER||''); for(var k=0;k<nm.length;k++) seed=(seed*31+nm.charCodeAt(k))>>>0; seed=seed||7;
+    var seed=0, nm=String(SEED||USER||''); for(var k=0;k<nm.length;k++) seed=(seed*31+nm.charCodeAt(k))>>>0; seed=seed||7;
     for(var i2=n-1;i2>0;i2--){ seed=(seed*1103515245+12345)>>>0; var j2=seed%(i2+1); var tmp=a[i2]; a[i2]=a[j2]; a[j2]=tmp; } return a; }
   function bfFor(c){ var perm=bfPerm(); return BUTTERFLIES[perm[c%perm.length]]; }
   function bfIcon(sp,size){ return '<span class="gicon bfi">'+bfSVG(sp,size||36)+'</span>'; }
@@ -1471,7 +1470,10 @@
   var UKEY="nh2vocab_user"; // 一度ログインした名前を端末に記憶（次回からパスワード省略）
   function saveUser(n){try{localStorage.setItem(UKEY,n||"")}catch(e){}}
   function loadUser(){try{return localStorage.getItem(UKEY)||""}catch(e){return""}}
-  function clearUser(){try{localStorage.removeItem(UKEY)}catch(e){}}
+  function clearUser(){try{localStorage.removeItem(UKEY); localStorage.removeItem(SKEY)}catch(e){}}
+  var SEED=null, SKEY="nh2vocab_seed"; // 2026-10-16 ちょうちょ順の種（サーバーが返す旧名・名前統一で図鑑が変わらないように）
+  function saveSeed(x){try{ if(x) localStorage.setItem(SKEY,x); else localStorage.removeItem(SKEY) }catch(e){}}
+  function loadSeed(){try{return localStorage.getItem(SKEY)||null}catch(e){return null}}
   var state={score:0,best:0,gems:0,selectedBook:null,selectedUnit:null,lessons:{}};
   try{var s=localStorage.getItem(KEY); if(s) state=Object.assign(state,JSON.parse(s));}catch(e){}
   function save(){ state._at=Date.now(); try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){} cloudPush(); }
@@ -2877,7 +2879,7 @@
       $("#lgBtn").disabled=true; $("#lgBtn").textContent="確認中…";
       google.script.run.withSuccessHandler(function(res){
         $("#lgBtn").disabled=false; $("#lgBtn").textContent="はじめる ▶";
-        if(res && res.ok){ USER=res.name||name; saveUser(USER); state.course=res.course||""; save(); renderLessons(); show("lessons"); checkOndokuUpdates(); cloudLoad(afterCloud); }
+        if(res && res.ok){ USER=res.name||name; saveUser(USER); SEED=res.seed||null; saveSeed(SEED); state.course=res.course||""; save(); renderLessons(); show("lessons"); checkOndokuUpdates(); cloudLoad(afterCloud); }
         else if(res && res.expired){ err.textContent="利用期間が終了しています。続けたい時はおうちの人から先生に連絡してね。"; }
         else{ err.textContent="名前かパスワードがちがうみたい。"; }
       }).withFailureHandler(function(){ $("#lgBtn").disabled=false; $("#lgBtn").textContent="はじめる ▶"; err.textContent="つながらないみたい。もう一度。"; }).login(name,pw);
@@ -2895,6 +2897,7 @@
         $("#lgErr").textContent = res.expired ? "利用期間が終了しています。続けたい時はおうちの人から先生に連絡してね。" : "";
         show("login");
       } else if(res && res.ok){
+        if(res.seed && res.seed!==SEED){ SEED=res.seed; saveSeed(SEED); if($("#lessons").classList.contains("on")) renderLessons(); }
         // コース変更（小学生→中学生など）を反映：シートを直したら次にアプリを開いた時に🔒が外れる
         var c=res.course||"";
         if(c!==(state.course||"")){ state.course=c; save(); if($("#lessons").classList.contains("on")) renderLessons(); }
@@ -2906,7 +2909,7 @@
   function loginByPwFlow(pw){
     if(CONFIG.backend && window.google && google.script){
       google.script.run.withSuccessHandler(function(res){
-        if(res && res.ok){ USER=res.name; saveUser(USER); state.course=res.course||""; save(); renderLessons(); show("lessons"); checkOndokuUpdates(); cloudLoad(afterCloud); }
+        if(res && res.ok){ USER=res.name; saveUser(USER); SEED=res.seed||null; saveSeed(SEED); state.course=res.course||""; save(); renderLessons(); show("lessons"); checkOndokuUpdates(); cloudLoad(afterCloud); }
         else if(res && res.expired){ $("#lgErr").textContent="利用期間が終了しています。続けたい時はおうちの人から先生に連絡してね。"; show("login"); }
         else{ $("#lgErr").textContent="合言葉がちがうみたい。"; show("login"); }
       }).withFailureHandler(function(){ show("login"); }).loginByPw(pw);
@@ -3036,7 +3039,7 @@
       show("login"); loginByPwFlow(autoPw);
     } else if(autoName && autoPw){ // 名前＋合言葉URL（従来）→毎回自動ログイン
       $("#lgName").value=autoName; $("#lgPw").value=autoPw; show("login"); doLogin();
-    } else if(remembered){ USER=remembered; renderLessons(); show("lessons"); checkOndokuUpdates(); revalidateUser(); cloudLoad(afterCloud); } // 前回ログイン済み→パスワード省略（裏で有効期限を確認）
+    } else if(remembered){ USER=remembered; SEED=loadSeed(); renderLessons(); show("lessons"); checkOndokuUpdates(); revalidateUser(); cloudLoad(afterCloud); } // 前回ログイン済み→パスワード省略（裏で有効期限を確認）
     else{ show("login"); }
   } else { renderLessons(); show("lessons"); }
 })();
