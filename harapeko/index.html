@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="ja">
 <head>
+<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png?v=1">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=1">
+<link rel="manifest" href="site.webmanifest?v=1">
+<meta name="apple-mobile-web-app-title" content="はらぺこ">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#F4B740">
 <script>
 // ===== 新しい入口（GitHub Pages）用：google.script.run の代わり（2026-10-13・生成ファイル／Index.html から _tools/新しい入口_GitHubPages版を生成.py で作る） =====
 // 画面のコードはそのまま。google.script.run.withSuccessHandler(f).関数(引数) を
@@ -1362,34 +1368,40 @@
   document.addEventListener("visibilitychange", function(){ if(document.visibilityState==="visible" && USER) fetchVisit(); });
 
   // ===== 🎬 レッスン動画「みた✅」（2026-10-13 ひろみさん）：L8以降の UFLI BOOK は Day1/Day2/BOOK/Word/Heart Word の5本。ロックはしない・リンクなし =====
+  // 2026-10-16 ひろみさん：新入生用 L7a「The Fat Mat」の最初は L1〜L7 の動画7本（この機能があることを最初に伝える）
   var VIDEOS=[{id:"day1",nm:"Day1"},{id:"day2",nm:"Day2"},{id:"book",nm:"BOOK"},{id:"word",nm:"Word"},{id:"heart",nm:"Heart Word"}];
-  function hasVideos(L){ var nm=L?lessonNum(L):null; return !!(L && isBook(L) && nm && nm.n>=8); }
-  function vidsSeen(ls){ ls.vids=ls.vids||{}; return VIDEOS.filter(function(v){return !!ls.vids[v.id]}).length; }
+  var VIDEOS_L7A=[1,2,3,4,5,6,7].map(function(n){ return {id:"l"+n, nm:"L"+n}; });
+  function videosFor(L){ var nm=L?lessonNum(L):null; if(!(L && isBook(L) && nm)) return null; if(nm.n===7 && nm.br==="a") return VIDEOS_L7A; return nm.n>=8?VIDEOS:null; }
+  function hasVideos(L){ return !!videosFor(L); }
+  function vidsSeen(ls, L){ ls.vids=ls.vids||{}; var list=videosFor(L||LES)||VIDEOS; return list.filter(function(v){return !!ls.vids[v.id]}).length; }
   function renderVidRow(){
     var box=$("#vidRow"); if(!box) return; box.innerHTML="";
     if(!LES || !hasVideos(LES)) return;
-    var ls=LS; var n=vidsSeen(ls);
+    var list=videosFor(LES), total=list.length, isL7=(list===VIDEOS_L7A);
+    var ls=LS; var n=vidsSeen(ls, LES);
     var fresh=!reqStages(LES).some(function(s){ return ls.cleared[s.id]>0; }); // まだクエストを始めていない → 最初の未視聴が「▶」で光る
-    var firstUn=null; VIDEOS.forEach(function(v){ if(!firstUn && !ls.vids[v.id]) firstUn=v.id; });
-    box.innerHTML='<div class="vid-row"><div class="ttl"><span>🎬 レッスン動画（5つ）</span><span class="cnt">'+n+' / 5 みた'+(n>=5?' 🎬':'')+'</span></div><div class="vids">'+
-      VIDEOS.map(function(v){ var on=!!ls.vids[v.id], nx=(fresh && v.id===firstUn);
+    var firstUn=null; list.forEach(function(v){ if(!firstUn && !ls.vids[v.id]) firstUn=v.id; });
+    var ttl=isL7?'🎬 L1〜L7 の動画（'+total+'つ）':'🎬 レッスン動画（'+total+'つ）';
+    box.innerHTML='<div class="vid-row"><div class="ttl"><span>'+ttl+'</span><span class="cnt">'+n+' / '+total+' みた'+(n>=total?' 🎬':'')+'</span></div><div class="vids" style="grid-template-columns:repeat('+(isL7?7:5)+',1fr)">'+
+      list.map(function(v){ var on=!!ls.vids[v.id], nx=(fresh && v.id===firstUn);
         return '<button class="vid'+(on?' on':'')+(nx?' nx':'')+'" data-v="'+v.id+'"><b>'+(on?'✅':(nx?'▶':'☐'))+'</b>'+v.nm.replace(' ','<br>')+'</button>'; }).join('')+
-      '</div><div class="vid-note">'+(n>=5?'🎬 5つ ぜんぶ みたよ！（タップで もどせるよ）':'みおわったら タップで ✅（もう一回 タップで もどせるよ）')+'</div></div>';
+      '</div><div class="vid-note">'+(n>=total?'🎬 '+total+'つ ぜんぶ みたよ！（タップで もどせるよ）':(isL7?'レッスンの動画を みおわったら タップで ✅（L8からは レッスンごとに 5つ あるよ）':'みおわったら タップで ✅（もう一回 タップで もどせるよ）'))+'</div></div>';
     box.querySelectorAll(".vid").forEach(function(b){ b.onclick=function(){ toggleVideo(b.getAttribute("data-v")); }; });
   }
   function toggleVideo(vid){
-    var v=VIDEOS.filter(function(x){return x.id===vid})[0]; if(!v || !LES) return;
+    var list=videosFor(LES)||VIDEOS, total=list.length;
+    var v=list.filter(function(x){return x.id===vid})[0]; if(!v || !LES) return;
     LS.vids=LS.vids||{};
     var on=!LS.vids[vid];
     if(on) LS.vids[vid]=todayStr(0); else delete LS.vids[vid];
     save();
     try{ if(CONFIG.backend && window.google && google.script && google.script.run) google.script.run.videoCheck(USER, fullTitle(LES), v.nm, on); }catch(e){}
-    if(on){ sfx.correct(); if(vidsSeen(LS)>=5 && !LS.vidsBonus){ LS.vidsBonus=1; gemsAdd(3); save(); showVidsDone(); } }
+    if(on){ sfx.correct(); if(vidsSeen(LS, LES)>=total && !LS.vidsBonus){ LS.vidsBonus=1; gemsAdd(3); save(); showVidsDone(total); } }
     renderVidRow(); if(typeof renderHomeStats==="function") renderHomeStats();
   }
-  function showVidsDone(){
+  function showVidsDone(total){
     var m=$("#modal");
-    m.innerHTML='<div class="big-fruit">🎬</div><h2>動画 5つ ぜんぶ みた！</h2><div class="rscore">💎 おたから <b>+3</b><br>つぎは 📷 ホワイトボード → クエストへ</div><button class="btn go" id="ok" style="margin-top:12px">すすむ ▶</button>';
+    m.innerHTML='<div class="big-fruit">🎬</div><h2>動画 '+(total||5)+'つ ぜんぶ みた！</h2><div class="rscore">💎 おたから <b>+3</b><br>つぎは 📷 ホワイトボード → クエストへ</div><button class="btn go" id="ok" style="margin-top:12px">すすむ ▶</button>';
     sfx.win(); $("#overlay").classList.add("on");
     $("#ok").onclick=function(){ $("#overlay").classList.remove("on"); renderHome(); };
   }
@@ -1842,7 +1854,7 @@
     // 🔢 L番号でひらく（UFLI BOOKだけ）：番号でおぼえている子は 級をさがさず直接ひらける
     if(state.selectedBook==="UFLI BOOK"){
       var jb=document.createElement("div"); jb.className="jumpbar";
-      jb.innerHTML='<span>🔢 L番号で ひらく</span><input type="number" inputmode="numeric" min="8" max="128" placeholder="L" id="jumpIn">'+
+      jb.innerHTML='<span>🔢 L番号で ひらく</span><input type="number" inputmode="numeric" min="7" max="128" placeholder="L" id="jumpIn">'+
         '<button class="btn go" id="jumpGo">ひらく</button>'+(state.jumpN?'<button class="uchip sm" id="jumpClr">✕ L'+state.jumpN+'だけ表示中</button>':'');
       box.appendChild(jb);
       var go=function(){ var n=parseInt(jb.querySelector("#jumpIn").value,10); if(!n) return; jumpToLesson(n); };
