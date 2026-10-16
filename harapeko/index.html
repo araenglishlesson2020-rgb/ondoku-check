@@ -1515,7 +1515,7 @@
     var mx=function(a,b){ return Math.max(Number(a)||0, Number(b)||0); };
     var out={};
     out.score=mx(loc.score,srv.score); out.best=mx(loc.best,srv.best); out.gems=mx(loc.gems,srv.gems);
-    ["selectedBook","selectedUnit","lastLesson","odRate","streak","lastDay","dailyBonus","dailyFresh","jumpN"].forEach(function(k){ if(NEW[k]!==undefined) out[k]=NEW[k]; else if(loc[k]!==undefined) out[k]=loc[k]; else if(srv[k]!==undefined) out[k]=srv[k]; });
+    ["selectedBook","selectedUnit","lastLesson","odRate","odPickN","odPart","streak","lastDay","dailyBonus","dailyFresh","jumpN"].forEach(function(k){ if(NEW[k]!==undefined) out[k]=NEW[k]; else if(loc[k]!==undefined) out[k]=loc[k]; else if(srv[k]!==undefined) out[k]=srv[k]; });
     out.course=loc.course||srv.course||""; // コースはログイン時にサーバーから入る（端末側が最新）
     var pd={}; (loc.playDays||[]).concat(srv.playDays||[]).forEach(function(d){ pd[d]=1; }); out.playDays=Object.keys(pd).sort();
     out.recSent={}; [srv.recSent||{}, loc.recSent||{}].forEach(function(o){ for(var k in o) out.recSent[k]=o[k]; });
@@ -2549,16 +2549,63 @@
   }
 
   // 🎤 チェック：マイク判定ページ（別タブ）を開く。結果は postMessage で戻る。
+  // 2026-10-16 ひろみさん「全文は小学生にはしんどい」→ 3文／5文／10文／ぜんぶ を えらべる。
+  //   えらぶ文＝そのレッスンで練習する単語（対になる Word の10語）が 入っている文を優先（同点は お話の順）。よむ順は お話の順のまま。
+  //   📖よんだ回数・🌍ごちそうは「ぜんぶ」の時だけ 数える（3文で 1回読んだ ことには しない）。⭐・スコア・💎は どれでも つく。
+  var OD_PICKS=[3,5,10];
+  function odTargetWords(L){ var W=pairedWord(L), out={}; ((W&&W.words)||[]).forEach(function(w){ var k=normEnA(w.en); if(k) out[k]=1; }); return out; }
+  function odSentScore(en, tg){
+    var n=0, seen={};
+    String(en).toLowerCase().split(/[^a-z']+/).forEach(function(t){ t=t.replace(/'/g,""); if(!t||seen[t]) return;
+      if(tg[t] || tg[t.replace(/(es|s|ed|ing)$/,"")]){ seen[t]=1; n++; } });
+    return n;
+  }
+  function odPickSents(L, n){
+    var S=L.sents||[]; if(!n || n>=S.length) return S.slice();
+    var tg=odTargetWords(L);
+    var idx=S.map(function(s,i){ return {i:i, sc:odSentScore(s.en,tg)}; });
+    idx.sort(function(a,b){ return (b.sc-a.sc) || (a.i-b.i); });
+    return idx.slice(0,n).map(function(x){return x.i}).sort(function(a,b){return a-b}).map(function(i){ return S[i]; });
+  }
+  // いま ひらいた チェックが「えらんだ文だけ」だったか（同じ本・30分いない）
+  function odPartialFor(id){ var p=state.odPart; if(!p || p.id!==id || !(p.n<p.total) || Date.now()-(p.t||0)>30*60000) return null; return p; }
   function odCheck(meta){
-    var b=$("#stageBody"); odSetBar(0,LES.sents.length,meta);
+    var b=$("#stageBody"), S=LES.sents||[], total=S.length; odSetBar(0,total,meta);
+    var opts=OD_PICKS.filter(function(k){return k<total});
+    var n=state.odPickN; if(n!=null && n!=="all" && opts.indexOf(n)<0) n=null;
+    if(n==null) n=(total>5?5:"all"); // はじめては 5文（5文いかの本は ぜんぶ）
+    if(!opts.length) n="all";
+    var chips=opts.map(function(k){ return '<button class="uchip" data-n="'+k+'">'+k+'文</button>'; }).join("")+
+      '<button class="uchip" data-n="all">ぜんぶ（'+total+'文）</button>';
     b.innerHTML='<div class="card"><div style="font-size:52px">🎤</div>'+
       '<h2 style="font-size:20px">音読チェック</h2>'+
+      (opts.length?('<div class="od-note" style="text-align:center;margin-top:4px"><b>なん文 よむ？</b></div>'+
+        '<div class="od-tools" id="odPick" style="justify-content:center;margin-top:6px">'+chips+'</div>'+
+        '<div id="odPickList" class="od-note" style="text-align:left"></div>'):'')+
       '<div class="od-note" style="text-align:left">1文ずつマイクにむかって読むよ。<b>どの単語が読めたか</b>、みどり✓と赤✗でわかる！<br><br>'+
       '① ボタンをおすと <b>新しい画面</b> がひらくよ<br>'+
       '② 「マイクの使用を許可しますか？」→ <b>許可</b> をえらんでね（まいかい きかれる ときは、その画面の 🔔 を見てね）<br>'+
       '③ おわったら、この画面にもどってきてね</div></div>'+
       '<div class="actions"><button class="btn go" id="odOpen">🎤 チェックをはじめる</button></div>';
-    $("#odOpen").onclick=function(){ openCheckPage(""); };
+    var picked=S.slice();
+    function setPick(k){
+      n=k; if(state.odPickN!==k){ state.odPickN=k; save(); }
+      picked=(k==="all")?S.slice():odPickSents(LES,k);
+      document.querySelectorAll("#odPick .uchip").forEach(function(c){ c.classList.toggle("on", String(c.dataset.n)===String(k)); });
+      var lst=$("#odPickList");
+      if(lst){ lst.innerHTML=(k==="all")
+        ? '📖 お話を ぜんぶ よむよ（'+total+'文）。さいごまで よむと 📖よんだ回数が ふえるよ'
+        : '🎯 きょう よむ '+picked.length+'文（このレッスンの ことばが 入っている文）<br>'+picked.map(function(s){ return '・<span class="en">'+escT(s.en)+'</span>'; }).join('<br>')+
+          '<br><span style="opacity:.8">ぜんぶ よむと 📖よんだ回数が ふえるよ</span>'; }
+      var btn=$("#odOpen"); if(btn) btn.textContent=(k==="all")?'🎤 チェックをはじめる（ぜんぶ）':'🎤 '+picked.length+'文で チェックをはじめる';
+    }
+    document.querySelectorAll("#odPick .uchip").forEach(function(c){ c.onclick=function(){ setPick(c.dataset.n==="all"?"all":Number(c.dataset.n)); }; });
+    setPick(n);
+    $("#odOpen").onclick=function(){
+      var part=(picked.length<total);
+      state.odPart=part?{id:LES.id, n:picked.length, total:total, t:Date.now()}:null; save();
+      openCheckPage("", null, part?picked:null);
+    };
   }
   // この画面（クエスト本体）に もどるためのURL（2026-10-14）：判定ページの「クエストにもどる」が window.close() で もどれない時
   //   （LINEの中から Safari に うつった時・ホーム画面の入口から ひらいた時 など＝10/14 保護者さんの報告）に、判定ページが ここへ 自分で もどる。
@@ -2587,14 +2634,16 @@
     }catch(e){ b.innerHTML=""; }
   }
   // 判定ページ（別タブ）を開く。mode="rec"=ろくおんだけ／mode="word"=ハートワード単語判定。Lopt=統合ホームから本文を渡す用
-  function openCheckPage(mode, Lopt){
+  function openCheckPage(mode, Lopt, sub){
     var L=Lopt||LES;
     var ex=(document.getElementById("execUrl")||{}).value||"";
     if(ex.indexOf("http")!==0) ex=""; // GAS外で開いた時はテンプレート文字列が残るので無効化
-    var items=L.sents || (L.words||[]).map(function(w){return {en:w.en, ja:w.ja||""}}); // 音読=文／ハートワード=単語
+    var all=L.sents || (L.words||[]).map(function(w){return {en:w.en, ja:w.ja||""}}); // 音読=文／ハートワード=単語
+    var items=(sub&&sub.length)?sub:all; // 2026-10-16 えらんだ文だけ（3文／5文／10文）で チェックできる
     var payload={ name:USER||"", lessonId:L.id, lessonTitle:fullTitle(L), mode:mode||"",
       sents:items.map(function(s){return {en:s.en, ja:s.ja||""}}),
       audio:items.map(function(s){ var e=audioFor(s.en); return (e&&e.f)||"" }),
+      pick:(items.length<all.length)?{n:items.length,total:all.length}:null,
       exec:ex, back:backUrl() };
     var h=btoa(unescape(encodeURIComponent(JSON.stringify(payload)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
     // openExternalBrowser=1：LINEの中のブラウザで開かれた時にSafari/Chromeへ逃がす（LINE公式パラメータ・通常ブラウザでは無視される）
@@ -2722,7 +2771,9 @@
     // 📖 よんだ回数（2026-09-10）：本文を さいごまで読むたび +1（BOOK 1 きく＆リピート／BOOK 2 シャドー／BOOK 3 チェック どれでも1回）。🌍は v2（3回ごと・foodCheck）
     var readsTxt="";
     var foodGot=0;
-    if(LES.mode==="ondoku"){
+    var odp=(LES.mode==="ondoku" && meta.id==="check")?odPartialFor(LES.id):null;
+    if(odp){ state.odPart=null; extra=(extra?extra+"<br>":"")+"🎯 "+odp.n+"文の チェック（ぜんぶ よむと 📖よんだ回数が ふえるよ）"; } // 2026-10-16 えらんだ文だけ
+    else if(LES.mode==="ondoku"){
       if(odSess && odSess.counted && odSess.id===LES.id) LS.part=Math.max(0,(LS.part||0)-1); // 1分カウント済み→「さいごまで」に おきかえ（二重に数えない）
       odSess=null;
       LS.reads=(LS.reads||0)+1; LS.readsBy=LS.readsBy||{}; LS.readsBy[meta.id]=(LS.readsBy[meta.id]||0)+1;
@@ -2787,7 +2838,9 @@
       (missed&&missed.length?('<br>にがてな語：<span class="en">'+escT(missed.slice(0,12).join(", "))+'</span>'):"")+
       "<br>スコア +"+pts+(g?("　💎おたから +"+g):"");
     var foodGot=0;
-    if(L.mode==="ondoku"){
+    var odp=(L.mode==="ondoku")?odPartialFor(L.id):null;
+    if(odp){ state.odPart=null; extra+="<br>🎯 "+odp.n+"文の チェック（ぜんぶ よむと 📖よんだ回数が ふえるよ）"; } // 2026-10-16 えらんだ文だけ
+    else if(L.mode==="ondoku"){
       if(odSess && odSess.counted && odSess.id===L.id){ ls.part=Math.max(0,(ls.part||0)-1); odSess=null; }
       ls.reads=(ls.reads||0)+1; ls.readsBy=ls.readsBy||{}; ls.readsBy[meta.id]=(ls.readsBy[meta.id]||0)+1;
       foodGot=foodCheck(L.id);

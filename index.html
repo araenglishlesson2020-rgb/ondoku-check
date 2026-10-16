@@ -206,7 +206,7 @@
       '<div class="note">単語クエストの「🎤 チェックをはじめる」ボタンから ひらいてね。</div></div></div>';
     return;
   }
-  $("#who").textContent=(DATA.name?DATA.name+" さん · ":"")+DATA.lessonTitle;
+  $("#who").textContent=(DATA.name?DATA.name+" さん · ":"")+DATA.lessonTitle+((DATA.pick&&DATA.pick.n)?("（"+DATA.pick.n+"文／"+DATA.pick.total+"文）"):""); // 2026-10-16 えらんだ文だけの時
   $("#lessonTitle").textContent=DATA.lessonTitle;
 
   // ---- 🔔 マイク許可を毎回きかれないようにする案内（2026-09-10 ひろみさん指示） ----
@@ -535,6 +535,7 @@
     $("#scrRun").classList.add("hidden"); $("#scrDone").classList.remove("hidden");
     var ok=0, total=0, missed=[], missSeen={}, detail=[], research=[], resSeen={}, anyNg=false;
     var sumHtml="";
+    if(DATA.pick&&DATA.pick.n) detail.push("🎯 えらんだ文 "+DATA.pick.n+"／"+DATA.pick.total+"文（このレッスンの ことばが 入っている文）"); // 2026-10-16 先生の記録に 何文の チェックか 残す
     SENTS.forEach(function(s,si){
       var t=s.judgeable.filter(Boolean).length; total+=t;
       var hit=s.best?s.best.wordHit:s.words.map(function(){return false});
