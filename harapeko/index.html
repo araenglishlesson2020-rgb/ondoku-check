@@ -3,7 +3,7 @@
 <head>
 <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png?v=1">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=1">
-<link rel="manifest" href="site.webmanifest?v=1">
+<link rel="manifest" href="site.webmanifest?v=2">
 <meta name="apple-mobile-web-app-title" content="はらぺこ">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#F4B740">
@@ -431,12 +431,12 @@
     <!-- LOGIN (Apps Script版のみ表示) -->
     <section class="screen" id="login">
       <div class="hero"><div class="kicker">UFLI BOOK・New Horizon</div><h1>はらぺこ<br>英語クエスト</h1>
-        <p>名前とパスワードでログインしてね。</p></div>
+        <p>合言葉（パスワード）を入れて「はじめる」。名前は なくてもOK。<br>はじめの1回だけ。次からは 自動で ひらくよ。</p></div>
       <div class="card login-card">
-        <label for="lgName">名前（ログインID）</label>
+        <label for="lgName">名前（なくてもOK）</label>
         <input id="lgName" autocomplete="off" placeholder="例）山田はな">
-        <label for="lgPw">パスワード</label>
-        <input id="lgPw" type="password" autocomplete="off" placeholder="パスワード">
+        <label for="lgPw">合言葉（パスワード）</label>
+        <input id="lgPw" type="password" autocomplete="off" placeholder="合言葉（例）pig">
         <div class="login-err" id="lgErr"></div>
         <button class="btn go" id="lgBtn" style="margin-top:10px">はじめる ▶</button>
       </div>
@@ -2933,7 +2933,12 @@
   // ===== ログイン =====
   function doLogin(){
     var name=$("#lgName").value.trim(), pw=$("#lgPw").value; var err=$("#lgErr"); err.textContent="";
-    if(!name||!pw){ err.textContent="名前とパスワードを入れてね。"; return; }
+    if(!pw){ err.textContent="合言葉（パスワード）を入れてね。"; return; }
+    if(!name){ // 名前なし＝合言葉だけ（2026-10-17：ホーム画面のアイコンから ひらくと ?k= が消える端末の救済。氏名は生徒シートから引く）
+      $("#lgBtn").disabled=true; $("#lgBtn").textContent="確認中…";
+      loginByPwFlow(pw, function(){ $("#lgBtn").disabled=false; $("#lgBtn").textContent="はじめる ▶"; });
+      return;
+    }
     if(CONFIG.backend && window.google && google.script){
       $("#lgBtn").disabled=true; $("#lgBtn").textContent="確認中…";
       google.script.run.withSuccessHandler(function(res){
@@ -2965,14 +2970,16 @@
   }
 
   // パスワードだけのURL（?k=合言葉）→ 氏名はサーバー（生徒シート）から引いて自動ログイン
-  function loginByPwFlow(pw){
+  function loginByPwFlow(pw, done){
+    done=done||function(){};
     if(CONFIG.backend && window.google && google.script){
       google.script.run.withSuccessHandler(function(res){
+        done();
         if(res && res.ok){ USER=res.name; saveUser(USER); SEED=res.seed||null; saveSeed(SEED); state.course=res.course||""; save(); renderLessons(); show("lessons"); checkOndokuUpdates(); cloudLoad(afterCloud); }
         else if(res && res.expired){ $("#lgErr").textContent="利用期間が終了しています。続けたい時はおうちの人から先生に連絡してね。"; show("login"); }
         else{ $("#lgErr").textContent="合言葉がちがうみたい。"; show("login"); }
-      }).withFailureHandler(function(){ show("login"); }).loginByPw(pw);
-    } else { show("login"); }
+      }).withFailureHandler(function(){ done(); $("#lgErr").textContent="つながらないみたい。もう一度。"; show("login"); }).loginByPw(pw);
+    } else { done(); show("login"); }
   }
 
   // ===== コントロール =====
