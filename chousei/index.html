@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>日程ちょうせい</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F28C28">
+<style>
+:root{--bg:#FFF8EE;--card:#FFFFFF;--ink:#3A2A1E;--muted:#8A7A6A;--line:#F0DCC4;--o:#F28C28;--o2:#FFE3C2;--g:#3FA34D;--y:#E9B400;--r:#D9534F;--best:#FFF1C9}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.7;-webkit-text-size-adjust:100%}
+main{max-width:640px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:22px;margin:4px 0 2px;letter-spacing:.02em}
+.sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:16px;margin:0 0 14px;box-shadow:0 2px 0 rgba(0,0,0,.03)}
+.card h2{font-size:16px;margin:0 0 8px}
+label.f{display:block;font-size:14px;font-weight:700;margin:6px 0 4px}
+input[type=text]{width:100%;font-size:18px;padding:12px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+input[type=text]:focus{outline:2px solid var(--o);border-color:var(--o)}
+.hint{font-size:12px;color:var(--muted);margin:4px 0 0}
+.drow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-top:1px dashed var(--line)}
+.drow:first-of-type{border-top:0}
+.dlab{font-size:15px;font-weight:700;line-height:1.3}
+.dlab small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.seg{display:flex;gap:6px;flex:0 0 auto}
+.seg button{width:48px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:20px;font-weight:700;color:#B8A898;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.seg button.on-o{background:var(--g);border-color:var(--g);color:#fff}
+.seg button.on-t{background:var(--y);border-color:var(--y);color:#fff}
+.seg button.on-x{background:#F7D9D8;border-color:#F0B8B6;color:var(--r)}
+.btn{display:block;width:100%;padding:14px;border:0;border-radius:14px;background:var(--o);color:#fff;font-size:18px;font-weight:700;cursor:pointer;margin-top:12px}
+.btn[disabled]{opacity:.5}
+.btn.ghost{background:transparent;color:var(--muted);font-size:13px;padding:8px;margin-top:4px;text-decoration:underline;font-weight:400}
+.msg{font-size:14px;margin-top:8px;min-height:1.4em}
+.msg.ok{color:var(--g);font-weight:700}
+.msg.ng{color:var(--r)}
+.sum{display:flex;flex-direction:column;gap:8px}
+.srow{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;padding:8px 10px;border-radius:12px;background:#FFFCF7;border:1px solid var(--line)}
+.srow.best{background:var(--best);border-color:var(--y)}
+.srow .l{font-weight:700;font-size:15px}
+.srow .l small{color:var(--muted);font-weight:400;margin-left:6px;font-size:12px}
+.srow .c{font-size:14px;white-space:nowrap}
+.bar{grid-column:1/-1;height:8px;border-radius:4px;background:#F3EADF;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--g)}
+.crown{font-size:12px;color:#9A6B00;font-weight:700;margin-left:6px}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -16px;padding:0 16px}
+table{border-collapse:separate;border-spacing:0;font-size:14px;min-width:100%}
+th,td{padding:8px 6px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-weight:700;color:var(--muted);font-size:12px}
+td.n,th.n{text-align:left;position:sticky;left:0;background:var(--card);font-weight:700;z-index:1;max-width:9em;overflow:hidden;text-overflow:ellipsis}
+td.o{color:var(--g);font-weight:700;font-size:18px}
+td.t{color:var(--y);font-weight:700;font-size:18px}
+td.x{color:#C9A0A0;font-size:16px}
+td.memo{text-align:left;color:var(--muted);font-size:12px;white-space:normal;min-width:8em}
+.empty{color:var(--muted);font-size:14px;text-align:center;padding:12px 0}
+.foot{font-size:12px;color:var(--muted);text-align:center;margin-top:20px}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid var(--line);border-top-color:var(--o);border-radius:50%;animation:s .8s linear infinite;vertical-align:-2px;margin-right:4px}
+@keyframes s{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<main>
+  <h1 id="title">🎃 日程ちょうせい</h1>
+  <p class="sub" id="desc"></p>
+
+  <section class="card">
+    <h2>① お子さんのお名前</h2>
+    <input type="text" id="name" placeholder="れい：藤村りょうた" autocomplete="off" inputmode="text">
+    <p class="hint">はらぺこと同じ「姓＋名前」でお願いします。同じ名前で送り直すと、前の回答が置きかわります。</p>
+  </section>
+
+  <section class="card">
+    <h2>② 来られる日を タップ</h2>
+    <div id="dates"></div>
+    <p class="hint">○＝来られる　△＝たぶん・途中から　✕＝むり</p>
+    <label class="f" for="memo">ひとこと（なくてOK）</label>
+    <input type="text" id="memo" placeholder="れい：18:10から入れます" autocomplete="off">
+    <button class="btn" id="send">おくる</button>
+    <div class="msg" id="msg"></div>
+    <button class="btn ghost" id="del">この名前の回答を とりけす</button>
+  </section>
+
+  <section class="card">
+    <h2>みんなの回答 <span id="cnt" style="font-weight:400;color:var(--muted);font-size:13px"></span></h2>
+    <div id="sum" class="sum"></div>
+    <div class="tw" style="margin-top:12px"><table id="tbl"></table></div>
+    <div id="empty" class="empty">まだ回答はありません。いちばん乗りです🎃</div>
+  </section>
+
+  <p class="foot">Beyond Core English 荒川ひろみ</p>
+</main>
+
+<script>
+// ===== 設定（候補日を変えたい時は ここだけ）=====
+// 新しいイベントを追加する時は EVENTS にキーを足し、URL に ?e=キー を付けて送る。
+var EVENTS = {
+  hw2026: {
+    title: "🎃 ハロウィン音読会 日程ちょうせい",
+    desc: "レッスンのない週に、オンライン（Zoom）で30分。はじめの10分はみんなで英語ゲーム、そのあと はらぺこで音読して解散です。来られる日に ○△✕ をつけて「おくる」を押してください（30秒で終わります）。しめきり：10/23（金）",
+    dates: [
+      { id: "1026", label: "10/26（月）", time: "18:00〜18:30" },
+      { id: "1027", label: "10/27（火）", time: "18:00〜18:30" },
+      { id: "1028", label: "10/28（水）", time: "18:00〜18:30" },
+      { id: "1029", label: "10/29（木）", time: "18:00〜18:30" }
+    ]
+  }
+};
+// ===== ここから下は さわらなくてOK =====
+var EXEC = "https://script.google.com/macros/s/AKfycbxXxNHogj9Rs5oVNbGio-xJLOPy-jmix20MLfGuqf0gW7tkv5sC9EGQKDyD7icAWCg/exec";
+var q = new URLSearchParams(location.search);
+var EID = q.get("e") || "hw2026";
+var EV = EVENTS[EID] || EVENTS.hw2026;
+var PREFIX = "📅" + EID + "_";
+var INDEX_KEY = PREFIX + "index";
+var $ = function (id) { return document.getElementById(id); };
+
+function rpc(fn, args) {
+  return fetch(EXEC, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ action: "rpc", fn: fn, args: args }) })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { if (!j || !j.ok) throw new Error((j && j.error) || "rpc error"); return j.r; });
+}
+function loadJSON(key) { return rpc("loadState", [key]).then(function (r) { if (!r || !r.ok) throw new Error("load"); try { return r.json ? JSON.parse(r.json) : null; } catch (e) { return null; } }); }
+function saveJSON(key, obj) { return rpc("saveState", [key, JSON.stringify(obj)]).then(function (r) { if (!r || !r.ok) throw new Error("save"); return r; }); }
+
+// ---- 画面 ----
+var ans = {};
+$("title").textContent = EV.title; document.title = EV.title;
+$("desc").textContent = EV.desc;
+try { var saved = localStorage.getItem("chousei_name"); if (saved) $("name").value = saved; } catch (e) {}
+if (q.get("n")) $("name").value = q.get("n");
+
+EV.dates.forEach(function (d) {
+  var row = document.createElement("div"); row.className = "drow";
+  row.innerHTML = '<div class="dlab">' + d.label + '<small>' + d.time + '</small></div><div class="seg" data-id="' + d.id + '">' +
+    '<button type="button" data-v="o" aria-label="来られる">○</button><button type="button" data-v="t" aria-label="たぶん">△</button><button type="button" data-v="x" aria-label="むり">✕</button></div>';
+  $("dates").appendChild(row);
+});
+$("dates").addEventListener("click", function (e) {
+  var b = e.target.closest("button"); if (!b) return;
+  var seg = b.parentNode, id = seg.getAttribute("data-id"), v = b.getAttribute("data-v");
+  ans[id] = v;
+  Array.prototype.forEach.call(seg.children, function (c) { c.className = (c === b) ? ("on-" + v) : ""; });
+});
+function setAns(a) { ans = a || {}; EV.dates.forEach(function (d) { var seg = document.querySelector('.seg[data-id="' + d.id + '"]'); Array.prototype.forEach.call(seg.children, function (c) { c.className = (ans[d.id] && c.getAttribute("data-v") === ans[d.id]) ? ("on-" + ans[d.id]) : ""; }); }); }
+
+function msg(t, cls) { var m = $("msg"); m.textContent = t; m.className = "msg " + (cls || ""); }
+
+// 名前一覧（index）に名前を足す。保存後に読み直して入っているか確認（同時送信ですれ違った時の保険・最大3回）
+function addToIndex(name) {
+  var tries = 0;
+  function go() {
+    tries++;
+    return loadJSON(INDEX_KEY).then(function (ix) {
+      var names = (ix && ix.names) || [];
+      if (names.indexOf(name) < 0) names.push(name);
+      return saveJSON(INDEX_KEY, { names: names, at: Date.now() });
+    }).then(function () { return loadJSON(INDEX_KEY); }).then(function (ix) {
+      if (ix && ix.names && ix.names.indexOf(name) >= 0) return true;
+      if (tries < 3) return go(); throw new Error("index");
+    });
+  }
+  return go();
+}
+
+$("send").addEventListener("click", function () {
+  var name = $("name").value.trim().replace(/\s+/g, "");
+  if (!name) { msg("お名前を入れてください", "ng"); $("name").focus(); return; }
+  var missing = EV.dates.filter(function (d) { return !ans[d.id]; });
+  if (missing.length) { msg("まだ ○△✕ がついていない日があります（" + missing.map(function (d) { return d.label; }).join("・") + "）", "ng"); return; }
+  $("send").disabled = true; msg("おくっています…");
+  var rec = { name: name, a: ans, memo: $("memo").value.trim().slice(0, 60), at: Date.now() };
+  saveJSON(PREFIX + name, rec).then(function () { return addToIndex(name); }).then(function () {
+    try { localStorage.setItem("chousei_name", name); } catch (e) {}
+    msg("✅ 受けつけました。ありがとうございます！", "ok"); $("send").disabled = false; loadAll();
+  }).catch(function (e) { msg("⚠️ 送れませんでした。電波のよい所で もう一度お願いします（" + e.message + "）", "ng"); $("send").disabled = false; });
+});
+
+$("del").addEventListener("click", function () {
+  var name = $("name").value.trim().replace(/\s+/g, "");
+  if (!name) { msg("とりけす名前を入れてください", "ng"); return; }
+  if (!confirm(name + " さんの回答を とりけしますか？")) return;
+  $("send").disabled = true; msg("とりけしています…");
+  saveJSON(PREFIX + name, { name: name, deleted: true, at: Date.now() }).then(function () { msg("とりけしました", "ok"); $("send").disabled = false; setAns({}); loadAll(); })
+    .catch(function (e) { msg("⚠️ とりけせませんでした（" + e.message + "）", "ng"); $("send").disabled = false; });
+});
+
+// ---- みんなの回答 ----
+function loadAll() {
+  $("cnt").innerHTML = '<span class="spin"></span>よみこみ中';
+  loadJSON(INDEX_KEY).then(function (ix) {
+    var names = (ix && ix.names) || [];
+    return Promise.all(names.map(function (n) { return loadJSON(PREFIX + n).catch(function () { return null; }); }));
+  }).then(function (recs) {
+    recs = recs.filter(function (r) { return r && !r.deleted && r.a; });
+    recs.sort(function (a, b) { return (a.at || 0) - (b.at || 0); });
+    render(recs);
+    // 自分の前回回答を復元
+    var mine = $("name").value.trim().replace(/\s+/g, "");
+    if (mine) { var r = recs.filter(function (x) { return x.name === mine; })[0]; if (r && !Object.keys(ans).length) { setAns(r.a); $("memo").value = r.memo || ""; } }
+  }).catch(function () { $("cnt").textContent = "（よみこめませんでした・再読込してください）"; });
+}
+function render(recs) {
+  $("cnt").textContent = recs.length ? recs.length + "人" : "";
+  $("empty").style.display = recs.length ? "none" : "";
+  var sum = EV.dates.map(function (d) {
+    var o = 0, t = 0, x = 0;
+    recs.forEach(function (r) { var v = r.a[d.id]; if (v === "o") o++; else if (v === "t") t++; else x++; });
+    return { d: d, o: o, t: t, x: x, score: o + t * 0.5 };
+  });
+  var best = Math.max.apply(null, sum.map(function (s) { return s.score; }));
+  $("sum").innerHTML = sum.map(function (s) {
+    var isBest = recs.length && s.score === best && best > 0;
+    var pct = recs.length ? Math.round(s.score / recs.length * 100) : 0;
+    return '<div class="srow' + (isBest ? " best" : "") + '"><div class="l">' + s.d.label + '<small>' + s.d.time + '</small>' + (isBest ? '<span class="crown">👑 いちばん多い</span>' : "") + '</div>' +
+      '<div class="c">○' + s.o + '　△' + s.t + '　✕' + s.x + '</div><div class="bar"><i style="width:' + pct + '%"></i></div></div>';
+  }).join("");
+  var th = '<tr><th class="n">なまえ</th>' + EV.dates.map(function (d) { return "<th>" + d.label.replace(/（.*）/, function (m) { return "<br>" + m; }) + "</th>"; }).join("") + "<th>ひとこと</th></tr>";
+  var mark = { o: ["o", "○"], t: ["t", "△"], x: ["x", "✕"] };
+  var rows = recs.map(function (r) {
+    return '<tr><td class="n">' + esc(r.name) + "</td>" + EV.dates.map(function (d) { var m = mark[r.a[d.id]] || ["x", "−"]; return '<td class="' + m[0] + '">' + m[1] + "</td>"; }).join("") + '<td class="memo">' + esc(r.memo || "") + "</td></tr>";
+  }).join("");
+  $("tbl").innerHTML = recs.length ? th + rows : "";
+}
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+loadAll();
+</script>
+</body>
+</html>
