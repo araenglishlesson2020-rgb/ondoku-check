@@ -67,7 +67,7 @@ td.memo{text-align:left;color:var(--muted);font-size:12px;white-space:normal;min
   <section class="card">
     <h2>① お子さんのお名前</h2>
     <input type="text" id="name" placeholder="姓＋名前（はらぺこと同じ）" autocomplete="off" inputmode="text">
-    <p class="hint">はらぺこと同じ「姓＋名前」でお願いします。同じ名前で送り直すと、前の回答が置きかわります。</p>
+    <p class="hint">はらぺこと同じ「姓＋名前」でお願いします。同じ名前で送り直すと、前の回答が置きかわります。回答は先生だけが見ます。</p>
   </section>
 
   <section class="card">
@@ -87,11 +87,11 @@ td.memo{text-align:left;color:var(--muted);font-size:12px;white-space:normal;min
     <button class="btn ghost" id="del">この名前の回答を とりけす</button>
   </section>
 
-  <section class="card">
+  <section class="card" id="results" style="display:none">
     <h2>みんなの回答 <span id="cnt" style="font-weight:400;color:var(--muted);font-size:13px"></span></h2>
     <div id="sum" class="sum"></div>
     <div class="tw" style="margin-top:12px"><table id="tbl"></table></div>
-    <div id="empty" class="empty">まだ回答はありません。いちばん乗りです🎃</div>
+    <div id="empty" class="empty">まだ回答はありません</div>
   </section>
 
   <p class="foot">Beyond Core English 荒川ひろみ</p>
@@ -119,6 +119,8 @@ var EID = q.get("e") || "hw2026";
 var EV = EVENTS[EID] || EVENTS.hw2026;
 var PREFIX = "📅" + EID + "_";
 var INDEX_KEY = PREFIX + "index";
+var ADMIN = false; var ADMIN_HASH = "0f494893048487503ac75dd2581c57a688e210e9da0e6790cf8a91e8b2d5724b"; // 先生用：?admin=合言葉 で一覧が見える（合言葉そのものはページに置かない）
+function sha256(t) { return crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)).then(function (b) { return Array.from(new Uint8Array(b)).map(function (x) { return ("0" + x.toString(16)).slice(-2); }).join(""); }); }
 var $ = function (id) { return document.getElementById(id); };
 
 function rpc(fn, args) {
@@ -184,7 +186,7 @@ $("send").addEventListener("click", function () {
   var rec = { name: name, join: join, a: (join === "x" ? {} : ans), memo: $("memo").value.trim().slice(0, 60), at: Date.now() };
   saveJSON(PREFIX + name, rec).then(function () { return addToIndex(name); }).then(function () {
     try { localStorage.setItem("chousei_name", name); } catch (e) {}
-    msg("✅ 受けつけました。ありがとうございます！", "ok"); $("send").disabled = false; loadAll();
+    msg("✅ 受けつけました。ありがとうございます！", "ok"); $("send").disabled = false; if (ADMIN) loadAll();
   }).catch(function (e) { msg("⚠️ 送れませんでした。電波のよい所で もう一度お願いします（" + e.message + "）", "ng"); $("send").disabled = false; });
 });
 
@@ -193,11 +195,15 @@ $("del").addEventListener("click", function () {
   if (!name) { msg("とりけす名前を入れてください", "ng"); return; }
   if (!confirm(name + " さんの回答を とりけしますか？")) return;
   $("send").disabled = true; msg("とりけしています…");
-  saveJSON(PREFIX + name, { name: name, deleted: true, at: Date.now() }).then(function () { msg("とりけしました", "ok"); $("send").disabled = false; setAns({}); loadAll(); })
+  saveJSON(PREFIX + name, { name: name, deleted: true, at: Date.now() }).then(function () { msg("とりけしました", "ok"); $("send").disabled = false; setAns({}); setJoin(null); if (ADMIN) loadAll(); })
     .catch(function (e) { msg("⚠️ とりけせませんでした（" + e.message + "）", "ng"); $("send").disabled = false; });
 });
 
 // ---- みんなの回答 ----
+function restoreMine() {
+  var mine = $("name").value.trim().replace(/\s+/g, ""); if (!mine) return;
+  loadJSON(PREFIX + mine).then(function (r) { if (r && !r.deleted && !join && !Object.keys(ans).length) { setJoin(r.join || "o"); setAns(r.a || {}); $("memo").value = r.memo || ""; } }).catch(function () {});
+}
 function loadAll() {
   $("cnt").innerHTML = '<span class="spin"></span>よみこみ中';
   loadJSON(INDEX_KEY).then(function (ix) {
@@ -207,9 +213,6 @@ function loadAll() {
     recs = recs.filter(function (r) { return r && !r.deleted && r.a; });
     recs.sort(function (a, b) { return (a.at || 0) - (b.at || 0); });
     render(recs);
-    // 自分の前回回答を復元
-    var mine = $("name").value.trim().replace(/\s+/g, "");
-    if (mine) { var r = recs.filter(function (x) { return x.name === mine; })[0]; if (r && !Object.keys(ans).length && !join) { setJoin(r.join || "o"); setAns(r.a); $("memo").value = r.memo || ""; } }
   }).catch(function () { $("cnt").textContent = "（よみこめませんでした・再読込してください）"; });
 }
 function render(recs) {
@@ -237,7 +240,14 @@ function render(recs) {
   $("tbl").innerHTML = recs.length ? th + rows : "";
 }
 function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-loadAll();
+(function () {
+  var a = q.get("admin");
+  if (!a || !window.crypto || !crypto.subtle) { restoreMine(); return; }
+  sha256(a).then(function (h) {
+    if (h === ADMIN_HASH) { ADMIN = true; $("results").style.display = ""; loadAll(); }
+    else restoreMine();
+  }).catch(restoreMine);
+})();
 </script>
 </body>
 </html>
