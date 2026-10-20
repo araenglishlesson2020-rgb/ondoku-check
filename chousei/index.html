@@ -104,11 +104,14 @@ td.memo{text-align:left;color:var(--muted);font-size:12px;white-space:normal;min
 var EVENTS = {
   hw2026: {
     title: "🎃 ハロウィンゲーム＆はらぺこ音読会 日程ちょうせい",
-    desc: "オンライン（Zoom）で25分。はじめの15分はみんなで英語ゲーム、そのあと10分は はらぺこで音読して解散です。来られる日に ○△✕ をつけて「おくる」を押してください（30秒で終わります）。しめきり：10/23（金）",
+    desc: "オンライン（Zoom）で25分。はじめの15分はみんなで英語ゲーム、そのあと10分は はらぺこで音読して解散です。【10/20 よる8時（20:00〜20:25）のわくを追加しました】もう回答した方も、もう一度ひらいて、参加できる時間帯 すべてに ○ をつけて「おくる」を押してください（30秒で終わります）。しめきり：10/23（金）",
     dates: [
       { id: "1027", label: "10/27（火）", time: "19:00〜19:25" },
+      { id: "1027pm8", label: "10/27（火）", time: "20:00〜20:25" },
       { id: "1028", label: "10/28（水）", time: "19:00〜19:25" },
+      { id: "1028pm8", label: "10/28（水）", time: "20:00〜20:25" },
       { id: "1029", label: "10/29（木）", time: "19:00〜19:25" },
+      { id: "1029pm8", label: "10/29（木）", time: "20:00〜20:25" },
       { id: "1028am", label: "10/28（水）あさ", time: "8:30〜8:55（日本時間）" }
     ]
   }
@@ -232,7 +235,7 @@ function render(recs) {
     return '<div class="srow' + (isBest ? " best" : "") + '"><div class="l">' + s.d.label + '<small>' + s.d.time + '</small>' + (isBest ? '<span class="crown">👑 いちばん多い</span>' : "") + '</div>' +
       '<div class="c">○' + s.o + '　△' + s.t + '　✕' + s.x + '</div><div class="bar"><i style="width:' + pct + '%"></i></div></div>';
   }).join("");
-  var th = '<tr><th class="n">なまえ</th><th>参加</th>' + EV.dates.map(function (d) { return "<th>" + d.label.replace(/（.*）/, function (m) { return "<br>" + m; }) + "</th>"; }).join("") + "<th>ひとこと</th></tr>";
+  var th = '<tr><th class="n">なまえ</th><th>参加</th>' + EV.dates.map(function (d) { return "<th>" + d.label.replace(/（.*）/, function (m) { return "<br>" + m; }) + "<br><small>" + d.time.slice(0, 5) + "</small></th>"; }).join("") + "<th>ひとこと</th></tr>";
   var mark = { o: ["o", "○"], t: ["t", "△"], x: ["x", "✕"] };
   var rows = recs.map(function (r) {
     var no = (r.join === "x");
