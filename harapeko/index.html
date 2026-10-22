@@ -921,7 +921,6 @@
   // 2026-10-22 回数制（サーバー step/half）：1段階＝step かい。nx(n)＝n段階さきまで あと何かい。旧サーバー（step なし）は1かい＝1段階
   function gStep(){ return (GROWTH&&GROWTH.step)?Number(GROWTH.step):1; }
   function nx(n){ var st=gStep(), h=(GROWTH&&!GROWTH.stale&&GROWTH.half)?Number(GROWTH.half):0; return Math.max(1, n*st-h); }
-  function capTail(){ return (GROWTH&&GROWTH.capped)?'（きょうは たくさん やったね！つづきは あした）':''; }
   // 2026-10-16 名前を「漢字姓＋ひらがな名」に統一。ちょうちょの順番は名前から作るので、サーバーが返す「種」（旧名・SEED）を優先して図鑑が変わらないようにする
   function bfPerm(){ var n=BUTTERFLIES.length, a=[]; for(var i=0;i<n;i++) a.push(i);
     var seed=0, nm=String(SEED||USER||''); for(var k=0;k<nm.length;k++) seed=(seed*31+nm.charCodeAt(k))>>>0; seed=seed||7;
@@ -937,11 +936,11 @@
       var nk=(en!=null)? pk-(en-Math.max(0,r-3))+1 : pk-4*ci.c+1; // この ちょうちょの 何びきめか（まえの ちょうちょの ぶんが のこっていたら 0以下→出さない）
       return {i:'🦋', sp:sp, t:sp.ja+'！きょうの なかまを えらぼう 🐾'+(nk>=4?'（4ひきめ → もりへ とんで、あたらしい たまごに）':(nk>=1?'（'+nk+'ひきめ）':''))}; }
     if(r==7) return {i:'🦋', sp:sp, t:sp.ja+'（'+sp.en+'）。4ひきめの なかまを えらぶと もりへ とんで、あたらしい たまごに'};
-    if(r>=3) return {i:'🦋', sp:sp, t:sp.ja+'（'+sp.en+'）が うまれた！あと '+nx(1)+'かい やると なかまを 1ぴき えらべるよ（あと '+(7-r)+'ひきで つぎの たまご）'+capTail()};
-    if(r==2) return {i:'🫛', t:'さなぎに なった！あと '+nx(1)+'かい やると ちょうちょ。なにが うまれるかな？'+capTail()};
-    if(r==1) return {i:'🐛', t:'あおむしが うまれた！あと '+nx(2)+'かい やると ちょうちょ！'+capTail()};
+    if(r>=3) return {i:'🦋', sp:sp, t:sp.ja+'（'+sp.en+'）が うまれた！あと '+nx(1)+'かい やると なかまを 1ぴき えらべるよ（あと '+(7-r)+'ひきで つぎの たまご）'};
+    if(r==2) return {i:'🫛', t:'さなぎに なった！あと '+nx(1)+'かい やると ちょうちょ。なにが うまれるかな？'};
+    if(r==1) return {i:'🐛', t:'あおむしが うまれた！あと '+nx(2)+'かい やると ちょうちょ！'};
     if(pend>0) return {i:'🥚', t:'なかまを えらぼう 🐾　'+nth+'の たまごが うまれたよ'};
-    return {i:'🥚', t:(ci.c?nth+'の たまご！':'')+'あと '+nx(1)+'かい やると あおむしが うまれるよ。なにが うまれるかは おたのしみ'+capTail()};
+    return {i:'🥚', t:(ci.c?nth+'の たまご！':'')+'あと '+nx(1)+'かい やると あおむしが うまれるよ。なにが うまれるかは おたのしみ'};
   }
   // 🦋 うまれた！（そのサイクルで はじめて ちょうちょを 見たとき 1回だけ・☁️ state.bfSeen）
   function maybeRevealBf(g){
